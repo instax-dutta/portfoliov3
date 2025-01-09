@@ -9,16 +9,15 @@ const skills = [
     category: "Programming",
     icon: <Code className="w-8 h-8" />,
     items: [
-      { name: "Python", level: 90 },
-      { name: "JavaScript", level: 85 },
       { name: "HTML", level: 95 },
+      { name: "Python", level: 95 },
       { name: "CSS", level: 90 },
-      { name: "TypeScript", level: 80 },
-      { name: "C++", level: 40 },
-      { name: "Java", level: 50 },
       { name: "SQL", level: 90 },
+      { name: "JavaScript", level: 85 },
+      { name: "TypeScript", level: 80 },
+      { name: "Java", level: 50 },
+      { name: "C++", level: 40 },
       { name: "R", level: 20 },
-
     ]
   },
   {
@@ -54,7 +53,6 @@ const skills = [
       { name: "GitHub Actions", level: 80 },
       { name: "Jenkins", level: 50 },
       { name: "Kubernetes", level: 20},
-      {}
     ]
   },
   {
