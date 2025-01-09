@@ -52,7 +52,7 @@ export default function Home() {
           className="text-xl mb-12 text-gray-300"
           variants={itemVariants}
         >
-          Computer Science Student | Machine Learning Enthusiast | DevOps Engineer | Entrepreneur | Innovator
+          Computer Science Student | Machine Learning Enthusiast | Backend Developer | Open Source Contributor
         </motion.p>
         <motion.nav variants={itemVariants}>
           <ul className="flex flex-wrap justify-center gap-4">
