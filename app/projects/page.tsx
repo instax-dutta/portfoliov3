@@ -2,13 +2,15 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { title } from 'process'
+import { link } from 'fs'
 
 const projects = [
   {
     title: "Product Review Sentiment Analyser",
     description: "Developed a web application using Flask and BeautifulSoup to analyze Flipkart product reviews.",
     link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
-    technologies: ["Flask", "BeautifulSoup"]
+    technologies: ["Flask", "BeautifulSoup","Python",]
   },
   {
     title: "Ultimate-Firewall",
@@ -20,14 +22,45 @@ const projects = [
     title: "SecPassGen",
     description: "Built a secure password generator web application with Flask.",
     link: "https://github.com/instax-dutta/Secure-Password-Generator-Webapp",
-    technologies: ["Flask", "zxcvbn", "SQLite"]
+    technologies: ["Flask", "zxcvbn", "SQLite","python"]
   },
   {
     title: "PassGuard",
     description: "Developed a secure password manager application with Flask.",
-    link: "#",
-    technologies: ["Flask", "SQLite"]
+    link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
+    technologies: ["Flask", "SQLite",]
+  },
+  {
+    title: "IpRecon",
+    description: "A Tkinter-based tool to fetch and analyze IP address data using the IPinfo API",
+    link: "https://github.com/instax-dutta/IPRecon",
+    technologies: ["Tkinter", "IPinfo API", "Python"]
+  },
+  {
+    title: "Todo List Webapp", 
+    description: "Simple to-do list web application built using Flask and SQLAlchemy. Users can add, edit, delete, complete, and reorder tasks.",
+    link: "https://github.com/instax-dutta/TODO-List-FlaskApp",
+    technologies: ["Flask", "SQLAlchemy", "SQLite"]
+  },
+  {
+    title: "Bandwidth Patrol",
+    description: "Application to Measure the Bandwidth Usage of your Device and Display it in the web dashboard!",
+    link:"https://github.com/instax-dutta/Bandwith-Usage-Dashboard",
+    technologies: ["Flask", "html", "Python"]
+  },
+  {
+    title: "CV Extractor",
+    description: "A web application that allows you to extract crucial information from a collection of resumes or CVs in various file formats (PDF, DOCX).",
+    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
+    technologies: ["Flask", "Python", "python-docx","PyPDF2","openpyxl"]
+  },
+  {
+    title: "CL-Chat",
+    description: "Multi Client Command Line ChatRoom",
+    link: "https://github.com/instax-dutta/CL-Chat",
+    technologies: ["Python", "Socket Programming"]
   }
+
 ]
 
 export default function Projects() {

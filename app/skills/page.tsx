@@ -13,6 +13,12 @@ const skills = [
       { name: "JavaScript", level: 85 },
       { name: "HTML", level: 95 },
       { name: "CSS", level: 90 },
+      { name: "TypeScript", level: 80 },
+      { name: "C++", level: 40 },
+      { name: "Java", level: 50 },
+      { name: "SQL", level: 90 },
+      { name: "R", level: 20 },
+
     ]
   },
   {
@@ -27,6 +33,10 @@ const skills = [
       { name: "Keras", level: 80 },
       { name: "XGBoost", level: 75 },
       { name: "OpenCV", level: 70 },
+      { name: "Matplotlib", level: 85 },
+      { name: "Seaborn", level: 80 },
+      { name: "Plotly", level: 75 },
+      { name: "LmStudio",level: 75},
     ]
   },
   {
@@ -42,6 +52,9 @@ const skills = [
       { name: "Netlify", level: 85 },
       { name: "Vercel", level: 85 },
       { name: "GitHub Actions", level: 80 },
+      { name: "Jenkins", level: 50 },
+      { name: "Kubernetes", level: 20},
+      {}
     ]
   },
   {
@@ -52,6 +65,11 @@ const skills = [
       { name: "Communication", level: 90 },
       { name: "Adaptability", level: 95 },
       { name: "Collaboration", level: 90 },
+      { name: "Leadership", level: 80 },
+      { name: "Time Management", level: 90 },
+      { name: "Critical Thinking", level: 95 },
+      { name: "Creativity", level: 90 },
+      { name: "Empathy", level: 85 },
     ]
   }
 ]
