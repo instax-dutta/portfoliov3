@@ -64,22 +64,22 @@ export default function About() {
             <SkillCard 
               icon={<Code className="w-8 h-8" />}
               title="Programming"
-              skills={['Python', 'JavaScript', 'HTML', 'CSS']}
+              skills={['Python', 'JavaScript', 'HTML', 'CSS','SQL','Typescript','Java','C++','R','Rust','Go']}
             />
             <SkillCard 
               icon={<Brain className="w-8 h-8" />}
               title="Machine Learning"
-              skills={['TensorFlow', 'PyTorch', 'scikit-learn', 'NumPy', 'Pandas', 'Keras', 'XGBoost', 'OpenCV']}
+              skills={['TensorFlow', 'PyTorch', 'scikit-learn', 'NumPy', 'Pandas', 'Keras', 'XGBoost', 'OpenCV','matplotlib','Seaborn','plotly','LmStudio','Ollama']}
             />
             <SkillCard 
               icon={<Server className="w-8 h-8" />}
               title="DevOps"
-              skills={['AWS', 'Docker', 'Git', 'CI/CD', 'Bash scripting', 'Linux server administration', 'Netlify', 'Vercel', 'GitHub Actions']}
+              skills={['AWS', 'Docker', 'Git', 'CI/CD', 'Bash scripting', 'Linux server administration', 'Netlify', 'Vercel', 'GitHub Actions','Jenkins','Kubernetes']}
             />
             <SkillCard 
               icon={<Zap className="w-8 h-8" />}
               title="Soft Skills"
-              skills={['Problem Solving', 'Communication', 'Adaptability', 'Collaboration']}
+              skills={['Problem Solving', 'Communication', 'Adaptability', 'Collaboration','Leadership','Time Managment','Critical Thinking','Creativity','Empathy']}
             />
           </div>
         </motion.section>

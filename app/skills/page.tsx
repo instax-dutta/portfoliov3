@@ -14,10 +14,11 @@ const skills = [
       { name: "CSS", level: 90 },
       { name: "SQL", level: 90 },
       { name: "JavaScript", level: 85 },
-      { name: "TypeScript", level: 80 },
       { name: "Java", level: 50 },
       { name: "C++", level: 40 },
       { name: "R", level: 20 },
+      {name: "Rust",level:15},
+      {name: "Go",level:10}
     ]
   },
   {
@@ -36,6 +37,7 @@ const skills = [
       { name: "Seaborn", level: 80 },
       { name: "Plotly", level: 75 },
       { name: "LmStudio",level: 75},
+      { name: "Ollama",level: 80},
     ]
   },
   {
@@ -53,6 +55,8 @@ const skills = [
       { name: "GitHub Actions", level: 80 },
       { name: "Jenkins", level: 50 },
       { name: "Kubernetes", level: 20},
+      {name:"Bash",level:90}
+
     ]
   },
   {
