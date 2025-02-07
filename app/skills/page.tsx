@@ -18,11 +18,16 @@ const skills = [
       { name: "C++", level: 40 },
       { name: "R", level: 20 },
       {name: "Rust",level:15},
-      {name: "Go",level:10}
+      {name: "Go",level:10},
+      {name: "TypeScript",level: 70},
+      {name: "React",level: 50},
+      {name: "Next.js",level: 70},
+      {name: "Tailwind CSS",level: 65},
+      {name: "Node.js",level: 60}
     ]
   },
   {
-    category: "Machine Learning",
+    category: "AI/ML",
     icon: <Brain className="w-8 h-8" />,
     items: [
       { name: "TensorFlow", level: 80 },
@@ -38,6 +43,8 @@ const skills = [
       { name: "Plotly", level: 75 },
       { name: "LmStudio",level: 75},
       { name: "Ollama",level: 80},
+      { name: "Hugging Face",level: 80},
+      { name: "google vertex",level: 80}
     ]
   },
   {
@@ -72,6 +79,9 @@ const skills = [
       { name: "Critical Thinking", level: 95 },
       { name: "Creativity", level: 90 },
       { name: "Empathy", level: 85 },
+      { name: "Conflict Resolution", level: 85 },
+      { name: "Decision Making", level: 90 },
+      { name: "Teamwork", level: 90 }
     ]
   }
 ]
