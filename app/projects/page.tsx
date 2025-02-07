@@ -59,7 +59,50 @@ const projects = [
     description: "Multi Client Command Line ChatRoom",
     link: "https://github.com/instax-dutta/CL-Chat",
     technologies: ["Python", "Socket Programming"]
+  },
+  {
+    title: "My Developer Portfolio",
+    description: "My Developer Portfolio Website made using Next.js and Tailwind CSS.", 
+    link: "https://sdad.pro",
+    technologies: ["React","Next.js", "Tailwind CSS","RadixUI","shadcn/ui"]
+  },
+  {
+    title: "Minimalistic Corner of the Web",
+    description: "A a minimalistic personal website made using Next.js and Tailwind CSS.",
+    link: "https://s8m1t.xyz",
+    technologies: ["Vite", "Tailwind CSS","shadcn/ui","RadixUI"]
+  },
+  {
+    title: "Horror Themed Portfolio",
+    description: "A horror themed developer portfolio using Next.js and Tailwind CSS.",
+    link: "https://horror-dev-portfolio.vercel.app",
+    technologies: ["Next.js", "Tailwind CSS","shadcn/ui","framer-motion","RadixUI"]
+  },
+  {
+    title: "A modern and animated developer portfolio",
+    description: "A modern and animated developer portfolio using Next.js and Tailwind CSS.",
+    link: "https://sdnayak.pp.ua",
+    technologies: ["Next.js", "Tailwind CSS","shadcn/ui","RadixUI","particles.js"]
+  },
+  {
+    title: "A 3d Landing page for a discord Community",
+    description: "A 3d Landing page for a discord Community using Three.js",
+    link: "https://zengodz.pp.ua",
+    technologies: ["Three.js", "Tailwind CSS","shadcn/ui","next.js","React"]
+  },
+  {
+    title: "Minecraft Server Status Checker",
+    description: "A simple Minecraft server status checker web application using next.js",
+    link: "https://mcs.sdad.pro",
+    technologies: ["Next.js", "Tailwind CSS","shadcn/ui"]
+  },
+  {
+    title : "A Creation Showcase web gallery for a 3d printing company",
+    description: "A Creation Showcase web gallery for a 3d printing company using html",
+    link: "https://www.race3d.store",
+    technologies: ["html", "css","js"],
   }
+
 
 ]
 
