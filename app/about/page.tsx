@@ -64,22 +64,22 @@ export default function About() {
             <SkillCard 
               icon={<Code className="w-8 h-8" />}
               title="Programming"
-              skills={['Python', 'JavaScript', 'HTML', 'CSS','SQL','Typescript','Java','C++','R','Rust','Go']}
+              skills={['HTML', 'Python', 'CSS', 'SQL', 'JavaScript', 'Java', 'C++', 'R', 'Rust', 'Go', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js']}
             />
             <SkillCard 
               icon={<Brain className="w-8 h-8" />}
-              title="Machine Learning"
-              skills={['TensorFlow', 'PyTorch', 'scikit-learn', 'NumPy', 'Pandas', 'Keras', 'XGBoost', 'OpenCV','matplotlib','Seaborn','plotly','LmStudio','Ollama']}
+              title="AI/ML"
+              skills={['TensorFlow', 'PyTorch', 'scikit-learn', 'NumPy', 'Pandas', 'Keras', 'XGBoost', 'OpenCV', 'Matplotlib', 'Seaborn', 'Plotly', 'LmStudio', 'Ollama', 'Hugging Face', 'Google Vertex']}
             />
             <SkillCard 
               icon={<Server className="w-8 h-8" />}
               title="DevOps"
-              skills={['AWS', 'Docker', 'Git', 'CI/CD', 'Bash scripting', 'Linux server administration', 'Netlify', 'Vercel', 'GitHub Actions','Jenkins','Kubernetes']}
+              skills={['AWS', 'Docker', 'Git', 'CI/CD', 'Bash scripting', 'Linux server administration', 'Netlify', 'Vercel', 'GitHub Actions', 'Jenkins', 'Kubernetes', 'Bash']}
             />
             <SkillCard 
               icon={<Zap className="w-8 h-8" />}
               title="Soft Skills"
-              skills={['Problem Solving', 'Communication', 'Adaptability', 'Collaboration','Leadership','Time Managment','Critical Thinking','Creativity','Empathy']}
+              skills={['Problem Solving', 'Communication', 'Adaptability', 'Collaboration', 'Leadership', 'Time Management', 'Critical Thinking', 'Creativity', 'Empathy', 'Conflict Resolution', 'Decision Making', 'Teamwork']}
             />
           </div>
         </motion.section>
