@@ -19,5 +19,10 @@ User-agent: Bingbot
 Disallow: /no-bing/
 Allow: /public/
 
-Sitemap: https://sdad.pro/sitemap.xml
+Disallow: /next/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /build/
+Disallow: /out/
 
+Sitemap: https://sdad.pro/sitemap.xml
