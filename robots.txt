@@ -1,0 +1,22 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /search?q=
+Disallow: /*.php$
+Disallow: /*.cgi$
+Disallow: /*.asp$
+Disallow: /*.aspx$
+
+User-agent: Googlebot
+Disallow: /no-google/
+Allow: /public/
+
+User-agent: Bingbot
+Disallow: /no-bing/
+Allow: /public/
+
+Sitemap: https://sdad.pro/sitemap.xml
