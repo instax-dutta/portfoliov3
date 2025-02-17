@@ -20,3 +20,4 @@ Disallow: /no-bing/
 Allow: /public/
 
 Sitemap: https://sdad.pro/sitemap.xml
+
