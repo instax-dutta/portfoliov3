@@ -1,8 +1,8 @@
-'use client'
-
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Code, Brain, Server, Zap } from 'lucide-react'
+"use client"
+import { motion } from "framer-motion"
+import { Code, Brain, Server, Zap } from "lucide-react"
+import Navigation from "../components/Navigation"
+import StarryBackground from "../components/StarryBackground"
 
 const skills = [
   {
@@ -17,14 +17,14 @@ const skills = [
       { name: "Java", level: 50 },
       { name: "C++", level: 40 },
       { name: "R", level: 20 },
-      {name: "Rust",level:15},
-      {name: "Go",level:10},
-      {name: "TypeScript",level: 70},
-      {name: "React",level: 50},
-      {name: "Next.js",level: 70},
-      {name: "Tailwind CSS",level: 65},
-      {name: "Node.js",level: 60}
-    ]
+      { name: "Rust", level: 15 },
+      { name: "Go", level: 10 },
+      { name: "TypeScript", level: 70 },
+      { name: "React", level: 50 },
+      { name: "Next.js", level: 70 },
+      { name: "Tailwind CSS", level: 65 },
+      { name: "Node.js", level: 60 },
+    ],
   },
   {
     category: "AI/ML",
@@ -41,11 +41,11 @@ const skills = [
       { name: "Matplotlib", level: 85 },
       { name: "Seaborn", level: 80 },
       { name: "Plotly", level: 75 },
-      { name: "LmStudio",level: 75},
-      { name: "Ollama",level: 80},
-      { name: "Hugging Face",level: 80},
-      { name: "google vertex",level: 80}
-    ]
+      { name: "LmStudio", level: 75 },
+      { name: "Ollama", level: 80 },
+      { name: "Hugging Face", level: 80 },
+      { name: "Google Vertex", level: 80 },
+    ],
   },
   {
     category: "DevOps",
@@ -61,10 +61,9 @@ const skills = [
       { name: "Vercel", level: 85 },
       { name: "GitHub Actions", level: 80 },
       { name: "Jenkins", level: 50 },
-      { name: "Kubernetes", level: 20},
-      {name:"Bash",level:90}
-
-    ]
+      { name: "Kubernetes", level: 20 },
+      { name: "Bash", level: 90 },
+    ],
   },
   {
     category: "Soft Skills",
@@ -81,21 +80,23 @@ const skills = [
       { name: "Empathy", level: 85 },
       { name: "Conflict Resolution", level: 85 },
       { name: "Decision Making", level: 90 },
-      { name: "Teamwork", level: 90 }
-    ]
-  }
+      { name: "Teamwork", level: 90 },
+    ],
+  },
 ]
 
 export default function Skills() {
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 min-h-screen">
-      <motion.main 
-        className="container mx-auto px-4 py-12"
+    <div className="text-gray-100 min-h-screen">
+      <StarryBackground />
+      <Navigation />
+      <motion.main
+        className="container mx-auto px-4 py-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1 
+        <motion.h1
           className="text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
@@ -108,24 +109,14 @@ export default function Skills() {
             <SkillCategory key={index} category={skillCategory} index={index} />
           ))}
         </div>
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <Link href="/" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 px-4 rounded transition-all duration-300">
-            Back to Home
-          </Link>
-        </motion.div>
       </motion.main>
     </div>
   )
 }
 
-function SkillCategory({ category, index }: { category: any, index: number }) {
+function SkillCategory({ category, index }: { category: any; index: number }) {
   return (
-    <motion.div 
+    <motion.div
       className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg border border-gray-700"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -133,7 +124,9 @@ function SkillCategory({ category, index }: { category: any, index: number }) {
     >
       <div className="flex items-center mb-4">
         <div className="text-blue-400">{category.icon}</div>
-        <h2 className="text-2xl font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">{category.category}</h2>
+        <h2 className="text-2xl font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+          {category.category}
+        </h2>
       </div>
       <div className="space-y-4">
         {category.items.map((skill: any, skillIndex: number) => (
@@ -144,9 +137,9 @@ function SkillCategory({ category, index }: { category: any, index: number }) {
   )
 }
 
-function SkillBar({ skill, delay }: { skill: any, delay: number }) {
+function SkillBar({ skill, delay }: { skill: any; delay: number }) {
   return (
-    <motion.div 
+    <motion.div
       className="space-y-2"
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -157,7 +150,7 @@ function SkillBar({ skill, delay }: { skill: any, delay: number }) {
         <span className="text-sm font-medium text-gray-400">{skill.level}%</span>
       </div>
       <div className="w-full bg-gray-700 rounded-full h-2.5">
-        <motion.div 
+        <motion.div
           className="bg-gradient-to-r from-blue-500 to-purple-600 h-2.5 rounded-full"
           initial={{ width: 0 }}
           animate={{ width: `${skill.level}%` }}

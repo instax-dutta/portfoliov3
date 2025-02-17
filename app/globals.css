@@ -1,47 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Space+Mono&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 229, 231, 235;
-  --background-start-rgb: 17, 24, 39;
-  --background-end-rgb: 31, 41, 55;
+  --color-background: #0a0f1f;
+  --color-primary: #60a5fa;
+  --color-secondary: #f472b6;
+  --color-accent: #22d3ee;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-rocket: #60a5fa;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom right,
-    transparent,
-    rgb(var(--background-end-rgb))
-  )
-  rgb(var(--background-start-rgb));
+@layer base {
+  body {
+    font-family: "Space Mono", monospace;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    cursor: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  @screen sm {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  @screen lg {
+    html {
+      font-size: 20px;
+    }
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold mb-3;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold mb-2;
+  }
+
+  p {
+    @apply text-base sm:text-lg lg:text-xl mb-4;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-color-primary to-color-secondary;
+  }
+
+  .glow {
+    @apply shadow-[0_0_15px_rgba(96,165,250,0.5)] transition-shadow duration-300;
+  }
+
+  .glow:hover {
+    @apply shadow-[0_0_30px_rgba(96,165,250,0.8)];
+  }
+
+  .space-button {
+    @apply bg-color-primary bg-opacity-20 border-2 border-color-primary text-color-text font-orbitron uppercase tracking-wider py-2 px-4 rounded transition-all duration-300;
+  }
+
+  .space-button:hover {
+    @apply bg-opacity-40 shadow-[0_0_15px_rgba(96,165,250,0.5)];
+  }
+
+  .space-card {
+    @apply bg-color-background bg-opacity-70 border border-color-primary rounded-lg p-6 shadow-md backdrop-blur-md;
+  }
+
+  .space-input {
+    @apply bg-color-background bg-opacity-50 border border-color-primary text-color-text font-mono py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-color-primary focus:ring-opacity-50;
+  }
+
+  .container {
+    @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+
+  .section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
 }
 
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-  width: 10px;
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  color: var(--color-rocket);
+  filter: drop-shadow(0 0 8px var(--color-rocket));
+  width: 32px;
+  height: 32px;
+  transition: all 0.1s ease;
 }
 
-::-webkit-scrollbar-track {
-  background: #1f2937;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
-}
-
-/* Ensure canvas doesn't create unwanted scrollbars */
-canvas {
-  display: block;
+.float {
+  animation: float 6s ease-in-out infinite;
 }
 

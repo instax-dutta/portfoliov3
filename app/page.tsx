@@ -1,74 +1,65 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import StarryBackground from './components/StarryBackground'
+import Link from "next/link"
+import { motion } from "framer-motion"
+import StarryBackground from "./components/StarryBackground"
+import AnimatedText from "./components/AnimatedText"
+import Navigation from "./components/Navigation"
 
 export default function Home() {
-  const menuItems = [
-    { href: "/about", label: "About" },
-    { href: "/experience", label: "Experience" },
-    { href: "/projects", label: "Projects" },
-    { href: "/skills", label: "Skills" },
-    { href: "/education", label: "Education" },
-    { href: "/certifications", label: "Certifications" },
-  ]
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   }
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1
-    }
+      opacity: 1,
+    },
   }
 
   return (
-    <main className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+    <main className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
       <StarryBackground />
+      <Navigation />
       <motion.div
-        className="z-10 text-center"
+        className="z-10 text-center px-4 max-w-4xl mt-16"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 
-          className="text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
-          variants={itemVariants}
-        >
-          Sai Dutta Abhishek Dash
-        </motion.h1>
-        <motion.p 
-          className="text-xl mb-12 text-gray-300"
-          variants={itemVariants}
-        >
-          🤖 AI-Driven Developer | 🐍 Python & Machine Learning Specialist | 💻 Backend Developer | ☁️ Cloud & DevOps Engineer
+        <AnimatedText
+          text="Sai Dutta Abhishek Dash"
+          className="text-4xl sm:text-5xl font-bold mb-4 text-white font-playfair"
+        />
+        <motion.div className="text-2xl sm:text-4xl font-bold mb-4 gradient-text font-playfair" variants={itemVariants}>
+          <AnimatedText text="AI-Driven Developer" />
+        </motion.div>
+        <motion.p className="text-lg sm:text-xl mb-8 text-color-text-muted" variants={itemVariants}>
+          🐍 Python & Machine Learning Specialist | 💻 Backend Developer | ☁️ Cloud & DevOps Engineer
         </motion.p>
-        <motion.nav variants={itemVariants}>
-          <ul className="flex flex-wrap justify-center gap-4">
-            {menuItems.map((item, index) => (
-              <motion.li 
-                key={item.href}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link href={item.href} className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 px-4 rounded transition-all duration-300">
-                  {item.label}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.nav>
+        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4">
+          <Link
+            href="/contact"
+            className="bg-gradient-to-r from-color-primary to-color-secondary hover:from-color-primary/80 hover:to-color-secondary/80 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Contact Me
+          </Link>
+          <Link
+            href="/projects"
+            className="bg-transparent border-2 border-color-primary text-color-primary hover:bg-color-primary hover:text-white font-bold py-2 px-6 rounded-full transition-all duration-300"
+          >
+            View Projects
+          </Link>
+        </motion.div>
       </motion.div>
     </main>
   )

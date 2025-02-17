@@ -1,7 +1,7 @@
-'use client'
-
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+"use client"
+import { motion } from "framer-motion"
+import Navigation from "../components/Navigation"
+import StarryBackground from "../components/StarryBackground"
 
 const experiences = [
   {
@@ -48,19 +48,21 @@ const experiences = [
     title: "CEO & Co-Founder",
     company: "RacerNodes",
     date: "May 2022 – July 2023",
-  }
+  },
 ]
 
 export default function Experience() {
   return (
     <div className="text-gray-100 min-h-screen">
-      <motion.main 
+      <StarryBackground />
+      <Navigation />
+      <motion.main
         className="container mx-auto px-4 py-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1 
+        <motion.h1
           className="text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
@@ -70,16 +72,18 @@ export default function Experience() {
         </motion.h1>
         <div className="relative">
           {experiences.map((exp, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               className="mb-16 relative"
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className={`flex items-center mb-4 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                  <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">{exp.title}</h2>
+              <div className={`flex items-center mb-4 ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
+                <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
+                  <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                    {exp.title}
+                  </h2>
                   <h3 className="text-xl text-blue-400">{exp.company}</h3>
                   <p className="text-gray-400">{exp.date}</p>
                 </div>
@@ -93,16 +97,6 @@ export default function Experience() {
             </motion.div>
           ))}
         </div>
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <Link href="/" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 px-4 rounded transition-all duration-300">
-            Back to Home
-          </Link>
-        </motion.div>
       </motion.main>
     </div>
   )
