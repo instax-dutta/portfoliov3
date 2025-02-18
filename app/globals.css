@@ -49,7 +49,8 @@
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-bold mb-4;
+    @apply text-5xl sm:text-6xl lg:text-7xl font-bold mb-4;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
 
   h2 {
@@ -67,7 +68,8 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-color-primary to-color-secondary;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-color-primary via-color-accent to-color-secondary;
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
   }
 
   .glow {
@@ -111,7 +113,7 @@
   filter: drop-shadow(0 0 8px var(--color-rocket));
   width: 32px;
   height: 32px;
-  transition: all 0.1s ease;
+  will-change: transform;
 }
 
 @keyframes float {
