@@ -103,6 +103,18 @@ const projects = [
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://www.race3d.store",
   },
+  {
+    title: "BizForge",
+    description: "A suite of powerful tools to supercharge your online presence and drive your business forward.",
+    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "RadixUI","Flask","Python"],
+    link: "https://bizzforge.sdad.pro",
+  },
+  {
+    title: "PacePal - A PomoDoro Timer to improve productivity",
+    description: "A PomoDoro Timer web application using Next.js",
+    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui"],
+    link: "https://focus.racer.news",
+  }
 ]
 
 export default function Projects() {
