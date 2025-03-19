@@ -6,16 +6,47 @@ import StarryBackground from "../components/StarryBackground"
 
 const projects = [
   {
+    title: "BizForge",
+    description: "A suite of powerful tools to supercharge your online presence and drive your business forward.",
+    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "RadixUI", "Flask", "Python"],
+    link: "https://bizzforge.sdad.pro",
+  },
+  {
     title: "Product Review Sentiment Analyser",
     description: "Developed a web application using Flask and BeautifulSoup to analyze Flipkart product reviews.",
     technologies: ["Flask", "BeautifulSoup", "Python"],
     link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
   },
   {
+    title: "A 3d Landing page for a discord Community",
+    description: "A 3d Landing page for a discord Community using Three.js",
+    technologies: ["Three.js", "Tailwind CSS", "shadcn/ui", "Next.js", "React"],
+    link: "https://zengodz.pp.ua",
+  },
+  {
+    title: "CV Extractor",
+    description:
+      "A web application that allows you to extract crucial information from a collection of resumes or CVs in various file formats (PDF, DOCX).",
+    technologies: ["Flask", "Python", "python-docx", "PyPDF2", "openpyxl"],
+    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
+  },
+  {
     title: "Ultimate-Firewall",
     description: "Developed and implemented a robust collection of IP table rules for Minecraft server security.",
     technologies: ["IP tables", "DDoS protection techniques"],
     link: "https://github.com/instax-dutta/Ultimate-Firewall",
+  },
+  {
+    title: "A Creation Showcase web gallery for a 3d printing company",
+    description: "A Creation Showcase web gallery for a 3d printing company using HTML",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://www.race3d.store",
+  },
+  {
+    title: "My Developer Portfolio",
+    description: "My Developer Portfolio Website made using Next.js and Tailwind CSS.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "RadixUI", "shadcn/ui"],
+    link: "https://sdad.pro",
   },
   {
     title: "SecPassGen",
@@ -30,17 +61,10 @@ const projects = [
     link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
   },
   {
-    title: "IpRecon",
-    description: "A Tkinter-based tool to fetch and analyze IP address data using the IPinfo API",
-    technologies: ["Tkinter", "IPinfo API", "Python"],
-    link: "https://github.com/instax-dutta/IPRecon",
-  },
-  {
-    title: "Todo List Webapp",
-    description:
-      "Simple to-do list web application built using Flask and SQLAlchemy. Users can add, edit, delete, complete, and reorder tasks.",
-    technologies: ["Flask", "SQLAlchemy", "SQLite"],
-    link: "https://github.com/instax-dutta/TODO-List-FlaskApp",
+    title: "PacePal - A PomoDoro Timer to improve productivity",
+    description: "A PomoDoro Timer web application using Next.js",
+    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui"],
+    link: "https://focus.racer.news",
   },
   {
     title: "Bandwidth Patrol",
@@ -49,47 +73,10 @@ const projects = [
     link: "https://github.com/instax-dutta/Bandwith-Usage-Dashboard",
   },
   {
-    title: "CV Extractor",
-    description:
-      "A web application that allows you to extract crucial information from a collection of resumes or CVs in various file formats (PDF, DOCX).",
-    technologies: ["Flask", "Python", "python-docx", "PyPDF2", "openpyxl"],
-    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
-  },
-  {
     title: "CL-Chat",
     description: "Multi Client Command Line ChatRoom",
     technologies: ["Python", "Socket Programming"],
     link: "https://github.com/instax-dutta/CL-Chat",
-  },
-  {
-    title: "My Developer Portfolio",
-    description: "My Developer Portfolio Website made using Next.js and Tailwind CSS.",
-    technologies: ["React", "Next.js", "Tailwind CSS", "RadixUI", "shadcn/ui"],
-    link: "https://sdad.pro",
-  },
-  {
-    title: "Minimalistic Corner of the Web",
-    description: "A minimalistic personal website made using Next.js and Tailwind CSS.",
-    technologies: ["Vite", "Tailwind CSS", "shadcn/ui", "RadixUI"],
-    link: "https://s8m1t.xyz",
-  },
-  {
-    title: "Horror Themed Portfolio",
-    description: "A horror themed developer portfolio using Next.js and Tailwind CSS.",
-    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "framer-motion", "RadixUI"],
-    link: "https://horror-dev-portfolio.vercel.app",
-  },
-  {
-    title: "A modern and animated developer portfolio",
-    description: "A modern and animated developer portfolio using Next.js and Tailwind CSS.",
-    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "RadixUI", "particles.js"],
-    link: "https://sdnayak.pp.ua",
-  },
-  {
-    title: "A 3d Landing page for a discord Community",
-    description: "A 3d Landing page for a discord Community using Three.js",
-    technologies: ["Three.js", "Tailwind CSS", "shadcn/ui", "Next.js", "React"],
-    link: "https://zengodz.pp.ua",
   },
   {
     title: "Minecraft Server Status Checker",
@@ -98,22 +85,35 @@ const projects = [
     link: "https://mcs.sdad.pro",
   },
   {
-    title: "A Creation Showcase web gallery for a 3d printing company",
-    description: "A Creation Showcase web gallery for a 3d printing company using HTML",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://www.race3d.store",
+    title: "IpRecon",
+    description: "A Tkinter-based tool to fetch and analyze IP address data using the IPinfo API",
+    technologies: ["Tkinter", "IPinfo API", "Python"],
+    link: "https://github.com/instax-dutta/IPRecon",
   },
   {
-    title: "BizForge",
-    description: "A suite of powerful tools to supercharge your online presence and drive your business forward.",
-    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "RadixUI","Flask","Python"],
-    link: "https://bizzforge.sdad.pro",
+    title: "A modern and animated developer portfolio",
+    description: "A modern and animated developer portfolio using Next.js and Tailwind CSS.",
+    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "RadixUI", "particles.js"],
+    link: "https://sdnayak.pp.ua",
   },
   {
-    title: "PacePal - A PomoDoro Timer to improve productivity",
-    description: "A PomoDoro Timer web application using Next.js",
-    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui"],
-    link: "https://focus.racer.news",
+    title: "Horror Themed Portfolio",
+    description: "A horror themed developer portfolio using Next.js and Tailwind CSS.",
+    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "framer-motion", "RadixUI"],
+    link: "https://horror-dev-portfolio.vercel.app",
+  },
+  {
+    title: "Minimalistic Corner of the Web",
+    description: "A minimalistic personal website made using Next.js and Tailwind CSS.",
+    technologies: ["Vite", "Tailwind CSS", "shadcn/ui", "RadixUI"],
+    link: "https://s8m1t.xyz",
+  },
+  {
+    title: "Todo List Webapp",
+    description:
+      "Simple to-do list web application built using Flask and SQLAlchemy. Users can add, edit, delete, complete, and reorder tasks.",
+    technologies: ["Flask", "SQLAlchemy", "SQLite"],
+    link: "https://github.com/instax-dutta/TODO-List-FlaskApp",
   }
 ]
 
