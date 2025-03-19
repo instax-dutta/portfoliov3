@@ -6,6 +6,18 @@ import StarryBackground from "../components/StarryBackground"
 
 const projects = [
   {
+    title: "GenieLabs",
+    description: "Elevates your development workflow with AI-powered tools that help you write, analyze, and improve code faster than ever.",
+    technologies: ["AI Agent", "API Integration", "Next.js", "React", "Tailwind CSS", "TypeScript"],
+    link: "https://genielabs.sdad.pro",
+  },
+  {
+    title: "Chronicle Canvas",
+    description: "Generate high-quality, SEO-optimized content in seconds with our advanced AI technology. Free to use, no sign-up required.",
+    technologies: ["AI Agent", "API Integration", "React", "Vite", "Tailwind CSS", "Redux"],
+    link: "https://cc.sdad.pro",
+  },
+  {
     title: "BizForge",
     description: "A suite of powerful tools to supercharge your online presence and drive your business forward.",
     technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "RadixUI", "Flask", "Python"],
