@@ -12,12 +12,6 @@ const projects = [
     link: "https://genielabs.sdad.pro",
   },
   {
-    title: "NoGPT",
-    description: "Transform AI-generated text into natural, human-like content that bypasses AI detection.",
-    technologies: ["AI", "Natural Language Processing (NLP)", "Flask", "Python"],
-    link: "https://nogpt.sdad.pro",
-  },
-  {
     title: "Chronicle Canvas",
     description: "Generate high-quality, SEO-optimized content in seconds with our advanced AI technology. Free to use, no sign-up required.",
     technologies: ["AI Agent", "API Integration", "React", "Vite", "Tailwind CSS", "Redux"],
