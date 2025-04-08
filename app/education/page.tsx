@@ -40,23 +40,24 @@ export default function Education() {
         >
           Education
         </motion.h1>
-        {education.map((edu, index) => (
-          <motion.div
-            key={index}
-            className="mb-8 bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-lg shadow-lg border border-gray-700"
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <h2 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-              {edu.degree}
-            </h2>
-            <h3 className="text-xl text-blue-400 mb-2">{edu.institution}</h3>
-            <p className="text-gray-400">{edu.year}</p>
-          </motion.div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {education.map((edu, index) => (
+            <motion.div
+              key={index}
+              className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <h2 className="text-xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                {edu.degree}
+              </h2>
+              <h3 className="text-lg text-blue-400 mb-1">{edu.institution}</h3>
+              <p className="text-gray-400">{edu.year}</p>
+            </motion.div>
+          ))}
+        </div>
       </motion.main>
     </div>
   )
 }
-

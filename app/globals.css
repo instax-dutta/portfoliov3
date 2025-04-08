@@ -22,6 +22,10 @@
     cursor: none;
   }
 
+  * {
+    cursor: none !important;
+  }
+
   h1,
   h2,
   h3,
@@ -131,4 +135,3 @@
 .float {
   animation: float 6s ease-in-out infinite;
 }
-

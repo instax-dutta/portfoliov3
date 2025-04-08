@@ -117,18 +117,18 @@ export default function Skills() {
 function SkillCategory({ category, index }: { category: any; index: number }) {
   return (
     <motion.div
-      className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 shadow-lg border border-gray-700"
+      className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-3">
         <div className="text-blue-400">{category.icon}</div>
-        <h2 className="text-2xl font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+        <h2 className="text-lg font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
           {category.category}
         </h2>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {category.items.map((skill: any, skillIndex: number) => (
           <SkillBar key={skillIndex} skill={skill} delay={skillIndex * 0.1} />
         ))}
@@ -160,4 +160,3 @@ function SkillBar({ skill, delay }: { skill: any; delay: number }) {
     </motion.div>
   )
 }
-

@@ -131,7 +131,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-color-background text-color-text">
+    <div className="min-h-screen text-color-text">
       <StarryBackground />
       <Navigation />
       <motion.main
@@ -152,18 +152,18 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-color-background/50 backdrop-blur-md p-6 rounded-lg shadow-lg border border-color-primary/20"
+              className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h2 className="text-2xl font-bold mb-2 text-color-primary">{project.title}</h2>
-              <p className="mb-4 text-color-text-muted">{project.description}</p>
-              <div className="mb-4">
+              <h2 className="text-lg font-bold mb-2 text-color-primary">{project.title}</h2>
+              <p className="mb-3 text-color-text-muted text-sm">{project.description}</p>
+              <div className="mb-3">
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="inline-block bg-color-secondary/20 text-color-secondary rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"
+                    className="inline-block bg-color-secondary/20 text-color-secondary rounded-full px-2 py-1 text-xs font-semibold mr-2 mb-2"
                   >
                     {tech}
                   </span>
@@ -173,7 +173,7 @@ export default function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-color-primary hover:text-color-secondary transition-colors duration-300"
+                className="text-color-primary hover:text-color-secondary transition-colors duration-300 text-sm font-semibold"
               >
                 View Project
               </Link>
@@ -184,4 +184,3 @@ export default function Projects() {
     </div>
   )
 }
-

@@ -69,16 +69,16 @@ export default function Certifications() {
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-lg shadow-lg border border-gray-700"
+              className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h2 className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+              <h2 className="text-lg font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
                 {cert.title}
               </h2>
-              <p className="text-blue-400 mb-2">{cert.issuer}</p>
-              <p className="text-gray-400">{cert.year}</p>
+              <p className="text-blue-400 mb-1 text-sm">{cert.issuer}</p>
+              <p className="text-gray-400 text-sm">{cert.year}</p>
             </motion.div>
           ))}
         </div>
@@ -86,4 +86,3 @@ export default function Certifications() {
     </div>
   )
 }
-

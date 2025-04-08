@@ -192,17 +192,17 @@ export default function About() {
 function SkillCard({ icon, title, skills }: { icon: React.ReactNode; title: string; skills: string[] }) {
   return (
     <motion.div
-      className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-lg shadow-lg border border-gray-700"
+      className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-3">
         <div className="text-blue-400">{icon}</div>
-        <h3 className="text-xl font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+        <h3 className="text-lg font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
           {title}
         </h3>
       </div>
-      <ul className="list-disc list-inside text-gray-300">
+      <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
         {skills.map((skill, index) => (
           <li key={index}>{skill}</li>
         ))}
@@ -223,9 +223,9 @@ function ExpandableSection({
   toggleExpand: () => void
 }) {
   return (
-    <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden border border-gray-700">
-      <button className="w-full px-4 py-2 flex justify-between items-center text-left" onClick={toggleExpand}>
-        <span className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+    <div className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg overflow-hidden shadow-md mb-4">
+      <button className="w-full px-4 py-2 flex justify-between items-center text-left hover:bg-color-background/70 transition-colors duration-300" onClick={toggleExpand}>
+        <span className="text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
           {title}
         </span>
         {isExpanded ? (
@@ -240,9 +240,8 @@ function ExpandableSection({
         animate={isExpanded ? "expanded" : "collapsed"}
         transition={{ duration: 0.3 }}
       >
-        {isExpanded && <p className="px-4 py-2 text-gray-300">{content}</p>}
+        {isExpanded && <p className="px-4 py-2 text-gray-300 text-sm">{content}</p>}
       </motion.div>
     </div>
   )
 }
-

@@ -81,18 +81,20 @@ export default function Experience() {
             >
               <div className={`flex items-center mb-4 ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
                 <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
-                  <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                    {exp.title}
-                  </h2>
-                  <h3 className="text-xl text-blue-400">{exp.company}</h3>
-                  <p className="text-gray-400">{exp.date}</p>
+                  <div className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                      {exp.title}
+                    </h2>
+                    <h3 className="text-xl text-blue-400">{exp.company}</h3>
+                    <p className="text-gray-400">{exp.date}</p>
+                  </div>
                 </div>
               </div>
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+                <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg"></div>
               </div>
               {index < experiences.length - 1 && (
-                <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+                <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-r from-blue-500 to-purple-600 shadow-md"></div>
               )}
             </motion.div>
           ))}
@@ -101,4 +103,3 @@ export default function Experience() {
     </div>
   )
 }
-
