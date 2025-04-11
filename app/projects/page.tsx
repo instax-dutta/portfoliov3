@@ -12,28 +12,22 @@ const projects = [
     link: "https://genielabs.sdad.pro",
   },
   {
-    title: "Chronicle Canvas",
+    title: "12Labs",
+    description: "Suite of audio/text tools: TTS (Edge voices), transcription (text/SRT), AI text gen (Mistral/Gemini via OpenRouter).",
+    technologies: ["Python", "Flask", "HTML", "CSS", "JavaScript", "edge-tts", "Mistral API", "Gemini API"],
+    link: "https://12labs.xyz",
+  },
+  {
+    title: "WordAI",
     description: "Generate high-quality, SEO-optimized content in seconds with our advanced AI technology. Free to use, no sign-up required.",
     technologies: ["AI Agent", "API Integration", "React", "Vite", "Tailwind CSS", "Redux"],
-    link: "https://cc.sdad.pro",
+    link: "https://wordai.app",
   },
   {
     title: "BizForge",
     description: "A suite of powerful tools to supercharge your online presence and drive your business forward.",
     technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "RadixUI", "Flask", "Python"],
     link: "https://bizzforge.sdad.pro",
-  },
-  {
-    title: "A 3d Landing page for a discord Community",
-    description: "A 3d Landing page for a discord Community using Three.js",
-    technologies: ["Three.js", "Tailwind CSS", "shadcn/ui", "Next.js", "React"],
-    link: "https://zengodz.pp.ua",
-  },
-  {
-    title: "My Developer Portfolio",
-    description: "My Developer Portfolio Website made using Next.js and Tailwind CSS.",
-    technologies: ["React", "Next.js", "Tailwind CSS", "RadixUI", "shadcn/ui"],
-    link: "https://sdad.pro",
   },
   {
     title: "CV Extractor",
@@ -43,10 +37,10 @@ const projects = [
     link: "https://github.com/instax-dutta/CvExtractor-Webapp",
   },
   {
-    title: "Product Review Sentiment Analyser",
-    description: "Developed a web application using Flask and BeautifulSoup to analyze Flipkart product reviews.",
-    technologies: ["Flask", "BeautifulSoup", "Python"],
-    link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
+    title: "My Developer Portfolio",
+    description: "My Developer Portfolio Website made using Next.js and Tailwind CSS.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "RadixUI", "shadcn/ui"],
+    link: "https://sdad.pro",
   },
   {
     title: "A modern and animated developer portfolio",
@@ -61,6 +55,18 @@ const projects = [
     link: "https://horror-dev-portfolio.vercel.app",
   },
   {
+    title: "A 3d Landing page for a discord Community",
+    description: "A 3d Landing page for a discord Community using Three.js",
+    technologies: ["Three.js", "Tailwind CSS", "shadcn/ui", "Next.js", "React"],
+    link: "https://zengodz.pp.ua",
+  },
+  {
+    title: "Product Review Sentiment Analyser",
+    description: "Developed a web application using Flask and BeautifulSoup to analyze Flipkart product reviews.",
+    technologies: ["Flask", "BeautifulSoup", "Python"],
+    link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
+  },
+  {
     title: "PacePal - A PomoDoro Timer to improve productivity",
     description: "A PomoDoro Timer web application using Next.js",
     technologies: ["Next.js", "Tailwind CSS", "shadcn/ui"],
@@ -73,16 +79,16 @@ const projects = [
     link: "https://mcs.sdad.pro",
   },
   {
+    title: "Minimalistic Corner of the Web",
+    description: "A minimalistic personal website made using Next.js and Tailwind CSS.",
+    technologies: ["Vite", "Tailwind CSS", "shadcn/ui", "RadixUI"],
+    link: "https://s8m1t.xyz",
+  },
+  {
     title: "A Creation Showcase web gallery for a 3d printing company",
     description: "A Creation Showcase web gallery for a 3d printing company using HTML",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://www.race3d.store",
-  },
-  {
-    title: "PassGuard",
-    description: "Developed a secure password manager application with Flask.",
-    technologies: ["Flask", "SQLite"],
-    link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
   },
   {
     title: "SecPassGen",
@@ -91,16 +97,17 @@ const projects = [
     link: "https://github.com/instax-dutta/Secure-Password-Generator-Webapp",
   },
   {
-    title: "Ultimate-Firewall",
-    description: "Developed and implemented a robust collection of IP table rules for Minecraft server security.",
-    technologies: ["IP tables", "DDoS protection techniques"],
-    link: "https://github.com/instax-dutta/Ultimate-Firewall",
+    title: "PassGuard",
+    description: "Developed a secure password manager application with Flask.",
+    technologies: ["Flask", "SQLite"],
+    link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
   },
   {
-    title: "Minimalistic Corner of the Web",
-    description: "A minimalistic personal website made using Next.js and Tailwind CSS.",
-    technologies: ["Vite", "Tailwind CSS", "shadcn/ui", "RadixUI"],
-    link: "https://s8m1t.xyz",
+    title: "Todo List Webapp",
+    description:
+      "Simple to-do list web application built using Flask and SQLAlchemy. Users can add, edit, delete, complete, and reorder tasks.",
+    technologies: ["Flask", "SQLAlchemy", "SQLite"],
+    link: "https://github.com/instax-dutta/TODO-List-FlaskApp",
   },
   {
     title: "Bandwidth Patrol",
@@ -121,11 +128,10 @@ const projects = [
     link: "https://github.com/instax-dutta/CL-Chat",
   },
   {
-    title: "Todo List Webapp",
-    description:
-      "Simple to-do list web application built using Flask and SQLAlchemy. Users can add, edit, delete, complete, and reorder tasks.",
-    technologies: ["Flask", "SQLAlchemy", "SQLite"],
-    link: "https://github.com/instax-dutta/TODO-List-FlaskApp",
+    title: "Ultimate-Firewall",
+    description: "Developed and implemented a robust collection of IP table rules for Minecraft server security.",
+    technologies: ["IP tables", "DDoS protection techniques"],
+    link: "https://github.com/instax-dutta/Ultimate-Firewall",
   }
 ]
 
