@@ -135,3 +135,27 @@
 .float {
   animation: float 6s ease-in-out infinite;
 }
+
+@font-face {
+  font-family: 'Mooxy';
+  src: url('/fonts/mooxy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.hero-mooxy {
+  font-family: 'Mooxy', 'Orbitron', sans-serif !important;
+  letter-spacing: 0.05em;
+}
+
+@font-face {
+  font-family: "Achiko";
+  src: url("/fonts/achiko.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.achiko-font {
+  font-family: "Achiko", sans-serif;
+}

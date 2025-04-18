@@ -69,7 +69,7 @@ export default function Home() {
       animate="visible"
     >
       <motion.h1
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white font-playfair relative inline-block"
+        className="hero-mooxy text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white relative inline-block"
         variants={nameVariants}
       >
         Sai Dutta Abhishek Dash
