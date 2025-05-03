@@ -30,6 +30,12 @@ const projects = [
     link: "https://wordai.app",
   },
   {
+    title: "RemoBG – AI Background Remover",
+    description: "Remove image backgrounds instantly using advanced AI. Fast, free, and privacy-friendly.",
+    technologies: ["AI", "Image Processing", "Next.js", "Tailwind CSS", "React"],
+    link: "https://remobg.sdad.pro",
+  },
+  {
     title: "BizForge",
     description: "A suite of powerful tools to supercharge your online presence and drive your business forward.",
     technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "RadixUI", "Flask", "Python"],
