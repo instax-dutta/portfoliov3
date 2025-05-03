@@ -12,6 +12,12 @@ const projects = [
     link: "https://genielabs.sdad.pro",
   },
   {
+    title: "OneShotAI – AI-Powered Prompt Engineering Tool",
+    description: "An AI-powered tool designed to streamline prompt engineering tasks.",
+    technologies: ["AI", "Prompt Engineering", "Next.js", "React", "Tailwind CSS"],
+    link: "https://oneshotai.sdad.pro",
+  },
+  {
     title: "12Labs",
     description: "Suite of audio/text tools: TTS (Edge voices), transcription (text/SRT), AI text gen (Mistral/Gemini via OpenRouter).",
     technologies: ["Python", "Flask", "HTML", "CSS", "JavaScript", "edge-tts", "Mistral API", "Gemini API"],
