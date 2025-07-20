@@ -5,9 +5,14 @@ import StarryBackground from "../components/StarryBackground"
 
 const experiences = [
   {
+    title: "Associate",
+    company: "Tech Mahindra",
+    date: "June 2025 – Present",
+  },
+  {
     title: "Associate Trainee",
     company: "Tech Mahindra",
-    date: "May 2025 – Present",
+    date: "May 2025 – June 2025",
   },
   {
     title: "Machine Learning Engineer Intern",
