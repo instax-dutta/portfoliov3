@@ -12,10 +12,11 @@ export const metadata: Metadata = {
   description: "Computer Science Student and Machine Learning Enthusiast",
   keywords: ["portfolio", "web development", "machine learning", "computer science"],
   authors: [{ name: "Sai Dutta Abhishek Dash" }],
+  metadataBase: new URL("https://sdad.pro"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-portfolio-url.com",
+    url: "https://sdad.pro",
     siteName: "Sai Dutta Abhishek Dash Portfolio",
     images: [
       {
@@ -49,7 +50,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'
