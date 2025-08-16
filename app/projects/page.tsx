@@ -6,34 +6,58 @@ import StarryBackground from "../components/StarryBackground"
 
 const projects = [
   {
+    title: "AI Tarot Card Reader",
+    description: "Advanced AI-powered tarot card reading application that provides personalized insights using machine learning and natural language processing.",
+    technologies: ["Next.js", "AI", "TensorFlow", "API", "React", "TypeScript"],
+    link: "https://ait.numbervibes.in",
+  },
+  {
+    title: "AI Powered Vedic MatchMaker",
+    description: "Intelligent matchmaking platform leveraging AI and Vedic astrology principles to provide compatibility analysis and relationship insights.",
+    technologies: ["Next.js", "AI", "TensorFlow", "Mistral AI", "API", "React"],
+    link: "https://aim.numbervibes.in",
+  },
+  {
     title: "GenieLabs",
     description: "Elevates your development workflow with AI-powered tools that help you write, analyze, and improve code faster than ever.",
     technologies: ["AI Agent", "API Integration", "Next.js", "React", "Tailwind CSS", "TypeScript"],
     link: "https://genielabs.sdad.pro",
   },
   {
-    title: "OneShotAI – AI-Powered Prompt Engineering Tool",
-    description: "An AI-powered tool designed to streamline prompt engineering tasks.",
-    technologies: ["AI", "Prompt Engineering", "Next.js", "React", "Tailwind CSS"],
-    link: "https://oneshotai.sdad.pro",
-  },
-  {
     title: "12Labs",
     description: "Suite of audio/text tools: TTS (Edge voices), transcription (text/SRT), AI text gen (Mistral/Gemini via OpenRouter).",
-    technologies: ["Python", "Flask", "HTML", "CSS", "JavaScript", "edge-tts", "Mistral API", "Gemini API"],
+    technologies: ["Python", "Flask", "AI", "edge-tts", "Mistral API", "Gemini API", "Machine Learning"],
     link: "https://12labs.xyz",
+  },
+  {
+    title: "OneShotAI – AI-Powered Prompt Engineering Tool",
+    description: "An AI-powered tool designed to streamline prompt engineering tasks and optimize AI model interactions.",
+    technologies: ["AI", "Prompt Engineering", "Next.js", "React", "Tailwind CSS", "NLP"],
+    link: "https://oneshotai.sdad.pro",
   },
   {
     title: "WordAI",
     description: "Generate high-quality, SEO-optimized content in seconds with our advanced AI technology. Free to use, no sign-up required.",
-    technologies: ["AI Agent", "API Integration", "React", "Vite", "Tailwind CSS", "Redux"],
+    technologies: ["AI Agent", "API Integration", "React", "Vite", "Tailwind CSS", "Redux", "NLP"],
     link: "https://wordai.app",
   },
   {
     title: "RemoBG – AI Background Remover",
-    description: "Remove image backgrounds instantly using advanced AI. Fast, free, and privacy-friendly.",
-    technologies: ["AI", "Image Processing", "Next.js", "Tailwind CSS", "React"],
+    description: "Remove image backgrounds instantly using advanced AI computer vision. Fast, free, and privacy-friendly.",
+    technologies: ["AI", "Computer Vision", "Image Processing", "Next.js", "Tailwind CSS", "React"],
     link: "https://remobg.sdad.pro",
+  },
+  {
+    title: "Product Review Sentiment Analyser",
+    description: "Machine learning web application that analyzes Flipkart product reviews using sentiment analysis and natural language processing.",
+    technologies: ["Flask", "BeautifulSoup", "Python", "Machine Learning", "NLP", "Sentiment Analysis"],
+    link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
+  },
+  {
+    title: "CV Extractor",
+    description: "Intelligent document processing application that extracts crucial information from resumes using ML-powered text extraction and analysis.",
+    technologies: ["Flask", "Python", "python-docx", "PyPDF2", "openpyxl", "Document Processing", "ML"],
+    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
   },
   {
     title: "BizForge",
@@ -42,11 +66,10 @@ const projects = [
     link: "https://bizzforge.sdad.pro",
   },
   {
-    title: "CV Extractor",
-    description:
-      "A web application that allows you to extract crucial information from a collection of resumes or CVs in various file formats (PDF, DOCX).",
-    technologies: ["Flask", "Python", "python-docx", "PyPDF2", "openpyxl"],
-    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
+    title: "A 3d Landing page for a discord Community",
+    description: "A 3d Landing page for a discord Community using Three.js",
+    technologies: ["Three.js", "Tailwind CSS", "shadcn/ui", "Next.js", "React"],
+    link: "https://zengodz.pp.ua",
   },
   {
     title: "My Developer Portfolio",
@@ -67,18 +90,6 @@ const projects = [
     link: "https://horror-dev-portfolio.vercel.app",
   },
   {
-    title: "A 3d Landing page for a discord Community",
-    description: "A 3d Landing page for a discord Community using Three.js",
-    technologies: ["Three.js", "Tailwind CSS", "shadcn/ui", "Next.js", "React"],
-    link: "https://zengodz.pp.ua",
-  },
-  {
-    title: "Product Review Sentiment Analyser",
-    description: "Developed a web application using Flask and BeautifulSoup to analyze Flipkart product reviews.",
-    technologies: ["Flask", "BeautifulSoup", "Python"],
-    link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
-  },
-  {
     title: "PacePal - A PomoDoro Timer to improve productivity",
     description: "A PomoDoro Timer web application using Next.js",
     technologies: ["Next.js", "Tailwind CSS", "shadcn/ui"],
@@ -91,16 +102,16 @@ const projects = [
     link: "https://mcs.sdad.pro",
   },
   {
-    title: "Minimalistic Corner of the Web",
-    description: "A minimalistic personal website made using Next.js and Tailwind CSS.",
-    technologies: ["Vite", "Tailwind CSS", "shadcn/ui", "RadixUI"],
-    link: "https://s8m1t.xyz",
-  },
-  {
     title: "A Creation Showcase web gallery for a 3d printing company",
     description: "A Creation Showcase web gallery for a 3d printing company using HTML",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://www.race3d.store",
+  },
+  {
+    title: "Minimalistic Corner of the Web",
+    description: "A minimalistic personal website made using Next.js and Tailwind CSS.",
+    technologies: ["Vite", "Tailwind CSS", "shadcn/ui", "RadixUI"],
+    link: "https://s8m1t.xyz",
   },
   {
     title: "SecPassGen",
@@ -111,7 +122,7 @@ const projects = [
   {
     title: "PassGuard",
     description: "Developed a secure password manager application with Flask.",
-    technologies: ["Flask", "SQLite"],
+    technologies: ["Flask", "SQLite", "Python"],
     link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
   },
   {
