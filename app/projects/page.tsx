@@ -170,7 +170,7 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
       >
         <motion.h1
-          className="text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-color-primary to-color-secondary"
+          className="font-orbitron text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-color-primary to-color-secondary tracking-wide"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
@@ -186,13 +186,13 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h2 className="text-lg font-bold mb-2 text-color-primary">{project.title}</h2>
-              <p className="mb-3 text-color-text-muted text-sm">{project.description}</p>
+              <h2 className="font-orbitron text-lg font-bold mb-2 text-color-primary tracking-wide">{project.title}</h2>
+              <p className="font-archivo mb-3 text-color-text-muted text-sm leading-relaxed">{project.description}</p>
               <div className="mb-3">
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="inline-block bg-color-secondary/20 text-color-secondary rounded-full px-2 py-1 text-xs font-semibold mr-2 mb-2"
+                    className="font-inconsolata inline-block bg-color-secondary/20 text-color-secondary rounded-full px-2 py-1 text-xs font-semibold mr-2 mb-2 tracking-wider"
                   >
                     {tech}
                   </span>
@@ -202,7 +202,7 @@ export default function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-color-primary hover:text-color-secondary transition-colors duration-300 text-sm font-semibold"
+                className="font-space-mono text-color-primary hover:text-color-secondary transition-colors duration-300 text-sm font-semibold tracking-wider uppercase"
               >
                 View Project
               </Link>

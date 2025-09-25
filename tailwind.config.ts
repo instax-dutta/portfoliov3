@@ -10,6 +10,12 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+      fontFamily: {
+        'orbitron': ['var(--font-orbitron)', 'sans-serif'],
+        'space-mono': ['var(--font-space-mono)', 'monospace'],
+        'archivo': ['var(--font-archivo)', 'sans-serif'],
+        'inconsolata': ['var(--font-inconsolata)', 'monospace'],
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

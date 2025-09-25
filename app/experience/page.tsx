@@ -209,11 +209,11 @@ export default function Experience() {
             transition={{ duration: 0.4 }}
           >
             <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
-            <span className="text-sm sm:text-base text-blue-400 font-medium">Professional Journey</span>
+            <span className="font-space-mono text-sm sm:text-base text-blue-400 font-medium tracking-wider">Professional Journey</span>
           </motion.div>
           
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400"
+            className="font-orbitron text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 tracking-wide"
             initial={prefersReducedMotion ? {} : { y: -30, opacity: 0 }}
             animate={prefersReducedMotion ? {} : { y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -222,7 +222,7 @@ export default function Experience() {
           </motion.h1>
           
           <motion.p
-            className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4"
+            className="font-archivo text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4"
             initial={prefersReducedMotion ? {} : { y: 20, opacity: 0 }}
             animate={prefersReducedMotion ? {} : { y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -304,7 +304,7 @@ export default function Experience() {
                         </div>
 
                         <motion.h2
-                          className={`text-xl sm:text-2xl lg:text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r ${exp.color}`}
+                          className={`font-orbitron text-xl sm:text-2xl lg:text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r ${exp.color} tracking-wide`}
                           initial={prefersReducedMotion ? {} : { opacity: 0, y: 10 }}
                           animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.05 + 0.1 }}
@@ -312,7 +312,7 @@ export default function Experience() {
                           {exp.title}
                         </motion.h2>
 
-                        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-2">{exp.company}</h3>
+                        <h3 className="font-space-mono text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-2 tracking-wider">{exp.company}</h3>
 
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4 text-sm sm:text-base text-gray-400">
                           <div className="flex items-center gap-2">
@@ -325,23 +325,23 @@ export default function Experience() {
                           </div>
                         </div>
 
-                        <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">{exp.description}</p>
+                        <p className="font-archivo text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">{exp.description}</p>
 
                         {/* Skills Tags - Responsive grid */}
                         <div className={`flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6 ${
                           isLeft ? "sm:justify-end" : "justify-start"
                         }`}>
                           {exp.skills.slice(0, isExpanded ? undefined : 4).map((skill, skillIndex) => (
-                            <motion.span
-                              key={skillIndex}
-                              className="px-2 sm:px-3 py-1 bg-gray-800/50 border border-gray-700 rounded-full text-xs sm:text-sm text-gray-300 hover:bg-gray-700/50 transition-colors"
-                              initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.9 }}
-                              animate={prefersReducedMotion ? {} : { opacity: 1, scale: 1 }}
-                              transition={{ delay: index * 0.05 + skillIndex * 0.02 }}
-                              whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
-                            >
-                              {skill}
-                            </motion.span>
+                              <motion.span
+                                key={skillIndex}
+                                className="font-inconsolata px-2 sm:px-3 py-1 bg-gray-800/50 border border-gray-700 rounded-full text-xs sm:text-sm text-gray-300 hover:bg-gray-700/50 transition-colors tracking-wide"
+                                initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.9 }}
+                                animate={prefersReducedMotion ? {} : { opacity: 1, scale: 1 }}
+                                transition={{ delay: index * 0.05 + skillIndex * 0.02 }}
+                                whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
+                              >
+                                {skill}
+                              </motion.span>
                           ))}
                           {!isExpanded && exp.skills.length > 4 && (
                             <span className="px-2 sm:px-3 py-1 text-xs sm:text-sm text-gray-500">
