@@ -16,6 +16,7 @@ const menuItems = [
   { href: "/education", label: "Education" },
   { href: "/certifications", label: "Certifications" },
   { href: "/contact", label: "Contact" },
+  { href: "https://blog.sdad.pro", label: "Blog", external: true },
 ]
 
 const Navigation: React.FC = () => {
@@ -49,17 +50,30 @@ const Navigation: React.FC = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-color-text hover:text-color-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                    pathname === item.href ? "text-color-primary" : ""
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {menuItems.map((item) => {
+                const linkClass = `text-color-text hover:text-color-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                  pathname === item.href ? "text-color-primary" : ""
+                }`
+                return item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={linkClass}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              })}
             </div>
           </div>
           <div className="md:hidden">
@@ -87,18 +101,32 @@ const Navigation: React.FC = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-color-background/80 backdrop-blur-md">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-color-text hover:text-color-primary block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-                    pathname === item.href ? "text-color-primary" : ""
-                  }`}
-                  onClick={toggleMenu}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {menuItems.map((item) => {
+                const linkClass = `text-color-text hover:text-color-primary block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                  pathname === item.href ? "text-color-primary" : ""
+                }`
+                return item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                    onClick={toggleMenu}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={linkClass}
+                    onClick={toggleMenu}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              })}
             </div>
           </motion.div>
         )}

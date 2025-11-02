@@ -111,6 +111,14 @@ export default function Home() {
         >
           View Projects
         </Link>
+        <a
+          href="https://blog.sdad.pro"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-transparent border-2 border-color-primary text-color-primary hover:bg-color-primary hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 text-lg"
+        >
+          Read Blog
+        </a>
       </motion.div>
 
       <motion.div
