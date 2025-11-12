@@ -1,10 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import StarryBackground from "./components/StarryBackground"
-import AnimatedText from "./components/AnimatedText"
+import { GooeyText } from "@/components/ui/gooey-text-morphing"
 import Navigation from "./components/Navigation"
 
 const roles = [
@@ -16,15 +15,6 @@ const roles = [
 ]
 
 export default function Home() {
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length)
-    }, 3000) // Change role every 3 seconds
-
-    return () => clearInterval(interval)
-  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -76,7 +66,12 @@ export default function Home() {
         <span className="block h-1 w-24 sm:w-32 md:w-40 bg-gradient-to-r from-color-primary to-color-secondary mt-3 mx-auto rounded-full animate-pulse"></span>
       </motion.h1>
       <motion.div className="text-lg sm:text-xl md:text-2xl text-color-text-muted" variants={itemVariants}>
-        <AnimatedText text={roles[currentRoleIndex]} key={currentRoleIndex} />
+        <GooeyText
+          texts={roles}
+          morphTime={1.5}
+          cooldownTime={0.5}
+          textClassName="text-lg sm:text-xl md:text-2xl text-color-text-muted"
+        />
       </motion.div>
     </motion.div>
 
