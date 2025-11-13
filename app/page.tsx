@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import StarryBackground from "./components/StarryBackground"
 import { GooeyText } from "@/components/ui/gooey-text-morphing"
 import Navigation from "./components/Navigation"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 
 const roles = [
   "🐍 Python Full Stack Developer",
@@ -94,25 +95,28 @@ export default function Home() {
       </motion.div>
 
       <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-4 sm:mt-6">
-        <Link
-          href="/contact"
-          className="bg-gradient-to-r from-color-primary to-color-secondary hover:from-color-primary/80 hover:to-color-secondary/80 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
-        >
-          Contact Me
+        <Link href="/contact" className="no-underline">
+          <InteractiveHoverButton
+            text="Contact Me"
+            className="w-auto min-w-[160px] px-8 py-3 text-lg border-color-primary bg-gradient-to-r from-color-primary to-color-secondary text-white hover:from-color-primary/90 hover:to-color-secondary/90"
+          />
         </Link>
-        <Link
-          href="/projects"
-          className="bg-transparent border-2 border-color-primary text-color-primary hover:bg-color-primary hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 text-lg"
-        >
-          View Projects
+        <Link href="/projects" className="no-underline">
+          <InteractiveHoverButton
+            text="View Projects"
+            className="w-auto min-w-[160px] px-8 py-3 text-lg border-2 border-color-primary bg-transparent text-color-primary hover:bg-color-primary hover:text-white"
+          />
         </Link>
         <a
           href="https://blog.sdad.pro"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-transparent border-2 border-color-primary text-color-primary hover:bg-color-primary hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 text-lg"
+          className="no-underline"
         >
-          Read Blog
+          <InteractiveHoverButton
+            text="Read Blog"
+            className="w-auto min-w-[160px] px-8 py-3 text-lg border-2 border-color-primary bg-transparent text-color-primary hover:bg-color-primary hover:text-white"
+          />
         </a>
       </motion.div>
 

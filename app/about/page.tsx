@@ -72,6 +72,8 @@ export default function About() {
           <h2 className="text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
             Key Skills
           </h2>
+          
+          {/* Detailed Skills Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <SkillCard
               icon={<Code className="w-8 h-8" />}

@@ -1,5 +1,6 @@
 "use client"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 import { Code, Brain, Server, Zap } from "lucide-react"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
@@ -90,6 +91,7 @@ export default function Skills() {
     <div className="text-gray-100 min-h-screen">
       <StarryBackground />
       <Navigation />
+      
       <motion.main
         className="container mx-auto px-4 py-20"
         initial={{ opacity: 0 }}
@@ -97,14 +99,17 @@ export default function Skills() {
         transition={{ duration: 0.5 }}
       >
         <motion.h1
-          className="text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+          className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Skills
+          My Skills & Expertise
         </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          style={{ perspective: "1000px" }}
+        >
           {skills.map((skillCategory, index) => (
             <SkillCategory key={index} category={skillCategory} index={index} />
           ))}
@@ -115,22 +120,41 @@ export default function Skills() {
 }
 
 function SkillCategory({ category, index }: { category: any; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [15, -15]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.3, 1, 1, 0.3]);
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
   return (
     <motion.div
-      className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      ref={ref}
+      style={{
+        rotateX: rotate,
+        scale,
+        opacity,
+        y,
+      }}
+      className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <div className="flex items-center mb-3">
+      <div className="flex items-center mb-4">
         <div className="text-blue-400">{category.icon}</div>
-        <h2 className="text-lg font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+        <h2 className="text-xl font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
           {category.category}
         </h2>
       </div>
       <div className="space-y-3">
         {category.items.map((skill: any, skillIndex: number) => (
-          <SkillBar key={skillIndex} skill={skill} delay={skillIndex * 0.1} />
+          <SkillBar key={skillIndex} skill={skill} delay={skillIndex * 0.05} />
         ))}
       </div>
     </motion.div>
