@@ -10,12 +10,12 @@ const experiences = [
   {
     title: "Associate",
     company: "Tech Mahindra",
-    date: "June 2025 – Present",
+    date: "June 2025 – September 2025",
     type: "Full-time",
     location: "Bhubaneswar, India",
-    description: "Currently working as an Associate, contributing to enterprise software solutions and digital transformation initiatives.",
+    description: "Worked as an Associate, contributing to enterprise software solutions and digital transformation initiatives.",
     skills: ["Enterprise Solutions", "Digital Transformation", "Team Collaboration", "Client Management"],
-    achievements: ["Promoted from Associate Trainee", "Contributing to key projects"],
+    achievements: ["Promoted from Associate Trainee", "Contributed to key projects"],
     icon: <Building2 className="w-5 h-5 sm:w-6 sm:h-6" />,
     color: "from-emerald-400 to-cyan-500"
   },
