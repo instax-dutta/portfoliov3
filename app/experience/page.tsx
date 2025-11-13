@@ -1,9 +1,10 @@
 "use client"
-import { motion, AnimatePresence } from "framer-motion"
-import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
-import { Building2, Calendar, ChevronDown, Briefcase, Zap, Code, Brain, Rocket } from "lucide-react"
+import { Briefcase, Calendar, Building2, Zap, Code, Brain, Rocket } from "lucide-react"
+import { Timeline } from "@/components/ui/timeline"
+import Image from "next/image"
 
 const experiences = [
   {
@@ -152,42 +153,7 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-}
-
 export default function Experience() {
-  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set())
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
-
-  useEffect(() => {
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
-    setPrefersReducedMotion(mediaQuery.matches)
-    
-    const handleChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches)
-    mediaQuery.addEventListener("change", handleChange)
-    
-    return () => mediaQuery.removeEventListener("change", handleChange)
-  }, [])
-
-  const toggleExpanded = (index: number) => {
-    const newExpanded = new Set(expandedItems)
-    if (newExpanded.has(index)) {
-      newExpanded.delete(index)
-    } else {
-      newExpanded.add(index)
-    }
-    setExpandedItems(newExpanded)
-  }
 
   return (
     <div className="text-gray-100 min-h-screen">
@@ -196,16 +162,16 @@ export default function Experience() {
       
       <motion.main
         className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative"
-        variants={prefersReducedMotion ? {} : containerVariants}
-        initial={prefersReducedMotion ? {} : "hidden"}
-        animate={prefersReducedMotion ? {} : "visible"}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
         {/* Header Section - Optimized for mobile */}
         <motion.div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <motion.div
             className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-500/20"
-            initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.9 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
           >
             <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
@@ -214,8 +180,8 @@ export default function Experience() {
           
           <motion.h1
             className="font-orbitron text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 tracking-wide"
-            initial={prefersReducedMotion ? {} : { y: -30, opacity: 0 }}
-            animate={prefersReducedMotion ? {} : { y: 0, opacity: 1 }}
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             Experience Timeline
@@ -223,8 +189,8 @@ export default function Experience() {
           
           <motion.p
             className="font-archivo text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4"
-            initial={prefersReducedMotion ? {} : { y: 20, opacity: 0 }}
-            animate={prefersReducedMotion ? {} : { y: 0, opacity: 1 }}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             A comprehensive journey through my professional experiences, from entrepreneurship to machine learning engineering, 
@@ -232,197 +198,80 @@ export default function Experience() {
           </motion.p>
         </motion.div>
 
-        {/* Timeline - Mobile-first responsive design */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Timeline Line - Simplified for mobile */}
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/30 to-purple-500/30 sm:transform sm:-translate-x-1/2" />
-
-          {experiences.map((exp, index) => {
-            const isLeft = index % 2 === 0
-            const isExpanded = expandedItems.has(index)
-
-            return (
-              <motion.div
-                key={index}
-                className="relative mb-8 sm:mb-12 lg:mb-16"
-                variants={prefersReducedMotion ? {} : itemVariants}
-                initial={prefersReducedMotion ? {} : "hidden"}
-                whileInView={prefersReducedMotion ? {} : "visible"}
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                {/* Timeline Dot - Simplified */}
-                <div className="absolute left-4 sm:left-1/2 top-6 sm:top-8 transform -translate-x-1/2 z-20">
-                  <motion.div
-                    className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r ${exp.color} shadow-lg border-2 sm:border-4 border-gray-900 flex items-center justify-center`}
-                    whileHover={prefersReducedMotion ? {} : { scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="text-white scale-75 sm:scale-100">
-                      {exp.icon}
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Experience Card - Mobile-first layout */}
-                <div className="ml-12 sm:ml-0 sm:flex sm:items-start">
-                  <motion.div
-                    className={`w-full sm:w-5/6 md:w-1/2 ${
-                      isLeft 
-                        ? "sm:pr-4 md:pr-8 sm:text-right sm:ml-auto" 
-                        : "sm:pl-4 md:pl-8 sm:text-left"
-                    }`}
-                    initial={prefersReducedMotion ? {} : { 
-                      opacity: 0, 
-                      x: isLeft ? -30 : 30 
-                    }}
-                    whileInView={prefersReducedMotion ? {} : { 
-                      opacity: 1, 
-                      x: 0 
-                    }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                  >
-                    <motion.div
-                      className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg"
-                      whileHover={prefersReducedMotion ? {} : { 
-                        scale: 1.01,
-                        boxShadow: "0 20px 40px -12px rgba(59, 130, 246, 0.15)"
-                      }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {/* Header */}
-                      <div className="mb-4 sm:mb-6">
-                        <div className={`flex items-center gap-2 sm:gap-3 mb-3 ${
-                          isLeft ? "sm:justify-end" : "justify-start"
-                        }`}>
-                          <div className={`p-2 sm:p-3 rounded-lg bg-gradient-to-r ${exp.color} bg-opacity-10`}>
-                            {exp.icon}
-                          </div>
-                          <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r ${exp.color} text-white`}>
-                            {exp.type}
-                          </span>
-                        </div>
-
-                        <motion.h2
-                          className={`font-orbitron text-xl sm:text-2xl lg:text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r ${exp.color} tracking-wide`}
-                          initial={prefersReducedMotion ? {} : { opacity: 0, y: 10 }}
-                          animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-                          transition={{ delay: index * 0.05 + 0.1 }}
-                        >
-                          {exp.title}
-                        </motion.h2>
-
-                        <h3 className="font-space-mono text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-2 tracking-wider">{exp.company}</h3>
-
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4 text-sm sm:text-base text-gray-400">
-                          <div className="flex items-center gap-2">
-                            <Calendar className="w-4 h-4" />
-                            <span>{exp.date}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Building2 className="w-4 h-4" />
-                            <span>{exp.location}</span>
-                          </div>
-                        </div>
-
-                        <p className="font-archivo text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">{exp.description}</p>
-
-                        {/* Skills Tags - Responsive grid */}
-                        <div className={`flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6 ${
-                          isLeft ? "sm:justify-end" : "justify-start"
-                        }`}>
-                          {exp.skills.slice(0, isExpanded ? undefined : 4).map((skill, skillIndex) => (
-                              <motion.span
-                                key={skillIndex}
-                                className="font-inconsolata px-2 sm:px-3 py-1 bg-gray-800/50 border border-gray-700 rounded-full text-xs sm:text-sm text-gray-300 hover:bg-gray-700/50 transition-colors tracking-wide"
-                                initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.9 }}
-                                animate={prefersReducedMotion ? {} : { opacity: 1, scale: 1 }}
-                                transition={{ delay: index * 0.05 + skillIndex * 0.02 }}
-                                whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
-                              >
-                                {skill}
-                              </motion.span>
-                          ))}
-                          {!isExpanded && exp.skills.length > 4 && (
-                            <span className="px-2 sm:px-3 py-1 text-xs sm:text-sm text-gray-500">
-                              +{exp.skills.length - 4} more
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Achievements - Expanded Content */}
-                        <AnimatePresence>
-                          {isExpanded && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="overflow-hidden"
-                            >
-                              <div className="border-t border-gray-700/50 pt-4 sm:pt-6 mt-4 sm:mt-6">
-                                <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 flex items-center gap-2">
-                                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
-                                  Key Achievements
-                                </h4>
-                                <ul className="space-y-2">
-                                  {exp.achievements.map((achievement, achIndex) => (
-                                    <motion.li
-                                      key={achIndex}
-                                      className="flex items-start gap-3 text-sm sm:text-base text-gray-300"
-                                      initial={prefersReducedMotion ? {} : { 
-                                        opacity: 0, 
-                                        x: isLeft ? 10 : -10 
-                                      }}
-                                      animate={prefersReducedMotion ? {} : { 
-                                        opacity: 1, 
-                                        x: 0 
-                                      }}
-                                      transition={{ delay: achIndex * 0.1 }}
-                                    >
-                                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mt-2 flex-shrink-0" />
-                                      <span>{achievement}</span>
-                                    </motion.li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-
-                        {/* Expand/Collapse Button */}
-                        <motion.button
-                          className={`flex items-center gap-2 mt-4 sm:mt-6 px-3 sm:px-4 py-2 bg-gradient-to-r ${exp.color} bg-opacity-10 hover:bg-opacity-20 rounded-lg border border-current border-opacity-20 transition-all duration-300 text-sm sm:text-base ${
-                            isLeft ? "sm:ml-auto" : ""
-                          }`}
-                          onClick={() => toggleExpanded(index)}
-                          whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
-                          whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
-                        >
-                          <span className="font-medium">
-                            {isExpanded ? "Show Less" : "Learn More"}
-                          </span>
-                          <motion.div
-                            animate={{ rotate: isExpanded ? 180 : 0 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <ChevronDown className="w-4 h-4" />
-                          </motion.div>
-                        </motion.button>
+        {/* Timeline Component */}
+        <div className="relative">
+          <Timeline
+            data={experiences.map((exp) => ({
+              title: exp.date,
+              content: (
+                <div className="text-gray-300">
+                  <div className="mb-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`p-2 rounded-lg bg-gradient-to-r ${exp.color} bg-opacity-10`}>
+                        {exp.icon}
                       </div>
-                    </motion.div>
-                  </motion.div>
+                      <span className={`px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r ${exp.color} text-white`}>
+                        {exp.type}
+                      </span>
+                    </div>
+                    <h2 className={`text-2xl lg:text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r ${exp.color} tracking-wide`}>
+                      {exp.title}
+                    </h2>
+                    <h3 className="text-lg lg:text-xl font-semibold text-white mb-2 tracking-wider">
+                      {exp.company}
+                    </h3>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4 text-sm text-gray-400">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4" />
+                        <span>{exp.date}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Building2 className="w-4 h-4" />
+                        <span>{exp.location}</span>
+                      </div>
+                    </div>
+                    <p className="text-sm sm:text-base text-gray-300 mb-4 leading-relaxed">
+                      {exp.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {exp.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="px-3 py-1 bg-gray-800/50 border border-gray-700 rounded-full text-xs sm:text-sm text-gray-300 hover:bg-gray-700/50 transition-colors"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="border-t border-gray-700/50 pt-4 mt-4">
+                      <h4 className="text-base font-semibold text-white mb-3 flex items-center gap-2">
+                        <Zap className="w-4 h-4 text-yellow-400" />
+                        Key Achievements
+                      </h4>
+                      <ul className="space-y-2">
+                        {exp.achievements.map((achievement, achIndex) => (
+                          <li
+                            key={achIndex}
+                            className="flex items-start gap-3 text-sm text-gray-300"
+                          >
+                            <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mt-2 flex-shrink-0" />
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            )
-          })}
+              ),
+            }))}
+          />
         </div>
 
         {/* Footer Stats - Mobile-optimized */}
         <motion.div
           className="mt-12 sm:mt-16 lg:mt-20 text-center"
-          initial={prefersReducedMotion ? {} : { opacity: 0, y: 30 }}
-          whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
@@ -430,8 +279,8 @@ export default function Experience() {
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
               <motion.div
                 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
-                initial={prefersReducedMotion ? {} : { scale: 0.8 }}
-                whileInView={prefersReducedMotion ? {} : { scale: 1 }}
+                initial={{ scale: 0.8 }}
+                whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 150, delay: 0.3 }}
               >
@@ -443,8 +292,8 @@ export default function Experience() {
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
               <motion.div
                 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500"
-                initial={prefersReducedMotion ? {} : { scale: 0.8 }}
-                whileInView={prefersReducedMotion ? {} : { scale: 1 }}
+                initial={{ scale: 0.8 }}
+                whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 150, delay: 0.4 }}
               >
@@ -456,8 +305,8 @@ export default function Experience() {
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
               <motion.div
                 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500"
-                initial={prefersReducedMotion ? {} : { scale: 0.8 }}
-                whileInView={prefersReducedMotion ? {} : { scale: 1 }}
+                initial={{ scale: 0.8 }}
+                whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 150, delay: 0.5 }}
               >
