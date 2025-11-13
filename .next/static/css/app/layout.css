@@ -2169,6 +2169,9 @@ video {
 .bg-color-background {
   background-color: var(--color-background);
 }
+.bg-color-primary {
+  background-color: var(--color-primary);
+}
 .bg-destructive {
   background-color: hsl(var(--destructive));
 }
@@ -3514,18 +3517,8 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.group:hover .group-hover\:bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.group:hover .group-hover\:from-color-primary {
-  --tw-gradient-from: var(--color-primary) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.group:hover .group-hover\:to-color-secondary {
-  --tw-gradient-to: var(--color-secondary) var(--tw-gradient-to-position);
+.group:hover .group-hover\:bg-color-primary {
+  background-color: var(--color-primary);
 }
 
 .group\/menu-item:hover .group-hover\/menu-item\:opacity-100 {
