@@ -3,17 +3,41 @@
 import type React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Twitter, Mail } from "lucide-react"
+import { Github, Linkedin, Twitter, Mail, MapPin, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import StarryBackground from "../components/StarryBackground"
 import Navigation from "../components/Navigation"
 
 const socialLinks = [
-  { icon: <Github className="w-6 h-6" />, href: "https://github.com/instax-dutta" },
-  { icon: <Linkedin className="w-6 h-6" />, href: "https://www.linkedin.com/in/sdabhishekdash/" },
-  { icon: <Twitter className="w-6 h-6" />, href: "https://twitter.com/abhishekdash69" },
-  { icon: <Mail className="w-6 h-6" />, href: "mailto:sdabhishekdash19@gmail.com" },
+  { icon: Github, href: "https://github.com/instax-dutta", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/sdabhishekdash/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://twitter.com/abhishekdash69", label: "Twitter" },
+  { icon: Mail, href: "mailto:sdabhishekdash19@gmail.com", label: "Email" },
 ]
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      damping: 15,
+      stiffness: 100,
+    },
+  },
+}
 
 export default function Contact() {
   const [result, setResult] = useState("")
@@ -42,133 +66,189 @@ export default function Contact() {
   }
 
   return (
-    <div className="relative min-h-screen flex flex-col overflow-hidden">
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
       <StarryBackground />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(96,165,250,0.12),transparent_55%)] pointer-events-none" />
       <Navigation />
       <motion.main
-        className="relative flex-grow flex flex-col items-center justify-center p-4 sm:p-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <div className="text-center mb-10 space-y-3 max-w-2xl px-2">
-          <p className="inline-flex items-center px-4 py-1 rounded-full text-xs sm:text-sm tracking-[0.25em] uppercase bg-white/5 border border-white/10 text-color-text/70">
-            Let&apos;s collaborate
-          </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white hero-mooxy leading-tight">
-            Contact Me
-          </h1>
-          <p className="text-color-text-muted text-sm sm:text-base lg:text-lg">
-            Whether you have a project in mind, need technical advice, or just
-            want to say hello, drop a line and I will get back to you.
-          </p>
-        </div>
-        <div className="w-full max-w-4xl bg-white/5 border border-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] space-y-8">
-          <div className="flex flex-col gap-6">
-            <p className="text-sm text-center sm:text-left text-color-text-muted">
-              Prefer a direct channel? Reach out via any of these platforms or drop a message using the form below.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {socialLinks.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-3 text-color-text/80 hover:text-white hover:border-color-primary/50 transition-all duration-300 shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {link.icon}
-                </motion.a>
-              ))}
-            </div>
-            <div className="flex flex-col gap-4 text-sm sm:text-base text-color-text-muted">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <span className="uppercase tracking-[0.25em] text-xs text-color-text">
-                  Email
-                </span>
-                <a
-                  href="mailto:sdabhishekdash19@gmail.com"
-                  className="text-white hover:text-color-primary text-base"
-                >
-                  sdabhishekdash19@gmail.com
-                </a>
-              </div>
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <span className="uppercase tracking-[0.25em] text-xs text-color-text">
-                  Location
-                </span>
-                <p className="text-white/80 text-base">Bhubaneswar, India · Available for remote work</p>
-              </div>
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <span className="uppercase tracking-[0.25em] text-xs text-color-text">
-                  Response Time
-                </span>
-                <p className="text-white/80 text-base">Within 24 hours on weekdays</p>
-              </div>
-            </div>
-          </div>
-          <form onSubmit={onSubmit} className="space-y-5">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-sm font-medium text-color-text">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm font-medium text-color-text">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="text-sm font-medium text-color-text">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={4}
-                className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200 resize-none"
-              ></textarea>
-            </div>
-            <Button
-              type="submit"
-              className="w-full text-base sm:text-lg tracking-wide font-heading shadow-shadow hover:-translate-y-0.5 transition-transform duration-200"
+        <motion.div
+          className="w-full max-w-4xl space-y-8 sm:space-y-12"
+          variants={itemVariants}
+        >
+          {/* Header */}
+          <div className="text-center space-y-4">
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white hero-mooxy"
+              variants={itemVariants}
             >
-              Send Message
-            </Button>
-          </form>
-          {result && (
+              Get In Touch
+            </motion.h1>
             <motion.p
-              className="pt-2 text-center text-color-text text-sm sm:text-base"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              className="text-color-text-muted text-base sm:text-lg max-w-2xl mx-auto"
+              variants={itemVariants}
             >
-              {result}
+              Have a project in mind or want to collaborate? I&apos;d love to hear from you.
+              Send me a message and I&apos;ll respond as soon as possible.
             </motion.p>
-          )}
-        </div>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
+            {/* Left Side - Contact Info */}
+            <motion.div
+              className="space-y-6"
+              variants={itemVariants}
+            >
+              {/* Contact Details */}
+              <div className="bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-xl p-6 space-y-6">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-lg bg-color-primary/20 border border-color-primary/30">
+                      <Mail className="w-5 h-5 text-color-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-color-text-muted uppercase tracking-wider mb-1">Email</p>
+                      <a
+                        href="mailto:sdabhishekdash19@gmail.com"
+                        className="text-white hover:text-color-primary transition-colors text-base sm:text-lg"
+                      >
+                        sdabhishekdash19@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-lg bg-color-primary/20 border border-color-primary/30">
+                      <MapPin className="w-5 h-5 text-color-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-color-text-muted uppercase tracking-wider mb-1">Location</p>
+                      <p className="text-white text-base sm:text-lg">Bhubaneswar, India</p>
+                      <p className="text-color-text-muted text-sm mt-1">Available for remote work</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-lg bg-color-primary/20 border border-color-primary/30">
+                      <Clock className="w-5 h-5 text-color-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-color-text-muted uppercase tracking-wider mb-1">Response Time</p>
+                      <p className="text-white text-base sm:text-lg">Within 24 hours</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Links */}
+                <div className="pt-4 border-t border-color-primary/20">
+                  <p className="text-sm text-color-text-muted uppercase tracking-wider mb-4">Connect with me</p>
+                  <div className="flex gap-3">
+                    {socialLinks.map((link, index) => {
+                      const Icon = link.icon
+                      return (
+                        <motion.a
+                          key={index}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center w-12 h-12 rounded-lg border border-color-primary/30 bg-color-background/50 hover:bg-color-primary/20 hover:border-color-primary transition-all duration-300 text-color-text hover:text-color-primary"
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                          aria-label={link.label}
+                        >
+                          <Icon className="w-5 h-5" />
+                        </motion.a>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Side - Contact Form */}
+            <motion.div
+              className="bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-xl p-6 sm:p-8"
+              variants={itemVariants}
+            >
+              <form onSubmit={onSubmit} className="space-y-5">
+                <div className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-color-text mb-2">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Your name"
+                      className="w-full px-4 py-3 bg-color-background/50 border border-color-primary/30 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/50 focus:border-color-primary transition-all duration-200"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-color-text mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="your.email@example.com"
+                      className="w-full px-4 py-3 bg-color-background/50 border border-color-primary/30 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/50 focus:border-color-primary transition-all duration-200"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-color-text mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={5}
+                      placeholder="Tell me about your project or just say hello..."
+                      className="w-full px-4 py-3 bg-color-background/50 border border-color-primary/30 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/50 focus:border-color-primary transition-all duration-200 resize-none"
+                    />
+                  </div>
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full text-base sm:text-lg font-heading"
+                >
+                  Send Message
+                </Button>
+
+                {result && (
+                  <motion.div
+                    className="mt-4 p-4 rounded-lg bg-color-primary/10 border border-color-primary/30 text-center"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <p className={`text-sm ${
+                      result.includes("successfully") 
+                        ? "text-green-400" 
+                        : result.includes("Sending") 
+                        ? "text-color-primary" 
+                        : "text-red-400"
+                    }`}>
+                      {result}
+                    </p>
+                  </motion.div>
+                )}
+              </form>
+            </motion.div>
+          </div>
+        </motion.div>
       </motion.main>
     </div>
   )
 }
-
