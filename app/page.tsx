@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import StarryBackground from "./components/StarryBackground"
 import { GooeyText } from "@/components/ui/gooey-text-morphing"
 import Navigation from "./components/Navigation"
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
+import { Button } from "@/components/ui/button"
 
 const roles = [
   "🐍 Python Full Stack Developer",
@@ -95,29 +95,37 @@ export default function Home() {
       </motion.div>
 
       <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-4 sm:mt-6">
-        <Link href="/contact" className="no-underline">
-          <InteractiveHoverButton
-            text="Contact Me"
-            className="w-auto min-w-[160px] px-8 py-3 text-lg border-color-primary bg-gradient-to-r from-color-primary to-color-secondary text-white hover:from-color-primary/90 hover:to-color-secondary/90"
-          />
-        </Link>
-        <Link href="/projects" className="no-underline">
-          <InteractiveHoverButton
-            text="View Projects"
-            className="w-auto min-w-[160px] px-8 py-3 text-lg border-2 border-color-primary bg-transparent text-color-primary hover:bg-color-primary hover:text-white"
-          />
-        </Link>
-        <a
-          href="https://blog.sdad.pro"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="no-underline"
+        <Button
+          asChild
+          className="min-w-[160px] px-8 py-3 text-base sm:text-lg font-heading"
         >
-          <InteractiveHoverButton
-            text="Read Blog"
-            className="w-auto min-w-[160px] px-8 py-3 text-lg border-2 border-color-primary bg-transparent text-color-primary hover:bg-color-primary hover:text-white"
-          />
-        </a>
+          <Link href="/contact" className="no-underline">
+            Contact Me
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="neutral"
+          className="min-w-[160px] px-8 py-3 text-base sm:text-lg font-heading"
+        >
+          <Link href="/projects" className="no-underline">
+            View Projects
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="reverse"
+          className="min-w-[160px] px-8 py-3 text-base sm:text-lg font-heading"
+        >
+          <a
+            href="https://blog.sdad.pro"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline"
+          >
+            Read Blog
+          </a>
+        </Button>
       </motion.div>
 
       <motion.div
