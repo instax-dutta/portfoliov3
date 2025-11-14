@@ -57,7 +57,7 @@ export default function About() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            A dynamic Computer Science student passionate about AI, machine learning, and building innovative solutions
+            Freelance Full Stack Developer and Machine Learning Engineer passionate about building innovative solutions and delivering high-quality projects
           </motion.p>
         </motion.div>
 
@@ -79,14 +79,14 @@ export default function About() {
           </h2>
               </div>
               <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
-            I am a dynamic and results-driven Computer Science student with a strong foundation in Python, machine
-            learning, and DevOps. My entrepreneurial drive and technical proficiency make me an ideal candidate for
-            innovative roles in the tech industry.
+            I am a dynamic and results-driven Freelance Full Stack Developer with a strong foundation in Python, machine
+            learning, and DevOps. My entrepreneurial drive and technical proficiency enable me to deliver innovative solutions
+            for clients across the tech industry.
           </p>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-            With hands-on experience in developing machine learning models, automating processes, and managing cloud
-            infrastructure, I am poised to contribute significantly to projects that leverage cutting-edge technologies
-            to solve real-world problems.
+          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+            With extensive hands-on experience in developing machine learning models, automating processes, and managing cloud
+            infrastructure, I specialize in building scalable applications that leverage cutting-edge technologies
+            to solve real-world business problems. Available for remote projects and consulting.
           </p>
             </div>
             <div className="mt-6 pt-6 border-t border-color-primary/20">
