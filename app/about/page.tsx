@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { ChevronDown, ChevronUp, Code, Brain, Server, Zap } from "lucide-react"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
+import { PatternText } from "@/components/ui/pattern-text"
 
 const sectionVariants = {
   collapsed: { height: 0, opacity: 0 },
@@ -33,14 +34,18 @@ export default function About() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1
-          className="text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+        <motion.div
+          className="mb-8 flex justify-center"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          About Sai Dutta Abhishek Dash
-        </motion.h1>
+          <PatternText
+            as="h1"
+            text="About Sai Dutta Abhishek Dash"
+            className="text-center text-[clamp(2.25rem,5vw,3.75rem)]"
+          />
+        </motion.div>
 
         <motion.section
           className="mb-12"

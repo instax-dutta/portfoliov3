@@ -5,6 +5,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { PatternText } from "@/components/ui/pattern-text"
 import StarryBackground from "../components/StarryBackground"
 import Navigation from "../components/Navigation"
 
@@ -56,9 +57,7 @@ export default function Contact() {
           <p className="inline-flex items-center px-4 py-1 rounded-full text-xs sm:text-sm tracking-[0.25em] uppercase bg-white/5 border border-white/10 text-color-text/70">
             Let&apos;s collaborate
           </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white hero-mooxy leading-tight">
-            Contact Me
-          </h1>
+          <PatternText as="h1" text="Contact Me" className="text-center text-[clamp(2.25rem,6vw,4rem)]" />
           <p className="text-color-text-muted text-sm sm:text-base lg:text-lg">
             Whether you have a project in mind, need technical advice, or just
             want to say hello, drop a line and I will get back to you.

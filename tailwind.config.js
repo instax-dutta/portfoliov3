@@ -92,6 +92,15 @@ module.exports = {
         base: "500",
         heading: "700",
       },
+      keyframes: {
+        shadanim: {
+          "0%": { backgroundPosition: "100% -100%" },
+          "100%": { backgroundPosition: "0% 0%" },
+        },
+      },
+      animation: {
+        shadanim: "shadanim 15s linear infinite",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

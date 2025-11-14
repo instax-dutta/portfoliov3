@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { AnimatedText } from "@/components/ui/animated-text"
+import { PatternText } from "@/components/ui/pattern-text"
+import { cn } from "@/lib/utils"
 
 const Default = () => <Button>Button</Button>
 
@@ -46,6 +48,21 @@ function SlowAnimationDemo() {
   )
 }
 
+function PatternTextDemo() {
+  return (
+    <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-hidden">
+      <div
+        aria-hidden="true"
+        className={cn(
+          "pointer-events-none absolute inset-0 mx-auto max-w-3xl rounded-full",
+          "bg-[radial-gradient(circle_at_top,var(--color-primary)/15,transparent_55%)] blur-3xl",
+        )}
+      />
+      <PatternText text="21st.dev" className="text-[clamp(3rem,12vw,8rem)] text-white" />
+    </div>
+  )
+}
+
 export {
   Default,
   Reverse,
@@ -55,5 +72,6 @@ export {
   CustomStyleDemo,
   HeadingDemo,
   SlowAnimationDemo,
+  PatternTextDemo,
 }
 

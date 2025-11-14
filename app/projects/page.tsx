@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
+import { PatternText } from "@/components/ui/pattern-text"
 
 const projects = [
   {
@@ -169,14 +170,14 @@ export default function Projects() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1
-          className="font-orbitron text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-color-primary to-color-secondary tracking-wide"
+        <motion.div
+          className="mb-12 flex justify-center"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My Projects
-        </motion.h1>
+          <PatternText as="h1" text="My Projects" className="text-center text-[clamp(2.25rem,5vw,3.75rem)]" />
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div

@@ -4,6 +4,7 @@ import { GraduationCap, BookOpen, School } from "lucide-react"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
 import DisplayCards from "@/components/ui/display-cards"
+import { PatternText } from "@/components/ui/pattern-text"
 
 // Education ordered from most recent to oldest
 const education = [
@@ -35,14 +36,14 @@ export default function Education() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1
-          className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+        <motion.div
+          className="mb-16 flex justify-center"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Education
-        </motion.h1>
+          <PatternText as="h1" text="Education" className="text-center text-[clamp(2.25rem,5vw,3.75rem)]" />
+        </motion.div>
         
         {/* Display Cards for Education */}
         <div className="flex justify-center items-center min-h-[600px] py-12">
