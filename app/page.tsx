@@ -63,6 +63,7 @@ export default function Home() {
       <motion.div variants={nameVariants} className="w-full">
         <AnimatedText
           text="Sai Dutta Abhishek Dash"
+          animateBy="words"
           textClassName="hero-mooxy text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white"
           underlineGradient="from-color-primary via-color-accent to-color-secondary"
           underlineHeight="h-1.5"

@@ -15,6 +15,7 @@ interface AnimatedTextProps extends React.HTMLAttributes<HTMLDivElement> {
   underlineGradient?: string
   underlineHeight?: string
   underlineOffset?: string
+  animateBy?: "letters" | "words"
 }
 
 const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
@@ -31,11 +32,15 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
       underlineGradient = "from-blue-500 via-purple-500 to-pink-500",
       underlineHeight = "h-1",
       underlineOffset = "-bottom-2",
+      animateBy = "letters",
       ...props
     },
     ref,
   ) => {
+    const words = text.split(" ")
     const letters = Array.from(text)
+    const items = animateBy === "words" ? words : letters
+    const itemCount = animateBy === "words" ? words.length : letters.length
 
     const container: Variants = {
       hidden: {
@@ -80,7 +85,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
         width: "100%",
         left: "0%",
         transition: {
-          delay: letters.length * delay,
+          delay: itemCount * delay + (itemCount - 1) * duration,
           duration: 0.8,
           ease: "easeOut",
         },
@@ -95,17 +100,26 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
       >
         <div className="relative">
           <motion.div
-            style={{ display: "flex", overflow: "hidden" }}
+            style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", overflow: "hidden" }}
             variants={container}
             initial="hidden"
             animate={replay ? "visible" : "hidden"}
             className={cn("text-4xl font-bold text-center", textClassName)}
           >
-            {letters.map((letter, index) => (
-              <motion.span key={index} variants={child}>
-                {letter === " " ? "\u00A0" : letter}
-              </motion.span>
-            ))}
+            {animateBy === "words" ? (
+              words.map((word, index) => (
+                <motion.span key={index} variants={child} className="inline-block">
+                  {word}
+                  {index < words.length - 1 && "\u00A0"}
+                </motion.span>
+              ))
+            ) : (
+              letters.map((letter, index) => (
+                <motion.span key={index} variants={child}>
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))
+            )}
           </motion.div>
           <motion.div
             variants={lineVariants}
