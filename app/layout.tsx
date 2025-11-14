@@ -3,6 +3,7 @@ import "./globals.css"
 import { Orbitron, Space_Mono, Archivo, Inconsolata } from "next/font/google"
 import StarryBackground from "./components/StarryBackground"
 import CustomCursor from "./components/CustomCursor"
+import LenisProvider from "./components/LenisProvider"
 import type { Metadata } from "next"
 
 // Primary heading font - futuristic display
@@ -71,7 +72,9 @@ export default function RootLayout({
       <body className={`${orbitron.variable} ${spaceMono.variable} ${archivo.variable} ${inconsolata.variable} font-archivo bg-color-background text-color-text min-h-screen`}>
         <StarryBackground />
         <CustomCursor />
-        <div className="relative z-10">{children}</div>
+        <LenisProvider>
+          <div className="relative z-10">{children}</div>
+        </LenisProvider>
       </body>
     </html>
   )
