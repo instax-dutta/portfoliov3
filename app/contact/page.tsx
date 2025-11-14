@@ -12,7 +12,7 @@ const socialLinks = [
   { icon: Github, href: "https://github.com/instax-dutta", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/sdabhishekdash/", label: "LinkedIn" },
   { icon: Twitter, href: "https://twitter.com/abhishekdash69", label: "Twitter" },
-  { icon: Mail, href: "mailto:sdabhishekdash19@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:contact@sdad.pro", label: "Email" },
 ]
 
 const containerVariants = {
@@ -113,10 +113,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm text-color-text-muted uppercase tracking-wider mb-1">Email</p>
                       <a
-                        href="mailto:sdabhishekdash19@gmail.com"
+                        href="mailto:contact@sdad.pro"
                         className="text-white hover:text-color-primary transition-colors text-base sm:text-lg"
                       >
-                        sdabhishekdash19@gmail.com
+                        contact@sdad.pro
                       </a>
                     </div>
                   </div>

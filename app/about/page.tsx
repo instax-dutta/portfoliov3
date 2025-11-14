@@ -1,249 +1,271 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
 import { motion } from "framer-motion"
-import { ChevronDown, ChevronUp, Code, Brain, Server, Zap } from "lucide-react"
+import { Code, Brain, Server, Zap, Target, TrendingUp, Lightbulb, Rocket } from "lucide-react"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
 
-const sectionVariants = {
-  collapsed: { height: 0, opacity: 0 },
-  expanded: { height: "auto", opacity: 1 },
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      damping: 15,
+      stiffness: 100,
+    },
+  },
 }
 
 export default function About() {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null)
-
-  const toggleSection = (section: string) => {
-    if (expandedSection === section) {
-      setExpandedSection(null)
-    } else {
-      setExpandedSection(section)
-    }
-  }
-
   return (
     <div className="text-gray-100 min-h-screen">
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="container mx-auto px-4 py-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
+        {/* Header */}
+        <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
         <motion.h1
-          className="text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
-          initial={{ y: -50 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          About Sai Dutta Abhishek Dash
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 hero-mooxy"
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            About Me
         </motion.h1>
+          <motion.p
+            className="text-color-text-muted text-base sm:text-lg max-w-2xl mx-auto"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            A dynamic Computer Science student passionate about AI, machine learning, and building innovative solutions
+          </motion.p>
+        </motion.div>
 
-        <motion.section
-          className="mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <h2 className="text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {/* Large Hero Card - Professional Summary */}
+          <motion.div
+            className="md:col-span-2 lg:col-span-2 lg:row-span-2 bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between group hover:border-color-primary/50 transition-all duration-300"
+            variants={itemVariants}
+            whileHover={{ scale: 1.02, y: -4 }}
+          >
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30">
+                  <Rocket className="w-6 h-6 text-blue-400" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
             Professional Summary
           </h2>
-          <p className="text-lg mb-4 text-gray-300">
+              </div>
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
             I am a dynamic and results-driven Computer Science student with a strong foundation in Python, machine
             learning, and DevOps. My entrepreneurial drive and technical proficiency make me an ideal candidate for
             innovative roles in the tech industry.
           </p>
-          <p className="text-lg text-gray-300">
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
             With hands-on experience in developing machine learning models, automating processes, and managing cloud
             infrastructure, I am poised to contribute significantly to projects that leverage cutting-edge technologies
             to solve real-world problems.
           </p>
-        </motion.section>
+            </div>
+            <div className="mt-6 pt-6 border-t border-color-primary/20">
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs sm:text-sm border border-blue-500/30">
+                  Full Stack
+                </span>
+                <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs sm:text-sm border border-purple-500/30">
+                  ML Engineer
+                </span>
+                <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs sm:text-sm border border-cyan-500/30">
+                  Cloud Practitioner
+                </span>
+              </div>
+            </div>
+          </motion.div>
 
-        <motion.section
-          className="mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <h2 className="text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-            Key Skills
-          </h2>
-          
-          {/* Detailed Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SkillCard
-              icon={<Code className="w-8 h-8" />}
+          {/* Programming Skills Card */}
+          <SkillBentoCard
+            icon={<Code className="w-6 h-6" />}
               title="Programming"
-              skills={[
-                "HTML",
-                "Python",
-                "CSS",
-                "SQL",
-                "JavaScript",
-                "Java",
-                "C++",
-                "R",
-                "Rust",
-                "Go",
-                "TypeScript",
-                "React",
-                "Next.js",
-                "Tailwind CSS",
-                "Node.js",
-              ]}
-            />
-            <SkillCard
-              icon={<Brain className="w-8 h-8" />}
-              title="AI/ML"
-              skills={[
-                "TensorFlow",
-                "PyTorch",
-                "scikit-learn",
-                "NumPy",
-                "Pandas",
-                "Keras",
-                "XGBoost",
-                "OpenCV",
-                "Matplotlib",
-                "Seaborn",
-                "Plotly",
-                "LmStudio",
-                "Ollama",
-                "Hugging Face",
-                "Google Vertex",
-              ]}
-            />
-            <SkillCard
-              icon={<Server className="w-8 h-8" />}
-              title="DevOps"
-              skills={[
-                "AWS",
-                "Docker",
-                "Git",
-                "CI/CD",
-                "Bash scripting",
-                "Linux server administration",
-                "Netlify",
-                "Vercel",
-                "GitHub Actions",
-                "Jenkins",
-                "Kubernetes",
-                "Bash",
-              ]}
-            />
-            <SkillCard
-              icon={<Zap className="w-8 h-8" />}
-              title="Soft Skills"
-              skills={[
-                "Problem Solving",
-                "Communication",
-                "Adaptability",
-                "Collaboration",
-                "Leadership",
-                "Time Management",
-                "Critical Thinking",
-                "Creativity",
-                "Empathy",
-                "Conflict Resolution",
-                "Decision Making",
-                "Teamwork",
-              ]}
-            />
-          </div>
-        </motion.section>
+            skills={["Python", "TypeScript", "JavaScript", "React", "Next.js", "Node.js", "Java", "C++", "Rust", "Go"]}
+            gradient="from-blue-500/20 to-cyan-500/20"
+            borderColor="border-blue-500/30"
+            iconColor="text-blue-400"
+            variants={itemVariants}
+          />
 
-        <motion.section
-          className="mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <h2 className="text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-            Professional Objectives
-          </h2>
-          <div className="space-y-4">
-            <ExpandableSection
+          {/* AI/ML Skills Card */}
+          <SkillBentoCard
+            icon={<Brain className="w-6 h-6" />}
+              title="AI/ML"
+            skills={["TensorFlow", "PyTorch", "scikit-learn", "NumPy", "Pandas", "OpenCV", "Hugging Face", "Ollama"]}
+            gradient="from-purple-500/20 to-pink-500/20"
+            borderColor="border-purple-500/30"
+            iconColor="text-purple-400"
+            variants={itemVariants}
+          />
+
+          {/* DevOps Skills Card */}
+          <SkillBentoCard
+            icon={<Server className="w-6 h-6" />}
+              title="DevOps"
+            skills={["AWS", "Docker", "Git", "CI/CD", "Kubernetes", "GitHub Actions", "Vercel", "Netlify"]}
+            gradient="from-cyan-500/20 to-blue-500/20"
+            borderColor="border-cyan-500/30"
+            iconColor="text-cyan-400"
+            variants={itemVariants}
+          />
+
+          {/* Soft Skills Card */}
+          <SkillBentoCard
+            icon={<Zap className="w-6 h-6" />}
+              title="Soft Skills"
+            skills={["Problem Solving", "Leadership", "Communication", "Teamwork", "Adaptability", "Creativity"]}
+            gradient="from-yellow-500/20 to-orange-500/20"
+            borderColor="border-yellow-500/30"
+            iconColor="text-yellow-400"
+            variants={itemVariants}
+          />
+
+          {/* Professional Objectives Cards */}
+          <ObjectiveCard
+            icon={<Target className="w-5 h-5" />}
               title="Innovative Problem Solving"
-              content="Seeking opportunities to apply my technical skills and creative thinking to develop innovative solutions for complex challenges in the tech industry."
-              isExpanded={expandedSection === "innovative"}
-              toggleExpand={() => toggleSection("innovative")}
-            />
-            <ExpandableSection
+            description="Applying technical skills and creative thinking to develop innovative solutions for complex challenges."
+            gradient="from-green-500/20 to-emerald-500/20"
+            borderColor="border-green-500/30"
+            iconColor="text-green-400"
+            variants={itemVariants}
+          />
+
+          <ObjectiveCard
+            icon={<TrendingUp className="w-5 h-5" />}
               title="Continuous Learning"
-              content="Committed to staying at the forefront of emerging technologies, particularly in AI and machine learning, to drive cutting-edge developments in the field."
-              isExpanded={expandedSection === "learning"}
-              toggleExpand={() => toggleSection("learning")}
-            />
-            <ExpandableSection
+            description="Staying at the forefront of emerging technologies, particularly in AI and machine learning."
+            gradient="from-indigo-500/20 to-purple-500/20"
+            borderColor="border-indigo-500/30"
+            iconColor="text-indigo-400"
+            variants={itemVariants}
+          />
+
+          <ObjectiveCard
+            icon={<Lightbulb className="w-5 h-5" />}
               title="Impactful Contributions"
-              content="Aiming to contribute to projects that have a meaningful impact on society, leveraging technology to improve people's lives and drive positive change."
-              isExpanded={expandedSection === "impact"}
-              toggleExpand={() => toggleSection("impact")}
+            description="Contributing to projects that have meaningful impact on society and drive positive change."
+            gradient="from-pink-500/20 to-rose-500/20"
+            borderColor="border-pink-500/30"
+            iconColor="text-pink-400"
+            variants={itemVariants}
             />
           </div>
-        </motion.section>
       </motion.main>
     </div>
   )
 }
 
-function SkillCard({ icon, title, skills }: { icon: React.ReactNode; title: string; skills: string[] }) {
+function SkillBentoCard({
+  icon,
+  title,
+  skills,
+  gradient,
+  borderColor,
+  iconColor,
+  variants,
+}: {
+  icon: React.ReactNode
+  title: string
+  skills: string[]
+  gradient: string
+  borderColor: string
+  iconColor: string
+  variants: any
+}) {
   return (
     <motion.div
-      className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300 }}
+      className={`bg-color-background/50 backdrop-blur-md border ${borderColor} rounded-2xl p-5 sm:p-6 flex flex-col group hover:border-opacity-60 transition-all duration-300`}
+      variants={variants}
+      whileHover={{ scale: 1.03, y: -4 }}
     >
-      <div className="flex items-center mb-3">
-        <div className="text-blue-400">{icon}</div>
-        <h3 className="text-lg font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+      <div className="flex items-center gap-3 mb-4">
+        <div className={`p-2.5 rounded-xl bg-gradient-to-br ${gradient} border ${borderColor}`}>
+          <div className={iconColor}>{icon}</div>
+        </div>
+        <h3 className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
           {title}
         </h3>
       </div>
-      <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-        {skills.map((skill, index) => (
-          <li key={index}>{skill}</li>
-        ))}
-      </ul>
+      <div className="flex-1">
+        <div className="flex flex-wrap gap-2">
+          {skills.slice(0, 6).map((skill, index) => (
+            <span
+              key={index}
+              className={`px-2.5 py-1 rounded-lg bg-gradient-to-br ${gradient} ${borderColor} border text-xs sm:text-sm text-gray-300`}
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+        {skills.length > 6 && (
+          <p className="text-xs text-gray-500 mt-3">+{skills.length - 6} more</p>
+        )}
+      </div>
     </motion.div>
   )
 }
 
-function ExpandableSection({
+function ObjectiveCard({
+  icon,
   title,
-  content,
-  isExpanded,
-  toggleExpand,
+  description,
+  gradient,
+  borderColor,
+  iconColor,
+  variants,
 }: {
+  icon: React.ReactNode
   title: string
-  content: string
-  isExpanded: boolean
-  toggleExpand: () => void
+  description: string
+  gradient: string
+  borderColor: string
+  iconColor: string
+  variants: any
 }) {
   return (
-    <div className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg overflow-hidden shadow-md mb-4">
-      <button className="w-full px-4 py-2 flex justify-between items-center text-left hover:bg-color-background/70 transition-colors duration-300" onClick={toggleExpand}>
-        <span className="text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-          {title}
-        </span>
-        {isExpanded ? (
-          <ChevronUp className="w-5 h-5 text-blue-400" />
-        ) : (
-          <ChevronDown className="w-5 h-5 text-blue-400" />
-        )}
-      </button>
       <motion.div
-        variants={sectionVariants}
-        initial="collapsed"
-        animate={isExpanded ? "expanded" : "collapsed"}
-        transition={{ duration: 0.3 }}
-      >
-        {isExpanded && <p className="px-4 py-2 text-gray-300 text-sm">{content}</p>}
+      className={`bg-color-background/50 backdrop-blur-md border ${borderColor} rounded-2xl p-5 sm:p-6 flex flex-col group hover:border-opacity-60 transition-all duration-300`}
+      variants={variants}
+      whileHover={{ scale: 1.03, y: -4 }}
+    >
+      <div className="flex items-start gap-3 mb-4">
+        <div className={`p-2.5 rounded-xl bg-gradient-to-br ${gradient} border ${borderColor} flex-shrink-0`}>
+          <div className={iconColor}>{icon}</div>
+        </div>
+        <div className="flex-1">
+          <h3 className="text-base sm:text-lg font-bold text-white mb-2">{title}</h3>
+          <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
+        </div>
+      </div>
       </motion.div>
-    </div>
   )
 }
