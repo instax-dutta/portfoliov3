@@ -4,7 +4,6 @@ import { useRef } from "react"
 import { Code, Brain, Server, Zap } from "lucide-react"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
-import { PatternText } from "@/components/ui/pattern-text"
 
 const skills = [
   {
@@ -99,18 +98,14 @@ export default function Skills() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.div
-          className="mb-16 flex justify-center"
+        <motion.h1
+          className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <PatternText
-            as="h1"
-            text="My Skills & Expertise"
-            className="text-center text-[clamp(2.25rem,5vw,3.75rem)]"
-          />
-        </motion.div>
+          My Skills & Expertise
+        </motion.h1>
         <div 
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           style={{ perspective: "1000px" }}

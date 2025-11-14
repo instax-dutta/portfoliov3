@@ -6,7 +6,7 @@ import StarryBackground from "./components/StarryBackground"
 import Navigation from "./components/Navigation"
 import { GooeyText } from "@/components/ui/gooey-text-morphing"
 import { Button } from "@/components/ui/button"
-import { PatternText } from "@/components/ui/pattern-text"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 const roles = [
   "🐍 Python Full Stack Developer",
@@ -60,11 +60,14 @@ export default function Home() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div variants={nameVariants} className="w-full flex justify-center">
-        <PatternText
-          as="h1"
+      <motion.div variants={nameVariants} className="w-full">
+        <AnimatedText
           text="Sai Dutta Abhishek Dash"
-          className="hero-mooxy text-center text-[clamp(2.5rem,6vw,5.5rem)] sm:text-[clamp(3rem,5vw,6.5rem)]"
+          textClassName="hero-mooxy text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white"
+          underlineGradient="from-color-primary via-color-accent to-color-secondary"
+          underlineHeight="h-1.5"
+          underlineOffset="-bottom-3"
+          className="w-full"
         />
       </motion.div>
       <motion.div className="text-lg sm:text-xl md:text-2xl text-color-text-muted" variants={itemVariants}>

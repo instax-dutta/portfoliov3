@@ -5,7 +5,6 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { PatternText } from "@/components/ui/pattern-text"
 import StarryBackground from "../components/StarryBackground"
 import Navigation from "../components/Navigation"
 
@@ -57,115 +56,116 @@ export default function Contact() {
           <p className="inline-flex items-center px-4 py-1 rounded-full text-xs sm:text-sm tracking-[0.25em] uppercase bg-white/5 border border-white/10 text-color-text/70">
             Let&apos;s collaborate
           </p>
-          <PatternText as="h1" text="Contact Me" className="text-center text-[clamp(2.25rem,6vw,4rem)]" />
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white hero-mooxy leading-tight">
+            Contact Me
+          </h1>
           <p className="text-color-text-muted text-sm sm:text-base lg:text-lg">
             Whether you have a project in mind, need technical advice, or just
             want to say hello, drop a line and I will get back to you.
           </p>
         </div>
-        <div className="w-full max-w-5xl grid gap-6 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
-          <section className="bg-white/5 border border-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] flex flex-col gap-8">
-            <div className="space-y-3 text-center sm:text-left">
-              <p className="text-sm text-color-text-muted">
-                Prefer a direct channel? Reach out via any of these platforms.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {socialLinks.map((link, index) => (
-                  <motion.a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-3 text-color-text/80 hover:text-white hover:border-color-primary/50 transition-all duration-300 shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {link.icon}
-                  </motion.a>
-                ))}
-              </div>
+        <div className="w-full max-w-4xl bg-white/5 border border-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] space-y-8">
+          <div className="flex flex-col gap-6">
+            <p className="text-sm text-center sm:text-left text-color-text-muted">
+              Prefer a direct channel? Reach out via any of these platforms or drop a message using the form below.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {socialLinks.map((link, index) => (
+                <motion.a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-3 text-color-text/80 hover:text-white hover:border-color-primary/50 transition-all duration-300 shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {link.icon}
+                </motion.a>
+              ))}
             </div>
-            <div className="space-y-4 text-sm sm:text-base text-color-text-muted">
-              <div className="flex flex-col gap-1">
-                <span className="text-color-text font-semibold tracking-wide uppercase text-xs">
+            <div className="flex flex-col gap-4 text-sm sm:text-base text-color-text-muted">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                <span className="uppercase tracking-[0.25em] text-xs text-color-text">
                   Email
                 </span>
-                <a href="mailto:sdabhishekdash19@gmail.com" className="text-white hover:text-color-primary">
+                <a
+                  href="mailto:sdabhishekdash19@gmail.com"
+                  className="text-white hover:text-color-primary text-base"
+                >
                   sdabhishekdash19@gmail.com
                 </a>
               </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-color-text font-semibold tracking-wide uppercase text-xs">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                <span className="uppercase tracking-[0.25em] text-xs text-color-text">
                   Location
                 </span>
-                <p className="text-white/80">Bhubaneswar, India · Available for remote work</p>
+                <p className="text-white/80 text-base">Bhubaneswar, India · Available for remote work</p>
               </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-color-text font-semibold tracking-wide uppercase text-xs">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                <span className="uppercase tracking-[0.25em] text-xs text-color-text">
                   Response Time
                 </span>
-                <p className="text-white/80">Within 24 hours on weekdays</p>
+                <p className="text-white/80 text-base">Within 24 hours on weekdays</p>
               </div>
             </div>
-          </section>
-          <section className="bg-white/5 border border-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
-            <form onSubmit={onSubmit} className="space-y-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm font-medium text-color-text">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm font-medium text-color-text">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200"
-                  />
-                </div>
+          </div>
+          <form onSubmit={onSubmit} className="space-y-5">
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name" className="text-sm font-medium text-color-text">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200"
+                />
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm font-medium text-color-text">
-                  Message
+                <label htmlFor="email" className="text-sm font-medium text-color-text">
+                  Email
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
                   required
-                  rows={4}
-                  className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200 resize-none"
-                ></textarea>
+                  className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200"
+                />
               </div>
-              <Button
-                type="submit"
-                className="w-full text-base sm:text-lg tracking-wide font-heading shadow-shadow hover:-translate-y-0.5 transition-transform duration-200"
-              >
-                Send Message
-              </Button>
-            </form>
-            {result && (
-              <motion.p
-                className="mt-6 text-center text-color-text text-sm sm:text-base"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                {result}
-              </motion.p>
-            )}
-          </section>
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="message" className="text-sm font-medium text-color-text">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={4}
+                className="w-full px-4 py-3 bg-white/5 text-white placeholder:text-color-text-muted border border-white/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary/50 transition-all duration-200 resize-none"
+              ></textarea>
+            </div>
+            <Button
+              type="submit"
+              className="w-full text-base sm:text-lg tracking-wide font-heading shadow-shadow hover:-translate-y-0.5 transition-transform duration-200"
+            >
+              Send Message
+            </Button>
+          </form>
+          {result && (
+            <motion.p
+              className="pt-2 text-center text-color-text text-sm sm:text-base"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {result}
+            </motion.p>
+          )}
         </div>
       </motion.main>
     </div>

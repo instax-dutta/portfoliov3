@@ -4,7 +4,6 @@ import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
 import { Briefcase, Calendar, Building2, Zap, Code, Brain, Rocket } from "lucide-react"
 import { Timeline } from "@/components/ui/timeline"
-import { PatternText } from "@/components/ui/pattern-text"
 
 const experiences = [
   {
@@ -178,18 +177,14 @@ export default function Experience() {
             <span className="font-space-mono text-sm sm:text-base text-blue-400 font-medium tracking-wider">Professional Journey</span>
           </motion.div>
           
-          <motion.div
-            className="mb-4 sm:mb-6 flex justify-center"
+          <motion.h1
+            className="font-orbitron text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 tracking-wide"
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <PatternText
-              as="h1"
-              text="Experience Timeline"
-              className="text-center text-[clamp(2.25rem,6vw,4.25rem)]"
-            />
-          </motion.div>
+            Experience Timeline
+          </motion.h1>
           
           <motion.p
             className="font-archivo text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4"
