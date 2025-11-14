@@ -6,6 +6,7 @@ import StarryBackground from "./components/StarryBackground"
 import { GooeyText } from "@/components/ui/gooey-text-morphing"
 import Navigation from "./components/Navigation"
 import { Button } from "@/components/ui/button"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 const roles = [
   "🐍 Python Full Stack Developer",
@@ -59,13 +60,16 @@ export default function Home() {
       initial="hidden"
       animate="visible"
     >
-      <motion.h1
-        className="hero-mooxy text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white relative inline-block"
-        variants={nameVariants}
-      >
-        Sai Dutta Abhishek Dash
-        <span className="block h-1 w-24 sm:w-32 md:w-40 bg-gradient-to-r from-color-primary to-color-secondary mt-3 mx-auto rounded-full animate-pulse"></span>
-      </motion.h1>
+      <motion.div variants={nameVariants} className="w-full">
+        <AnimatedText
+          text="Sai Dutta Abhishek Dash"
+          textClassName="hero-mooxy text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white"
+          underlineGradient="from-color-primary via-color-accent to-color-secondary"
+          underlineHeight="h-1.5"
+          underlineOffset="-bottom-3"
+          className="w-full"
+        />
+      </motion.div>
       <motion.div className="text-lg sm:text-xl md:text-2xl text-color-text-muted" variants={itemVariants}>
         <GooeyText
           texts={roles}
