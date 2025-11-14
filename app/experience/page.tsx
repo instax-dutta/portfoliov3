@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
-import { Briefcase, Calendar, Building2, Zap, Code, Brain, Rocket } from "lucide-react"
+import { Briefcase, Calendar, Building2, Zap, Code, Brain, Rocket, ChevronDown } from "lucide-react"
 import { Timeline } from "@/components/ui/timeline"
 
 const experiences = [
@@ -195,10 +195,41 @@ export default function Experience() {
             A comprehensive journey through my professional experiences, from entrepreneurship to machine learning engineering, 
             showcasing growth, learning, and impact across diverse technology domains.
           </motion.p>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            className="flex justify-center mt-8 sm:mt-12"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <motion.div
+              className="flex flex-col items-center gap-2 cursor-pointer group"
+              animate={{
+                y: [0, 8, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              onClick={() => {
+                const timelineElement = document.querySelector('[data-timeline]') || document.querySelector('.relative')
+                if (timelineElement) {
+                  timelineElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              }}
+            >
+              <div className="p-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-md border border-blue-500/30 group-hover:border-blue-400/50 transition-all duration-300">
+                <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:text-cyan-400 transition-colors duration-300" />
+              </div>
+              <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider font-space-mono">Scroll</p>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
         {/* Timeline Component */}
-        <div className="relative">
+        <div className="relative" data-timeline>
           <Timeline
             data={experiences.map((exp) => ({
               title: exp.date,

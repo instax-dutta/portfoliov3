@@ -1,5 +1,5 @@
 "use client"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { useRef } from "react"
 import { Code, Brain, Server, Zap } from "lucide-react"
 import Navigation from "../components/Navigation"
@@ -106,10 +106,7 @@ export default function Skills() {
         >
           My Skills & Expertise
         </motion.h1>
-        <div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          style={{ perspective: "1000px" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skillCategory, index) => (
             <SkillCategory key={index} category={skillCategory} index={index} />
           ))}
@@ -123,28 +120,45 @@ function SkillCategory({ category, index }: { category: any; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    offset: ["start 0.8", "end 0.2"]
   });
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [15, -15]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.3, 1, 1, 0.3]);
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  // Use spring for smoother animations
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    mass: 0.5
+  });
+
+  // Reduced transform ranges for smoother performance
+  const scale = useTransform(smoothProgress, [0, 0.5, 1], [0.95, 1, 0.95], {
+    clamp: false
+  });
+  const opacity = useTransform(smoothProgress, [0, 0.2, 0.8, 1], [0.4, 1, 1, 0.4], {
+    clamp: false
+  });
+  const y = useTransform(smoothProgress, [0, 1], [20, -20], {
+    clamp: false
+  });
 
   return (
     <motion.div
       ref={ref}
       style={{
-        rotateX: rotate,
         scale,
         opacity,
         y,
+        willChange: "transform, opacity"
       }}
-      className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500"
-      initial={{ opacity: 0, y: 50 }}
+      className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
     >
       <div className="flex items-center mb-4">
         <div className="text-blue-400">{category.icon}</div>
@@ -165,20 +179,30 @@ function SkillBar({ skill, delay }: { skill: any; delay: number }) {
   return (
     <motion.div
       className="space-y-2"
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3, delay }}
+      initial={{ opacity: 0, x: -10 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ 
+        duration: 0.4, 
+        delay,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
     >
       <div className="flex justify-between">
         <span className="text-sm font-medium text-gray-300">{skill.name}</span>
         <span className="text-sm font-medium text-gray-400">{skill.level}%</span>
       </div>
-      <div className="w-full bg-gray-700 rounded-full h-2.5">
+      <div className="w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
         <motion.div
           className="bg-gradient-to-r from-blue-500 to-purple-600 h-2.5 rounded-full"
           initial={{ width: 0 }}
-          animate={{ width: `${skill.level}%` }}
-          transition={{ duration: 0.5, delay }}
+          whileInView={{ width: `${skill.level}%` }}
+          viewport={{ once: true }}
+          transition={{ 
+            duration: 0.8, 
+            delay: delay + 0.2,
+            ease: [0.25, 0.1, 0.25, 1]
+          }}
         />
       </div>
     </motion.div>
