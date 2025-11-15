@@ -62,7 +62,7 @@ export default function About() {
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {/* Large Hero Card - Professional Summary */}
           <motion.div
             className="md:col-span-2 lg:col-span-2 lg:row-span-2 bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between group hover:border-color-primary/50 transition-all duration-300"
@@ -150,9 +150,9 @@ export default function About() {
 
           {/* Professional Objectives Cards */}
           <ObjectiveCard
-            icon={<Target className="w-5 h-5" />}
-              title="Innovative Problem Solving"
-            description="Applying technical skills and creative thinking to develop innovative solutions for complex challenges."
+            icon={<Target className="w-4 h-4" />}
+              title="Problem Solving"
+            description="Creative solutions for complex challenges."
             gradient="from-green-500/20 to-emerald-500/20"
             borderColor="border-green-500/30"
             iconColor="text-green-400"
@@ -160,9 +160,9 @@ export default function About() {
           />
 
           <ObjectiveCard
-            icon={<TrendingUp className="w-5 h-5" />}
+            icon={<TrendingUp className="w-4 h-4" />}
               title="Continuous Learning"
-            description="Staying at the forefront of emerging technologies, particularly in AI and machine learning."
+            description="Staying current with emerging technologies."
             gradient="from-indigo-500/20 to-purple-500/20"
             borderColor="border-indigo-500/30"
             iconColor="text-indigo-400"
@@ -170,9 +170,9 @@ export default function About() {
           />
 
           <ObjectiveCard
-            icon={<Lightbulb className="w-5 h-5" />}
-              title="Impactful Contributions"
-            description="Contributing to projects that have meaningful impact on society and drive positive change."
+            icon={<Lightbulb className="w-4 h-4" />}
+              title="Impactful Work"
+            description="Projects that drive positive change."
             gradient="from-pink-500/20 to-rose-500/20"
             borderColor="border-pink-500/30"
             iconColor="text-pink-400"
@@ -180,9 +180,9 @@ export default function About() {
             />
 
           <ObjectiveCard
-            icon={<Globe className="w-5 h-5" />}
-              title="Client-Centric Development"
-            description="Delivering tailored solutions that align with client goals, ensuring seamless collaboration and transparent communication throughout the development lifecycle."
+            icon={<Globe className="w-4 h-4" />}
+              title="Client-Focused"
+            description="Tailored solutions with transparent communication."
             gradient="from-teal-500/20 to-cyan-500/20"
             borderColor="border-teal-500/30"
             iconColor="text-teal-400"
@@ -213,31 +213,31 @@ function SkillBentoCard({
 }) {
   return (
     <motion.div
-      className={`bg-color-background/50 backdrop-blur-md border ${borderColor} rounded-2xl p-5 sm:p-6 flex flex-col group hover:border-opacity-60 transition-all duration-300`}
+      className={`bg-color-background/50 backdrop-blur-md border ${borderColor} rounded-xl p-3 sm:p-4 flex flex-col group hover:border-opacity-60 transition-all duration-300`}
       variants={variants}
-      whileHover={{ scale: 1.03, y: -4 }}
+      whileHover={{ scale: 1.02, y: -2 }}
     >
-      <div className="flex items-center gap-3 mb-4">
-        <div className={`p-2.5 rounded-xl bg-gradient-to-br ${gradient} border ${borderColor}`}>
+      <div className="flex items-center gap-2.5 mb-3">
+        <div className={`p-1.5 rounded-lg bg-gradient-to-br ${gradient} border ${borderColor}`}>
           <div className={iconColor}>{icon}</div>
         </div>
-        <h3 className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+        <h3 className="text-sm sm:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
           {title}
         </h3>
       </div>
       <div className="flex-1">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {skills.slice(0, 6).map((skill, index) => (
             <span
               key={index}
-              className={`px-2.5 py-1 rounded-lg bg-gradient-to-br ${gradient} ${borderColor} border text-xs sm:text-sm text-gray-300`}
+              className={`px-2 py-0.5 rounded-md bg-gradient-to-br ${gradient} ${borderColor} border text-xs text-gray-300`}
             >
               {skill}
             </span>
           ))}
         </div>
         {skills.length > 6 && (
-          <p className="text-xs text-gray-500 mt-3">+{skills.length - 6} more</p>
+          <p className="text-xs text-gray-500 mt-2">+{skills.length - 6} more</p>
         )}
       </div>
     </motion.div>
@@ -263,17 +263,17 @@ function ObjectiveCard({
 }) {
   return (
       <motion.div
-      className={`bg-color-background/50 backdrop-blur-md border ${borderColor} rounded-2xl p-5 sm:p-6 flex flex-col group hover:border-opacity-60 transition-all duration-300`}
+      className={`bg-color-background/50 backdrop-blur-md border ${borderColor} rounded-xl p-3 sm:p-4 flex flex-col group hover:border-opacity-60 transition-all duration-300`}
       variants={variants}
-      whileHover={{ scale: 1.03, y: -4 }}
+      whileHover={{ scale: 1.02, y: -2 }}
     >
-      <div className="flex items-start gap-3 mb-4">
-        <div className={`p-2.5 rounded-xl bg-gradient-to-br ${gradient} border ${borderColor} flex-shrink-0`}>
+      <div className="flex items-start gap-2.5 mb-2">
+        <div className={`p-1.5 rounded-lg bg-gradient-to-br ${gradient} border ${borderColor} flex-shrink-0`}>
           <div className={iconColor}>{icon}</div>
         </div>
         <div className="flex-1">
-          <h3 className="text-base sm:text-lg font-bold text-white mb-2">{title}</h3>
-          <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
+          <h3 className="text-sm sm:text-base font-bold text-white mb-1">{title}</h3>
+          <p className="text-xs sm:text-sm text-gray-400 leading-snug">{description}</p>
         </div>
       </div>
       </motion.div>
