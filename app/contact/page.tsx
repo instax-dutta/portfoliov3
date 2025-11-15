@@ -82,7 +82,7 @@ export default function Contact() {
           {/* Header */}
           <div className="text-center space-y-4">
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white hero-mooxy"
+              className="achiko-font text-4xl sm:text-5xl md:text-6xl font-bold text-white"
               variants={itemVariants}
             >
               Get In Touch

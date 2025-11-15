@@ -44,7 +44,7 @@ export default function About() {
         {/* Header */}
         <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
         <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 hero-mooxy"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 achiko-font"
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}

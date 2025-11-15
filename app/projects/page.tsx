@@ -170,7 +170,7 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
       >
         <motion.h1
-          className="font-orbitron text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-color-primary to-color-secondary tracking-wide"
+          className="achiko-font text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-color-primary to-color-secondary tracking-wide"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
