@@ -108,7 +108,7 @@ export default function About() {
           <SkillBentoCard
             icon={<Code className="w-6 h-6" />}
               title="Programming"
-            skills={["Python", "TypeScript", "JavaScript", "React", "Next.js", "Node.js", "Java", "C++", "Rust", "Go"]}
+            skills={["Python", "TypeScript", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "HTML", "CSS", "SQL", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL", "Java", "C++", "Rust", "Go", "Tailwind CSS", "Redux"]}
             gradient="from-blue-500/20 to-cyan-500/20"
             borderColor="border-blue-500/30"
             iconColor="text-blue-400"
@@ -119,7 +119,7 @@ export default function About() {
           <SkillBentoCard
             icon={<Brain className="w-6 h-6" />}
               title="AI/ML"
-            skills={["TensorFlow", "PyTorch", "scikit-learn", "NumPy", "Pandas", "OpenCV", "Hugging Face", "Ollama"]}
+            skills={["TensorFlow", "PyTorch", "scikit-learn", "NumPy", "Pandas", "OpenCV", "Hugging Face", "Ollama", "Keras", "XGBoost", "Matplotlib", "Seaborn", "Plotly", "NLTK", "spaCy", "LangChain", "Google Vertex AI", "Mistral AI", "Gemini API", "Computer Vision"]}
             gradient="from-purple-500/20 to-pink-500/20"
             borderColor="border-purple-500/30"
             iconColor="text-purple-400"
@@ -130,7 +130,7 @@ export default function About() {
           <SkillBentoCard
             icon={<Server className="w-6 h-6" />}
               title="DevOps"
-            skills={["AWS", "Docker", "Git", "CI/CD", "Kubernetes", "GitHub Actions", "Vercel", "Netlify"]}
+            skills={["AWS", "Docker", "Git", "CI/CD", "Kubernetes", "GitHub Actions", "Vercel", "Netlify", "Linux", "Bash", "Terraform", "Ansible", "Jenkins", "Nginx", "CloudFormation", "EC2", "S3", "Lambda", "CloudWatch", "IAM"]}
             gradient="from-cyan-500/20 to-blue-500/20"
             borderColor="border-cyan-500/30"
             iconColor="text-cyan-400"
@@ -141,7 +141,7 @@ export default function About() {
           <SkillBentoCard
             icon={<Zap className="w-6 h-6" />}
               title="Soft Skills"
-            skills={["Problem Solving", "Leadership", "Communication", "Teamwork", "Adaptability", "Creativity"]}
+            skills={["Problem Solving", "Leadership", "Communication", "Teamwork", "Adaptability", "Creativity", "Time Management", "Critical Thinking", "Decision Making", "Conflict Resolution", "Empathy", "Collaboration", "Mentoring", "Project Management", "Agile Methodology"]}
             gradient="from-yellow-500/20 to-orange-500/20"
             borderColor="border-yellow-500/30"
             iconColor="text-yellow-400"
