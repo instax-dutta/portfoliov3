@@ -30,7 +30,7 @@ export default function Education() {
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="container mx-auto px-4 py-6 sm:py-8 lg:py-4 xl:py-6 flex flex-col lg:h-[calc(100vh-4rem)] lg:justify-center"
+        className="container mx-auto px-4 pt-20 sm:pt-24 lg:pt-20 pb-6 sm:pb-8 lg:pb-4 xl:pb-6 flex flex-col lg:h-[calc(100vh-5rem)] lg:justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { motion } from "framer-motion"
-import { Code, Brain, Server, Zap, Target, TrendingUp, Lightbulb, Rocket } from "lucide-react"
+import { Code, Brain, Server, Zap, Target, TrendingUp, Lightbulb, Rocket, Users, Globe } from "lucide-react"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
 
@@ -176,6 +176,16 @@ export default function About() {
             gradient="from-pink-500/20 to-rose-500/20"
             borderColor="border-pink-500/30"
             iconColor="text-pink-400"
+            variants={itemVariants}
+            />
+
+          <ObjectiveCard
+            icon={<Globe className="w-5 h-5" />}
+              title="Client-Centric Development"
+            description="Delivering tailored solutions that align with client goals, ensuring seamless collaboration and transparent communication throughout the development lifecycle."
+            gradient="from-teal-500/20 to-cyan-500/20"
+            borderColor="border-teal-500/30"
+            iconColor="text-teal-400"
             variants={itemVariants}
             />
           </div>
