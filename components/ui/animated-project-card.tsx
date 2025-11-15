@@ -146,48 +146,50 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
         )}
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col flex-1 p-6">
+        <div className="relative z-10 flex flex-col flex-1 p-5 sm:p-6">
           {/* Header */}
-          <div className="mb-4">
+          <div className="mb-5">
             <h3 className={cn(
-              "text-2xl font-bold mb-2 bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+              "text-xl sm:text-2xl font-bold mb-3 leading-tight bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
             )}>
               {project.title}
             </h3>
-            <p className="text-sm text-color-text-muted leading-relaxed">
+            <p className="text-sm sm:text-base text-color-text-muted leading-relaxed line-clamp-3">
               {project.description}
             </p>
           </div>
 
           {/* Tech Stack */}
-          <div className="flex-1 mb-4">
+          <div className="flex-1 mb-5 min-h-0">
             <TechStack techStack={techStack} />
           </div>
 
           {/* Footer Buttons */}
-          <div className="flex gap-2 mt-auto">
+          <div className="flex flex-wrap gap-2 mt-auto pt-3 border-t border-color-primary/10">
             <Button
               asChild
+              size="sm"
               className={cn(
                 "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700",
-                "text-white shadow-md border-0"
+                "text-white shadow-md border-0 text-xs sm:text-sm"
               )}
             >
               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-4 w-4" />
+                <ExternalLink className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 View Project
               </a>
             </Button>
             {isGithubLink && (
               <Button
                 asChild
+                size="sm"
                 variant="outline"
                 className={cn(
-                  "border-color-primary/30 text-color-primary hover:bg-color-primary/10"
+                  "border-color-primary/30 text-color-primary hover:bg-color-primary/10 text-xs sm:text-sm"
                 )}
               >
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
+                  <Github className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   Code
                 </a>
               </Button>
