@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Github } from 'lucide-react'
 import { TechStack } from '@/components/ui/tech-stack'
@@ -77,7 +77,19 @@ const getTechInfo = (techName: string): { url: string; color: string } => {
 
 export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   const [isHovered, setIsHovered] = useState(false)
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+  const lightSize = 120
   const isGithubLink = project.link.includes('github.com')
+
+  const lightX = useTransform(x, (value) => value - lightSize / 2)
+  const lightY = useTransform(y, (value) => value - lightSize / 2)
+
+  const handleMouseMove = (event: React.MouseEvent) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    x.set(event.clientX - rect.left)
+    y.set(event.clientY - rect.top)
+  }
 
   // Convert technologies to tech stack format
   const techStack = project.technologies.map(tech => ({
@@ -90,32 +102,70 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className="relative"
     >
-      <Card className={cn(
-        "h-full bg-color-background/50 backdrop-blur-md border border-color-primary/30",
-        "hover:border-color-primary/50 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden",
-        "text-color-text flex flex-col"
-      )}>
-        <div className="relative z-10 flex flex-col flex-1">
-          <CardHeader>
-            <CardTitle className={cn(
-              "text-2xl font-bold bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+      <div
+        className={cn(
+          "relative h-full bg-color-background/80 overflow-hidden rounded-xl shadow-lg border border-color-primary/30 backdrop-blur-xl",
+          "hover:border-color-primary/50 transition-all duration-300 flex flex-col"
+        )}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => {
+          setIsHovered(false)
+          x.set(0)
+          y.set(0)
+        }}
+      >
+        {/* Background Image */}
+        <Image
+          src="https://images.unsplash.com/photo-1695883701435-7bd88f796e05?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4NHxDRHd1d1hKQWJFd3x8ZW58MHx8fHx8"
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover filter blur-3xl opacity-20"
+          width={600}
+          height={400}
+          unoptimized
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-color-background/60 rounded-xl border border-color-primary/20 backdrop-blur-xl"></div>
+
+        {/* Interactive Light Effect */}
+        {isHovered && (
+          <motion.div
+            className="absolute rounded-full pointer-events-none z-0"
+            style={{
+              width: lightSize,
+              height: lightSize,
+              background: 'rgba(96, 165, 250, 0.3)',
+              filter: 'blur(40px)',
+              x: lightX,
+              y: lightY,
+            }}
+          ></motion.div>
+        )}
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col flex-1 p-6">
+          {/* Header */}
+          <div className="mb-4">
+            <h3 className={cn(
+              "text-2xl font-bold mb-2 bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
             )}>
               {project.title}
-            </CardTitle>
-            <CardDescription className="text-color-text-muted">
+            </h3>
+            <p className="text-sm text-color-text-muted leading-relaxed">
               {project.description}
-            </CardDescription>
-          </CardHeader>
+            </p>
+          </div>
 
-          <CardContent className="flex-1">
+          {/* Tech Stack */}
+          <div className="flex-1 mb-4">
             <TechStack techStack={techStack} />
-          </CardContent>
+          </div>
 
-          <CardFooter className="flex gap-2 mt-auto">
+          {/* Footer Buttons */}
+          <div className="flex gap-2 mt-auto">
             <Button
               asChild
               className={cn(
@@ -142,9 +192,9 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
                 </a>
               </Button>
             )}
-          </CardFooter>
+          </div>
         </div>
-      </Card>
+      </div>
     </motion.div>
   )
 }
