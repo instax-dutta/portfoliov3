@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -77,10 +77,20 @@ const getTechInfo = (techName: string): { url: string; color: string } => {
 
 export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   const [isHovered, setIsHovered] = useState(false)
+  const [lightSize, setLightSize] = useState(120)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const lightSize = 120
   const isGithubLink = project.link.includes('github.com')
+
+  // Responsive light size
+  useEffect(() => {
+    const updateLightSize = () => {
+      setLightSize(window.innerWidth < 640 ? 80 : window.innerWidth < 1024 ? 100 : 120)
+    }
+    updateLightSize()
+    window.addEventListener('resize', updateLightSize)
+    return () => window.removeEventListener('resize', updateLightSize)
+  }, [])
 
   const lightX = useTransform(x, (value) => value - lightSize / 2)
   const lightY = useTransform(y, (value) => value - lightSize / 2)
@@ -101,13 +111,19 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1,
+        ease: [0.25, 0.1, 0.25, 1] // Optimized easing
+      }}
       className="relative"
+      style={{ willChange: 'transform, opacity' }}
     >
       <div
         className={cn(
           "relative h-full bg-color-background/80 overflow-hidden rounded-xl shadow-lg border border-color-primary/30 backdrop-blur-xl",
-          "hover:border-color-primary/50 transition-all duration-300 flex flex-col"
+          "hover:border-color-primary/50 transition-all duration-300 flex flex-col",
+          "will-change-transform"
         )}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
@@ -117,14 +133,17 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
           y.set(0)
         }}
       >
-        {/* Background Image */}
+        {/* Background Image - Lazy loaded for performance */}
         <Image
           src="https://images.unsplash.com/photo-1695883701435-7bd88f796e05?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4NHxDRHd1d1hKQWJFd3x8ZW58MHx8fHx8"
-          alt="Background"
+          alt={`${project.title} project background`}
           className="absolute inset-0 w-full h-full object-cover filter blur-3xl opacity-20"
           width={600}
           height={400}
-          unoptimized
+          loading="lazy"
+          quality={30}
+          priority={false}
+          aria-hidden="true"
         />
 
         {/* Overlay */}
@@ -133,7 +152,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
         {/* Interactive Light Effect */}
         {isHovered && (
           <motion.div
-            className="absolute rounded-full pointer-events-none z-0"
+            className="absolute rounded-full pointer-events-none z-0 will-change-transform"
             style={{
               width: lightSize,
               height: lightSize,
@@ -146,18 +165,18 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
         )}
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col flex-1 p-5 sm:p-6">
+        <article className="relative z-10 flex flex-col flex-1 p-5 sm:p-6">
           {/* Header */}
-          <div className="mb-5">
-            <h3 className={cn(
+          <header className="mb-5">
+            <h2 className={cn(
               "text-xl sm:text-2xl font-bold mb-3 leading-tight bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
             )}>
               {project.title}
-            </h3>
+            </h2>
             <p className="text-sm sm:text-base text-color-text-muted leading-relaxed line-clamp-3">
               {project.description}
             </p>
-          </div>
+          </header>
 
           {/* Tech Stack */}
           <div className="flex-1 mb-5 min-h-0">
@@ -165,18 +184,18 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
           </div>
 
           {/* Footer Buttons */}
-          <div className="flex flex-wrap gap-2 mt-auto pt-3 border-t border-color-primary/10">
+          <footer className="flex flex-wrap gap-2 sm:gap-3 mt-auto pt-3 sm:pt-4 border-t border-color-primary/10">
             <Button
               asChild
               size="sm"
               className={cn(
                 "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700",
-                "text-white shadow-md border-0 text-xs sm:text-sm"
+                "text-white shadow-md border-0 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
               )}
             >
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                View Project
+                <span className="whitespace-nowrap">View Project</span>
               </a>
             </Button>
             {isGithubLink && (
@@ -185,7 +204,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
                 size="sm"
                 variant="outline"
                 className={cn(
-                  "border-color-primary/30 text-color-primary hover:bg-color-primary/10 text-xs sm:text-sm"
+                  "border-color-primary/30 text-color-primary hover:bg-color-primary/10 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
                 )}
               >
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
@@ -194,8 +213,8 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
                 </a>
               </Button>
             )}
-          </div>
-        </div>
+          </footer>
+        </article>
       </div>
     </motion.div>
   )

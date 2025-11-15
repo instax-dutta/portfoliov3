@@ -162,7 +162,7 @@ export default function About() {
           <ObjectiveCard
             icon={<TrendingUp className="w-4 h-4" />}
               title="Continuous Learning"
-            description="Committed to staying ahead of industry trends, regularly upskilling in AI/ML, cloud technologies, and modern frameworks. Actively contributes to open-source and maintains technical blogs."
+            description="Committed to staying ahead of industry trends, regularly upskilling in AI/ML, cloud technologies, and modern frameworks. Actively contributes to open-source projects and technical communities."
             gradient="from-indigo-500/20 to-purple-500/20"
             borderColor="border-indigo-500/30"
             iconColor="text-indigo-400"

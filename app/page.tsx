@@ -117,20 +117,6 @@ export default function Home() {
             View Projects
           </Link>
         </Button>
-        <Button
-          asChild
-          variant="reverse"
-          className="min-w-[160px] px-8 py-3 text-base sm:text-lg font-heading"
-        >
-          <a
-            href="https://blog.sdad.pro"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline"
-          >
-            Read Blog
-          </a>
-        </Button>
       </motion.div>
 
       <motion.div

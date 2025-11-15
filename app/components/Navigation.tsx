@@ -11,8 +11,7 @@ import {
   Code, 
   GraduationCap, 
   Award, 
-  Mail, 
-  BookOpen 
+  Mail
 } from "lucide-react"
 import { NavBar } from "@/components/ui/tubelight-navbar"
 
@@ -25,7 +24,6 @@ const menuItems = [
   { href: "/education", label: "Education", icon: GraduationCap },
   { href: "/certifications", label: "Certifications", icon: Award },
   { href: "/contact", label: "Contact", icon: Mail },
-  { href: "https://blog.sdad.pro", label: "Blog", icon: BookOpen, external: true },
 ]
 
 const Navigation: React.FC = () => {
@@ -56,8 +54,8 @@ const Navigation: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-16">
-            <Link href="/" className="text-color-primary font-bold text-xl achiko-font">
+          <div className="flex items-center h-14 sm:h-16">
+            <Link href="/" className="text-color-primary font-bold text-lg sm:text-xl achiko-font">
               SDAD
             </Link>
           </div>

@@ -98,7 +98,7 @@ export const metadata: Metadata = {
   publisher: "Sai Dutta Abhishek Dash",
   metadataBase: new URL("https://sdad.pro"),
   alternates: {
-    canonical: "/",
+    canonical: "https://sdad.pro/",
   },
   openGraph: {
     type: "website",
@@ -149,6 +149,10 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
     shortcut: "/favicon.svg",
+  },
+  other: {
+    "theme-color": "#0a0f1f",
+    "format-detection": "telephone=no",
   },
 }
 
