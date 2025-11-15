@@ -30,13 +30,13 @@ export default function Education() {
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="container mx-auto px-4 py-20"
+        className="container mx-auto px-4 py-6 sm:py-8 lg:py-4 xl:py-6 flex flex-col lg:h-[calc(100vh-4rem)] lg:justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <motion.h1
-          className="achiko-font text-5xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+          className="achiko-font text-4xl sm:text-5xl font-bold mb-3 sm:mb-4 lg:mb-3 xl:mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
@@ -45,7 +45,7 @@ export default function Education() {
         </motion.h1>
         
         {/* Display Cards for Education */}
-        <div className="flex justify-center items-center min-h-[600px] pt-6 pb-12">
+        <div className="flex justify-center items-center flex-1 min-h-[400px] sm:min-h-[450px] lg:min-h-0 pt-2 sm:pt-4 lg:pt-2 pb-4 sm:pb-6 lg:pb-4">
           <DisplayCards
             cards={[...education].reverse().map((edu, index) => {
               const icons = [
