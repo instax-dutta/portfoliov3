@@ -152,7 +152,7 @@ export default function About() {
           <ObjectiveCard
             icon={<Target className="w-4 h-4" />}
               title="Problem Solving"
-            description="Creative solutions for complex challenges."
+            description="Expert in analyzing complex technical challenges and delivering innovative, scalable solutions. Proven track record of debugging critical issues and optimizing system performance across multiple projects."
             gradient="from-green-500/20 to-emerald-500/20"
             borderColor="border-green-500/30"
             iconColor="text-green-400"
@@ -162,7 +162,7 @@ export default function About() {
           <ObjectiveCard
             icon={<TrendingUp className="w-4 h-4" />}
               title="Continuous Learning"
-            description="Staying current with emerging technologies."
+            description="Committed to staying ahead of industry trends, regularly upskilling in AI/ML, cloud technologies, and modern frameworks. Actively contributes to open-source and maintains technical blogs."
             gradient="from-indigo-500/20 to-purple-500/20"
             borderColor="border-indigo-500/30"
             iconColor="text-indigo-400"
@@ -172,7 +172,7 @@ export default function About() {
           <ObjectiveCard
             icon={<Lightbulb className="w-4 h-4" />}
               title="Impactful Work"
-            description="Projects that drive positive change."
+            description="Delivered 20+ production-ready applications serving thousands of users. Specialized in building AI-powered solutions that automate workflows and enhance business efficiency."
             gradient="from-pink-500/20 to-rose-500/20"
             borderColor="border-pink-500/30"
             iconColor="text-pink-400"
@@ -182,7 +182,7 @@ export default function About() {
           <ObjectiveCard
             icon={<Globe className="w-4 h-4" />}
               title="Client-Focused"
-            description="Tailored solutions with transparent communication."
+            description="Experienced in remote collaboration with international clients. Strong communication skills with proven ability to translate technical concepts to stakeholders and deliver projects on time and within budget."
             gradient="from-teal-500/20 to-cyan-500/20"
             borderColor="border-teal-500/30"
             iconColor="text-teal-400"
@@ -227,7 +227,7 @@ function SkillBentoCard({
       </div>
       <div className="flex-1">
         <div className="flex flex-wrap gap-1.5">
-          {skills.slice(0, 6).map((skill, index) => (
+          {skills.map((skill, index) => (
             <span
               key={index}
               className={`px-2 py-0.5 rounded-md bg-gradient-to-br ${gradient} ${borderColor} border text-xs text-gray-300`}
@@ -236,9 +236,6 @@ function SkillBentoCard({
             </span>
           ))}
         </div>
-        {skills.length > 6 && (
-          <p className="text-xs text-gray-500 mt-2">+{skills.length - 6} more</p>
-        )}
       </div>
     </motion.div>
   )
@@ -272,8 +269,8 @@ function ObjectiveCard({
           <div className={iconColor}>{icon}</div>
         </div>
         <div className="flex-1">
-          <h3 className="text-sm sm:text-base font-bold text-white mb-1">{title}</h3>
-          <p className="text-xs sm:text-sm text-gray-400 leading-snug">{description}</p>
+          <h3 className="text-sm sm:text-base font-bold text-white mb-2">{title}</h3>
+          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{description}</p>
         </div>
       </div>
       </motion.div>
