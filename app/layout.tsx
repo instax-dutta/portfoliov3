@@ -140,6 +140,16 @@ export const metadata: Metadata = {
     // yandex: "your-yandex-verification-code",
   },
   category: "Portfolio",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+    ],
+    apple: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
+  },
 }
 
 const structuredData = {
