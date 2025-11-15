@@ -1,11 +1,11 @@
 "use client"
 
-import React, { useRef, useState } from 'react'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Github } from 'lucide-react'
+import { TechStack } from '@/components/ui/tech-stack'
 import { cn } from '@/lib/utils'
 
 interface Project {
@@ -21,74 +21,85 @@ interface ProjectCardProps {
   index: number
 }
 
+// Technology mapping with colors and URLs
+const techMap: Record<string, { url: string; color: string }> = {
+  'Next.js': { url: 'https://nextjs.org/', color: '#000000' },
+  'React': { url: 'https://react.dev/', color: '#61DAFB' },
+  'TypeScript': { url: 'https://www.typescriptlang.org/', color: '#3178C6' },
+  'JavaScript': { url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', color: '#F7DF1E' },
+  'Python': { url: 'https://www.python.org/', color: '#3776AB' },
+  'Tailwind CSS': { url: 'https://tailwindcss.com/', color: '#06B6D4' },
+  'Node.js': { url: 'https://nodejs.org/', color: '#339933' },
+  'Flask': { url: 'https://flask.palletsprojects.com/', color: '#000000' },
+  'TensorFlow': { url: 'https://www.tensorflow.org/', color: '#FF6F00' },
+  'AI': { url: 'https://www.openai.com/', color: '#10A37F' },
+  'Machine Learning': { url: 'https://scikit-learn.org/', color: '#F7931E' },
+  'API': { url: 'https://restfulapi.net/', color: '#00D9FF' },
+  'Mistral AI': { url: 'https://mistral.ai/', color: '#FF6B35' },
+  'Gemini API': { url: 'https://ai.google.dev/', color: '#4285F4' },
+  'Three.js': { url: 'https://threejs.org/', color: '#000000' },
+  'HTML': { url: 'https://developer.mozilla.org/en-US/docs/Web/HTML', color: '#E34F26' },
+  'CSS': { url: 'https://developer.mozilla.org/en-US/docs/Web/CSS', color: '#1572B6' },
+  'Vite': { url: 'https://vitejs.dev/', color: '#646CFF' },
+  'Redux': { url: 'https://redux.js.org/', color: '#764ABC' },
+  'NLP': { url: 'https://spacy.io/', color: '#09A3D5' },
+  'Computer Vision': { url: 'https://opencv.org/', color: '#5C3EE8' },
+  'Image Processing': { url: 'https://opencv.org/', color: '#5C3EE8' },
+  'BeautifulSoup': { url: 'https://www.crummy.com/software/BeautifulSoup/', color: '#FF6B6B' },
+  'Sentiment Analysis': { url: 'https://www.nltk.org/', color: '#4A90E2' },
+  'Document Processing': { url: 'https://python-docx.readthedocs.io/', color: '#3776AB' },
+  'ML': { url: 'https://scikit-learn.org/', color: '#F7931E' },
+  'RadixUI': { url: 'https://www.radix-ui.com/', color: '#161618' },
+  'shadcn/ui': { url: 'https://ui.shadcn.com/', color: '#000000' },
+  'particles.js': { url: 'https://github.com/VincentGarreau/particles.js', color: '#000000' },
+  'framer-motion': { url: 'https://www.framer.com/motion/', color: '#0055FF' },
+  'SQLite': { url: 'https://www.sqlite.org/', color: '#003B57' },
+  'SQLAlchemy': { url: 'https://www.sqlalchemy.org/', color: '#D71F00' },
+  'zxcvbn': { url: 'https://github.com/dropbox/zxcvbn', color: '#0061FF' },
+  'Tkinter': { url: 'https://docs.python.org/3/library/tkinter.html', color: '#3776AB' },
+  'Socket Programming': { url: 'https://docs.python.org/3/library/socket.html', color: '#3776AB' },
+  'IP tables': { url: 'https://www.netfilter.org/', color: '#000000' },
+  'DDoS protection techniques': { url: 'https://www.cloudflare.com/learning/ddos/', color: '#F38020' },
+  'AI Agent': { url: 'https://www.langchain.com/', color: '#10A37F' },
+  'API Integration': { url: 'https://restfulapi.net/', color: '#00D9FF' },
+  'Prompt Engineering': { url: 'https://www.promptingguide.ai/', color: '#10A37F' },
+  'edge-tts': { url: 'https://github.com/rany2/edge-tts', color: '#0078D4' },
+  'python-docx': { url: 'https://python-docx.readthedocs.io/', color: '#3776AB' },
+  'PyPDF2': { url: 'https://pypdf2.readthedocs.io/', color: '#3776AB' },
+  'openpyxl': { url: 'https://openpyxl.readthedocs.io/', color: '#3776AB' },
+  'IPinfo API': { url: 'https://ipinfo.io/', color: '#4A90E2' },
+}
+
+// Default fallback for unknown technologies
+const getTechInfo = (techName: string): { url: string; color: string } => {
+  return techMap[techName] || { url: '#', color: '#60a5fa' }
+}
+
 export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
-  const cardRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
-
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 })
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 })
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['7.5deg', '-7.5deg'])
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-7.5deg', '7.5deg'])
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return
-
-    const rect = cardRef.current.getBoundingClientRect()
-    const width = rect.width
-    const height = rect.height
-    const mouseX = e.clientX - rect.left
-    const mouseY = e.clientY - rect.top
-    const xPct = mouseX / width - 0.5
-    const yPct = mouseY / height - 0.5
-
-    x.set(xPct)
-    y.set(yPct)
-  }
-
-  const handleMouseLeave = () => {
-    x.set(0)
-    y.set(0)
-    setIsHovered(false)
-  }
-
   const isGithubLink = project.link.includes('github.com')
+
+  // Convert technologies to tech stack format
+  const techStack = project.technologies.map(tech => ({
+    name: tech,
+    ...getTechInfo(tech)
+  }))
 
   return (
     <motion.div
-      ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: 'preserve-3d',
-      }}
+      onMouseLeave={() => setIsHovered(false)}
       className="relative"
     >
       <Card className={cn(
         "h-full bg-color-background/50 backdrop-blur-md border border-color-primary/30",
-        "hover:border-color-primary/50 shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden",
-        "text-color-text"
+        "hover:border-color-primary/50 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden",
+        "text-color-text flex flex-col"
       )}>
-        <motion.div
-          className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10"
-        />
-
-        <motion.div
-          style={{
-            transform: 'translateZ(50px)',
-            transformStyle: 'preserve-3d',
-          }}
-          className="relative z-10"
-        >
+        <div className="relative z-10 flex flex-col flex-1">
           <CardHeader>
             <CardTitle className={cn(
               "text-2xl font-bold bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
@@ -100,24 +111,11 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
             </CardDescription>
           </CardHeader>
 
-          <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, idx) => (
-                <Badge
-                  key={idx}
-                  variant="secondary"
-                  className={cn(
-                    "bg-color-primary/20 text-color-primary border-color-primary/30",
-                    "hover:bg-color-primary/30 transition-colors"
-                  )}
-                >
-                  {tech}
-                </Badge>
-              ))}
-            </div>
+          <CardContent className="flex-1">
+            <TechStack techStack={techStack} />
           </CardContent>
 
-          <CardFooter className="flex gap-2">
+          <CardFooter className="flex gap-2 mt-auto">
             <Button
               asChild
               className={cn(
@@ -145,16 +143,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
               </Button>
             )}
           </CardFooter>
-        </motion.div>
-
-        <motion.div
-          className="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
-          animate={{
-            scale: isHovered ? 1.5 : 1,
-            opacity: isHovered ? 0.6 : 0.3,
-          }}
-          transition={{ duration: 0.3 }}
-        />
+        </div>
       </Card>
     </motion.div>
   )
