@@ -1,8 +1,8 @@
 "use client"
 import { motion } from "framer-motion"
-import Link from "next/link"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
+import { AnimatedProjectCard } from "@/components/ui/animated-project-card"
 
 const projects = [
   {
@@ -169,46 +169,43 @@ export default function Projects() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1
-          className="achiko-font text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 tracking-wide"
-          initial={{ y: -50 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5 }}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          My Projects
-        </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.h1
+            className="achiko-font text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 tracking-wide"
+            initial={{ y: -50 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            My Projects
+          </motion.h1>
+          <p className="text-lg text-color-text-muted max-w-2xl mx-auto">
+            Explore my latest work showcasing innovative solutions and creative implementations
+          </p>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
           {projects.map((project, index) => (
-            <motion.div
+            <AnimatedProjectCard
               key={index}
-              className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <h2 className="font-orbitron text-lg font-bold mb-2 text-color-primary tracking-wide">{project.title}</h2>
-              <p className="font-archivo mb-3 text-color-text-muted text-sm leading-relaxed">{project.description}</p>
-              <div className="mb-3">
-                {project.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="font-inconsolata inline-block bg-color-secondary/20 text-color-secondary rounded-full px-2 py-1 text-xs font-semibold mr-2 mb-2 tracking-wider"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <Link
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-space-mono text-color-primary hover:text-color-secondary transition-colors duration-300 text-sm font-semibold tracking-wider uppercase"
-              >
-                View Project
-              </Link>
-            </motion.div>
+              project={project}
+              index={index}
+            />
           ))}
         </div>
+        <motion.div
+          className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+        </motion.div>
       </motion.main>
     </div>
   )

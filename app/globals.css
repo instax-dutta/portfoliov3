@@ -142,6 +142,10 @@
   .section {
     @apply py-12 sm:py-16 lg:py-20;
   }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
 }
 
 .cursor {
