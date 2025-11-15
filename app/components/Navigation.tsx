@@ -64,7 +64,7 @@ const Navigation: React.FC = () => {
         </div>
       </nav>
 
-      {/* Tubelight Navbar */}
+      {/* Tubelight Navbar - positioned to the right to avoid logo overlap */}
       <NavBar items={navItems} />
     </>
   )
