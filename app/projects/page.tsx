@@ -195,7 +195,7 @@ export default function Projects() {
               index={index}
             />
           ))}
-        </div>
+        </section>
         <motion.div
           className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 will-change-opacity"
           initial={{ opacity: 0 }}

@@ -102,6 +102,7 @@ export default function Home() {
       <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-4 sm:mt-6">
         <Button
           asChild
+          variant="reverse"
           className="min-w-[160px] px-8 py-3 text-base sm:text-lg font-heading"
         >
           <Link href="/contact" className="no-underline">
