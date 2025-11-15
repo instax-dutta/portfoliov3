@@ -36,7 +36,7 @@ export default function Education() {
         transition={{ duration: 0.5 }}
       >
         <motion.h1
-          className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+          className="text-5xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
@@ -45,7 +45,7 @@ export default function Education() {
         </motion.h1>
         
         {/* Display Cards for Education */}
-        <div className="flex justify-center items-center min-h-[600px] py-12">
+        <div className="flex justify-center items-center min-h-[600px] pt-6 pb-12">
           <DisplayCards
             cards={[...education].reverse().map((edu, index) => {
               const icons = [
