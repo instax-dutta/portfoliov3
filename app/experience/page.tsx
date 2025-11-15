@@ -7,6 +7,18 @@ import { Timeline } from "@/components/ui/timeline"
 
 const experiences = [
   {
+    title: "Freelance Full Stack Developer",
+    company: "Self-Employed",
+    date: "September 2025 – Present",
+    type: "Freelance",
+    location: "Remote",
+    description: "Providing full-stack development services to clients, building scalable web applications, and delivering end-to-end solutions from frontend to backend.",
+    skills: ["Full Stack Development", "Web Applications", "Client Services", "Project Management", "React", "Node.js", "Database Design"],
+    achievements: ["Delivering custom web solutions", "Working with diverse client projects", "Building scalable applications"],
+    icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" />,
+    color: "from-indigo-400 to-purple-500"
+  },
+  {
     title: "Associate",
     company: "Tech Mahindra",
     date: "June 2025 – September 2025",
