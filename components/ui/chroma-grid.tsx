@@ -136,7 +136,7 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
                         ) : null}
                     </div>
                     <footer className="chroma-info">
-                        <h3 className="name font-bold text-lg">{c.title}</h3>
+                        <h3 className="name font-bold text-lg leading-snug">{c.title}</h3>
                         {c.handle && <span className="handle text-sm">{c.handle}</span>}
                         <p className="role text-sm">{c.subtitle}</p>
                         {c.location && <span className="location text-xs">{c.location}</span>}
