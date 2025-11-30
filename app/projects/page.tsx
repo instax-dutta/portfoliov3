@@ -6,30 +6,12 @@ import { AnimatedProjectCard } from "@/components/ui/animated-project-card"
 import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 
 const projects = [
-  // Featured & Full Stack Applications
-  {
-    title: "Sensory",
-    description: "Modern web application built with cutting-edge technologies featuring scalable cloud storage, efficient database management, and advanced rate limiting for optimal performance and security.",
-    technologies: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
-    link: "https://mirror.sdad.pro",
-  },
+  // Featured: AI-Powered Full Stack Solutions
   {
     title: "GenieLabs",
     description: "AI-powered development platform that elevates your workflow with intelligent tools for code generation, analysis, and optimization. Built for developers, by developers.",
     technologies: ["AI Agent", "API Integration", "Next.js 14", "React 18", "Tailwind CSS 3", "TypeScript 5"],
     link: "https://genielabs.sdad.pro",
-  },
-  {
-    title: "Ultimate-Firewall",
-    description: "Enterprise-grade firewall solution with comprehensive IP table rules and DDoS protection techniques, demonstrating advanced DevOps and security expertise.",
-    technologies: ["IP tables v1.8", "DDoS protection techniques"],
-    link: "https://github.com/instax-dutta/Ultimate-Firewall",
-  },
-  {
-    title: "BizForge",
-    description: "A comprehensive suite of powerful business tools designed to supercharge your online presence, automate workflows, and drive business growth with modern web technologies.",
-    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
-    link: "https://bizzforge.sdad.pro",
   },
   {
     title: "12Labs",
@@ -38,33 +20,11 @@ const projects = [
     link: "https://12labs.xyz",
   },
   {
-    title: "CV Extractor",
-    description: "Intelligent document processing system that automatically extracts and analyzes crucial information from resumes using ML-powered text extraction. Ideal for HR and recruitment workflows.",
-    technologies: ["Flask 2", "Python 3.10", "python-docx", "PyPDF2", "openpyxl", "Document Processing", "ML"],
-    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
+    title: "Sensory",
+    description: "Modern web application built with cutting-edge technologies featuring scalable cloud storage, efficient database management, and advanced rate limiting for optimal performance and security.",
+    technologies: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
+    link: "https://mirror.sdad.pro",
   },
-
-  // Security & Systems Engineering
-  {
-    title: "SecPassGen",
-    description: "Enterprise-grade secure password generator with strength analysis, built using industry-standard security practices and cryptographic libraries.",
-    technologies: ["Flask 2", "zxcvbn", "SQLite 3", "Python 3.9"],
-    link: "https://github.com/instax-dutta/Secure-Password-Generator-Webapp",
-  },
-  {
-    title: "CL-Chat",
-    description: "Multi-client command-line chat application built with socket programming, showcasing networking expertise and real-time communication implementation.",
-    technologies: ["Python 3.8", "Socket Programming"],
-    link: "https://github.com/instax-dutta/CL-Chat",
-  },
-  {
-    title: "Bandwidth Patrol",
-    description: "System monitoring tool that tracks and visualizes bandwidth usage in real-time, providing insights for network management and optimization.",
-    technologies: ["Flask 2", "HTML5", "Python 3.9"],
-    link: "https://github.com/instax-dutta/Bandwith-Usage-Dashboard",
-  },
-
-  // AI & Machine Learning Tools
   {
     title: "WordAI",
     description: "Advanced AI content generation platform that produces high-quality, SEO-optimized content in seconds. Production-ready solution serving users with zero sign-up friction.",
@@ -84,19 +44,71 @@ const projects = [
     link: "https://oneshotai.sdad.pro",
   },
   {
-    title: "Product Review Sentiment Analyser",
-    description: "Machine learning-powered business intelligence tool that analyzes product reviews using advanced sentiment analysis and NLP to provide actionable insights for businesses.",
-    technologies: ["Flask 2", "BeautifulSoup 4", "Python 3.9", "Machine Learning", "NLP", "Sentiment Analysis"],
-    link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
-  },
-  {
     title: "AI Powered Vedic MatchMaker",
     description: "Intelligent matchmaking platform leveraging advanced AI and Vedic astrology principles to provide comprehensive compatibility analysis and relationship insights.",
     technologies: ["Next.js 13", "AI", "TensorFlow.js", "Mistral AI", "API", "React 18"],
     link: "https://aim.numbervibes.in",
   },
+  {
+    title: "AI Tarot Card Reader",
+    description: "Advanced AI-powered application that provides personalized insights using state-of-the-art machine learning and natural language processing technologies.",
+    technologies: ["Next.js 13", "AI", "TensorFlow.js", "API", "React 18", "TypeScript 5"],
+    link: "https://ait.numbervibes.in",
+  },
 
-  // Web Development & Utilities
+  // Machine Learning & Data Engineering
+  {
+    title: "CV Extractor",
+    description: "Intelligent document processing system that automatically extracts and analyzes crucial information from resumes using ML-powered text extraction. Ideal for HR and recruitment workflows.",
+    technologies: ["Flask 2", "Python 3.10", "python-docx", "PyPDF2", "openpyxl", "Document Processing", "ML"],
+    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
+  },
+  {
+    title: "Product Review Sentiment Analyser",
+    description: "Machine learning-powered business intelligence tool that analyzes product reviews using advanced sentiment analysis and NLP to provide actionable insights for businesses.",
+    technologies: ["Flask 2", "BeautifulSoup 4", "Python 3.9", "Machine Learning", "NLP", "Sentiment Analysis"],
+    link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
+  },
+
+  // Enterprise, DevOps & Security
+  {
+    title: "Ultimate-Firewall",
+    description: "Enterprise-grade firewall solution with comprehensive IP table rules and DDoS protection techniques, demonstrating advanced DevOps and security expertise.",
+    technologies: ["IP tables v1.8", "DDoS protection techniques"],
+    link: "https://github.com/instax-dutta/Ultimate-Firewall",
+  },
+  {
+    title: "BizForge",
+    description: "A comprehensive suite of powerful business tools designed to supercharge your online presence, automate workflows, and drive business growth with modern web technologies.",
+    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
+    link: "https://bizzforge.sdad.pro",
+  },
+  {
+    title: "SecPassGen",
+    description: "Enterprise-grade secure password generator with strength analysis, built using industry-standard security practices and cryptographic libraries.",
+    technologies: ["Flask 2", "zxcvbn", "SQLite 3", "Python 3.9"],
+    link: "https://github.com/instax-dutta/Secure-Password-Generator-Webapp",
+  },
+  {
+    title: "Bandwidth Patrol",
+    description: "System monitoring tool that tracks and visualizes bandwidth usage in real-time, providing insights for network management and optimization.",
+    technologies: ["Flask 2", "HTML5", "Python 3.9"],
+    link: "https://github.com/instax-dutta/Bandwith-Usage-Dashboard",
+  },
+  {
+    title: "CL-Chat",
+    description: "Multi-client command-line chat application built with socket programming, showcasing networking expertise and real-time communication implementation.",
+    technologies: ["Python 3.8", "Socket Programming"],
+    link: "https://github.com/instax-dutta/CL-Chat",
+  },
+  {
+    title: "IpRecon",
+    description: "Network reconnaissance tool that fetches and analyzes IP address data using external APIs, demonstrating API integration and data analysis skills.",
+    technologies: ["Tkinter", "IPinfo API", "Python 3.9"],
+    link: "https://github.com/instax-dutta/IPRecon",
+  },
+
+  // Web Development & Creative
   {
     title: "My Developer Portfolio",
     description: "Professional portfolio website showcasing modern web development practices, responsive design, and seamless user experience built with cutting-edge technologies.",
@@ -128,14 +140,6 @@ const projects = [
     link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
   },
   {
-    title: "IpRecon",
-    description: "Network reconnaissance tool that fetches and analyzes IP address data using external APIs, demonstrating API integration and data analysis skills.",
-    technologies: ["Tkinter", "IPinfo API", "Python 3.9"],
-    link: "https://github.com/instax-dutta/IPRecon",
-  },
-
-  // Creative & Design
-  {
     title: "A 3d Landing page for a discord Community",
     description: "Immersive 3D interactive landing page built with Three.js, demonstrating advanced frontend development skills and creative technical implementation.",
     technologies: ["Three.js r150", "Tailwind CSS 3", "shadcn/ui", "Next.js 13", "React 18"],
@@ -164,12 +168,6 @@ const projects = [
     description: "Professional web gallery for a 3D printing company, demonstrating ability to create clean, functional business websites with modern design principles.",
     technologies: ["HTML5", "CSS3", "JavaScript ES6+"],
     link: "https://www.race3d.store",
-  },
-  {
-    title: "AI Tarot Card Reader",
-    description: "Advanced AI-powered application that provides personalized insights using state-of-the-art machine learning and natural language processing technologies.",
-    technologies: ["Next.js 13", "AI", "TensorFlow.js", "API", "React 18", "TypeScript 5"],
-    link: "https://ait.numbervibes.in",
   },
 ]
 
