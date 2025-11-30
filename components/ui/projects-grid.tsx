@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useRef, useEffect, useState } from 'react'
-import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import { motion, useScroll, useTransform, useInView, type HTMLMotionProps } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface ProjectsGridProps {
@@ -22,8 +22,8 @@ const containerVariants = {
 }
 
 const itemVariants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 30,
     scale: 0.95,
   },
@@ -33,7 +33,7 @@ const itemVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: [0.25, 0.1, 0.25, 1] as const,
     },
   },
 }
@@ -137,7 +137,7 @@ export function ProjectsMasonryGrid({ children, className }: ProjectsGridProps) 
 }
 
 // Animated grid with hover effects and glow
-export function ProjectsAnimatedGrid({ children, className, ...props }: ProjectsGridProps & React.HTMLAttributes<HTMLDivElement>) {
+export function ProjectsAnimatedGrid({ children, className, ...props }: ProjectsGridProps & HTMLMotionProps<"section">) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
   const { scrollYProgress } = useScroll({
@@ -188,7 +188,7 @@ export function ProjectsAnimatedGrid({ children, className, ...props }: Projects
           <motion.div
             key={index}
             variants={itemVariants}
-            whileHover={{ 
+            whileHover={{
               y: -8,
               transition: { duration: 0.3 }
             }}
