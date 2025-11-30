@@ -3,8 +3,15 @@ import { motion } from "framer-motion"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
 import { AnimatedProjectCard } from "@/components/ui/animated-project-card"
+import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 
 const projects = [
+  {
+    title: "Mirror",
+    description: "Modern web application built with cutting-edge technologies featuring scalable cloud storage, efficient database management, and advanced rate limiting for optimal performance and security.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
+    link: "https://mirror.sdad.pro",
+  },
   {
     title: "AI Tarot Card Reader",
     description: "Advanced AI-powered tarot card reading application that provides personalized insights using machine learning and natural language processing.",
@@ -187,7 +194,7 @@ export default function Projects() {
             Explore my latest work showcasing innovative solutions and creative implementations
           </p>
         </motion.header>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" aria-label="Project portfolio">
+        <ProjectsAnimatedGrid aria-label="Project portfolio">
           {projects.map((project, index) => (
             <AnimatedProjectCard
               key={`${project.title}-${index}`}
@@ -195,7 +202,7 @@ export default function Projects() {
               index={index}
             />
           ))}
-        </section>
+        </ProjectsAnimatedGrid>
         <motion.div
           className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 will-change-opacity"
           initial={{ opacity: 0 }}
