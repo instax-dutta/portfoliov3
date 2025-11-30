@@ -192,7 +192,7 @@ export function ProjectsAnimatedGrid({ children, className, ...props }: Projects
               y: -8,
               transition: { duration: 0.3 }
             }}
-            className="w-full"
+            className="w-full h-full flex"
           >
             {child}
           </motion.div>

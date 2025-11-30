@@ -121,7 +121,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
     >
       <div
         className={cn(
-          "relative h-full bg-color-background/80 overflow-hidden rounded-xl shadow-lg border border-color-primary/30 backdrop-blur-xl",
+          "relative h-full min-h-[400px] sm:min-h-[450px] bg-color-background/80 overflow-hidden rounded-xl shadow-lg border border-color-primary/30 backdrop-blur-xl",
           "hover:border-color-primary/50 transition-all duration-300 flex flex-col",
           "will-change-transform"
         )}
@@ -167,7 +167,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
         {/* Content */}
         <article className="relative z-10 flex flex-col flex-1 p-5 sm:p-6">
           {/* Header */}
-          <header className="mb-5">
+          <header className="mb-5 flex-shrink-0">
             <h2 className={cn(
               "text-xl sm:text-2xl font-bold mb-3 leading-tight bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
             )}>
@@ -179,7 +179,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
           </header>
 
           {/* Tech Stack */}
-          <div className="flex-1 mb-5 min-h-0">
+          <div className="flex-1 mb-5 min-h-[120px] overflow-hidden">
             <TechStack techStack={techStack} />
           </div>
 
