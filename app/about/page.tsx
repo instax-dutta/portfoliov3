@@ -32,11 +32,11 @@ const itemVariants = {
 
 export default function About() {
   return (
-    <div className="text-gray-100 min-h-screen">
+    <div className="relative text-gray-100 min-h-screen">
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

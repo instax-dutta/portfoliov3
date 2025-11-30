@@ -48,11 +48,11 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <div className="text-gray-100 min-h-screen">
+    <div className="relative text-gray-100 min-h-screen">
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="container mx-auto px-4 py-20"
+        className="relative container mx-auto px-4 py-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

@@ -26,11 +26,11 @@ const education = [
 
 export default function Education() {
   return (
-    <div className="text-gray-100 min-h-screen">
+    <div className="relative text-gray-100 min-h-screen">
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="container mx-auto px-4 pt-20 sm:pt-24 lg:pt-20 pb-6 sm:pb-8 lg:pb-4 xl:pb-6 flex flex-col lg:h-[calc(100vh-5rem)] lg:justify-center"
+        className="relative container mx-auto px-4 pt-20 sm:pt-24 lg:pt-20 pb-6 sm:pb-8 lg:pb-4 xl:pb-6 flex flex-col lg:h-[calc(100vh-5rem)] lg:justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

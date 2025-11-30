@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import React, { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, Mail, MapPin, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -39,34 +38,82 @@ const itemVariants = {
   },
 }
 
+// Input sanitization function
+const sanitizeInput = (input: string): string => {
+  return input
+    .replace(/[<>]/g, '') // Remove potential HTML tags
+    .replace(/javascript:/gi, '') // Remove javascript: protocol
+    .replace(/on\w+=/gi, '') // Remove event handlers
+    .trim()
+}
+
 export default function Contact() {
   const [result, setResult] = useState("")
+  const formRef = React.useRef<HTMLFormElement>(null)
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setResult("Sending....")
-    const formData = new FormData(event.currentTarget)
+    const form = event.currentTarget || formRef.current
+    if (!form) {
+      setResult("Form error. Please refresh the page.")
+      return
+    }
+    const formData = new FormData(form)
 
-    formData.append("access_key", "19f3f5f2-bed7-452c-ae94-55018f2c7418")
+    // Sanitize form inputs
+    const name = sanitizeInput(formData.get("name") as string || "")
+    const email = sanitizeInput(formData.get("email") as string || "")
+    const message = sanitizeInput(formData.get("message") as string || "")
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    })
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      setResult("Please enter a valid email address")
+      return
+    }
 
-    const data = await response.json()
+    // Validate required fields
+    if (!name || !email || !message) {
+      setResult("Please fill in all required fields")
+      return
+    }
 
-    if (data.success) {
-      setResult("Message sent successfully!")
-      event.currentTarget.reset()
-    } else {
-      console.log("Error", data)
-      setResult(data.message)
+    // Create new FormData with sanitized values
+    const sanitizedFormData = new FormData()
+    sanitizedFormData.append("name", name)
+    sanitizedFormData.append("email", email)
+    sanitizedFormData.append("message", message)
+    sanitizedFormData.append("access_key", "19f3f5f2-bed7-452c-ae94-55018f2c7418")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: sanitizedFormData,
+        headers: {
+          'Accept': 'application/json',
+        },
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setResult("Message sent successfully!")
+        if (form) {
+          form.reset()
+        }
+      } else {
+        console.log("Error", data)
+        setResult(data.message || "Failed to send message. Please try again.")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setResult("An error occurred. Please try again later.")
     }
   }
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden">
+    <div className="relative min-h-screen flex flex-col overflow-hidden">
       <StarryBackground />
       <Navigation />
       <motion.main
@@ -174,7 +221,7 @@ export default function Contact() {
               className="bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-xl p-6 sm:p-8"
               variants={itemVariants}
             >
-              <form onSubmit={onSubmit} className="space-y-5">
+              <form ref={formRef} onSubmit={onSubmit} className="space-y-5">
                 <div className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-color-text mb-2">

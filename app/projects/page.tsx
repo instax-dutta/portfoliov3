@@ -172,11 +172,11 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="min-h-screen text-color-text">
+    <div className="relative min-h-screen text-color-text">
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -199,7 +199,7 @@ export default function Projects() {
             Explore my latest work showcasing innovative solutions and creative implementations
           </p>
         </motion.header>
-        <ProjectsAnimatedGrid aria-label="Project portfolio">
+        <ProjectsAnimatedGrid aria-label="Project portfolio" data-testid="projects-grid">
           {projects.map((project, index) => (
             <AnimatedProjectCard
               key={`${project.title}-${index}`}
@@ -208,6 +208,10 @@ export default function Projects() {
             />
           ))}
         </ProjectsAnimatedGrid>
+        {/* Debug: Ensure all projects are rendered */}
+        <div className="sr-only" aria-hidden="true">
+          Total projects: {projects.length}
+        </div>
         <motion.div
           className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 will-change-opacity"
           initial={{ opacity: 0 }}

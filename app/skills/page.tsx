@@ -88,12 +88,12 @@ const skills = [
 
 export default function Skills() {
   return (
-    <div className="text-gray-100 min-h-screen">
+    <div className="relative text-gray-100 min-h-screen">
       <StarryBackground />
       <Navigation />
       
       <motion.main
-        className="container mx-auto px-4 py-20"
+        className="relative container mx-auto px-4 py-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -150,7 +150,7 @@ function SkillCategory({ category, index }: { category: any; index: number }) {
         y,
         willChange: "transform, opacity"
       }}
-      className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
+      className="relative bg-color-background/50 backdrop-blur-md border border-color-primary rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}

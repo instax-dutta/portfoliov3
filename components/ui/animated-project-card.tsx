@@ -132,6 +132,10 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
           x.set(0)
           y.set(0)
         }}
+        onClick={(e) => {
+          // Prevent card click from navigating - only buttons should navigate
+          e.stopPropagation()
+        }}
       >
         {/* Background Image - Lazy loaded for performance */}
         <Image
