@@ -7,6 +7,8 @@ const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null)
   const mousePosition = useRef({ x: 0, y: 0 })
   const cursorPosition = useRef({ x: 0, y: 0 })
+  const rotation = useRef(0)
+  const isVisible = useRef(false)
   const rafId = useRef<number | null>(null)
 
   const lerp = (start: number, end: number, factor: number) => {
@@ -14,35 +16,78 @@ const CustomCursor: React.FC = () => {
   }
 
   useEffect(() => {
+    // Check if device supports hover (mouse)
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)")
+    if (!mediaQuery.matches) return
+
     const updateMousePosition = (e: MouseEvent) => {
       mousePosition.current = { x: e.clientX, y: e.clientY }
+      if (!isVisible.current) {
+        isVisible.current = true
+        if (cursorRef.current) cursorRef.current.style.opacity = "1"
+      }
+    }
+
+    const handleMouseLeave = () => {
+      isVisible.current = false
+      if (cursorRef.current) cursorRef.current.style.opacity = "0"
+    }
+
+    const handleMouseEnter = () => {
+      isVisible.current = true
+      if (cursorRef.current) cursorRef.current.style.opacity = "1"
     }
 
     const animateCursor = () => {
-      cursorPosition.current.x = lerp(cursorPosition.current.x, mousePosition.current.x, 0.15)
-      cursorPosition.current.y = lerp(cursorPosition.current.y, mousePosition.current.y, 0.15)
+      const targetX = mousePosition.current.x
+      const targetY = mousePosition.current.y
+
+      // Calculate rotation based on movement direction
+      const dx = targetX - cursorPosition.current.x
+      const dy = targetY - cursorPosition.current.y
+
+      // Only update rotation if moving significantly
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90 // +90 to align rocket tip
+        // Smooth rotation
+        const rotDiff = angle - rotation.current
+        // Handle wrapping around 360 degrees
+        let adjustedDiff = ((rotDiff + 180) % 360) - 180
+        rotation.current = lerp(rotation.current, rotation.current + adjustedDiff, 0.1)
+      }
+
+      cursorPosition.current.x = lerp(cursorPosition.current.x, targetX, 0.15)
+      cursorPosition.current.y = lerp(cursorPosition.current.y, targetY, 0.15)
 
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${cursorPosition.current.x}px, ${cursorPosition.current.y}px, 0) translate(-50%, -50%)`
+        cursorRef.current.style.transform = `translate3d(${cursorPosition.current.x}px, ${cursorPosition.current.y}px, 0) translate(-50%, -50%) rotate(${rotation.current}deg)`
       }
 
       rafId.current = requestAnimationFrame(animateCursor)
     }
 
     window.addEventListener("mousemove", updateMousePosition)
+    document.addEventListener("mouseleave", handleMouseLeave)
+    document.addEventListener("mouseenter", handleMouseEnter)
     rafId.current = requestAnimationFrame(animateCursor)
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition)
+      document.removeEventListener("mouseleave", handleMouseLeave)
+      document.removeEventListener("mouseenter", handleMouseEnter)
       if (rafId.current) {
         cancelAnimationFrame(rafId.current)
       }
     }
-  }, []) // Removed lerp from the dependency array
+  }, [])
 
   return (
-    <div ref={cursorRef} className="cursor">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+    <div
+      ref={cursorRef}
+      className="cursor fixed pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 will-change-transform"
+      style={{ left: 0, top: 0 }} // Ensure it starts at top-left so translate works correctly
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]">
         <path d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
         <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z" />
       </svg>
