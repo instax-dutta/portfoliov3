@@ -160,6 +160,9 @@ export function ProjectsAnimatedGrid({ children, className, ...props }: Projects
       {/* Animated background gradient */}
       <motion.div
         className="absolute inset-0 -z-10 opacity-20"
+        initial={{
+          background: "radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)",
+        }}
         animate={{
           background: [
             "radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)",
