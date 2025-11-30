@@ -115,11 +115,12 @@
   }
 
   .glow {
-    @apply shadow-[0_0_15px_rgba(96, 165, 250, 0.5)] transition-shadow duration-300;
+    @apply transition-shadow duration-300;
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
   }
 
   .glow:hover {
-    @apply shadow-[0_0_30px_rgba(96, 165, 250, 0.8)];
+    box-shadow: 0 0 30px rgba(96, 165, 250, 0.8);
   }
 
   .space-button {
@@ -128,7 +129,8 @@
   }
 
   .space-button:hover {
-    @apply bg-opacity-40 shadow-[0_0_15px_rgba(96, 165, 250, 0.5)];
+    @apply bg-opacity-40;
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
   }
 
   .space-card {
