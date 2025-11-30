@@ -117,7 +117,7 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
             {data.map((c, i) => (
                 <article
                     key={i}
-                    className="chroma-card"
+                    className="chroma-card group"
                     onMouseMove={handleCardMove}
                     onClick={() => handleCardClick(c.url)}
                     style={{
@@ -130,13 +130,18 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
                         {c.image ? (
                             <img src={c.image} alt={c.title} loading="lazy" />
                         ) : c.icon ? (
-                            <div className="w-full h-full flex items-center justify-center text-white/80">
+                            <div className="w-full h-full flex items-center justify-center text-white/80 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-50">
                                 {c.icon}
                             </div>
                         ) : null}
                     </div>
                     <footer className="chroma-info">
-                        <h3 className="name font-bold text-lg leading-snug">{c.title}</h3>
+                        <div className="absolute bottom-full left-0 w-full px-4 pb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 pointer-events-none transform translate-y-2 group-hover:translate-y-0">
+                            <div className="bg-black/90 backdrop-blur-md p-3 rounded-lg border border-white/10 shadow-xl">
+                                <p className="font-medium text-white text-sm leading-relaxed">{c.title}</p>
+                            </div>
+                        </div>
+                        <h3 className="name font-bold text-lg leading-snug truncate">{c.title}</h3>
                         {c.handle && <span className="handle text-sm">{c.handle}</span>}
                         <p className="role text-sm">{c.subtitle}</p>
                         {c.location && <span className="location text-xs">{c.location}</span>}
