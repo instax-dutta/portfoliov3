@@ -146,14 +146,13 @@ export function ProjectsAnimatedGrid({ children, className, ...props }: Projects
   })
 
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95])
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.3])
 
   const childrenArray = React.Children.toArray(children)
 
   return (
     <motion.section
       ref={containerRef}
-      style={{ scale, opacity }}
+      style={{ scale }}
       className={cn("relative", className)}
       {...props}
     >
