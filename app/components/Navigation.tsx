@@ -113,12 +113,21 @@ const Navigation: React.FC = () => {
               onClick={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
-                setIsMobileMenuOpen((prev) => !prev)
+                e.nativeEvent.stopImmediatePropagation()
+                setIsMobileMenuOpen((prev) => {
+                  console.log('Menu toggle clicked, new state:', !prev)
+                  return !prev
+                })
               }}
-              className="md:hidden p-2 rounded-lg text-color-text hover:bg-color-primary/20 transition-colors z-50 relative cursor-pointer"
+              onMouseDown={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+              }}
+              className="md:hidden p-2 rounded-lg text-color-text hover:bg-color-primary/20 transition-colors z-[100] relative cursor-pointer"
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
-              style={{ pointerEvents: 'auto' }}
+              data-testid="mobile-menu-button"
+              style={{ pointerEvents: 'auto', position: 'relative', zIndex: 100 }}
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6 pointer-events-none" />
