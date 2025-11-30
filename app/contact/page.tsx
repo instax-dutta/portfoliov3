@@ -109,6 +109,7 @@ export default function Contact() {
     } catch (error) {
       console.error("Form submission error:", error)
       setResult("An error occurred. Please try again later.")
+      // Don't reset form on error so user can retry
     }
   }
 

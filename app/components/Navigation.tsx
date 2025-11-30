@@ -18,6 +18,7 @@ import {
   X
 } from "lucide-react"
 import { NavBar } from "@/components/ui/tubelight-navbar"
+import { cn } from "@/lib/utils"
 
 const menuItems = [
   { href: "/", label: "Home", icon: Home },
@@ -96,13 +97,13 @@ const Navigation: React.FC = () => {
     <>
       {/* Logo at top left */}
       <nav
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled ? "bg-color-background/80 backdrop-blur-md" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14 sm:h-16">
-            <Link href="/" className="text-color-primary font-bold text-lg sm:text-xl achiko-font">
+          <div className="flex items-center justify-between h-14 sm:h-16 relative">
+            <Link href="/" className="text-color-primary font-bold text-lg sm:text-xl achiko-font z-10">
               SDAD
             </Link>
             
@@ -110,17 +111,19 @@ const Navigation: React.FC = () => {
             <button
               type="button"
               onClick={(e) => {
+                e.preventDefault()
                 e.stopPropagation()
-                setIsMobileMenuOpen(!isMobileMenuOpen)
+                setIsMobileMenuOpen((prev) => !prev)
               }}
-              className="md:hidden p-2 rounded-lg text-color-text hover:bg-color-primary/20 transition-colors z-50 relative"
+              className="md:hidden p-2 rounded-lg text-color-text hover:bg-color-primary/20 transition-colors z-50 relative cursor-pointer"
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
+              style={{ pointerEvents: 'auto' }}
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6 pointer-events-none" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-6 h-6 pointer-events-none" />
               )}
             </button>
           </div>
@@ -147,26 +150,30 @@ const Navigation: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="fixed top-14 sm:top-16 left-0 right-0 z-50 bg-color-background/95 backdrop-blur-md border-b border-color-primary/30 md:hidden"
+              className="fixed top-14 sm:top-16 left-0 right-0 z-[60] bg-color-background/95 backdrop-blur-md border-b border-color-primary/30 md:hidden shadow-lg"
               onClick={(e) => e.stopPropagation()}
             >
-            <div className="px-4 py-4 space-y-2">
-              {menuItems.map((item) => {
-                const Icon = item.icon
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-color-text hover:bg-color-primary/20 hover:text-color-primary transition-colors"
-                  >
-                    <Icon className="w-5 h-5" />
-                    <span className="font-medium">{item.label}</span>
-                  </Link>
-                )
-              })}
-            </div>
-          </motion.div>
+              <div className="px-4 py-4 space-y-2">
+                {menuItems.map((item) => {
+                  const Icon = item.icon
+                  const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={cn(
+                        "flex items-center gap-3 px-4 py-3 rounded-lg text-color-text hover:bg-color-primary/20 hover:text-color-primary transition-colors",
+                        isActive && "bg-color-primary/10 text-color-primary"
+                      )}
+                    >
+                      <Icon className="w-5 h-5" />
+                      <span className="font-medium">{item.label}</span>
+                    </Link>
+                  )
+                })}
+              </div>
+            </motion.div>
           </>
         )}
       </AnimatePresence>

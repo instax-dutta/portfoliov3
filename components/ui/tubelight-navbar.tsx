@@ -67,7 +67,7 @@ export function NavBar({ items, className }: NavBarProps) {
               {isActive && (
                 <motion.div
                   layoutId="lamp"
-                  className="absolute inset-0 w-full bg-color-primary/10 rounded-full -z-10"
+                  className="absolute inset-0 w-full bg-color-primary/20 rounded-full -z-10"
                   initial={false}
                   transition={{
                     type: "spring",
@@ -75,10 +75,10 @@ export function NavBar({ items, className }: NavBarProps) {
                     damping: 30,
                   }}
                 >
-                  <div className="absolute -top-1.5 sm:-top-2 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-0.5 sm:h-1 bg-color-primary rounded-t-full">
-                    <div className="absolute w-8 sm:w-12 h-4 sm:h-6 bg-color-primary/30 rounded-full blur-md -top-1.5 sm:-top-2 -left-1.5 sm:-left-2" />
-                    <div className="absolute w-6 sm:w-8 h-4 sm:h-6 bg-color-primary/30 rounded-full blur-md -top-0.5 sm:-top-1" />
-                    <div className="absolute w-3 sm:w-4 h-3 sm:h-4 bg-color-primary/30 rounded-full blur-sm top-0 left-1.5 sm:left-2" />
+                  <div className="absolute -top-1.5 sm:-top-2 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-0.5 sm:h-1 bg-color-primary rounded-t-full shadow-lg shadow-color-primary/50">
+                    <div className="absolute w-8 sm:w-12 h-4 sm:h-6 bg-color-primary/40 rounded-full blur-md -top-1.5 sm:-top-2 -left-1.5 sm:-left-2" />
+                    <div className="absolute w-6 sm:w-8 h-4 sm:h-6 bg-color-primary/40 rounded-full blur-md -top-0.5 sm:-top-1" />
+                    <div className="absolute w-3 sm:w-4 h-3 sm:h-4 bg-color-primary/40 rounded-full blur-sm top-0 left-1.5 sm:left-2" />
                   </div>
                 </motion.div>
               )}
