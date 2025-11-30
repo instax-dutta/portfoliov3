@@ -8,80 +8,30 @@ import StarryBackground from "../components/StarryBackground"
 const skills = [
   {
     category: "Programming",
-    icon: <Code className="w-8 h-8" />,
+    icon: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
     items: [
-      { name: "HTML", level: 95 },
-      { name: "Python", level: 95 },
-      { name: "CSS", level: 90 },
-      { name: "SQL", level: 90 },
-      { name: "JavaScript", level: 85 },
-      { name: "Java", level: 50 },
-      { name: "C++", level: 40 },
-      { name: "R", level: 20 },
-      { name: "Rust", level: 15 },
-      { name: "Go", level: 10 },
-      { name: "TypeScript", level: 70 },
-      { name: "React", level: 50 },
-      { name: "Next.js", level: 70 },
-      { name: "Tailwind CSS", level: 65 },
-      { name: "Node.js", level: 60 },
+      "HTML", "Python", "CSS", "SQL", "JavaScript", "Java", "C++", "R", "Rust", "Go", "TypeScript", "React", "Next.js", "Tailwind CSS", "Node.js"
     ],
   },
   {
     category: "AI/ML",
-    icon: <Brain className="w-8 h-8" />,
+    icon: <Brain className="w-6 h-6 sm:w-8 sm:h-8" />,
     items: [
-      { name: "TensorFlow", level: 80 },
-      { name: "PyTorch", level: 75 },
-      { name: "scikit-learn", level: 85 },
-      { name: "NumPy", level: 90 },
-      { name: "Pandas", level: 90 },
-      { name: "Keras", level: 80 },
-      { name: "XGBoost", level: 75 },
-      { name: "OpenCV", level: 70 },
-      { name: "Matplotlib", level: 85 },
-      { name: "Seaborn", level: 80 },
-      { name: "Plotly", level: 75 },
-      { name: "LmStudio", level: 75 },
-      { name: "Ollama", level: 80 },
-      { name: "Hugging Face", level: 80 },
-      { name: "Google Vertex", level: 80 },
+      "TensorFlow", "PyTorch", "scikit-learn", "NumPy", "Pandas", "Keras", "XGBoost", "OpenCV", "Matplotlib", "Seaborn", "Plotly", "LmStudio", "Ollama", "Hugging Face", "Google Vertex"
     ],
   },
   {
     category: "DevOps",
-    icon: <Server className="w-8 h-8" />,
+    icon: <Server className="w-6 h-6 sm:w-8 sm:h-8" />,
     items: [
-      { name: "AWS", level: 80 },
-      { name: "Docker", level: 85 },
-      { name: "Git", level: 90 },
-      { name: "CI/CD", level: 85 },
-      { name: "Bash scripting", level: 80 },
-      { name: "Linux server administration", level: 75 },
-      { name: "Netlify", level: 85 },
-      { name: "Vercel", level: 85 },
-      { name: "GitHub Actions", level: 80 },
-      { name: "Jenkins", level: 50 },
-      { name: "Kubernetes", level: 20 },
-      { name: "Bash", level: 90 },
+      "AWS", "Docker", "Git", "CI/CD", "Bash scripting", "Linux server administration", "Netlify", "Vercel", "GitHub Actions", "Jenkins", "Kubernetes", "Bash"
     ],
   },
   {
     category: "Soft Skills",
-    icon: <Zap className="w-8 h-8" />,
+    icon: <Zap className="w-6 h-6 sm:w-8 sm:h-8" />,
     items: [
-      { name: "Problem Solving", level: 95 },
-      { name: "Communication", level: 90 },
-      { name: "Adaptability", level: 95 },
-      { name: "Collaboration", level: 90 },
-      { name: "Leadership", level: 80 },
-      { name: "Time Management", level: 90 },
-      { name: "Critical Thinking", level: 95 },
-      { name: "Creativity", level: 90 },
-      { name: "Empathy", level: 85 },
-      { name: "Conflict Resolution", level: 85 },
-      { name: "Decision Making", level: 90 },
-      { name: "Teamwork", level: 90 },
+      "Problem Solving", "Communication", "Adaptability", "Collaboration", "Leadership", "Time Management", "Critical Thinking", "Creativity", "Empathy", "Conflict Resolution", "Decision Making", "Teamwork"
     ],
   },
 ]
@@ -91,22 +41,38 @@ export default function Skills() {
     <div className="relative text-gray-100 min-h-screen">
       <StarryBackground />
       <Navigation />
-      
+
       <motion.main
-        className="relative container mx-auto px-4 py-20"
+        className="relative container mx-auto px-4 py-20 sm:py-24"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.h1
-          className="achiko-font text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400"
-          initial={{ y: -50 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5 }}
+        <motion.header
+          className="text-center mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          My Skills & Expertise
-        </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.h1
+            className="achiko-font text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 tracking-wide"
+            initial={{ y: -30 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            My Skills & Expertise
+          </motion.h1>
+          <motion.p
+            className="text-color-text-muted text-lg max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            A comprehensive overview of my technical abilities and professional competencies
+          </motion.p>
+        </motion.header>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {skills.map((skillCategory, index) => (
             <SkillCategory key={index} category={skillCategory} index={index} />
           ))}
@@ -118,93 +84,63 @@ export default function Skills() {
 
 function SkillCategory({ category, index }: { category: any; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 0.8", "end 0.2"]
-  });
 
-  // Use spring for smoother animations
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    mass: 0.5
-  });
-
-  // Reduced transform ranges for smoother performance
-  const scale = useTransform(smoothProgress, [0, 0.5, 1], [0.95, 1, 0.95], {
-    clamp: false
-  });
-  const opacity = useTransform(smoothProgress, [0, 0.2, 0.8, 1], [0.4, 1, 1, 0.4], {
-    clamp: false
-  });
-  const y = useTransform(smoothProgress, [0, 1], [20, -20], {
-    clamp: false
-  });
-
+  // Simplified animation logic for better performance
   return (
     <motion.div
       ref={ref}
-      style={{
-        scale,
-        opacity,
-        y,
-        willChange: "transform, opacity"
-      }}
-      className="relative bg-color-background/50 backdrop-blur-md border border-color-primary rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
+      className="relative bg-color-background/40 backdrop-blur-md border border-color-primary/30 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ 
-        duration: 0.5, 
+      transition={{
+        duration: 0.5,
         delay: index * 0.1,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: "easeOut"
       }}
     >
-      <div className="flex items-center mb-4">
-        <div className="text-blue-400">{category.icon}</div>
-        <h2 className="text-xl font-semibold ml-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-          {category.category}
-        </h2>
-      </div>
-      <div className="space-y-3">
-        {category.items.map((skill: any, skillIndex: number) => (
-          <SkillBar key={skillIndex} skill={skill} delay={skillIndex * 0.05} />
-        ))}
+      {/* Glow effect on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      <div className="relative z-10">
+        <div className="flex items-center mb-6 border-b border-color-primary/20 pb-4">
+          <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400 group-hover:text-blue-300 transition-colors">
+            {category.icon}
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold ml-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+            {category.category}
+          </h2>
+        </div>
+
+        <div className="flex flex-wrap gap-2 sm:gap-3">
+          {category.items.map((skill: string, skillIndex: number) => (
+            <SkillBadge key={skillIndex} skill={skill} index={skillIndex} />
+          ))}
+        </div>
       </div>
     </motion.div>
   )
 }
 
-function SkillBar({ skill, delay }: { skill: any; delay: number }) {
+function SkillBadge({ skill, index }: { skill: string; index: number }) {
   return (
     <motion.div
-      className="space-y-2"
-      initial={{ opacity: 0, x: -10 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ 
-        duration: 0.4, 
-        delay,
-        ease: [0.25, 0.1, 0.25, 1]
+      transition={{
+        duration: 0.3,
+        delay: index * 0.03, // Faster stagger for snappier feel
+        ease: "backOut"
       }}
+      whileHover={{
+        scale: 1.05,
+        y: -2,
+        transition: { duration: 0.2 }
+      }}
+      className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-color-background/60 border border-color-primary/20 text-sm sm:text-base font-medium text-color-text-muted hover:text-color-primary hover:border-color-primary/50 hover:bg-color-primary/10 transition-colors cursor-default select-none shadow-sm"
     >
-      <div className="flex justify-between">
-        <span className="text-sm font-medium text-gray-300">{skill.name}</span>
-        <span className="text-sm font-medium text-gray-400">{skill.level}%</span>
-      </div>
-      <div className="w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
-        <motion.div
-          className="bg-gradient-to-r from-blue-500 to-purple-600 h-2.5 rounded-full"
-          initial={{ width: 0 }}
-          whileInView={{ width: `${skill.level}%` }}
-          viewport={{ once: true }}
-          transition={{ 
-            duration: 0.8, 
-            delay: delay + 0.2,
-            ease: [0.25, 0.1, 0.25, 1]
-          }}
-        />
-      </div>
+      {skill}
     </motion.div>
   )
 }

@@ -1,7 +1,9 @@
 "use client"
 import { motion } from "framer-motion"
+import { Award } from "lucide-react"
 import Navigation from "../components/Navigation"
 import StarryBackground from "../components/StarryBackground"
+import ChromaGrid from "@/components/ui/chroma-grid"
 
 const certifications = [
   {
@@ -47,40 +49,54 @@ const certifications = [
 ]
 
 export default function Certifications() {
+  const certificationItems = certifications.map((cert, index) => {
+    const colors = [
+      { border: "#3B82F6", gradient: "linear-gradient(145deg, #3B82F6, #000)" },
+      { border: "#A855F7", gradient: "linear-gradient(145deg, #A855F7, #000)" },
+      { border: "#06B6D4", gradient: "linear-gradient(145deg, #06B6D4, #000)" },
+      { border: "#F59E0B", gradient: "linear-gradient(145deg, #F59E0B, #000)" },
+    ];
+    const color = colors[index % colors.length];
+
+    return {
+      title: cert.title,
+      subtitle: cert.issuer,
+      handle: cert.year,
+      icon: <Award className="w-20 h-20 text-white/90" />,
+      borderColor: color.border,
+      gradient: color.gradient,
+    };
+  });
+
   return (
-    <div className="relative text-gray-100 min-h-screen">
+    <div className="relative text-gray-100 min-h-screen overflow-hidden">
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="relative container mx-auto px-4 py-20"
+        className="relative container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-screen"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <motion.h1
-          className="achiko-font text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400"
+          className="achiko-font text-4xl sm:text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400"
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Certifications
         </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              className="bg-color-background/50 backdrop-blur-md border border-color-primary rounded-lg p-4 shadow-md hover:scale-105 transition-transform duration-300"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <h2 className="text-lg font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                {cert.title}
-              </h2>
-              <p className="text-blue-400 mb-1 text-sm">{cert.issuer}</p>
-              <p className="text-gray-400 text-sm">{cert.year}</p>
-            </motion.div>
-          ))}
+
+        <div className="w-full h-[800px] relative">
+          <ChromaGrid
+            items={certificationItems}
+            radius={300}
+            damping={0.45}
+            fadeOut={0.6}
+            ease="power3.out"
+            columns={3}
+            rows={3}
+          />
         </div>
       </motion.main>
     </div>
