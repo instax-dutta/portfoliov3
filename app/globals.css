@@ -230,9 +230,9 @@
   }
 }
 
-/* Optimize scrolling performance */
+/* Lenis handles smooth scrolling - don't use CSS scroll-behavior */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

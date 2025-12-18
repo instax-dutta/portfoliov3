@@ -17,29 +17,28 @@ const LenisProvider = ({ children }: LenisProviderProps) => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
     if (prefersReducedMotion.matches) return
 
-    // Optimized Lenis configuration for smooth performance
+    // Optimized Lenis configuration for ultra-smooth scrolling
     const lenis = new Lenis({
-      lerp: 0.08, // Slightly faster for better responsiveness
-      duration: 1.2, // Smooth duration
-      smoothWheel: true,
+      lerp: 0.1, // Perfect balance between smoothness and responsiveness
+      duration: 1.2, // Smooth scroll duration
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing for natural feel
+      orientation: 'vertical', // Vertical scrolling
+      gestureOrientation: 'vertical', // Vertical gestures
+      smoothWheel: true, // Enable smooth wheel scrolling
       smoothTouch: false, // Disable on touch for better mobile performance
-      wheelMultiplier: 1, // Standard wheel multiplier
-      touchMultiplier: 2, // Faster touch scrolling
-      normalizeWheel: true,
-      infinite: false,
+      wheelMultiplier: 1, // Standard wheel sensitivity
+      touchMultiplier: 2, // Enhanced touch scrolling
+      normalizeWheel: true, // Normalize scroll across browsers
+      infinite: false, // No infinite scroll
     })
 
     lenisRef.current = lenis
 
     let animationFrame: number
-    let lastTime = 0
 
     const onFrame = (time: number) => {
-      // Throttle to 60fps for better performance
-      if (time - lastTime >= 16.67) {
-        lenis.raf(time)
-        lastTime = time
-      }
+      // Let Lenis run at native refresh rate for butter-smooth scrolling
+      lenis.raf(time)
       animationFrame = requestAnimationFrame(onFrame)
     }
 

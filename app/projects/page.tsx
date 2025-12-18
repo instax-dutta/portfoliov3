@@ -6,7 +6,19 @@ import { AnimatedProjectCard } from "@/components/ui/animated-project-card"
 import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 
 const projects = [
-  // Featured: AI-Powered Full Stack Solutions
+  // 🚀 Featured: Production-Ready Fullstack & AI Applications
+  {
+    title: "VullScanny - Security Vulnerability Scanner",
+    description: "Production-ready AI-powered security vulnerability scanner for developers. Features advanced code analysis, real-time scanning, and comprehensive security reports with zero-config setup. Built for newbie and expert developers alike.",
+    technologies: ["Next.js 16", "React", "Tailwind CSS", "Framer Motion", "Lenis", "PWA", "Turbopack", "Vercel", "HSTS"],
+    link: "https://vullscanny.sdad.pro",
+  },
+  {
+    title: "Binify - Zero-Knowledge Encrypted Pastebin",
+    description: "Production-grade secure pastebin with client-side encryption ensuring zero-knowledge architecture. Features syntax highlighting, expiration controls, and blazing-fast performance with enterprise-level security and privacy.",
+    technologies: ["Next.js 15", "Turso", "Upstash Redis", "Tailwind CSS", "Framer Motion", "Lucide React", "Web Crypto API", "TypeScript"],
+    link: "https://bin.sdad.pro",
+  },
   {
     title: "GenieLabs",
     description: "AI-powered development platform that elevates your workflow with intelligent tools for code generation, analysis, and optimization. Built for developers, by developers.",
@@ -14,17 +26,18 @@ const projects = [
     link: "https://genielabs.sdad.pro",
   },
   {
-    title: "12Labs",
-    description: "Enterprise-grade suite of AI-powered audio and text processing tools featuring TTS, transcription, and intelligent content generation with support for multiple AI providers.",
-    technologies: ["Python 3.11", "Flask 3", "AI", "edge-tts", "Mistral API", "Gemini API", "Machine Learning"],
-    link: "https://12labs.xyz",
-  },
-  {
     title: "Sensory",
     description: "Modern web application built with cutting-edge technologies featuring scalable cloud storage, efficient database management, and advanced rate limiting for optimal performance and security.",
     technologies: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
     link: "https://mirror.sdad.pro",
   },
+  // TODO: Hidden - Work in progress, uncomment when ready to display
+  /* {
+    title: "12Labs",
+    description: "Enterprise-grade suite of AI-powered audio and text processing tools featuring TTS, transcription, and intelligent content generation with support for multiple AI providers.",
+    technologies: ["Python 3.11", "Flask 3", "AI", "edge-tts", "Mistral API", "Gemini API", "Machine Learning"],
+    link: "https://12labs.xyz",
+  }, */
   {
     title: "WordAI",
     description: "Advanced AI content generation platform that produces high-quality, SEO-optimized content in seconds. Production-ready solution serving users with zero sign-up friction.",
@@ -32,11 +45,12 @@ const projects = [
     link: "https://wordai.app",
   },
   {
-    title: "RemoBG – AI Background Remover",
-    description: "Production-ready AI-powered image processing tool that removes backgrounds instantly using advanced computer vision. Optimized for speed, privacy, and user experience.",
-    technologies: ["AI", "Computer Vision", "Image Processing", "Next.js 14", "Tailwind CSS 3", "React 18"],
-    link: "https://remobg.sdad.pro",
+    title: "BizForge",
+    description: "A comprehensive suite of powerful business tools designed to supercharge your online presence, automate workflows, and drive business growth with modern web technologies.",
+    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
+    link: "https://bizzforge.sdad.pro",
   },
+
   {
     title: "OneShotAI – AI-Powered Prompt Engineering Tool",
     description: "Professional AI tool designed to streamline prompt engineering workflows and optimize AI model interactions for better results and efficiency.",
@@ -56,7 +70,7 @@ const projects = [
     link: "https://ait.numbervibes.in",
   },
 
-  // Machine Learning & Data Engineering
+  // 🔬 Machine Learning & Data Engineering
   {
     title: "CV Extractor",
     description: "Intelligent document processing system that automatically extracts and analyzes crucial information from resumes using ML-powered text extraction. Ideal for HR and recruitment workflows.",
@@ -70,18 +84,12 @@ const projects = [
     link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
   },
 
-  // Enterprise, DevOps & Security
+  // 🔐 Enterprise Security & DevOps
   {
     title: "Ultimate-Firewall",
     description: "Enterprise-grade firewall solution with comprehensive IP table rules and DDoS protection techniques, demonstrating advanced DevOps and security expertise.",
     technologies: ["IP tables v1.8", "DDoS protection techniques"],
     link: "https://github.com/instax-dutta/Ultimate-Firewall",
-  },
-  {
-    title: "BizForge",
-    description: "A comprehensive suite of powerful business tools designed to supercharge your online presence, automate workflows, and drive business growth with modern web technologies.",
-    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
-    link: "https://bizzforge.sdad.pro",
   },
   {
     title: "SecPassGen",
@@ -90,16 +98,16 @@ const projects = [
     link: "https://github.com/instax-dutta/Secure-Password-Generator-Webapp",
   },
   {
+    title: "PassGuard",
+    description: "Secure password management application with encrypted storage, demonstrating expertise in security best practices and data protection.",
+    technologies: ["Flask 2", "SQLite 3", "Python 3.9"],
+    link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
+  },
+  {
     title: "Bandwidth Patrol",
     description: "System monitoring tool that tracks and visualizes bandwidth usage in real-time, providing insights for network management and optimization.",
     technologies: ["Flask 2", "HTML5", "Python 3.9"],
     link: "https://github.com/instax-dutta/Bandwith-Usage-Dashboard",
-  },
-  {
-    title: "CL-Chat",
-    description: "Multi-client command-line chat application built with socket programming, showcasing networking expertise and real-time communication implementation.",
-    technologies: ["Python 3.8", "Socket Programming"],
-    link: "https://github.com/instax-dutta/CL-Chat",
   },
   {
     title: "IpRecon",
@@ -107,8 +115,14 @@ const projects = [
     technologies: ["Tkinter", "IPinfo API", "Python 3.9"],
     link: "https://github.com/instax-dutta/IPRecon",
   },
+  {
+    title: "CL-Chat",
+    description: "Multi-client command-line chat application built with socket programming, showcasing networking expertise and real-time communication implementation.",
+    technologies: ["Python 3.8", "Socket Programming"],
+    link: "https://github.com/instax-dutta/CL-Chat",
+  },
 
-  // Web Development & Creative
+  // 🎨 Modern Web Development & Creative
   {
     title: "My Developer Portfolio",
     description: "Professional portfolio website showcasing modern web development practices, responsive design, and seamless user experience built with cutting-edge technologies.",
@@ -116,10 +130,10 @@ const projects = [
     link: "https://sdad.pro",
   },
   {
-    title: "Minecraft Server Status Checker",
-    description: "Real-time server monitoring tool that checks Minecraft server status, demonstrating API integration and real-time data fetching capabilities.",
-    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui"],
-    link: "https://mcs.sdad.pro",
+    title: "A 3d Landing page for a discord Community",
+    description: "Immersive 3D interactive landing page built with Three.js, demonstrating advanced frontend development skills and creative technical implementation.",
+    technologies: ["Three.js r150", "Tailwind CSS 3", "shadcn/ui", "Next.js 13", "React 18"],
+    link: "https://zengodz.pp.ua",
   },
   {
     title: "Todo List Webapp",
@@ -134,24 +148,6 @@ const projects = [
     link: "https://focus.racer.news",
   },
   {
-    title: "PassGuard",
-    description: "Secure password management application with encrypted storage, demonstrating expertise in security best practices and data protection.",
-    technologies: ["Flask 2", "SQLite 3", "Python 3.9"],
-    link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
-  },
-  {
-    title: "A 3d Landing page for a discord Community",
-    description: "Immersive 3D interactive landing page built with Three.js, demonstrating advanced frontend development skills and creative technical implementation.",
-    technologies: ["Three.js r150", "Tailwind CSS 3", "shadcn/ui", "Next.js 13", "React 18"],
-    link: "https://zengodz.pp.ua",
-  },
-  {
-    title: "A modern and animated developer portfolio",
-    description: "Modern, animated portfolio website featuring smooth animations, particle effects, and responsive design showcasing advanced frontend capabilities.",
-    technologies: ["Next.js 13", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "particles.js"],
-    link: "https://sdnayak.pp.ua",
-  },
-  {
     title: "Horror Themed Portfolio",
     description: "Creative portfolio website with unique horror-themed design, showcasing ability to create engaging, themed user experiences with advanced animations.",
     technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "framer-motion 10", "RadixUI"],
@@ -162,12 +158,6 @@ const projects = [
     description: "Minimalist personal website demonstrating clean design principles, performance optimization, and modern web development practices.",
     technologies: ["Vite 4", "Tailwind CSS 3", "shadcn/ui", "RadixUI"],
     link: "https://s8m1t.xyz",
-  },
-  {
-    title: "A Creation Showcase web gallery for a 3d printing company",
-    description: "Professional web gallery for a 3D printing company, demonstrating ability to create clean, functional business websites with modern design principles.",
-    technologies: ["HTML5", "CSS3", "JavaScript ES6+"],
-    link: "https://www.race3d.store",
   },
 ]
 
