@@ -9,25 +9,25 @@ const projects = [
   // 🚀 Featured: Production-Ready Fullstack & AI Applications
   {
     title: "VullScanny - Security Vulnerability Scanner",
-    description: "Production-ready AI-powered security vulnerability scanner for developers. Features advanced code analysis, real-time scanning, and comprehensive security reports with zero-config setup. Built for newbie and expert developers alike.",
+    description: "AI-powered security scanner with zero-config setup. Instant code analysis and comprehensive vulnerability reports.",
     technologies: ["Next.js 16", "React", "Tailwind CSS", "Framer Motion", "Lenis", "PWA", "Turbopack", "Vercel", "HSTS"],
     link: "https://vullscanny.sdad.pro",
   },
   {
     title: "Binify - Zero-Knowledge Encrypted Pastebin",
-    description: "Production-grade secure pastebin with client-side encryption ensuring zero-knowledge architecture. Features syntax highlighting, expiration controls, and blazing-fast performance with enterprise-level security and privacy.",
+    description: "Zero-knowledge encrypted pastebin. Client-side encryption ensures absolute privacy—even we can't read your pastes.",
     technologies: ["Next.js 15", "Turso", "Upstash Redis", "Tailwind CSS", "Framer Motion", "Lucide React", "Web Crypto API", "TypeScript"],
     link: "https://bin.sdad.pro",
   },
   {
     title: "GenieLabs",
-    description: "AI-powered development platform that elevates your workflow with intelligent tools for code generation, analysis, and optimization. Built for developers, by developers.",
+    description: "AI-powered dev platform for code generation, analysis, and optimization. Workflow automation for the modern developer.",
     technologies: ["AI Agent", "API Integration", "Next.js 14", "React 18", "Tailwind CSS 3", "TypeScript 5"],
     link: "https://genielabs.sdad.pro",
   },
   {
     title: "Sensory",
-    description: "Modern web application built with cutting-edge technologies featuring scalable cloud storage, efficient database management, and advanced rate limiting for optimal performance and security.",
+    description: "Scalable cloud storage with efficient database management and advanced rate limiting for optimal performance.",
     technologies: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
     link: "https://mirror.sdad.pro",
   },
@@ -40,32 +40,32 @@ const projects = [
   }, */
   {
     title: "WordAI",
-    description: "Advanced AI content generation platform that produces high-quality, SEO-optimized content in seconds. Production-ready solution serving users with zero sign-up friction.",
+    description: "AI content generation that produces SEO-optimized articles in seconds. No sign-up required.",
     technologies: ["AI Agent", "API Integration", "React 18", "Vite 5", "Tailwind CSS 3", "Redux Toolkit", "NLP"],
     link: "https://wordai.app",
   },
   {
     title: "BizForge",
-    description: "A comprehensive suite of powerful business tools designed to supercharge your online presence, automate workflows, and drive business growth with modern web technologies.",
+    description: "Suite of business tools to automate workflows and supercharge online presence. All-in-one business growth platform.",
     technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
     link: "https://bizzforge.sdad.pro",
   },
 
   {
     title: "OneShotAI – AI-Powered Prompt Engineering Tool",
-    description: "Professional AI tool designed to streamline prompt engineering workflows and optimize AI model interactions for better results and efficiency.",
+    description: "Streamline prompt engineering workflows and optimize AI model interactions for better results.",
     technologies: ["AI", "Prompt Engineering", "Next.js 14", "React 18", "Tailwind CSS 3", "NLP"],
     link: "https://oneshotai.sdad.pro",
   },
   {
     title: "AI Powered Vedic MatchMaker",
-    description: "Intelligent matchmaking platform leveraging advanced AI and Vedic astrology principles to provide comprehensive compatibility analysis and relationship insights.",
+    description: "AI-driven matchmaking using Vedic astrology for comprehensive compatibility analysis and relationship insights.",
     technologies: ["Next.js 13", "AI", "TensorFlow.js", "Mistral AI", "API", "React 18"],
     link: "https://aim.numbervibes.in",
   },
   {
     title: "AI Tarot Card Reader",
-    description: "Advanced AI-powered application that provides personalized insights using state-of-the-art machine learning and natural language processing technologies.",
+    description: "AI-powered tarot readings with personalized insights using advanced ML and NLP technologies.",
     technologies: ["Next.js 13", "AI", "TensorFlow.js", "API", "React 18", "TypeScript 5"],
     link: "https://ait.numbervibes.in",
   },
@@ -73,13 +73,13 @@ const projects = [
   // 🔬 Machine Learning & Data Engineering
   {
     title: "CV Extractor",
-    description: "Intelligent document processing system that automatically extracts and analyzes crucial information from resumes using ML-powered text extraction. Ideal for HR and recruitment workflows.",
+    description: "ML-powered resume parser that automatically extracts key information. Streamlines HR and recruitment workflows.",
     technologies: ["Flask 2", "Python 3.10", "python-docx", "PyPDF2", "openpyxl", "Document Processing", "ML"],
     link: "https://github.com/instax-dutta/CvExtractor-Webapp",
   },
   {
     title: "Product Review Sentiment Analyser",
-    description: "Machine learning-powered business intelligence tool that analyzes product reviews using advanced sentiment analysis and NLP to provide actionable insights for businesses.",
+    description: "ML-powered sentiment analysis tool that transforms product reviews into actionable business insights.",
     technologies: ["Flask 2", "BeautifulSoup 4", "Python 3.9", "Machine Learning", "NLP", "Sentiment Analysis"],
     link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
   },
@@ -87,37 +87,37 @@ const projects = [
   // 🔐 Enterprise Security & DevOps
   {
     title: "Ultimate-Firewall",
-    description: "Enterprise-grade firewall solution with comprehensive IP table rules and DDoS protection techniques, demonstrating advanced DevOps and security expertise.",
+    description: "Enterprise firewall with comprehensive IP table rules and DDoS protection techniques.",
     technologies: ["IP tables v1.8", "DDoS protection techniques"],
     link: "https://github.com/instax-dutta/Ultimate-Firewall",
   },
   {
     title: "SecPassGen",
-    description: "Enterprise-grade secure password generator with strength analysis, built using industry-standard security practices and cryptographic libraries.",
+    description: "Secure password generator with strength analysis using industry-standard cryptographic practices.",
     technologies: ["Flask 2", "zxcvbn", "SQLite 3", "Python 3.9"],
     link: "https://github.com/instax-dutta/Secure-Password-Generator-Webapp",
   },
   {
     title: "PassGuard",
-    description: "Secure password management application with encrypted storage, demonstrating expertise in security best practices and data protection.",
+    description: "Password manager with encrypted storage. Built with security best practices and data protection in mind.",
     technologies: ["Flask 2", "SQLite 3", "Python 3.9"],
     link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
   },
   {
     title: "Bandwidth Patrol",
-    description: "System monitoring tool that tracks and visualizes bandwidth usage in real-time, providing insights for network management and optimization.",
+    description: "Real-time bandwidth monitoring and visualization for network management and optimization insights.",
     technologies: ["Flask 2", "HTML5", "Python 3.9"],
     link: "https://github.com/instax-dutta/Bandwith-Usage-Dashboard",
   },
   {
     title: "IpRecon",
-    description: "Network reconnaissance tool that fetches and analyzes IP address data using external APIs, demonstrating API integration and data analysis skills.",
+    description: "Network reconnaissance tool for IP address analysis and geolocation data using external APIs.",
     technologies: ["Tkinter", "IPinfo API", "Python 3.9"],
     link: "https://github.com/instax-dutta/IPRecon",
   },
   {
     title: "CL-Chat",
-    description: "Multi-client command-line chat application built with socket programming, showcasing networking expertise and real-time communication implementation.",
+    description: "Multi-client CLI chat application built with socket programming for real-time communication.",
     technologies: ["Python 3.8", "Socket Programming"],
     link: "https://github.com/instax-dutta/CL-Chat",
   },
@@ -125,37 +125,37 @@ const projects = [
   // 🎨 Modern Web Development & Creative
   {
     title: "My Developer Portfolio",
-    description: "Professional portfolio website showcasing modern web development practices, responsive design, and seamless user experience built with cutting-edge technologies.",
+    description: "Modern portfolio showcasing responsive design and seamless UX with cutting-edge web technologies.",
     technologies: ["React 18", "Next.js 14", "Tailwind CSS 3", "RadixUI", "shadcn/ui"],
     link: "https://sdad.pro",
   },
   {
     title: "A 3d Landing page for a discord Community",
-    description: "Immersive 3D interactive landing page built with Three.js, demonstrating advanced frontend development skills and creative technical implementation.",
+    description: "Immersive 3D landing page built with Three.js. Interactive experience showcasing creative frontend development.",
     technologies: ["Three.js r150", "Tailwind CSS 3", "shadcn/ui", "Next.js 13", "React 18"],
     link: "https://zengodz.pp.ua",
   },
   {
     title: "Todo List Webapp",
-    description: "Full-stack task management application with CRUD operations, task reordering, and persistent storage. Demonstrates complete application development lifecycle.",
+    description: "Full-stack task manager with CRUD operations, drag-and-drop reordering, and persistent storage.",
     technologies: ["Flask 2", "SQLAlchemy 2", "SQLite 3"],
     link: "https://github.com/instax-dutta/TODO-List-FlaskApp",
   },
   {
     title: "PacePal - A PomoDoro Timer to improve productivity",
-    description: "Productivity-focused Pomodoro timer application designed to help users manage time effectively and boost productivity with a clean, intuitive interface.",
+    description: "Pomodoro timer with a clean interface to boost productivity and manage time effectively.",
     technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui"],
     link: "https://focus.racer.news",
   },
   {
     title: "Horror Themed Portfolio",
-    description: "Creative portfolio website with unique horror-themed design, showcasing ability to create engaging, themed user experiences with advanced animations.",
+    description: "Horror-themed portfolio with unique design and advanced animations. A spooky twist on the traditional portfolio.",
     technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "framer-motion 10", "RadixUI"],
     link: "https://horror-dev-portfolio.vercel.app",
   },
   {
     title: "Minimalistic Corner of the Web",
-    description: "Minimalist personal website demonstrating clean design principles, performance optimization, and modern web development practices.",
+    description: "Minimalist website demonstrating clean design and performance optimization. Less is more.",
     technologies: ["Vite 4", "Tailwind CSS 3", "shadcn/ui", "RadixUI"],
     link: "https://s8m1t.xyz",
   },
