@@ -6,8 +6,9 @@ import { useEffect, useRef } from "react"
 const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null)
   const mousePosition = useRef({ x: 0, y: 0 })
-  const cursorPosition = useRef({ x: 0, y: 0 })
+  const previousMousePosition = useRef({ x: 0, y: 0 })
   const rotation = useRef(0)
+  const targetRotation = useRef(0)
   const isVisible = useRef(false)
   const rafId = useRef<number | null>(null)
 
@@ -21,7 +22,10 @@ const CustomCursor: React.FC = () => {
     if (!mediaQuery.matches) return
 
     const updateMousePosition = (e: MouseEvent) => {
+      // Store previous position for rotation calculation
+      previousMousePosition.current = { ...mousePosition.current }
       mousePosition.current = { x: e.clientX, y: e.clientY }
+
       if (!isVisible.current) {
         isVisible.current = true
         if (cursorRef.current) cursorRef.current.style.opacity = "1"
@@ -39,28 +43,29 @@ const CustomCursor: React.FC = () => {
     }
 
     const animateCursor = () => {
-      const targetX = mousePosition.current.x
-      const targetY = mousePosition.current.y
+      const currentX = mousePosition.current.x
+      const currentY = mousePosition.current.y
 
-      // Calculate rotation based on movement direction
-      const dx = targetX - cursorPosition.current.x
-      const dy = targetY - cursorPosition.current.y
+      // Calculate rotation based on actual mouse movement
+      const dx = currentX - previousMousePosition.current.x
+      const dy = currentY - previousMousePosition.current.y
 
-      // Only update rotation if moving significantly
-      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+      // Only update target rotation if mouse moved significantly (prevents jitter)
+      if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
         const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90 // +90 to align rocket tip
-        // Smooth rotation
+
+        // Handle wrapping around 360 degrees for smooth rotation
         const rotDiff = angle - rotation.current
-        // Handle wrapping around 360 degrees
-        let adjustedDiff = ((rotDiff + 180) % 360) - 180
-        rotation.current = lerp(rotation.current, rotation.current + adjustedDiff, 0.1)
+        const adjustedDiff = ((rotDiff + 180) % 360) - 180
+        targetRotation.current = rotation.current + adjustedDiff
       }
 
-      cursorPosition.current.x = lerp(cursorPosition.current.x, targetX, 0.15)
-      cursorPosition.current.y = lerp(cursorPosition.current.y, targetY, 0.15)
+      // Smooth rotation interpolation (increased from 0.1 to 0.2 for faster response)
+      rotation.current = lerp(rotation.current, targetRotation.current, 0.2)
 
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${cursorPosition.current.x}px, ${cursorPosition.current.y}px, 0) translate(-50%, -50%) rotate(${rotation.current}deg)`
+        // Position is instant - no lerp! This makes it truly replace the cursor
+        cursorRef.current.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%) rotate(${rotation.current}deg)`
       }
 
       rafId.current = requestAnimationFrame(animateCursor)
