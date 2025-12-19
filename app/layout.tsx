@@ -212,6 +212,7 @@ export const metadata: Metadata = {
   other: {
     "theme-color": "#0a0f1f",
     "format-detection": "telephone=no",
+    "og:logo": "https://sdad.pro/favicon.svg",
   },
 }
 
@@ -220,7 +221,7 @@ const structuredData = {
   "@type": ["Person", "ProfessionalService"],
   name: "Sai Dutta Abhishek Dash",
   url: "https://sdad.pro",
-  image: "https://sdad.pro/og-image.jpg",
+  image: "https://sdad.pro/og-image.png",
   sameAs: [
     "https://github.com/instax-dutta",
     "https://www.linkedin.com/in/sdabhishekdash/",

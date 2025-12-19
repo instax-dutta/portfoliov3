@@ -1,20 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    <linearGradient id="fav-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" />
+      <stop offset="1" stop-color="#60A5FA" />
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
   </defs>
-  <!-- Background circle with gradient -->
-  <circle cx="50" cy="50" r="48" fill="url(#gradient)"/>
-  <!-- S icon with better positioning -->
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle" filter="url(#glow)">S</text>
+  
+  <!-- Futuristic Rocket/A Symbol -->
+  <path d="M32 8L56 52H44L32 28L20 52H8L32 8Z" fill="url(#fav-grad)" filter="url(#soft-glow)" />
+  
+  <!-- Core Energy Pulse -->
+  <circle cx="32" cy="40" r="5" fill="white">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Subtle Orbital Arc -->
+  <path d="M12 48C18 54 26 56 32 56C38 56 46 54 52 48" stroke="white" stroke-width="2" stroke-linecap="round" stroke-opacity="0.4" />
 </svg>
-
