@@ -7,7 +7,7 @@ import LenisProvider from "./components/LenisProvider"
 import type { Metadata } from "next"
 
 // Primary heading font - futuristic display
-const orbitron = Orbitron({ 
+const orbitron = Orbitron({
   subsets: ["latin"],
   variable: "--font-orbitron",
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -16,7 +16,7 @@ const orbitron = Orbitron({
 })
 
 // Accent heading font - tech/terminal feel
-const spaceMono = Space_Mono({ 
+const spaceMono = Space_Mono({
   subsets: ["latin"],
   variable: "--font-space-mono",
   weight: ["400", "700"],
@@ -25,7 +25,7 @@ const spaceMono = Space_Mono({
 })
 
 // Body text font - clean and readable
-const archivo = Archivo({ 
+const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font-archivo",
   weight: ["300", "400", "500", "600", "700"],
@@ -34,7 +34,7 @@ const archivo = Archivo({
 })
 
 // Monospace font for code/tech elements
-const inconsolata = Inconsolata({ 
+const inconsolata = Inconsolata({
   subsets: ["latin"],
   variable: "--font-inconsolata",
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
