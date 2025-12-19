@@ -5,10 +5,9 @@ import { useEffect, useRef } from "react"
 
 const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null)
-  const mousePosition = useRef({ x: 0, y: 0 })
-  const previousMousePosition = useRef({ x: 0, y: 0 })
+  const targetPos = useRef({ x: 0, y: 0 })
+  const currentPos = useRef({ x: 0, y: 0 })
   const rotation = useRef(0)
-  const targetRotation = useRef(0)
   const isVisible = useRef(false)
   const rafId = useRef<number | null>(null)
 
@@ -17,17 +16,14 @@ const CustomCursor: React.FC = () => {
   }
 
   useEffect(() => {
-    // Check if device supports hover (mouse)
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)")
     if (!mediaQuery.matches) return
 
-    const updateMousePosition = (e: MouseEvent) => {
-      // Store previous position for rotation calculation
-      previousMousePosition.current = { ...mousePosition.current }
-      mousePosition.current = { x: e.clientX, y: e.clientY }
-
+    const handleMouseMove = (e: MouseEvent) => {
+      targetPos.current = { x: e.clientX, y: e.clientY }
       if (!isVisible.current) {
         isVisible.current = true
+        currentPos.current = { x: e.clientX, y: e.clientY } // Snap on first move
         if (cursorRef.current) cursorRef.current.style.opacity = "1"
       }
     }
@@ -42,47 +38,43 @@ const CustomCursor: React.FC = () => {
       if (cursorRef.current) cursorRef.current.style.opacity = "1"
     }
 
-    const animateCursor = () => {
-      const currentX = mousePosition.current.x
-      const currentY = mousePosition.current.y
+    const animate = () => {
+      // Smoothly follow the mouse with high-performance lerp
+      // Using 0.25 for a very responsive but smooth feel
+      const nextX = lerp(currentPos.current.x, targetPos.current.x, 0.25)
+      const nextY = lerp(currentPos.current.y, targetPos.current.y, 0.25)
 
-      // Calculate rotation based on actual mouse movement
-      const dx = currentX - previousMousePosition.current.x
-      const dy = currentY - previousMousePosition.current.y
+      // Calculate rotation based on the movement delta of the smoothed position
+      const dx = nextX - currentPos.current.x
+      const dy = nextY - currentPos.current.y
 
-      // Only update target rotation if mouse moved significantly (prevents jitter)
-      if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
-        const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90 // +90 to align rocket tip
+      currentPos.current = { x: nextX, y: nextY }
 
-        // Handle wrapping around 360 degrees for smooth rotation
-        const rotDiff = angle - rotation.current
-        const adjustedDiff = ((rotDiff + 180) % 360) - 180
-        targetRotation.current = rotation.current + adjustedDiff
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        const targetAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 90
+
+        // Wrap rotation for smoothest transitions
+        const diff = ((targetAngle - rotation.current + 180) % 360) - 180
+        rotation.current += diff * 0.15 // Smooth rotation adjustment
       }
-
-      // Smooth rotation interpolation (increased from 0.1 to 0.2 for faster response)
-      rotation.current = lerp(rotation.current, targetRotation.current, 0.2)
 
       if (cursorRef.current) {
-        // Position is instant - no lerp! This makes it truly replace the cursor
-        cursorRef.current.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%) rotate(${rotation.current}deg)`
+        cursorRef.current.style.transform = `translate3d(${nextX}px, ${nextY}px, 0) translate(-50%, -50%) rotate(${rotation.current}deg)`
       }
 
-      rafId.current = requestAnimationFrame(animateCursor)
+      rafId.current = requestAnimationFrame(animate)
     }
 
-    window.addEventListener("mousemove", updateMousePosition)
+    window.addEventListener("mousemove", handleMouseMove)
     document.addEventListener("mouseleave", handleMouseLeave)
     document.addEventListener("mouseenter", handleMouseEnter)
-    rafId.current = requestAnimationFrame(animateCursor)
+    rafId.current = requestAnimationFrame(animate)
 
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition)
+      window.removeEventListener("mousemove", handleMouseMove)
       document.removeEventListener("mouseleave", handleMouseLeave)
       document.removeEventListener("mouseenter", handleMouseEnter)
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current)
-      }
+      if (rafId.current) cancelAnimationFrame(rafId.current)
     }
   }, [])
 
@@ -90,9 +82,9 @@ const CustomCursor: React.FC = () => {
     <div
       ref={cursorRef}
       className="cursor fixed pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 will-change-transform"
-      style={{ left: 0, top: 0 }} // Ensure it starts at top-left so translate works correctly
+      style={{ left: 0, top: 0 }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400/90 drop-shadow-[0_0_12px_rgba(34,211,238,0.6)]">
         <path d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
         <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z" />
       </svg>
