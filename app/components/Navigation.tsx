@@ -5,14 +5,14 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { 
-  Home, 
-  User, 
-  Briefcase, 
-  FolderKanban, 
-  Code, 
-  GraduationCap, 
-  Award, 
+import {
+  Home,
+  User,
+  Briefcase,
+  FolderKanban,
+  Code,
+  GraduationCap,
+  Award,
   Mail,
   Menu,
   X
@@ -26,8 +26,7 @@ const menuItems = [
   { href: "/experience", label: "Experience", icon: Briefcase },
   { href: "/projects", label: "Projects", icon: FolderKanban },
   { href: "/skills", label: "Skills", icon: Code },
-  { href: "/education", label: "Education", icon: GraduationCap },
-  { href: "/certifications", label: "Certifications", icon: Award },
+  { href: "/credentials", label: "Credentials", icon: GraduationCap },
   { href: "/contact", label: "Contact", icon: Mail },
 ]
 
@@ -90,23 +89,21 @@ const Navigation: React.FC = () => {
     name: item.label,
     url: item.href,
     icon: item.icon,
-    external: item.external,
   }))
 
   return (
     <>
       {/* Logo at top left */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-color-background/80 backdrop-blur-md" : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-color-background/80 backdrop-blur-md" : "bg-transparent"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16 relative">
             <Link href="/" className="text-color-primary font-bold text-lg sm:text-xl achiko-font z-10">
               SDAD
             </Link>
-            
+
             {/* Mobile Hamburger Menu Button */}
             <button
               type="button"
