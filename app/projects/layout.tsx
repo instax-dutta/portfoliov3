@@ -103,6 +103,8 @@ const breadcrumbStructuredData = {
   ],
 }
 
+import DOMPurify from "isomorphic-dompurify"
+
 export default function ProjectsLayout({
   children,
 }: {
@@ -112,11 +114,11 @@ export default function ProjectsLayout({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(projectsStructuredData)) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(breadcrumbStructuredData)) }}
       />
       {children}
     </>

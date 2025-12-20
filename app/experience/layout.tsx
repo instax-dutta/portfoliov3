@@ -67,6 +67,8 @@ const experienceStructuredData = {
   },
 }
 
+import DOMPurify from "isomorphic-dompurify"
+
 export default function ExperienceLayout({
   children,
 }: {
@@ -76,7 +78,7 @@ export default function ExperienceLayout({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(experienceStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(experienceStructuredData)) }}
       />
       {children}
     </>

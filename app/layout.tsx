@@ -331,6 +331,8 @@ const structuredData = {
   ],
 }
 
+import DOMPurify from "isomorphic-dompurify"
+
 export default function RootLayout({
   children,
 }: {
@@ -341,7 +343,7 @@ export default function RootLayout({
       <body className={`${orbitron.variable} ${spaceMono.variable} ${archivo.variable} ${inconsolata.variable} font-archivo bg-color-background text-color-text min-h-screen`}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(structuredData)) }}
         />
         <StarryBackground />
         <CustomCursor />
