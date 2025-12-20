@@ -113,8 +113,7 @@ export default function Credentials() {
             <motion.main
                 className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.05 }}
+                animate="visible"
                 variants={{
                     hidden: { opacity: 0 },
                     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
