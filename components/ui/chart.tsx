@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import DOMPurify from "isomorphic-dompurify"
 import * as RechartsPrimitive from "recharts"
 
 import { cn } from "@/lib/utils"
@@ -67,7 +68,6 @@ const ChartContainer = React.forwardRef<
 })
 ChartContainer.displayName = "Chart"
 
-import DOMPurify from "isomorphic-dompurify"
 
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(
@@ -78,31 +78,43 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null
   }
 
-  return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: DOMPurify.sanitize(
-          Object.entries(THEMES)
-            .map(
-              ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-                  .map(([key, itemConfig]) => {
-                    const color =
-                      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
-                      itemConfig.color
-                    return color ? `  --color-${key}: ${color};` : null
-                  })
-                  .join("\n")}
+  // Strictly validate ID to prevent selector injection
+  const safeId = id.replace(/[^a-zA-Z0-9-]/g, "")
+
+  const styleContent = React.useMemo(() => {
+    const rawStyles = Object.entries(THEMES)
+      .map(([theme, prefix]) => {
+        const themeStyles = colorConfig
+          .map(([key, itemConfig]) => {
+            const color =
+              itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
+              itemConfig.color
+
+            if (!color || typeof color !== "string") return null
+
+            // Strictly validate key and color to prevent CSS injection
+            const safeKey = key.replace(/[^a-zA-Z0-9-]/g, "")
+            const safeColor = color.replace(/[;{}<>]/g, "")
+
+            return `  --color-${safeKey}: ${safeColor};`
+          })
+          .filter(Boolean)
+          .join("\n")
+
+        return `${prefix} [data-chart=${safeId}] {\n${themeStyles}\n}`
+      })
+      .join("\n")
+
+    // Final sanitization pass as a safety layer
+    return DOMPurify.sanitize(rawStyles, {
+      ALLOWED_TAGS: [],
+      ALLOWED_ATTR: [],
+    })
+  }, [safeId, colorConfig])
+
+  return <style>{styleContent}</style>
 }
-`
-            )
-            .join("\n")
-        ),
-      }}
-    />
-  )
-}
+
 
 const ChartTooltip = RechartsPrimitive.Tooltip
 
