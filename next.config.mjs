@@ -48,6 +48,20 @@ const nextConfig = {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/education',
+        destination: '/credentials',
+        permanent: true,
+      },
+      {
+        source: '/certifications',
+        destination: '/credentials',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 mergeConfig(nextConfig, userConfig)

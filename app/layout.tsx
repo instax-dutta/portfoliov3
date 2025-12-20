@@ -148,6 +148,11 @@ export const metadata: Metadata = {
     "India Developer",
     "Global Projects",
 
+    "Credentials",
+    "Education",
+    "Certifications",
+    "Academic Background",
+    "Professional Certifications",
     "Sai Dutta Abhishek Dash",
     "SDAD",
   ],

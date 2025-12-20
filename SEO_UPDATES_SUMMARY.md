@@ -39,9 +39,12 @@
 - Concise, scannable description with bullet points
 - Emphasis on production apps count (20+)
 
-### 6. **Category Update**
+### 7. **New Architecture Alignment**
 
-- Changed from "Portfolio" to "Technology" for better categorization
+- **Merged Routes**: Education and Certifications are now combined into `/credentials`.
+- **301 Redirects**: Implemented permanent redirects from `/education` and `/certifications` to `/credentials` to preserve link equity.
+- **Improved Sitemap**: Updated `sitemap.xml` to include the new hierarchical structure.
+- **Page-Specific Metadata**: Each page now has unique, optimized title tags and descriptions to improve search result performance.
 
 ## 📊 SEO Impact
 
