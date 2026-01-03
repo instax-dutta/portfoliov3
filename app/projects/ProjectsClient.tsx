@@ -7,11 +7,17 @@ import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 
 const projects = [
   // 🚀 Featured: Production-Ready Fullstack & AI Applications
-  {
+  /* {
     title: "VullScanny - Security Vulnerability Scanner",
     description: "AI-powered security scanner with zero-config setup. Instant code analysis and comprehensive vulnerability reports.",
     technologies: ["Next.js 16", "React", "Tailwind CSS", "Framer Motion", "Lenis", "PWA", "Turbopack", "Vercel", "HSTS"],
     link: "https://vullscanny.sdad.pro",
+  }, */
+  {
+    title: "PacketBuddy — Open Source Network Usage & Bandwidth Tracker",
+    description: "Ultra-lightweight bandwidth monitor and network traffic tracker with real-time stats, cost tracking, and zero configuration.",
+    technologies: ["Python", "JavaScript", "HTML/CSS", "Shell", "PowerShell", "Batchfile", "NeonDB", "Chart.js"],
+    link: "https://github.com/instax-dutta/packet-buddy",
   },
   {
     title: "Binify - Zero-Knowledge Encrypted Pastebin",

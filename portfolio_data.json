@@ -1,0 +1,378 @@
+{
+    "portfolio_owner": {
+        "name": "Sai Dutta Abhishek Dash",
+        "job_titles": [
+            "Freelance Full Stack Developer",
+            "Machine Learning Engineer",
+            "Security Expert"
+        ],
+        "location": {
+            "city": "Bhubaneswar",
+            "state": "Odisha",
+            "country": "India"
+        },
+        "contact": {
+            "email": "contact@sdad.pro",
+            "website": "https://sdad.pro",
+            "github": "https://github.com/instax-dutta",
+            "linkedin": "https://www.linkedin.com/in/sdabhishekdash/",
+            "twitter": "https://twitter.com/abhishekdash69"
+        }
+    },
+    "professional_summary": "Expert Full Stack Developer & AI/ML Engineer specializing in Python, React, Next.js, Security Engineering, DevOps, and Cloud Architecture. Built 20+ production apps including AI-powered tools, zero-knowledge encryption systems, and enterprise security solutions. AWS Certified Cloud Practitioner available for innovative projects.",
+    "tech_stack": {
+        "languages": [
+            "HTML",
+            "Python",
+            "CSS",
+            "SQL",
+            "JavaScript",
+            "Java",
+            "C++",
+            "R",
+            "Rust",
+            "Go",
+            "TypeScript"
+        ],
+        "frontend": [
+            "React 19",
+            "Next.js 16",
+            "Tailwind CSS 4",
+            "Framer Motion",
+            "shadcn/ui",
+            "Three.js",
+            "RadixUI",
+            "Lenis"
+        ],
+        "backend": [
+            "Node.js",
+            "Flask 3",
+            "FastAPI",
+            "Express.js",
+            "RESTful APIs",
+            "GraphQL"
+        ],
+        "ai_ml": [
+            "TensorFlow",
+            "PyTorch",
+            "scikit-learn",
+            "NumPy",
+            "Pandas",
+            "Keras",
+            "XGBoost",
+            "OpenCV",
+            "Matplotlib",
+            "Seaborn",
+            "Plotly",
+            "LmStudio",
+            "Ollama",
+            "Hugging Face",
+            "Google Vertex AI",
+            "NLTK",
+            "spaCy",
+            "LangChain"
+        ],
+        "devops_cloud": [
+            "AWS (EC2, S3, Lambda, CloudWatch, IAM)",
+            "Docker",
+            "Git",
+            "CI/CD",
+            "Bash",
+            "Linux Server Administration",
+            "Netlify",
+            "Vercel",
+            "GitHub Actions",
+            "Jenkins",
+            "Kubernetes",
+            "Terraform",
+            "Ansible",
+            "Nginx"
+        ],
+        "databases": [
+            "PostgreSQL",
+            "MongoDB",
+            "Turso",
+            "Upstash Redis",
+            "SQLite",
+            "Backblaze B2"
+        ],
+        "soft_skills": [
+            "Problem Solving",
+            "Communication",
+            "Adaptability",
+            "Collaboration",
+            "Leadership",
+            "Time Management",
+            "Critical Thinking",
+            "Creativity",
+            "Empathy",
+            "Conflict Resolution",
+            "Decision Making",
+            "Teamwork"
+        ]
+    },
+    "work_experience": [
+        {
+            "title": "Freelance Full Stack Developer",
+            "company": "Self-Employed",
+            "period": "September 2025 – Present",
+            "type": "Freelance",
+            "location": "Remote",
+            "description": "Providing full-stack development services to clients, building scalable web applications, and delivering end-to-end solutions from frontend to backend.",
+            "skills": [
+                "Full Stack Development",
+                "Web Applications",
+                "Client Services",
+                "Project Management",
+                "React",
+                "Node.js",
+                "Database Design"
+            ],
+            "achievements": [
+                "Delivering custom web solutions",
+                "Working with diverse client projects",
+                "Building scalable applications"
+            ]
+        },
+        {
+            "title": "Associate",
+            "company": "Tech Mahindra",
+            "period": "June 2025 – September 2025",
+            "type": "Full-time",
+            "location": "Bhubaneswar, India",
+            "description": "Worked as an Associate, contributing to enterprise software solutions and digital transformation initiatives.",
+            "skills": [
+                "Enterprise Solutions",
+                "Digital Transformation",
+                "Team Collaboration",
+                "Client Management"
+            ],
+            "achievements": [
+                "Promoted from Associate Trainee",
+                "Contributed to key projects"
+            ]
+        },
+        {
+            "title": "Associate Trainee",
+            "company": "Tech Mahindra",
+            "period": "May 2025 – June 2025",
+            "type": "Training Program",
+            "location": "Bhubaneswar, India",
+            "description": "Completed comprehensive training program covering enterprise technologies, software development practices, and industry standards.",
+            "achievements": [
+                "Successfully completed training program",
+                "Quick promotion to Associate"
+            ]
+        },
+        {
+            "title": "Machine Learning Engineer Intern",
+            "company": "CodeAlpha",
+            "period": "June 2024 – July 2024",
+            "type": "Internship",
+            "achievements": [
+                "Built 3 ML models",
+                "Improved prediction accuracy by 15%"
+            ]
+        },
+        {
+            "title": "Python Developer Intern",
+            "company": "OctaNet Services Pvt Ltd.",
+            "period": "June 2024 – July 2024",
+            "type": "Internship",
+            "achievements": [
+                "Created automation scripts",
+                "Reduced manual work by 40%"
+            ]
+        },
+        {
+            "title": "CEO & Co-Founder",
+            "company": "RacerNodes",
+            "period": "May 2022 – July 2023",
+            "type": "Entrepreneurship",
+            "achievements": [
+                "Led team of 5+ members",
+                "Launched successful product",
+                "Managed startup operations"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor's degree, Computer Science",
+            "institution": "GIET University Gunupur",
+            "year": "2025",
+            "location": "Gunupur, Odisha, India",
+            "description": "Specialized in Computer Science with focus on AI/ML and Software Engineering"
+        },
+        {
+            "degree": "Intermediate",
+            "institution": "Delhi Public School (DPS)",
+            "year": "2021",
+            "location": "Dhenkanal, Odisha, India",
+            "description": "Science stream with Mathematics and Computer Science"
+        }
+    ],
+    "certifications": [
+        {
+            "title": "AWS Bedrock Workshop (Build a Gen AI Chatbot)",
+            "issuer": "Udemy",
+            "year": "2024"
+        },
+        {
+            "title": "Amazon Bedrock Getting Started",
+            "issuer": "AWS",
+            "year": "2024"
+        },
+        {
+            "title": "Amazon Q Developer",
+            "issuer": "AWS",
+            "year": "2024"
+        },
+        {
+            "title": "AWS Cloud Practitioner",
+            "issuer": "Udemy",
+            "year": "2024"
+        },
+        {
+            "title": "Python 3: Programming beginner to advanced",
+            "issuer": "Udemy",
+            "year": "2024"
+        },
+        {
+            "title": "Planning a Machine Learning Project",
+            "issuer": "AWS",
+            "year": "2024"
+        },
+        {
+            "title": "Python For Data Science and Machine Learning",
+            "issuer": "Udemy",
+            "year": "2024"
+        },
+        {
+            "title": "Project Management",
+            "issuer": "LearnTube",
+            "year": "2024"
+        }
+    ],
+    "projects": {
+        "featured": [
+            {
+                "title": "PacketBuddy — Open Source Network Usage & Bandwidth Tracker",
+                "description": "Ultra-lightweight bandwidth monitor and network traffic tracker with real-time stats, cost tracking, and zero configuration.",
+                "technologies": [
+                    "Python",
+                    "JavaScript",
+                    "HTML/CSS",
+                    "Shell",
+                    "PowerShell",
+                    "Batchfile",
+                    "NeonDB",
+                    "Chart.js"
+                ],
+                "link": "https://github.com/instax-dutta/packet-buddy"
+            },
+            {
+                "title": "Binify - Zero-Knowledge Encrypted Pastebin",
+                "description": "Zero-knowledge encrypted pastebin. Client-side encryption ensures absolute privacy—even we can't read your pastes.",
+                "technologies": [
+                    "Next.js 15",
+                    "Turso",
+                    "Upstash Redis",
+                    "Web Crypto API",
+                    "TypeScript"
+                ],
+                "link": "https://bin.sdad.pro"
+            },
+            {
+                "title": "GenieLabs",
+                "description": "AI-powered dev platform for code generation, analysis, and optimization.",
+                "technologies": [
+                    "AI Agent",
+                    "API Integration",
+                    "Next.js 14",
+                    "TypeScript 5"
+                ],
+                "link": "https://genielabs.sdad.pro"
+            },
+            {
+                "title": "Sensory",
+                "description": "Scalable cloud storage with efficient database management and advanced rate limiting.",
+                "technologies": [
+                    "Next.js 15",
+                    "Vercel",
+                    "Backblaze B2",
+                    "Turso",
+                    "Upstash Redis"
+                ],
+                "link": "https://mirror.sdad.pro"
+            }
+        ],
+        "machine_learning": [
+            {
+                "title": "CV Extractor",
+                "description": "ML-powered resume parser that automatically extracts key information.",
+                "technologies": [
+                    "Flask 2",
+                    "Python 3.10",
+                    "Document Processing",
+                    "ML"
+                ],
+                "link": "https://github.com/instax-dutta/CvExtractor-Webapp"
+            },
+            {
+                "title": "Product Review Sentiment Analyser",
+                "description": "ML-powered sentiment analysis tool that transforms product reviews into actionable business insights.",
+                "technologies": [
+                    "Flask 2",
+                    "BeautifulSoup 4",
+                    "NLP",
+                    "Sentiment Analysis"
+                ],
+                "link": "https://github.com/instax-dutta/ProductReviewSentimentAnalyser"
+            }
+        ],
+        "security": [
+            {
+                "title": "Ultimate-Firewall",
+                "description": "Enterprise firewall with comprehensive IP table rules and DDoS protection techniques.",
+                "technologies": [
+                    "IP tables v1.8",
+                    "DDoS protection"
+                ],
+                "link": "https://github.com/instax-dutta/Ultimate-Firewall"
+            },
+            {
+                "title": "VullScanny - Security Vulnerability Scanner",
+                "description": "AI-powered security scanner with zero-config setup. Instant code analysis and reports.",
+                "technologies": [
+                    "Next.js 16",
+                    "PWA",
+                    "Turbopack",
+                    "HSTS"
+                ],
+                "link": "https://vullscanny.sdad.pro"
+            }
+        ],
+        "in_development": [
+            {
+                "title": "12Labs",
+                "description": "Enterprise-grade suite of AI-powered audio and text processing tools.",
+                "technologies": [
+                    "Python 3.11",
+                    "Flask 3",
+                    "edge-tts",
+                    "Mistral API",
+                    "Gemini API"
+                ],
+                "status": "Hidden / Work in Progress"
+            }
+        ]
+    },
+    "metrics": {
+        "total_experiences": 12,
+        "production_ready_apps": 20,
+        "companies_worked_with": "10+",
+        "years_of_experience": "3+",
+        "startup_founded": 1
+    }
+}
