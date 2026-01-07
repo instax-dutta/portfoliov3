@@ -257,21 +257,6 @@
     "projects": {
         "featured": [
             {
-                "title": "PacketBuddy — Open Source Network Usage & Bandwidth Tracker",
-                "description": "Ultra-lightweight bandwidth monitor and network traffic tracker with real-time stats, cost tracking, and zero configuration.",
-                "technologies": [
-                    "Python",
-                    "JavaScript",
-                    "HTML/CSS",
-                    "Shell",
-                    "PowerShell",
-                    "Batchfile",
-                    "NeonDB",
-                    "Chart.js"
-                ],
-                "link": "https://github.com/instax-dutta/packet-buddy"
-            },
-            {
                 "title": "Binify - Zero-Knowledge Encrypted Pastebin",
                 "description": "Zero-knowledge encrypted pastebin. Client-side encryption ensures absolute privacy—even we can't read your pastes.",
                 "technologies": [
@@ -305,6 +290,21 @@
                     "Upstash Redis"
                 ],
                 "link": "https://mirror.sdad.pro"
+            },
+            {
+                "title": "PacketBuddy — Open Source Network Usage & Bandwidth Tracker",
+                "description": "Ultra-lightweight bandwidth monitor and network traffic tracker with real-time stats, cost tracking, and zero configuration.",
+                "technologies": [
+                    "Python",
+                    "JavaScript",
+                    "HTML/CSS",
+                    "Shell",
+                    "PowerShell",
+                    "Batchfile",
+                    "NeonDB",
+                    "Chart.js"
+                ],
+                "link": "https://github.com/instax-dutta/packet-buddy"
             }
         ],
         "machine_learning": [

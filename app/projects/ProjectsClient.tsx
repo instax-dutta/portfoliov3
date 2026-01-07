@@ -6,25 +6,19 @@ import { AnimatedProjectCard } from "@/components/ui/animated-project-card"
 import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 
 const projects = [
-  // 🚀 Featured: Production-Ready Fullstack & AI Applications
-  /* {
-    title: "VullScanny - Security Vulnerability Scanner",
-    description: "AI-powered security scanner with zero-config setup. Instant code analysis and comprehensive vulnerability reports.",
-    technologies: ["Next.js 16", "React", "Tailwind CSS", "Framer Motion", "Lenis", "PWA", "Turbopack", "Vercel", "HSTS"],
-    link: "https://vullscanny.sdad.pro",
-  }, */
-  {
-    title: "PacketBuddy — Open Source Network Usage & Bandwidth Tracker",
-    description: "Ultra-lightweight bandwidth monitor and network traffic tracker with real-time stats, cost tracking, and zero configuration.",
-    technologies: ["Python", "JavaScript", "HTML/CSS", "Shell", "PowerShell", "Batchfile", "NeonDB", "Chart.js"],
-    link: "https://github.com/instax-dutta/packet-buddy",
-  },
+  // 🚀 Featured: Top Projects for Employability (Security + AI/ML + Full Stack + Cloud)
   {
     title: "Binify - Zero-Knowledge Encrypted Pastebin",
     description: "Zero-knowledge encrypted pastebin. Client-side encryption ensures absolute privacy—even we can't read your pastes.",
     technologies: ["Next.js 15", "Turso", "Upstash Redis", "Tailwind CSS", "Framer Motion", "Lucide React", "Web Crypto API", "TypeScript"],
     link: "https://bin.sdad.pro",
   },
+  /* {
+    title: "VullScanny - Security Vulnerability Scanner",
+    description: "AI-powered security scanner with zero-config setup. Instant code analysis and comprehensive vulnerability reports.",
+    technologies: ["Next.js 16", "React", "Tailwind CSS", "Framer Motion", "Lenis", "PWA", "Turbopack", "Vercel", "HSTS"],
+    link: "https://vullscanny.sdad.pro",
+  }, */
   {
     title: "GenieLabs",
     description: "AI-powered dev platform for code generation, analysis, and optimization. Workflow automation for the modern developer.",
@@ -37,26 +31,20 @@ const projects = [
     technologies: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
     link: "https://mirror.sdad.pro",
   },
-  // TODO: Hidden - Work in progress, uncomment when ready to display
-  /* {
-    title: "12Labs",
-    description: "Enterprise-grade suite of AI-powered audio and text processing tools featuring TTS, transcription, and intelligent content generation with support for multiple AI providers.",
-    technologies: ["Python 3.11", "Flask 3", "AI", "edge-tts", "Mistral API", "Gemini API", "Machine Learning"],
-    link: "https://12labs.xyz",
-  }, */
+  {
+    title: "PacketBuddy — Open Source Network Usage & Bandwidth Tracker",
+    description: "Ultra-lightweight bandwidth monitor and network traffic tracker with real-time stats, cost tracking, and zero configuration.",
+    technologies: ["Python", "JavaScript", "HTML/CSS", "Shell", "PowerShell", "Batchfile", "NeonDB", "Chart.js"],
+    link: "https://github.com/instax-dutta/packet-buddy",
+  },
+
+  // 🤖 AI/ML Applications
   {
     title: "WordAI",
     description: "AI content generation that produces SEO-optimized articles in seconds. No sign-up required.",
     technologies: ["AI Agent", "API Integration", "React 18", "Vite 5", "Tailwind CSS 3", "Redux Toolkit", "NLP"],
     link: "https://wordai.app",
   },
-  {
-    title: "BizForge",
-    description: "Suite of business tools to automate workflows and supercharge online presence. All-in-one business growth platform.",
-    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
-    link: "https://bizzforge.sdad.pro",
-  },
-
   {
     title: "OneShotAI – AI-Powered Prompt Engineering Tool",
     description: "Streamline prompt engineering workflows and optimize AI model interactions for better results.",
@@ -88,6 +76,14 @@ const projects = [
     description: "ML-powered sentiment analysis tool that transforms product reviews into actionable business insights.",
     technologies: ["Flask 2", "BeautifulSoup 4", "Python 3.9", "Machine Learning", "NLP", "Sentiment Analysis"],
     link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
+  },
+
+  // 💼 Business & Productivity Tools
+  {
+    title: "BizForge",
+    description: "Suite of business tools to automate workflows and supercharge online presence. All-in-one business growth platform.",
+    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
+    link: "https://bizzforge.sdad.pro",
   },
 
   // 🔐 Enterprise Security & DevOps

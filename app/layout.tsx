@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     default: "Sai Dutta Abhishek Dash - Full Stack Developer | AI/ML Engineer | Security Expert",
     template: "%s | Sai Dutta Abhishek Dash",
   },
-  description: "Expert Full Stack Developer & AI/ML Engineer specializing in Python, React, Next.js, Security Engineering, DevOps, and Cloud Architecture. Built 20+ production apps including AI-powered tools, zero-knowledge encryption systems, and enterprise security solutions. AWS Certified Cloud Practitioner available for innovative projects.",
+  description: "Expert Full Stack Developer & AI/ML Engineer specializing in Security Engineering, Cloud Architecture, and Production Applications. Built 20+ apps including Binify (zero-knowledge encryption), GenieLabs (AI dev platform), Sensory (cloud storage), and PacketBuddy (network monitoring). Expertise in Python, React, Next.js, TypeScript, AWS, TensorFlow. AWS Certified Cloud Practitioner available for innovative projects.",
   keywords: [
     // Core Roles
     "Full Stack Developer",
@@ -169,7 +169,7 @@ export const metadata: Metadata = {
     url: "https://sdad.pro",
     siteName: "Sai Dutta Abhishek Dash - Developer Portfolio",
     title: "Sai Dutta Abhishek Dash - Full Stack Developer | AI Engineer | Security Expert",
-    description: "Expert Full Stack Developer & AI/ML Engineer with 20+ production applications. Specializing in AI-powered tools, zero-knowledge encryption, security solutions, and cloud architecture. Python • React • Next.js • AWS • TensorFlow",
+    description: "Security-focused Full Stack Developer & AI/ML Engineer with 20+ production applications. Built Binify (zero-knowledge encryption), GenieLabs (AI platform), Sensory (cloud storage), PacketBuddy (network monitoring). Python • React • Next.js • AWS • TensorFlow • TypeScript",
     images: [
       {
         url: "/og-image.png",
@@ -182,7 +182,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sai Dutta Abhishek Dash - Full Stack Developer | AI Engineer | Security Expert",
-    description: "Expert in Full Stack Development, AI/ML, Security Engineering & Cloud Architecture. Built 20+ production apps. Python • React • Next.js • AWS • TensorFlow",
+    description: "Security-focused Full Stack Developer & AI/ML Engineer. Built 20+ apps: Binify (encryption), GenieLabs (AI), Sensory (cloud), PacketBuddy (monitoring). Python • React • Next.js • AWS • TensorFlow",
     images: ["/og-image.png"],
     creator: "@abhishekdash69",
     site: "@abhishekdash69",
