@@ -49,7 +49,7 @@ const projects = [
     title: "OneShotAI – AI-Powered Prompt Engineering Tool",
     description: "Streamline prompt engineering workflows and optimize AI model interactions for better results.",
     technologies: ["AI", "Prompt Engineering", "Next.js 14", "React 18", "Tailwind CSS 3", "NLP"],
-    link: "https://oneshotai.sdad.pro",
+    link: "https://oneshotai.site",
   },
   {
     title: "AI Powered Vedic MatchMaker",
