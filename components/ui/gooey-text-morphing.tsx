@@ -26,6 +26,7 @@ export function GooeyText({
     let time = new Date();
     let morph = 0;
     let cooldown = cooldownTime;
+    let animationFrameId: number;
 
     const setMorph = (fraction: number) => {
       if (text1Ref.current && text2Ref.current) {
@@ -62,7 +63,7 @@ export function GooeyText({
     };
 
     function animate() {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
       const newTime = new Date();
       const shouldIncrementIndex = cooldown > 0;
       const dt = (newTime.getTime() - time.getTime()) / 1000;
@@ -84,10 +85,12 @@ export function GooeyText({
       }
     }
 
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
-      // Cleanup function if needed
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, [texts, morphTime, cooldownTime]);
 

@@ -19,8 +19,8 @@ const LenisProvider = ({ children }: LenisProviderProps) => {
 
     // Optimized Lenis configuration for ultra-smooth scrolling
     const lenis = new Lenis({
-      lerp: 0.1, // Perfect balance between smoothness and responsiveness
-      duration: 1.2, // Smooth scroll duration
+      lerp: 0.08, // Slightly reduced for snappier response
+      duration: 1.0, // Reduced duration for better performance
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing for natural feel
       orientation: 'vertical', // Vertical scrolling
       gestureOrientation: 'vertical', // Vertical gestures

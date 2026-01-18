@@ -10,7 +10,7 @@ import type { Metadata } from "next"
 const orbitron = Orbitron({
   subsets: ["latin"],
   variable: "--font-orbitron",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700", "900"], // Reduced from 6 weights to 3
   display: "swap",
   preload: true,
 })
@@ -28,7 +28,7 @@ const spaceMono = Space_Mono({
 const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font-archivo",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"], // Reduced from 5 weights to 3
   display: "swap",
   preload: true,
 })
@@ -37,7 +37,7 @@ const archivo = Archivo({
 const inconsolata = Inconsolata({
   subsets: ["latin"],
   variable: "--font-inconsolata",
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700"], // Reduced from 8 weights to 2
   display: "swap",
   preload: false, // Not critical, load later
 })

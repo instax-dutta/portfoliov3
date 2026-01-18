@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, memo } from "react"
 
 const StarryBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -10,21 +10,22 @@ const StarryBackground: React.FC = () => {
     const canvas = canvasRef.current
     if (!canvas) return
 
-    const ctx = canvas.getContext("2d")
+    const ctx = canvas.getContext("2d", { alpha: true })
     if (!ctx) return
 
     let width = (canvas.width = window.innerWidth)
     let height = (canvas.height = window.innerHeight)
+    let animationFrameId: number
 
     const stars: { x: number; y: number; radius: number; vx: number; vy: number }[] = []
     const shootingStars: { x: number; y: number; len: number; speed: number }[] = []
 
-    // Generate stars
-    for (let i = 0; i < 200; i++) {
+    // Optimized star count (150) with larger sizes for fuller appearance
+    for (let i = 0; i < 150; i++) {
       stars.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        radius: Math.random() * 1.5 + 0.5,
+        radius: Math.random() * 1.7 + 0.8, // Larger stars: 0.8-2.5px (was 0.5-2px)
         vx: Math.random() * 0.2 - 0.1,
         vy: Math.random() * 0.2 - 0.1,
       })
@@ -66,7 +67,6 @@ const StarryBackground: React.FC = () => {
 
     function addShootingStar() {
       if (Math.random() < 0.005 && shootingStars.length < 3) {
-        // Reduced probability and max number of shooting stars
         shootingStars.push({
           x: Math.random() * width,
           y: 0,
@@ -76,14 +76,27 @@ const StarryBackground: React.FC = () => {
       }
     }
 
-    function animate() {
-      drawStars()
-      drawShootingStars()
-      addShootingStar()
-      requestAnimationFrame(animate)
+    // FPS throttling for better performance
+    const fps = 60
+    const frameDelay = 1000 / fps
+    let lastFrameTime = 0
+
+    function animate(currentTime: number) {
+      animationFrameId = requestAnimationFrame(animate)
+
+      const elapsed = currentTime - lastFrameTime
+
+      // Only render if enough time has passed (60 FPS cap)
+      if (elapsed > frameDelay) {
+        lastFrameTime = currentTime - (elapsed % frameDelay)
+
+        drawStars()
+        drawShootingStars()
+        addShootingStar()
+      }
     }
 
-    animate()
+    animationFrameId = requestAnimationFrame(animate)
 
     const handleResize = () => {
       width = canvas.width = window.innerWidth
@@ -94,10 +107,11 @@ const StarryBackground: React.FC = () => {
 
     return () => {
       window.removeEventListener("resize", handleResize)
+      cancelAnimationFrame(animationFrameId)
     }
   }, [])
 
   return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full z-0" />
 }
 
-export default StarryBackground
+export default memo(StarryBackground)

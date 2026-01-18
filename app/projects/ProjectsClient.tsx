@@ -1,7 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
 import Navigation from "../components/Navigation"
-import StarryBackground from "../components/StarryBackground"
 import { AnimatedProjectCard } from "@/components/ui/animated-project-card"
 import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 
@@ -166,7 +165,6 @@ const projects = [
 export default function Projects() {
   return (
     <div className="relative min-h-screen text-color-text">
-      <StarryBackground />
       <Navigation />
       <motion.main
         className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"

@@ -60,11 +60,19 @@ const CustomCursor: React.FC = () => {
         targetRotation.current = rotation.current + adjustedDiff
       }
 
-      // Smooth rotation interpolation (increased from 0.1 to 0.2 for faster response)
-      rotation.current = lerp(rotation.current, targetRotation.current, 0.2)
+      // Smooth rotation interpolation
+      const rotationDiff = Math.abs(targetRotation.current - rotation.current)
 
-      if (cursorRef.current) {
-        // Position is instant - no lerp! This makes it truly replace the cursor
+      // Only update if there's a meaningful difference (performance optimization)
+      if (rotationDiff > 0.1) {
+        rotation.current = lerp(rotation.current, targetRotation.current, 0.2)
+
+        if (cursorRef.current) {
+          // Position is instant - no lerp! This makes it truly replace the cursor
+          cursorRef.current.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%) rotate(${rotation.current}deg)`
+        }
+      } else if (cursorRef.current) {
+        // Just update position without rotation calculation
         cursorRef.current.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%) rotate(${rotation.current}deg)`
       }
 

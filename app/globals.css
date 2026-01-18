@@ -228,6 +228,24 @@
     backface-visibility: hidden;
     perspective: 1000px;
   }
+
+  /* CSS Containment for better paint performance */
+  .contain-layout {
+    contain: layout;
+  }
+
+  .contain-paint {
+    contain: paint;
+  }
+
+  .contain-strict {
+    contain: strict;
+  }
+
+  /* Content visibility for off-screen optimization */
+  .content-auto {
+    content-visibility: auto;
+  }
 }
 
 /* Lenis handles smooth scrolling - don't use CSS scroll-behavior */

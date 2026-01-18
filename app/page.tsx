@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import StarryBackground from "./components/StarryBackground"
 import Navigation from "./components/Navigation"
 import { GooeyText } from "@/components/ui/gooey-text-morphing"
 import { Button } from "@/components/ui/button"
@@ -59,7 +58,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
-      <StarryBackground />
       <Navigation />
       <motion.div
         className="z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 max-w-4xl mt-12 sm:mt-16 gap-6 sm:gap-8"
