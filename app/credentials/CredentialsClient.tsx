@@ -108,10 +108,9 @@ const itemVariants = {
 export default function Credentials() {
     return (
         <div className="relative text-gray-100 min-h-screen overflow-hidden">
-            <StarryBackground />
             <Navigation />
             <motion.main
-                className="relative z-10 isolate container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
+                className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -121,16 +120,10 @@ export default function Credentials() {
             >
                 {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{
-                        duration: 0.6,
-                        ease: "easeOut" as any
-                    }}
+                    variants={itemVariants}
                     className="text-center mb-16 relative gpu-accelerated"
                 >
-                    <h1 className="achiko-font text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400">
+                    <h1 className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow">
                         Credentials
                     </h1>
                     <p className="text-lg text-color-text-muted max-w-2xl mx-auto">

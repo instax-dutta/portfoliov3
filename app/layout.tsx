@@ -1,10 +1,18 @@
 import type React from "react"
 import "./globals.css"
-import { Orbitron, Space_Mono, Archivo, Inconsolata } from "next/font/google"
+import { Orbitron, Space_Mono, Archivo, Inconsolata, Audiowide } from "next/font/google"
 import StarryBackground from "./components/StarryBackground"
 import CustomCursor from "./components/CustomCursor"
 import LenisProvider from "./components/LenisProvider"
 import type { Metadata } from "next"
+
+// Sci-fi heading font - atmospheric and premium
+const audiowide = Audiowide({
+  subsets: ["latin"],
+  variable: "--font-audiowide",
+  weight: "400",
+  display: "swap",
+})
 
 // Primary heading font - futuristic display
 const orbitron = Orbitron({
@@ -340,15 +348,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${orbitron.variable} ${spaceMono.variable} ${archivo.variable} ${inconsolata.variable} font-archivo bg-color-background text-color-text min-h-screen`}>
+      <body className={`${orbitron.variable} ${spaceMono.variable} ${archivo.variable} ${inconsolata.variable} ${audiowide.variable} font-archivo text-color-text min-h-screen relative overflow-x-hidden`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(structuredData)) }}
         />
+
+        {/* Layer 1: Base Background Color (Lowest) */}
+        <div className="fixed inset-0 bg-[#0a0f1f] -z-[100]" />
+
+        {/* Layer 2: Starry Background (Component now handles own positioning) */}
         <StarryBackground />
+
+        {/* Layer 3: Custom Cursor (Fixed top) */}
         <CustomCursor />
+
+        {/* Layer 4: Content (Above all backgrounds) */}
         <LenisProvider>
-          <div className="relative z-10">{children}</div>
+          <div className="relative z-0 min-h-screen">
+            {children}
+          </div>
         </LenisProvider>
       </body>
     </html>

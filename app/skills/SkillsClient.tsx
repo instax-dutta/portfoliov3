@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { useRef } from "react"
 import { Code, Brain, Server, Zap } from "lucide-react"
 import Navigation from "../components/Navigation"
-import StarryBackground from "../components/StarryBackground"
 
 const skills = [
   {
@@ -36,47 +35,64 @@ const skills = [
   },
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut" as const,
+    },
+  },
+}
+
 export default function Skills() {
   return (
     <div className="relative text-gray-100 min-h-screen">
-      <StarryBackground />
       <Navigation />
 
       <motion.main
-        className="relative z-10 isolate container mx-auto px-4 pt-20 sm:pt-24 pb-12 sm:pb-16"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        className="relative container mx-auto px-4 pt-20 sm:pt-24 pb-12 sm:pb-16"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
         <motion.header
           className="text-center mb-12 sm:mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          variants={itemVariants}
         >
           <motion.h1
-            className="achiko-font text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 tracking-wide"
-            initial={{ y: -30 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
           >
             My Skills & Expertise
           </motion.h1>
           <motion.p
             className="text-color-text-muted text-lg max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
           >
             A comprehensive overview of my technical abilities and professional competencies
           </motion.p>
         </motion.header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10"
+          variants={containerVariants}
+        >
           {skills.map((skillCategory, index) => (
             <SkillCategory key={index} category={skillCategory} index={index} />
           ))}
-        </div>
+        </motion.div>
       </motion.main>
     </div>
   )
@@ -90,14 +106,7 @@ function SkillCategory({ category, index }: { category: any; index: number }) {
     <motion.div
       ref={ref}
       className="relative bg-color-background/40 backdrop-blur-md border border-color-primary/30 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        ease: "easeOut"
-      }}
+      variants={itemVariants}
     >
       {/* Glow effect on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -125,14 +134,7 @@ function SkillCategory({ category, index }: { category: any; index: number }) {
 function SkillBadge({ skill, index }: { skill: string; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.3,
-        delay: index * 0.03, // Faster stagger for snappier feel
-        ease: "backOut"
-      }}
+      variants={itemVariants}
       whileHover={{
         scale: 1.05,
         y: -2,

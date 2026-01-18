@@ -118,18 +118,26 @@ export function GooeyText({
         <span
           ref={text1Ref}
           className={cn(
-            "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-block select-none whitespace-nowrap text-center text-6xl md:text-[60pt]",
+            "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-block select-none whitespace-nowrap text-center text-6xl md:text-[60pt] antialiased",
             "text-foreground",
             textClassName
           )}
+          style={{
+            WebkitFontSmoothing: "antialiased",
+            MozOsxFontSmoothing: "grayscale"
+          }}
         />
         <span
           ref={text2Ref}
           className={cn(
-            "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-block select-none whitespace-nowrap text-center text-6xl md:text-[60pt]",
+            "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-block select-none whitespace-nowrap text-center text-6xl md:text-[60pt] antialiased",
             "text-foreground",
             textClassName
           )}
+          style={{
+            WebkitFontSmoothing: "antialiased",
+            MozOsxFontSmoothing: "grayscale"
+          }}
         />
       </div>
     </div>

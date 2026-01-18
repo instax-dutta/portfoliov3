@@ -115,10 +115,9 @@ export default function Contact() {
 
   return (
     <div className="relative min-h-screen flex flex-col overflow-hidden">
-      <StarryBackground />
       <Navigation />
       <motion.main
-        className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 md:pb-20 relative z-10 isolate"
+        className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 md:pb-20 relative"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -130,7 +129,7 @@ export default function Contact() {
           {/* Header */}
           <div className="text-center space-y-4">
             <motion.h1
-              className="achiko-font text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400"
+              className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
               variants={itemVariants}
             >
               Get In Touch

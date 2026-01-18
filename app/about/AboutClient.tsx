@@ -23,9 +23,20 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       damping: 15,
       stiffness: 100,
+    },
+  },
+}
+
+const gridContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0, // No extra delay for grid items
     },
   },
 }
@@ -33,10 +44,9 @@ const itemVariants = {
 export default function About() {
   return (
     <div className="relative text-gray-100 min-h-screen">
-      <StarryBackground />
       <Navigation />
       <motion.main
-        className="relative z-10 isolate container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
+        className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -44,25 +54,22 @@ export default function About() {
         {/* Header */}
         <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 achiko-font"
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
           >
             About Me
           </motion.h1>
           <motion.p
             className="text-color-text-muted text-base sm:text-lg max-w-2xl mx-auto"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
           >
             Freelance Full Stack Developer and Machine Learning Engineer passionate about building innovative solutions and delivering high-quality projects
           </motion.p>
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+          variants={gridContainerVariants}
+        >
           {/* Large Hero Card - Professional Summary */}
           <motion.div
             className="md:col-span-2 lg:col-span-2 lg:row-span-2 bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between group hover:border-color-primary/50 transition-all duration-300"
@@ -188,7 +195,7 @@ export default function About() {
             iconColor="text-teal-400"
             variants={itemVariants}
           />
-        </div>
+        </motion.div>
       </motion.main>
     </div>
   )

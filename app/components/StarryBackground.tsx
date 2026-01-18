@@ -32,6 +32,7 @@ const StarryBackground: React.FC = () => {
     }
 
     function drawStars() {
+      if (!ctx) return
       ctx.clearRect(0, 0, width, height)
       ctx.fillStyle = "rgba(255, 255, 255, 0.8)"
       stars.forEach((star) => {
@@ -48,6 +49,7 @@ const StarryBackground: React.FC = () => {
     }
 
     function drawShootingStars() {
+      if (!ctx) return
       ctx.strokeStyle = "rgba(255, 255, 255, 0.8)"
       ctx.lineWidth = 2
       shootingStars.forEach((star, index) => {
@@ -111,7 +113,7 @@ const StarryBackground: React.FC = () => {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10" />
+  return <canvas ref={canvasRef} className="fixed inset-0 w-full h-full -z-10 pointer-events-none" />
 }
 
 export default memo(StarryBackground)

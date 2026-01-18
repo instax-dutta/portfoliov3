@@ -164,45 +164,48 @@ const containerVariants = {
   },
 }
 
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring" as const,
+      damping: 15,
+      stiffness: 100,
+    },
+  },
+}
+
 export default function Experience() {
 
   return (
     <div className="relative text-gray-100 min-h-screen">
-      <StarryBackground />
       <Navigation />
 
       <motion.main
-        className="relative z-10 isolate container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
+        className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Header Section - Optimized for mobile */}
-        <motion.div className="text-center mb-12 sm:mb-16 lg:mb-20">
+        <motion.div className="text-center mb-12 sm:mb-16 lg:mb-20" variants={itemVariants}>
           <motion.div
             className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-500/20"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
           >
             <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
             <span className="font-space-mono text-sm sm:text-base text-blue-400 font-medium tracking-wider">Professional Journey</span>
           </motion.div>
 
           <motion.h1
-            className="achiko-font text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 tracking-wide"
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            className="scifi-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
           >
             Experience Timeline
           </motion.h1>
 
           <motion.p
             className="font-archivo text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
             A comprehensive journey through my professional experiences, from entrepreneurship to machine learning engineering,
             showcasing growth, learning, and impact across diverse technology domains.
