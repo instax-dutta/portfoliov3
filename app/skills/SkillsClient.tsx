@@ -43,7 +43,7 @@ export default function Skills() {
       <Navigation />
 
       <motion.main
-        className="relative container mx-auto px-4 py-20 sm:py-24"
+        className="relative z-10 isolate container mx-auto px-4 pt-20 sm:pt-24 pb-12 sm:pb-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

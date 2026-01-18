@@ -118,7 +118,7 @@ export default function Contact() {
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 md:pb-20"
+        className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 md:pb-20 relative z-10 isolate"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -148,11 +148,11 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Left Side - Contact Info */}
             <motion.div
-              className="space-y-6"
+              className="h-full"
               variants={itemVariants}
             >
               {/* Contact Details */}
-              <div className="bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-xl p-6 space-y-6">
+              <div className="bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-xl p-6 sm:p-8 h-full flex flex-col justify-between">
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-lg bg-color-primary/20 border border-color-primary/30">
@@ -219,7 +219,7 @@ export default function Contact() {
 
             {/* Right Side - Contact Form */}
             <motion.div
-              className="bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-xl p-6 sm:p-8"
+              className="bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-xl p-6 sm:p-8 h-full"
               variants={itemVariants}
             >
               <form ref={formRef} onSubmit={onSubmit} className="space-y-5">
@@ -282,10 +282,10 @@ export default function Contact() {
                     transition={{ duration: 0.3 }}
                   >
                     <p className={`text-sm ${result.includes("successfully")
-                        ? "text-green-400"
-                        : result.includes("Sending")
-                          ? "text-color-primary"
-                          : "text-red-400"
+                      ? "text-green-400"
+                      : result.includes("Sending")
+                        ? "text-color-primary"
+                        : "text-red-400"
                       }`}>
                       {result}
                     </p>

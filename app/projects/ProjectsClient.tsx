@@ -167,7 +167,7 @@ export default function Projects() {
     <div className="relative min-h-screen text-color-text">
       <Navigation />
       <motion.main
-        className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
+        className="relative z-10 isolate container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
