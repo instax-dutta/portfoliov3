@@ -100,11 +100,11 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
       >
         <div className="relative">
           <motion.div
-            style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", overflow: "hidden" }}
+            style={{ display: "flex", justifyContent: "center", overflow: "visible" }}
             variants={container}
             initial="hidden"
             animate={replay ? "visible" : "hidden"}
-            className={cn("text-4xl font-bold text-center", textClassName)}
+            className={cn("text-4xl font-bold text-center flex-wrap md:flex-nowrap mb-2", textClassName)}
           >
             {animateBy === "words" ? (
               words.map((word, index) => (

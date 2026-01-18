@@ -61,7 +61,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
       <Navigation />
       <motion.div
-        className="z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 max-w-4xl mt-12 sm:mt-16 gap-6 sm:gap-8"
+        className="z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 max-w-7xl mt-12 sm:mt-16 gap-6 sm:gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

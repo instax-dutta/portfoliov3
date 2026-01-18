@@ -17,19 +17,16 @@ const LenisProvider = ({ children }: LenisProviderProps) => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
     if (prefersReducedMotion.matches) return
 
-    // Optimized Lenis configuration for ultra-smooth scrolling
+    // "Luxury" Profile: Silky smooth, physics-based scrolling
     const lenis = new Lenis({
-      lerp: 0.08, // Slightly reduced for snappier response
-      duration: 1.0, // Reduced duration for better performance
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing for natural feel
-      orientation: 'vertical', // Vertical scrolling
-      gestureOrientation: 'vertical', // Vertical gestures
-      smoothWheel: true, // Enable smooth wheel scrolling
-      smoothTouch: false, // Disable on touch for better mobile performance
-      wheelMultiplier: 1, // Standard wheel sensitivity
-      touchMultiplier: 2, // Enhanced touch scrolling
-      normalizeWheel: true, // Normalize scroll across browsers
-      infinite: false, // No infinite scroll
+      duration: 1.2, // The "Gold Standard" for premium feel
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Expo Out for snappy start, smooth settle
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
     })
 
     lenisRef.current = lenis
