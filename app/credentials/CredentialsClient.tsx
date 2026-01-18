@@ -111,7 +111,7 @@ export default function Credentials() {
             <StarryBackground />
             <Navigation />
             <motion.main
-                className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+                className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
                 initial="hidden"
                 animate="visible"
                 variants={{

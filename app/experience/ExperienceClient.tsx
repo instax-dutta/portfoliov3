@@ -170,9 +170,9 @@ export default function Experience() {
     <div className="relative text-gray-100 min-h-screen">
       <StarryBackground />
       <Navigation />
-      
+
       <motion.main
-        className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -188,7 +188,7 @@ export default function Experience() {
             <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
             <span className="font-space-mono text-sm sm:text-base text-blue-400 font-medium tracking-wider">Professional Journey</span>
           </motion.div>
-          
+
           <motion.h1
             className="achiko-font text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 tracking-wide"
             initial={{ y: -30, opacity: 0 }}
@@ -197,14 +197,14 @@ export default function Experience() {
           >
             Experience Timeline
           </motion.h1>
-          
+
           <motion.p
             className="font-archivo text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            A comprehensive journey through my professional experiences, from entrepreneurship to machine learning engineering, 
+            A comprehensive journey through my professional experiences, from entrepreneurship to machine learning engineering,
             showcasing growth, learning, and impact across diverse technology domains.
           </motion.p>
 
@@ -330,7 +330,7 @@ export default function Experience() {
               </motion.div>
               <p className="text-gray-400 mt-2 text-sm sm:text-base">Total Experiences</p>
             </div>
-            
+
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
               <motion.div
                 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500"
@@ -343,7 +343,7 @@ export default function Experience() {
               </motion.div>
               <p className="text-gray-400 mt-2 text-sm sm:text-base">Companies Worked With</p>
             </div>
-            
+
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
               <motion.div
                 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500"

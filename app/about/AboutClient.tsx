@@ -36,21 +36,21 @@ export default function About() {
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Header */}
         <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
-        <motion.h1
+          <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 achiko-font"
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
             About Me
-        </motion.h1>
+          </motion.h1>
           <motion.p
             className="text-color-text-muted text-base sm:text-lg max-w-2xl mx-auto"
             initial={{ y: 20, opacity: 0 }}
@@ -75,19 +75,19 @@ export default function About() {
                   <Rocket className="w-6 h-6 text-blue-400" />
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-            Professional Summary
-          </h2>
+                  Professional Summary
+                </h2>
               </div>
               <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
-            I am a dynamic and results-driven Freelance Full Stack Developer with a strong foundation in Python, machine
-            learning, and DevOps. My entrepreneurial drive and technical proficiency enable me to deliver innovative solutions
-            for clients across the tech industry.
-          </p>
-          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-            With extensive hands-on experience in developing machine learning models, automating processes, and managing cloud
-            infrastructure, I specialize in building scalable applications that leverage cutting-edge technologies
-            to solve real-world business problems. Available for remote projects and consulting.
-          </p>
+                I am a dynamic and results-driven Freelance Full Stack Developer with a strong foundation in Python, machine
+                learning, and DevOps. My entrepreneurial drive and technical proficiency enable me to deliver innovative solutions
+                for clients across the tech industry.
+              </p>
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                With extensive hands-on experience in developing machine learning models, automating processes, and managing cloud
+                infrastructure, I specialize in building scalable applications that leverage cutting-edge technologies
+                to solve real-world business problems. Available for remote projects and consulting.
+              </p>
             </div>
             <div className="mt-6 pt-6 border-t border-color-primary/20">
               <div className="flex flex-wrap gap-2">
@@ -107,7 +107,7 @@ export default function About() {
           {/* Programming Skills Card */}
           <SkillBentoCard
             icon={<Code className="w-6 h-6" />}
-              title="Programming"
+            title="Programming"
             skills={["Python", "TypeScript", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "HTML", "CSS", "SQL", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL", "Java", "C++", "Rust", "Go", "Tailwind CSS", "Redux"]}
             gradient="from-blue-500/20 to-cyan-500/20"
             borderColor="border-blue-500/30"
@@ -118,7 +118,7 @@ export default function About() {
           {/* AI/ML Skills Card */}
           <SkillBentoCard
             icon={<Brain className="w-6 h-6" />}
-              title="AI/ML"
+            title="AI/ML"
             skills={["TensorFlow", "PyTorch", "scikit-learn", "NumPy", "Pandas", "OpenCV", "Hugging Face", "Ollama", "Keras", "XGBoost", "Matplotlib", "Seaborn", "Plotly", "NLTK", "spaCy", "LangChain", "Google Vertex AI", "Mistral AI", "Gemini API", "Computer Vision"]}
             gradient="from-purple-500/20 to-pink-500/20"
             borderColor="border-purple-500/30"
@@ -129,7 +129,7 @@ export default function About() {
           {/* DevOps Skills Card */}
           <SkillBentoCard
             icon={<Server className="w-6 h-6" />}
-              title="DevOps"
+            title="DevOps"
             skills={["AWS", "Docker", "Git", "CI/CD", "Kubernetes", "GitHub Actions", "Vercel", "Netlify", "Linux", "Bash", "Terraform", "Ansible", "Jenkins", "Nginx", "CloudFormation", "EC2", "S3", "Lambda", "CloudWatch", "IAM"]}
             gradient="from-cyan-500/20 to-blue-500/20"
             borderColor="border-cyan-500/30"
@@ -140,7 +140,7 @@ export default function About() {
           {/* Soft Skills Card */}
           <SkillBentoCard
             icon={<Zap className="w-6 h-6" />}
-              title="Soft Skills"
+            title="Soft Skills"
             skills={["Problem Solving", "Leadership", "Communication", "Teamwork", "Adaptability", "Creativity", "Time Management", "Critical Thinking", "Decision Making", "Conflict Resolution", "Empathy", "Collaboration", "Mentoring", "Project Management", "Agile Methodology"]}
             gradient="from-yellow-500/20 to-orange-500/20"
             borderColor="border-yellow-500/30"
@@ -151,7 +151,7 @@ export default function About() {
           {/* Professional Objectives Cards */}
           <ObjectiveCard
             icon={<Target className="w-4 h-4" />}
-              title="Problem Solving"
+            title="Problem Solving"
             description="Expert in analyzing complex technical challenges and delivering innovative, scalable solutions. Proven track record of debugging critical issues and optimizing system performance across multiple projects."
             gradient="from-green-500/20 to-emerald-500/20"
             borderColor="border-green-500/30"
@@ -161,7 +161,7 @@ export default function About() {
 
           <ObjectiveCard
             icon={<TrendingUp className="w-4 h-4" />}
-              title="Continuous Learning"
+            title="Continuous Learning"
             description="Committed to staying ahead of industry trends, regularly upskilling in AI/ML, cloud technologies, and modern frameworks. Actively contributes to open-source projects and technical communities."
             gradient="from-indigo-500/20 to-purple-500/20"
             borderColor="border-indigo-500/30"
@@ -171,24 +171,24 @@ export default function About() {
 
           <ObjectiveCard
             icon={<Lightbulb className="w-4 h-4" />}
-              title="Impactful Work"
+            title="Impactful Work"
             description="Delivered 20+ production-ready applications serving thousands of users. Specialized in building AI-powered solutions that automate workflows and enhance business efficiency."
             gradient="from-pink-500/20 to-rose-500/20"
             borderColor="border-pink-500/30"
             iconColor="text-pink-400"
             variants={itemVariants}
-            />
+          />
 
           <ObjectiveCard
             icon={<Globe className="w-4 h-4" />}
-              title="Client-Focused"
+            title="Client-Focused"
             description="Experienced in remote collaboration with international clients. Strong communication skills with proven ability to translate technical concepts to stakeholders and deliver projects on time and within budget."
             gradient="from-teal-500/20 to-cyan-500/20"
             borderColor="border-teal-500/30"
             iconColor="text-teal-400"
             variants={itemVariants}
-            />
-          </div>
+          />
+        </div>
       </motion.main>
     </div>
   )
@@ -259,7 +259,7 @@ function ObjectiveCard({
   variants: any
 }) {
   return (
-      <motion.div
+    <motion.div
       className={`bg-color-background/50 backdrop-blur-md border ${borderColor} rounded-xl p-3 sm:p-4 flex flex-col group hover:border-opacity-60 transition-all duration-300`}
       variants={variants}
       whileHover={{ scale: 1.02, y: -2 }}
@@ -273,6 +273,6 @@ function ObjectiveCard({
           <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{description}</p>
         </div>
       </div>
-      </motion.div>
+    </motion.div>
   )
 }

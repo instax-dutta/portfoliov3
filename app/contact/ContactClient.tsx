@@ -118,7 +118,7 @@ export default function Contact() {
       <StarryBackground />
       <Navigation />
       <motion.main
-        className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20"
+        className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 md:pb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -234,7 +234,7 @@ export default function Contact() {
                       name="name"
                       required
                       placeholder="Your name"
-                      className="w-full px-4 py-3 bg-color-background/50 border border-color-primary/30 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/50 focus:border-color-primary transition-all duration-200"
+                      className="w-full px-4 py-3 bg-transparent border-2 border-color-primary/40 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary focus:bg-color-background/10 transition-all duration-200"
                     />
                   </div>
 
@@ -248,7 +248,7 @@ export default function Contact() {
                       name="email"
                       required
                       placeholder="your.email@example.com"
-                      className="w-full px-4 py-3 bg-color-background/50 border border-color-primary/30 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/50 focus:border-color-primary transition-all duration-200"
+                      className="w-full px-4 py-3 bg-transparent border-2 border-color-primary/40 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary focus:bg-color-background/10 transition-all duration-200"
                     />
                   </div>
 
@@ -262,7 +262,7 @@ export default function Contact() {
                       required
                       rows={5}
                       placeholder="Tell me about your project or just say hello..."
-                      className="w-full px-4 py-3 bg-color-background/50 border border-color-primary/30 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/50 focus:border-color-primary transition-all duration-200 resize-none"
+                      className="w-full px-4 py-3 bg-transparent border-2 border-color-primary/40 rounded-lg text-white placeholder:text-color-text-muted focus:outline-none focus:ring-2 focus:ring-color-primary/60 focus:border-color-primary focus:bg-color-background/10 transition-all duration-200 resize-none"
                     />
                   </div>
                 </div>
@@ -281,13 +281,12 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <p className={`text-sm ${
-                      result.includes("successfully") 
-                        ? "text-green-400" 
-                        : result.includes("Sending") 
-                        ? "text-color-primary" 
-                        : "text-red-400"
-                    }`}>
+                    <p className={`text-sm ${result.includes("successfully")
+                        ? "text-green-400"
+                        : result.includes("Sending")
+                          ? "text-color-primary"
+                          : "text-red-400"
+                      }`}>
                       {result}
                     </p>
                   </motion.div>
