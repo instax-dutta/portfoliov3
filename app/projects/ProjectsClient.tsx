@@ -96,7 +96,8 @@ const projects = [
     title: "SecPassGen",
     description: "Secure password generator with strength analysis using industry-standard cryptographic practices.",
     technologies: ["Flask 2", "zxcvbn", "SQLite 3", "Python 3.9"],
-    link: "https://github.com/instax-dutta/Secure-Password-Generator-Webapp",
+    link: "https://passwords.sdad.pro",
+    githubLink: "https://github.com/instax-dutta/SecPassGenV2",
   },
   {
     title: "PassGuard",

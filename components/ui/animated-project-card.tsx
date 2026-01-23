@@ -80,7 +80,8 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
   const [lightSize, setLightSize] = useState(120)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const isGithubLink = project.link.includes('github.com')
+  const githubUrl = project.githubLink || (project.link.includes('github.com') ? project.link : null)
+  const showGithubButton = !!githubUrl
 
   // Responsive light size
   useEffect(() => {
@@ -195,7 +196,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
                 <span className="whitespace-nowrap">View Project</span>
               </a>
             </Button>
-            {isGithubLink && (
+            {showGithubButton && (
               <Button
                 asChild
                 size="sm"
@@ -204,7 +205,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
                   "border-color-primary/30 text-color-primary hover:bg-color-primary/10 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
                 )}
               >
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <a href={githubUrl as string} target="_blank" rel="noopener noreferrer">
                   <Github className="mr-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   Code
                 </a>
