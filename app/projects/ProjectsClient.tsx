@@ -7,6 +7,34 @@ import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 const projects = [
   // 🚀 Featured: Top Projects for Employability (Security + AI/ML + Full Stack + Cloud)
   {
+    title: "Tooner — Lightning-Fast Document Tokenization",
+    description: "Privacy-first, client-side platform to convert any document (PDF, DOCX, CSV, etc.) into token-optimized .toon files. Reduces token usage for LLMs with zero server-side storage.",
+    technologies: ["React 19", "Vite 6", "TypeScript 5", "Framer Motion", "GSAP", "Lenis", "Web Workers", "TOON Format"],
+    link: "https://tooner.sdad.pro",
+    githubLink: "https://github.com/instax-dutta/tooner",
+  },
+  {
+    title: "Ignition — Reddit to LLM Extraction Engine",
+    description: "High-performance extraction engine that transforms Reddit discussions into TOON format for LLM ingestion. Intelligent subreddit discovery with 50-70% token reduction.",
+    technologies: ["Vite 5", "React 18", "TypeScript 5", "Framer Motion", "Lenis", "Zustand", "TanStack Query v5", "Tailwind CSS v4", "shadcn/ui", "Netlify Functions"],
+    link: "https://ignition.sdad.pro",
+    githubLink: "https://github.com/instax-dutta/project-ignition",
+  },
+  {
+    title: "RPi Persona — Server Health Monitoring Daemon",
+    description: "Minimalist daemon that gives your server a voice based on its health. Ultra-lightweight with deterministic persona moods and premium glassmorphism dashboard.",
+    technologies: ["Python 3", "Flask", "psutil", "HTML5/CSS", "Ollama Cloud", "Glassmorphism"],
+    link: "https://rpi.sdad.pro",
+    githubLink: "https://github.com/instax-dutta/Rpi-Persona",
+  },
+  {
+    title: "Preddit — Lightweight Reddit Mirror",
+    description: "Super-lightweight, personalisable Reddit mirror for minimal hardware. Disk-first aggregator with zero JavaScript and sub-20KB pages.",
+    technologies: ["Python 3", "Flask", "SQLite 3", "HTML", "Server-Side Rendering"],
+    link: "https://preddit.sdad.pro",
+    githubLink: "https://github.com/instax-dutta/preddit",
+  },
+  {
     title: "Binify - Zero-Knowledge Encrypted Pastebin",
     description: "Zero-knowledge encrypted pastebin. Client-side encryption ensures absolute privacy—even we can't read your pastes.",
     technologies: ["Next.js 15", "Turso", "Upstash Redis", "Tailwind CSS", "Framer Motion", "Lucide React", "Web Crypto API", "TypeScript"],
