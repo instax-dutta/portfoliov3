@@ -2,28 +2,17 @@ import type { Metadata } from "next"
 import ProjectsClient from "./ProjectsClient"
 
 export const metadata: Metadata = {
-    title: "Projects | Sai Dutta Abhishek Dash",
-    description: "Explore production-ready projects by Sai Dutta Abhishek Dash: Zero-knowledge encryption systems, AI-powered platforms, cloud storage solutions, and network monitoring tools. Showcasing expertise in security engineering, AI/ML, full stack development, and cloud architecture.",
+    title: "Portfolio: AI, Security & Full Stack Projects",
+    description: "Explore Sai Dutta Abhishek Dash's production-ready projects: Tooner (Doc Tokenization), Ignition (Reddit to LLM), RPi Persona (Server Health), and 25+ more. Expertise in React, Next.js, Python, ML, and Security Architecture.",
     keywords: [
-        "Portfolio Projects",
-        "Full Stack Projects",
-        "AI/ML Projects",
-        "Security Engineering Projects",
-        "Zero-Knowledge Encryption",
-        "AI-Powered Applications",
-        "Cloud Storage Solutions",
-        "Network Monitoring Tools",
-        "Next.js Applications",
-        "React Projects",
-        "Python Projects",
-        "Open Source Projects",
-        "Production Apps",
-        "Enterprise Security Solutions",
-        "Machine Learning Applications",
-        "DevOps Projects",
-        "Cloud Architecture",
-        "TypeScript Projects",
-        "Software Development Portfolio"
+        "Sai Dutta Abhishek Dash Projects",
+        "AI Portfolio",
+        "Security Engineering Showcase",
+        "Python Full Stack Apps",
+        "Tooner AI",
+        "Ignition Reddit Mirror",
+        "Open Source Security Tools",
+        "Next.js Production Examples"
     ],
 }
 

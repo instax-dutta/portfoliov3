@@ -5,7 +5,7 @@ import { AnimatedProjectCard } from "@/components/ui/animated-project-card"
 import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 
 const projects = [
-  // 🚀 Featured: Top Projects for Employability (Security + AI/ML + Full Stack + Cloud)
+  // 🚀 Nexus: AI & Automation (VC & High-End Client Focus)
   {
     title: "Tooner — Lightning-Fast Document Tokenization",
     description: "Privacy-first, client-side platform to convert any document (PDF, DOCX, CSV, etc.) into token-optimized .toon files. Reduces token usage for LLMs with zero server-side storage.",
@@ -21,51 +21,11 @@ const projects = [
     githubLink: "https://github.com/instax-dutta/project-ignition",
   },
   {
-    title: "RPi Persona — Server Health Monitoring Daemon",
-    description: "Minimalist daemon that gives your server a voice based on its health. Ultra-lightweight with deterministic persona moods and premium glassmorphism dashboard.",
-    technologies: ["Python 3", "Flask", "psutil", "HTML5/CSS", "Ollama Cloud", "Glassmorphism"],
-    link: "https://rpi.sdad.pro",
-    githubLink: "https://github.com/instax-dutta/Rpi-Persona",
-  },
-  {
-    title: "Preddit — Lightweight Reddit Mirror",
-    description: "Super-lightweight, personalisable Reddit mirror for minimal hardware. Disk-first aggregator with zero JavaScript and sub-20KB pages.",
-    technologies: ["Python 3", "Flask", "SQLite 3", "HTML", "Server-Side Rendering"],
-    link: "https://preddit.sdad.pro",
-    githubLink: "https://github.com/instax-dutta/preddit",
-  },
-  {
-    title: "Binify - Zero-Knowledge Encrypted Pastebin",
-    description: "Zero-knowledge encrypted pastebin. Client-side encryption ensures absolute privacy—even we can't read your pastes.",
-    technologies: ["Next.js 15", "Turso", "Upstash Redis", "Tailwind CSS", "Framer Motion", "Lucide React", "Web Crypto API", "TypeScript"],
-    link: "https://bin.sdad.pro",
-  },
-  /* {
-    title: "VullScanny - Security Vulnerability Scanner",
-    description: "AI-powered security scanner with zero-config setup. Instant code analysis and comprehensive vulnerability reports.",
-    technologies: ["Next.js 16", "React", "Tailwind CSS", "Framer Motion", "Lenis", "PWA", "Turbopack", "Vercel", "HSTS"],
-    link: "https://vullscanny.sdad.pro",
-  }, */
-  {
     title: "GenieLabs",
     description: "AI-powered dev platform for code generation, analysis, and optimization. Workflow automation for the modern developer.",
     technologies: ["AI Agent", "API Integration", "Next.js 14", "React 18", "Tailwind CSS 3", "TypeScript 5"],
     link: "https://genielabs.sdad.pro",
   },
-  {
-    title: "Sensory",
-    description: "Scalable cloud storage with efficient database management and advanced rate limiting for optimal performance.",
-    technologies: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
-    link: "https://mirror.sdad.pro",
-  },
-  {
-    title: "PacketBuddy — Open Source Network Usage & Bandwidth Tracker",
-    description: "Ultra-lightweight bandwidth monitor and network traffic tracker with real-time stats, cost tracking, and zero configuration.",
-    technologies: ["Python", "JavaScript", "HTML/CSS", "Shell", "PowerShell", "Batchfile", "NeonDB", "Chart.js"],
-    link: "https://github.com/instax-dutta/packet-buddy",
-  },
-
-  // 🤖 AI/ML Applications
   {
     title: "WordAI",
     description: "AI content generation that produces SEO-optimized articles in seconds. No sign-up required.",
@@ -77,6 +37,20 @@ const projects = [
     description: "Streamline prompt engineering workflows and optimize AI model interactions for better results.",
     technologies: ["AI", "Prompt Engineering", "Next.js 14", "React 18", "Tailwind CSS 3", "NLP"],
     link: "https://oneshotai.site",
+  },
+
+  // 🔬 Applied ML & Data Engineering (Deep Tech Focus)
+  {
+    title: "CV Extractor",
+    description: "ML-powered resume parser that automatically extracts key information. Streamlines HR and recruitment workflows.",
+    technologies: ["Flask 2", "Python 3.10", "python-docx", "PyPDF2", "openpyxl", "Document Processing", "ML"],
+    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
+  },
+  {
+    title: "Product Review Sentiment Analyser",
+    description: "ML-powered sentiment analysis tool that transforms product reviews into actionable business insights.",
+    technologies: ["Flask 2", "BeautifulSoup 4", "Python 3.9", "Machine Learning", "NLP", "Sentiment Analysis"],
+    link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
   },
   {
     title: "AI Powered Vedic MatchMaker",
@@ -91,29 +65,32 @@ const projects = [
     link: "https://ait.numbervibes.in",
   },
 
-  // 🔬 Machine Learning & Data Engineering
+  // 🛡️ Infrastructure, Security & Cloud (Enterprise Focus)
   {
-    title: "CV Extractor",
-    description: "ML-powered resume parser that automatically extracts key information. Streamlines HR and recruitment workflows.",
-    technologies: ["Flask 2", "Python 3.10", "python-docx", "PyPDF2", "openpyxl", "Document Processing", "ML"],
-    link: "https://github.com/instax-dutta/CvExtractor-Webapp",
+    title: "Binify - Zero-Knowledge Encrypted Pastebin",
+    description: "Zero-knowledge encrypted pastebin. Client-side encryption ensures absolute privacy—even we can't read your pastes.",
+    technologies: ["Next.js 15", "Turso", "Upstash Redis", "Tailwind CSS", "Framer Motion", "Lucide React", "Web Crypto API", "TypeScript"],
+    link: "https://bin.sdad.pro",
   },
   {
-    title: "Product Review Sentiment Analyser",
-    description: "ML-powered sentiment analysis tool that transforms product reviews into actionable business insights.",
-    technologies: ["Flask 2", "BeautifulSoup 4", "Python 3.9", "Machine Learning", "NLP", "Sentiment Analysis"],
-    link: "https://github.com/instax-dutta/ProductReviewSentimentAnalyser",
+    title: "RPi Persona — Server Health Monitoring Daemon",
+    description: "Minimalist daemon that gives your server a voice based on its health. Ultra-lightweight with deterministic persona moods and premium glassmorphism dashboard.",
+    technologies: ["Python 3", "Flask", "psutil", "HTML5/CSS", "Ollama Cloud", "Glassmorphism"],
+    link: "https://rpi.sdad.pro",
+    githubLink: "https://github.com/instax-dutta/Rpi-Persona",
   },
-
-  // 💼 Business & Productivity Tools
   {
-    title: "BizForge",
-    description: "Suite of business tools to automate workflows and supercharge online presence. All-in-one business growth platform.",
-    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
-    link: "https://bizzforge.sdad.pro",
+    title: "Sensory",
+    description: "Scalable cloud storage with efficient database management and advanced rate limiting for optimal performance.",
+    technologies: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
+    link: "https://mirror.sdad.pro",
   },
-
-  // 🔐 Enterprise Security & DevOps
+  {
+    title: "PacketBuddy — Open Source Network Usage & Bandwidth Tracker",
+    description: "Ultra-lightweight bandwidth monitor and network traffic tracker with real-time stats, cost tracking, and zero configuration.",
+    technologies: ["Python", "JavaScript", "HTML/CSS", "Shell", "PowerShell", "Batchfile", "NeonDB", "Chart.js"],
+    link: "https://github.com/instax-dutta/packet-buddy",
+  },
   {
     title: "Ultimate-Firewall",
     description: "Enterprise firewall with comprehensive IP table rules and DDoS protection techniques.",
@@ -145,14 +122,21 @@ const projects = [
     technologies: ["Tkinter", "IPinfo API", "Python 3.9"],
     link: "https://github.com/instax-dutta/IPRecon",
   },
-  {
-    title: "CL-Chat",
-    description: "Multi-client CLI chat application built with socket programming for real-time communication.",
-    technologies: ["Python 3.8", "Socket Programming"],
-    link: "https://github.com/instax-dutta/CL-Chat",
-  },
 
-  // 🎨 Modern Web Development & Creative
+  // 🎨 Premium Web Apps & Creative (Freelance & Client Focus)
+  {
+    title: "BizForge",
+    description: "Suite of business tools to automate workflows and supercharge online presence. All-in-one business growth platform.",
+    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
+    link: "https://bizzforge.sdad.pro",
+  },
+  {
+    title: "Preddit — Lightweight Reddit Mirror",
+    description: "Super-lightweight, personalisable Reddit mirror for minimal hardware. Disk-first aggregator with zero JavaScript and sub-20KB pages.",
+    technologies: ["Python 3", "Flask", "SQLite 3", "HTML", "Server-Side Rendering"],
+    link: "https://preddit.sdad.pro",
+    githubLink: "https://github.com/instax-dutta/preddit",
+  },
   {
     title: "My Developer Portfolio",
     description: "Modern portfolio showcasing responsive design and seamless UX with cutting-edge web technologies.",
@@ -188,6 +172,12 @@ const projects = [
     description: "Minimalist website demonstrating clean design and performance optimization. Less is more.",
     technologies: ["Vite 4", "Tailwind CSS 3", "shadcn/ui", "RadixUI"],
     link: "https://s8m1t.xyz",
+  },
+  {
+    title: "CL-Chat",
+    description: "Multi-client CLI chat application built with socket programming for real-time communication.",
+    technologies: ["Python 3.8", "Socket Programming"],
+    link: "https://github.com/instax-dutta/CL-Chat",
   },
 ]
 

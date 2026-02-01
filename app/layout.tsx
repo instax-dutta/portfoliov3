@@ -231,112 +231,66 @@ export const metadata: Metadata = {
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": ["Person", "ProfessionalService"],
-  name: "Sai Dutta Abhishek Dash",
-  url: "https://sdad.pro",
-  image: "https://sdad.pro/og-image.png",
-  sameAs: [
-    "https://github.com/instax-dutta",
-    "https://www.linkedin.com/in/sdabhishekdash/",
-    "https://twitter.com/abhishekdash69",
-  ],
-  jobTitle: "Freelance Full Stack Developer & Machine Learning Engineer",
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: "GIET University Gunupur",
-  },
-  knowsAbout: [
-    "Python",
-    "Machine Learning",
-    "Full Stack Development",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Node.js",
-    "AI/ML",
-    "Cloud Computing",
-    "DevOps",
-    "Freelance Web Development",
-    "Custom Software Development",
-    "Database Design",
-    "API Development",
-    "E-commerce Development",
-  ],
-  email: "contact@sdad.pro",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Bhubaneswar",
-    addressRegion: "Odisha",
-    addressCountry: "IN",
-  },
-  areaServed: "Worldwide",
-  availableChannel: {
-    "@type": "ServiceChannel",
-    serviceUrl: "https://sdad.pro/contact",
-    serviceType: "Online",
-  },
-  offers: [
+  "@graph": [
     {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        serviceType: "Web Development",
-        name: "Full Stack Web Development",
-        description: "Custom full-stack web application development using React, Next.js, Node.js, and modern technologies. Building scalable, responsive, and high-performance web solutions.",
-        provider: {
-          "@type": "Person",
-          name: "Sai Dutta Abhishek Dash",
-        },
-        areaServed: "Worldwide",
-        availableChannel: {
-          "@type": "ServiceChannel",
-          serviceUrl: "https://sdad.pro/contact",
-        },
-      },
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "USD",
-        valueAddedTaxIncluded: false,
-      },
+      "@type": "Person",
+      "@id": "https://sdad.pro/#person",
+      "name": "Sai Dutta Abhishek Dash",
+      "url": "https://sdad.pro",
+      "image": "https://sdad.pro/og-image.png",
+      "description": "Security-focused Full Stack Developer & AI/ML Engineer. Specialist in Python, Next.js, and AWS Cloud Architecture.",
+      "sameAs": [
+        "https://github.com/instax-dutta",
+        "https://www.linkedin.com/in/sdabhishekdash/",
+        "https://twitter.com/abhishekdash69"
+      ],
+      "jobTitle": "Full Stack Engineer & AI Specialist",
+      "knowsAbout": [
+        "Full Stack Web Development",
+        "Machine Learning",
+        "AI Agent Development",
+        "Security Engineering",
+        "Cloud Architecture (AWS)",
+        "Zero-Knowledge Encryption",
+        "NLP & Sentiment Analysis",
+        "Automation Systems"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhubaneswar",
+        "addressRegion": "Odisha",
+        "addressCountry": "IN"
+      }
     },
     {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        serviceType: "Machine Learning",
-        name: "Machine Learning & AI Services",
-        description: "Machine learning model development, AI integration, data analysis, and predictive analytics services using Python, TensorFlow, and modern ML frameworks.",
-        provider: {
-          "@type": "Person",
-          name: "Sai Dutta Abhishek Dash",
-        },
-        areaServed: "Worldwide",
-        availableChannel: {
-          "@type": "ServiceChannel",
-          serviceUrl: "https://sdad.pro/contact",
-        },
-      },
+      "@type": "WebSite",
+      "@id": "https://sdad.pro/#website",
+      "url": "https://sdad.pro",
+      "name": "Sai Dutta Abhishek Dash Portfolio",
+      "publisher": { "@id": "https://sdad.pro/#person" }
     },
     {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        serviceType: "Software Development",
-        name: "Custom Software Development",
-        description: "End-to-end custom software development services including frontend, backend, database design, API development, and deployment.",
-        provider: {
-          "@type": "Person",
-          name: "Sai Dutta Abhishek Dash",
-        },
-        areaServed: "Worldwide",
-        availableChannel: {
-          "@type": "ServiceChannel",
-          serviceUrl: "https://sdad.pro/contact",
-        },
+      "@type": "ProfessionalService",
+      "name": "Sai Dutta Abhishek Dash - Development Services",
+      "image": "https://sdad.pro/og-image.png",
+      "url": "https://sdad.pro",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhubaneswar",
+        "addressRegion": "Odisha",
+        "addressCountry": "IN"
       },
-    },
-  ],
+      "priceRange": "$$",
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "SaaS Development",
+        "AI/ML Implementation",
+        "Security Auditing",
+        "Custom Web Applications"
+      ]
+    }
+  ]
 }
 
 import DOMPurify from "isomorphic-dompurify"
