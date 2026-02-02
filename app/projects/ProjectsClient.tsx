@@ -144,34 +144,10 @@ const projects = [
     link: "https://sdad.pro",
   },
   {
-    title: "A 3d Landing page for a discord Community",
-    description: "Immersive 3D landing page built with Three.js. Interactive experience showcasing creative frontend development.",
-    technologies: ["Three.js r150", "Tailwind CSS 3", "shadcn/ui", "Next.js 13", "React 18"],
-    link: "https://zengodz.pp.ua",
-  },
-  {
     title: "Todo List Webapp",
     description: "Full-stack task manager with CRUD operations, drag-and-drop reordering, and persistent storage.",
     technologies: ["Flask 2", "SQLAlchemy 2", "SQLite 3"],
     link: "https://github.com/instax-dutta/TODO-List-FlaskApp",
-  },
-  {
-    title: "PacePal - A PomoDoro Timer to improve productivity",
-    description: "Pomodoro timer with a clean interface to boost productivity and manage time effectively.",
-    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui"],
-    link: "https://focus.racer.news",
-  },
-  {
-    title: "Horror Themed Portfolio",
-    description: "Horror-themed portfolio with unique design and advanced animations. A spooky twist on the traditional portfolio.",
-    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "framer-motion 10", "RadixUI"],
-    link: "https://horror-dev-portfolio.vercel.app",
-  },
-  {
-    title: "Minimalistic Corner of the Web",
-    description: "Minimalist website demonstrating clean design and performance optimization. Less is more.",
-    technologies: ["Vite 4", "Tailwind CSS 3", "shadcn/ui", "RadixUI"],
-    link: "https://s8m1t.xyz",
   },
   {
     title: "CL-Chat",
