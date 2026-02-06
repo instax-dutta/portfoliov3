@@ -134,8 +134,8 @@ export default function Credentials() {
                 {/* Education Section */}
                 <motion.div className="mb-24" variants={itemVariants}>
                     <div className="flex items-center gap-3 mb-8">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                            <GraduationCap className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                            <GraduationCap className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                         </div>
                         <h2 className="text-3xl font-bold text-white">Education</h2>
                     </div>
@@ -161,8 +161,8 @@ export default function Credentials() {
                                 >
                                     <div className={`h-full bg-gradient-to-br ${colors[index]} backdrop-blur-md border rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10`}>
                                         {/* Icon */}
-                                        <div className={`w-16 h-16 rounded-xl ${iconColors[index]} border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                                            <Icon className={`w-8 h-8 ${iconTextColors[index]}`} />
+                                        <div className={`w-16 h-16 rounded-xl ${iconColors[index]} border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 relative`}>
+                                            <Icon className="w-8 h-8 text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] relative z-10" />
                                         </div>
 
                                         {/* Year Badge */}
@@ -201,8 +201,8 @@ export default function Credentials() {
                 {/* Certifications Section */}
                 <motion.div variants={itemVariants}>
                     <div className="flex items-center gap-3 mb-8">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                            <Award className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                            <Award className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                         </div>
                         <h2 className="text-3xl font-bold text-white">Professional Certifications</h2>
                     </div>
@@ -248,7 +248,7 @@ export default function Credentials() {
                                     <div className={`h-full bg-gradient-to-br ${colors.gradient} backdrop-blur-md border ${colors.border} rounded-xl p-5 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10`}>
                                         <div className="flex items-start gap-3 mb-3">
                                             <div className="flex-shrink-0 mt-1">
-                                                <CheckCircle className={`w-5 h-5 ${colors.icon}`} />
+                                                <CheckCircle className="w-5 h-5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                                             </div>
                                             <div className="flex-1 min-w-0">
                                                 <h3 className="text-sm font-semibold text-white mb-2 line-clamp-3 group-hover:text-cyan-300 transition-colors leading-tight">
@@ -293,8 +293,8 @@ export default function Credentials() {
                                 variants={itemVariants}
                                 whileHover={{ scale: 1.05, y: -5 }}
                             >
-                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-20 border border-white/10 mx-auto mb-3 flex items-center justify-center`}>
-                                    <Icon className="w-6 h-6 text-cyan-400" />
+                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color.split(' ').map(c => `${c}/20`).join(' ')} border border-white/20 mx-auto mb-3 flex items-center justify-center relative transition-all duration-300 group-hover:border-white/40`}>
+                                    <Icon className="w-6 h-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] relative z-10" />
                                 </div>
                                 <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
                                 <div className="text-sm text-color-text-muted">{stat.label}</div>
