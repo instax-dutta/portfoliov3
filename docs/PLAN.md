@@ -1,75 +1,47 @@
-# Portfolio Projects Reordering Plan
+# PLAN: Experience Page Layout Adjustment & Color Revert
 
-## 📋 Overview
-Reorder the projects in `ProjectsClient.tsx` to better appeal to VCs, recruiters, and clients by prioritizing AI, Automation, ML, and high-impact Web Apps.
+## Objective
+Restore the cohesive sci-fi color palette (blue/cyan/emerald) to the Experience page and fix layout overlaps in the Timeline component while maintaining smooth animations and responsiveness.
 
-## 🎯 Objectives
-1. Categorize and rank projects based on impact and relevance.
-2. Group related projects to create a coherent narrative.
-3. Keep the most "wow-factor" projects at the top.
-4. Maintain technical depth in subsequent sections.
+## Proposed Changes
 
-## 📦 Proposed Category Order
+### 1. Color System Revert
+- **Files**: `app/experience/ExperienceClient.tsx`
+- **Action**: Change the unique "cool" colors assigned to roles back to the established cohesive sci-fi palette.
+  - Role 1 (Freelance): `from-blue-400 to-cyan-500`
+  - Role 2 (Associate): `from-emerald-400 to-cyan-500`
+  - Role 3 (ML Intern): `from-teal-400 to-emerald-500`
+  - ... and so on, following the pattern of blue/cyan/emerald.
+- **Action**: Revert achievement bullet points to use the standard blue/emerald gradient.
 
-### 1. 🚀 Nexus: AI & Automation (VC & High-End Client Focus)
-This section will feature the most advanced AI and automation tools. This is for VCs and recruiters looking for high-level technical innovation.
-- **Tooner** (AI/Document Tokenization)
-- **Ignition** (AI/Knowledge Graph extraction)
-- **GenieLabs** (AI Dev Platform)
-- **WordAI** (AI Content Engine)
-- **OneShotAI** (Prompt Engineering Tool)
+### 2. Layout & Timeline Optimization
+- **Files**: `components/ui/timeline.tsx`
+- **Problem**: Large side titles currently overlap with content cards.
+- **Solution**: 
+  - Adjust the `h3` size for side titles (currently `text-5xl` on md+ screens). Reduce to `text-3xl` or adjust margins.
+  - Fix the `translate` or `gap` between the sticky side title and the content.
+  - Ensure the "Role" text doesn't bleed into the card area.
+- **Files**: `app/experience/ExperienceClient.tsx`
+- **Decision**: Keep Role title as the side text BUT optimize its length/size, or revert to Date if users prefer.
+- **Refinement**: Add side padding or grid constraints to prevent overlap.
 
-### 2. 🔬 Applied ML & Data Engineering (Deep Tech / Recruiter Focus)
-Focuses on the "how" and shows expertise in data processing and machine learning models.
-- **CV Extractor** (ML HR tool)
-- **Product Review Sentiment Analyser** (NLP/ML)
-- **AI Powered Vedic MatchMaker** (Complex Logic/AI)
-- **AI Tarot Card Reader** (AI/ML Interaction)
+### 3. Responsiveness Fixes
+- **Action**: Hide or significantly shrink side titles on smaller tablet screens (md) where horizontal space is tight.
+- **Action**: Ensure cards center properly on mobile.
 
-### 3. 🛡️ Infrastructure, Security & Cloud (Enterprise Focus)
-Shows stability, security-first mindset, and cloud architecture skills.
-- **Binify** (Zero-Knowledge Encryption)
-- **RPi Persona** (Monitoring/Ollama Integration)
-- **Sensory** (Cloud Storage/DB)
-- **PacketBuddy** (Network Tracking)
-- **Ultimate-Firewall** (Security/IP Tables)
-- **SecPassGen** (Cryptography)
-- **PassGuard** (Security/Encrypted Storage)
-- **Bandwidth Patrol** (Monitoring)
-- **IpRecon** (Network Recon)
+### 4. Verification
+- Manual visual inspection via `npm run dev`.
+- Run linting checks.
 
-### 4. 🎨 Premium Web Apps & Creative (Freelance & Client Focus)
-Shows design taste, UX/UI skills, and full-stack capabilities.
-- **BizForge** (SaaS Suite)
-- **Preddit** (Minimalist Web App)
-- **A 3d Landing page for a discord Community** (Three.js/UX)
-- **Horror Themed Portfolio** (Animations/UX)
-- **PacePal** (Productivity App)
-- **My Developer Portfolio** (Current site)
-- **Todo List Webapp** (Full-stack CRUD)
-- **Minimalistic Corner of the Web** (Design/Performance)
-- **CL-Chat** (Socket Programming/Networking)
-
-## 🔧 Implementation Steps
-
-### Step 1: Update ProjectsClient.tsx
-1. Re-organize the `projects` array based on the proposed categories.
-2. Update the comments in the file to reflect these new categories.
-3. Ensure the project objects are complete and accurate.
-
-### Step 2: Verification
-1. Run `npm run build` to ensure no errors.
-2. Verify the order on the live `/projects` page.
-
-## ✅ Verification Checklist
-- [ ] AI projects are at the top.
-- [ ] Categories are clearly defined with comments.
-- [ ] High-impact projects like Tooner, Ignition, and GenieLabs are showcased first.
-- [ ] All projects are still present (Total: 28).
+## Agent Assignments (Phase 2)
+1. **frontend-specialist**: Implementation of layout fixes and color reverts.
+2. **performance-optimizer**: Verify scroll performance and animation fluidity.
+3. **test-engineer**: Validate responsiveness across breakpoints (375px, 768px, 1024px).
 
 ---
 
-**Plan Created:** 2026-02-01  
-**Status:** Awaiting Approval  
-**Estimated Time:** 10 minutes  
-**Risk Level:** Low
+## Approval Required
+Does this plan look correct?
+- Reverting colors to cohesive blue/emerald theme.
+- Fixing the side-text overlap by adjusting layout constraints.
+- Keeping the smooth scroll behavior.

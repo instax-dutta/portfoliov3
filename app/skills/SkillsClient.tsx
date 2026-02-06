@@ -74,7 +74,7 @@ export default function Skills() {
           variants={itemVariants}
         >
           <motion.h1
-            className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
+            className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow"
           >
             My Skills & Expertise
           </motion.h1>
@@ -109,14 +109,14 @@ function SkillCategory({ category, index }: { category: any; index: number }) {
       variants={itemVariants}
     >
       {/* Glow effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative z-10">
         <div className="flex items-center mb-6 border-b border-color-primary/20 pb-4">
           <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400 group-hover:text-blue-300 transition-colors">
             {category.icon}
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold ml-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+          <h2 className="text-xl sm:text-2xl font-bold ml-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-500">
             {category.category}
           </h2>
         </div>

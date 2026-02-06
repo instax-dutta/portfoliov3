@@ -19,7 +19,7 @@ function CustomStyleDemo() {
   return (
     <AnimatedText
       text="Custom Style"
-      textClassName="text-6xl bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text"
+      textClassName="text-6xl bg-gradient-to-r from-blue-600 to-emerald-600 text-transparent bg-clip-text"
       underlineGradient="from-red-500 via-yellow-500 to-green-500"
       underlineHeight="h-2"
       underlineOffset="-bottom-4"

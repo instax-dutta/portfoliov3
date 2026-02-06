@@ -140,7 +140,7 @@ const projects = [
   {
     title: "My Developer Portfolio",
     description: "Modern portfolio showcasing responsive design and seamless UX with cutting-edge web technologies.",
-    technologies: ["React 18", "Next.js 14", "Tailwind CSS 3", "RadixUI", "shadcn/ui"],
+    technologies: ["React 18", "Next.js 14", "Tailwind CSS 3", "RadixUI", "shadcn/ui", "Lucide React", "Framer Motion"],
     link: "https://sdad.pro",
   },
   {
@@ -196,7 +196,7 @@ export default function Projects() {
           variants={itemVariants}
         >
           <motion.h1
-            className="scifi-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
+            className="scifi-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow"
           >
             My Projects
           </motion.h1>
@@ -224,7 +224,7 @@ export default function Projects() {
           transition={{ duration: 1 }}
         >
           <div className="absolute top-10 left-10 sm:top-20 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-blue-500/10 rounded-full blur-3xl will-change-transform" />
-          <div className="absolute bottom-10 right-10 sm:bottom-20 sm:right-20 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-purple-500/10 rounded-full blur-3xl will-change-transform" />
+          <div className="absolute bottom-10 right-10 sm:bottom-20 sm:right-20 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-emerald-500/10 rounded-full blur-3xl will-change-transform" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-cyan-500/10 rounded-full blur-3xl will-change-transform" />
         </motion.div>
       </motion.main>

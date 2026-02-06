@@ -123,7 +123,7 @@ export default function Credentials() {
                     variants={itemVariants}
                     className="text-center mb-16 relative gpu-accelerated"
                 >
-                    <h1 className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow">
+                    <h1 className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow">
                         Credentials
                     </h1>
                     <p className="text-lg text-color-text-muted max-w-2xl mx-auto">
@@ -145,11 +145,11 @@ export default function Credentials() {
                             const Icon = edu.icon
                             const colors = [
                                 "from-blue-500/10 to-cyan-500/10 border-blue-500/30 hover:border-blue-500/60",
-                                "from-purple-500/10 to-pink-500/10 border-purple-500/30 hover:border-purple-500/60",
-                                "from-cyan-500/10 to-teal-500/10 border-cyan-500/30 hover:border-cyan-500/60",
+                                "from-emerald-500/10 to-teal-500/10 border-emerald-500/30 hover:border-emerald-500/60",
+                                "from-cyan-500/10 to-blue-500/10 border-cyan-500/30 hover:border-cyan-500/60",
                             ]
-                            const iconColors = ["bg-blue-500/20 border-blue-500/40", "bg-purple-500/20 border-purple-500/40", "bg-cyan-500/20 border-cyan-500/40"]
-                            const iconTextColors = ["text-blue-400", "text-purple-400", "text-cyan-400"]
+                            const iconColors = ["bg-blue-500/20 border-blue-500/40", "bg-emerald-500/20 border-emerald-500/40", "bg-cyan-500/20 border-cyan-500/40"]
+                            const iconTextColors = ["text-blue-400", "text-emerald-400", "text-cyan-400"]
 
                             return (
                                 <motion.div
@@ -179,7 +179,7 @@ export default function Credentials() {
                                         {/* Institution */}
                                         <div className="flex items-start gap-2 mb-3">
                                             <MapPin className="w-4 h-4 text-color-text-muted flex-shrink-0 mt-1" />
-                                            <p className="text-sm font-medium text-purple-300">{edu.institution}</p>
+                                            <p className="text-sm font-medium text-emerald-300">{edu.institution}</p>
                                         </div>
 
                                         {/* Description */}
@@ -201,7 +201,7 @@ export default function Credentials() {
                 {/* Certifications Section */}
                 <motion.div variants={itemVariants}>
                     <div className="flex items-center gap-3 mb-8">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
                             <Award className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                         </div>
                         <h2 className="text-3xl font-bold text-white">Professional Certifications</h2>
@@ -211,10 +211,10 @@ export default function Credentials() {
                         {certifications.map((cert, index) => {
                             const categoryColors = {
                                 "AI/ML": {
-                                    gradient: "from-purple-500/10 to-pink-500/10",
-                                    border: "border-purple-500/30 hover:border-purple-500/60",
-                                    badge: "bg-purple-500/20 text-purple-300",
-                                    icon: "text-purple-400"
+                                    gradient: "from-emerald-500/10 to-teal-500/10",
+                                    border: "border-emerald-500/30 hover:border-emerald-500/60",
+                                    badge: "bg-emerald-500/20 text-emerald-300",
+                                    icon: "text-emerald-400"
                                 },
                                 "Cloud": {
                                     gradient: "from-blue-500/10 to-cyan-500/10",
@@ -245,7 +245,7 @@ export default function Credentials() {
                                     whileHover={{ y: -5 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <div className={`h-full bg-gradient-to-br ${colors.gradient} backdrop-blur-md border ${colors.border} rounded-xl p-5 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10`}>
+                                    <div className={`h-full bg-gradient-to-br ${colors.gradient} backdrop-blur-md border ${colors.border} rounded-xl p-5 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10`}>
                                         <div className="flex items-start gap-3 mb-3">
                                             <div className="flex-shrink-0 mt-1">
                                                 <CheckCircle className="w-5 h-5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
@@ -281,7 +281,7 @@ export default function Credentials() {
                 >
                     {[
                         { label: "Degree", value: "1", icon: GraduationCap, color: "from-blue-500 to-cyan-500" },
-                        { label: "Institutions", value: "3", icon: School, color: "from-purple-500 to-pink-500" },
+                        { label: "Institutions", value: "3", icon: School, color: "from-cyan-500 to-blue-500" },
                         { label: "Certifications", value: "8", icon: Award, color: "from-cyan-500 to-teal-500" },
                         { label: "Latest", value: "2025", icon: CheckCircle, color: "from-green-500 to-emerald-500" },
                     ].map((stat, index) => {

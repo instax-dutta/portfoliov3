@@ -154,7 +154,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
             style={{
               width: lightSize,
               height: lightSize,
-              background: 'rgba(96, 165, 250, 0.3)',
+              background: 'rgba(34, 211, 238, 0.3)',
               filter: 'blur(40px)',
               x: lightX,
               y: lightY,
@@ -167,7 +167,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
           {/* Header */}
           <header className="mb-5 flex-shrink-0">
             <h2 className={cn(
-              "text-xl sm:text-2xl font-bold mb-3 leading-tight bg-gradient-to-r from-blue-300 via-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+              "text-xl sm:text-2xl font-bold mb-3 leading-tight bg-gradient-to-r from-blue-300 via-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent"
             )}>
               {project.title}
             </h2>
@@ -187,7 +187,7 @@ export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index
               asChild
               size="sm"
               className={cn(
-                "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700",
+                "bg-gradient-to-r from-blue-500 to-emerald-600 hover:from-blue-600 hover:to-emerald-700",
                 "text-white shadow-md border-0 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
               )}
             >

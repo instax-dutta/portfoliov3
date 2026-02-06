@@ -15,8 +15,8 @@ const experiences = [
     description: "Providing full-stack development services to clients, building scalable web applications, and delivering end-to-end solutions from frontend to backend.",
     skills: ["Full Stack Development", "Web Applications", "Client Services", "Project Management", "React", "Node.js", "Database Design"],
     achievements: ["Delivering custom web solutions", "Working with diverse client projects", "Building scalable applications"],
-    icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-indigo-400 to-purple-500"
+    icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.5} />,
+    color: "from-cyan-400 via-blue-500 to-indigo-600"
   },
   {
     title: "Associate",
@@ -27,8 +27,8 @@ const experiences = [
     description: "Worked as an Associate, contributing to enterprise software solutions and digital transformation initiatives.",
     skills: ["Enterprise Solutions", "Digital Transformation", "Team Collaboration", "Client Management"],
     achievements: ["Promoted from Associate Trainee", "Contributed to key projects"],
-    icon: <Building2 className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-emerald-400 to-cyan-500"
+    icon: <Building2 className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.5} />,
+    color: "from-emerald-400 via-teal-500 to-cyan-600"
   },
   {
     title: "Associate Trainee",
@@ -39,8 +39,8 @@ const experiences = [
     description: "Completed comprehensive training program covering enterprise technologies, software development practices, and industry standards.",
     skills: ["Enterprise Technologies", "Software Development", "Industry Standards", "Professional Development"],
     achievements: ["Successfully completed training program", "Quick promotion to Associate"],
-    icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-blue-400 to-indigo-500"
+    icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.5} />,
+    color: "from-sky-400 via-blue-500 to-indigo-700"
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -51,8 +51,8 @@ const experiences = [
     description: "Developed and implemented machine learning models for data analysis and predictive analytics projects.",
     skills: ["Python", "Machine Learning", "Data Analysis", "TensorFlow", "Scikit-learn"],
     achievements: ["Built 3 ML models", "Improved prediction accuracy by 15%"],
-    icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-purple-400 to-pink-500"
+    icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.5} />,
+    color: "from-teal-300 via-emerald-400 to-green-600"
   },
   {
     title: "Python Developer Intern",
@@ -64,7 +64,7 @@ const experiences = [
     skills: ["Python", "Backend Development", "API Development", "Automation", "Database Management"],
     achievements: ["Created automation scripts", "Reduced manual work by 40%"],
     icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-green-400 to-blue-500"
+    color: "from-blue-200 via-sky-400 to-blue-600"
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -76,7 +76,7 @@ const experiences = [
     skills: ["Computer Vision", "NLP", "Deep Learning", "OpenCV", "NLTK"],
     achievements: ["Implemented CV solutions", "Developed NLP models"],
     icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-orange-400 to-red-500"
+    color: "from-blue-200 via-sky-300 to-blue-500"
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -88,7 +88,7 @@ const experiences = [
     skills: ["EdTech Solutions", "Machine Learning", "Data Science", "Educational Analytics"],
     achievements: ["Built learning recommendation system", "Analyzed student performance data"],
     icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-teal-400 to-cyan-500"
+    color: "from-cyan-300 via-sky-400 to-blue-500"
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -100,7 +100,7 @@ const experiences = [
     skills: ["Business Intelligence", "Data Mining", "Predictive Analytics", "Machine Learning"],
     achievements: ["Created BI dashboards", "Implemented predictive models"],
     icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-violet-400 to-purple-500"
+    color: "from-sky-300 via-blue-400 to-indigo-500"
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -112,7 +112,7 @@ const experiences = [
     skills: ["AI Applications", "Model Deployment", "Production Systems", "MLOps"],
     achievements: ["Deployed ML models to production", "Optimized model performance"],
     icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-rose-400 to-pink-500"
+    color: "from-emerald-300 via-teal-400 to-teal-700"
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -124,7 +124,7 @@ const experiences = [
     skills: ["Secure ML", "Data Privacy", "Encryption", "AI Security", "Privacy-Preserving ML"],
     achievements: ["Implemented secure ML pipeline", "Enhanced data privacy measures"],
     icon: <Brain className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-slate-400 to-gray-500"
+    color: "from-slate-300 via-gray-400 to-zinc-600"
   },
   {
     title: "Python Developer Intern",
@@ -136,7 +136,7 @@ const experiences = [
     skills: ["Python", "Software Engineering", "Web Development", "Database Design"],
     achievements: ["Built web applications", "Learned industry best practices"],
     icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-amber-400 to-orange-500"
+    color: "from-slate-200 via-slate-400 to-blue-600"
   },
   {
     title: "CEO & Co-Founder",
@@ -147,8 +147,25 @@ const experiences = [
     description: "Founded and led a technology startup, managing team operations, product development, and strategic planning.",
     skills: ["Leadership", "Entrepreneurship", "Strategic Planning", "Team Management", "Product Development"],
     achievements: ["Led team of 5+ members", "Launched successful product", "Managed startup operations"],
-    icon: <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />,
-    color: "from-yellow-400 to-red-500"
+    icon: (
+      <motion.div
+        animate={{
+          y: [0, -4, 0],
+          rotate: [0, 5, 0]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="relative"
+      >
+        <Rocket className="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]" strokeWidth={2.5} />
+        {/* Plasma Thruster Effect */}
+        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-3 bg-cyan-400 blur-[2px] opacity-60 animate-pulse" />
+      </motion.div>
+    ),
+    color: "from-white via-cyan-300 to-blue-600"
   },
 ]
 
@@ -192,14 +209,14 @@ export default function Experience() {
         {/* Header Section - Optimized for mobile */}
         <motion.div className="text-center mb-12 sm:mb-16 lg:mb-20" variants={itemVariants}>
           <motion.div
-            className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-500/20"
+            className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-emerald-500/10 backdrop-blur-md border border-blue-500/20"
           >
             <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
             <span className="font-space-mono text-sm sm:text-base text-blue-400 font-medium tracking-wider">Professional Journey</span>
           </motion.div>
 
           <motion.h1
-            className="scifi-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
+            className="scifi-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow"
           >
             Experience Timeline
           </motion.h1>
@@ -235,7 +252,7 @@ export default function Experience() {
                 }
               }}
             >
-              <div className="p-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-md border border-blue-500/30 group-hover:border-blue-400/50 transition-all duration-300">
+              <div className="p-3 rounded-full bg-gradient-to-r from-blue-500/20 to-teal-500/20 backdrop-blur-md border border-blue-500/30 group-hover:border-blue-400/50 transition-all duration-300">
                 <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:text-cyan-400 transition-colors duration-300" />
               </div>
               <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider font-space-mono">Scroll</p>
@@ -251,15 +268,21 @@ export default function Experience() {
               content: (
                 <div className="text-gray-300">
                   <div className="mb-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className={`p-2 rounded-lg bg-gradient-to-r ${exp.color} bg-opacity-10`}>
-                        {exp.icon}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`p-3 rounded-xl bg-gradient-to-br ${exp.color} bg-opacity-40 border-2 border-white/20 shadow-2xl backdrop-blur-xl group-hover:scale-110 transition-transform duration-300 relative`}>
+                        {/* Outer Glow Layer */}
+                        <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${exp.color} blur-lg opacity-40 -z-10`} />
+                        <div className="text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] relative z-10">
+                          {exp.icon}
+                        </div>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r ${exp.color} text-white`}>
+                      <span className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] bg-slate-900/80 text-white border border-white/10 backdrop-blur-md shadow-lg relative overflow-hidden group/type">
+                        <div className={`absolute inset-0 bg-gradient-to-r ${exp.color} opacity-20 -z-10`} />
+                        <div className={`absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r ${exp.color} opacity-50`} />
                         {exp.type}
                       </span>
                     </div>
-                    <h2 className={`text-2xl lg:text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r ${exp.color} tracking-wide`}>
+                    <h2 className={`scifi-heading text-2xl lg:text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r ${exp.color} tracking-tight drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]`}>
                       {exp.title}
                     </h2>
                     <h3 className="text-lg lg:text-xl font-semibold text-white mb-2 tracking-wider">
@@ -299,7 +322,7 @@ export default function Experience() {
                             key={achIndex}
                             className="flex items-start gap-3 text-sm text-gray-300"
                           >
-                            <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mt-2 flex-shrink-0" />
+                            <div className={`w-2 h-2 bg-gradient-to-r ${exp.color} rounded-full mt-2 flex-shrink-0`} />
                             <span>{achievement}</span>
                           </li>
                         ))}
@@ -323,7 +346,7 @@ export default function Experience() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
               <motion.div
-                className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+                className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-500"
                 initial={{ scale: 0.8 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}

@@ -129,7 +129,7 @@ export default function Contact() {
           {/* Header */}
           <div className="text-center space-y-4">
             <motion.h1
-              className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
+              className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow"
               variants={itemVariants}
             >
               Get In Touch

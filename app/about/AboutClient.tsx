@@ -54,7 +54,7 @@ export default function About() {
         {/* Header */}
         <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
           <motion.h1
-            className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-purple-500 to-pink-500 text-glow"
+            className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow"
           >
             About Me
           </motion.h1>
@@ -78,10 +78,10 @@ export default function About() {
           >
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-emerald-500/20 border border-blue-500/30">
                   <Rocket className="w-6 h-6 text-blue-400" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                <h2 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-500">
                   Professional Summary
                 </h2>
               </div>
@@ -101,7 +101,7 @@ export default function About() {
                 <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs sm:text-sm border border-blue-500/30">
                   Full Stack
                 </span>
-                <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs sm:text-sm border border-purple-500/30">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs sm:text-sm border border-emerald-500/30">
                   ML Engineer
                 </span>
                 <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs sm:text-sm border border-cyan-500/30">
@@ -127,9 +127,9 @@ export default function About() {
             icon={<Brain className="w-6 h-6" />}
             title="AI/ML"
             skills={["TensorFlow", "PyTorch", "scikit-learn", "NumPy", "Pandas", "OpenCV", "Hugging Face", "Ollama", "Keras", "XGBoost", "Matplotlib", "Seaborn", "Plotly", "NLTK", "spaCy", "LangChain", "Google Vertex AI", "Mistral AI", "Gemini API", "Computer Vision"]}
-            gradient="from-purple-500/20 to-pink-500/20"
-            borderColor="border-purple-500/30"
-            iconColor="text-purple-400"
+            gradient="from-emerald-500/20 to-teal-500/20"
+            borderColor="border-emerald-500/30"
+            iconColor="text-emerald-400"
             variants={itemVariants}
           />
 
@@ -170,7 +170,7 @@ export default function About() {
             icon={<TrendingUp className="w-4 h-4" />}
             title="Continuous Learning"
             description="Committed to staying ahead of industry trends, regularly upskilling in AI/ML, cloud technologies, and modern frameworks. Actively contributes to open-source projects and technical communities."
-            gradient="from-indigo-500/20 to-purple-500/20"
+            gradient="from-cyan-500/20 to-blue-500/20"
             borderColor="border-indigo-500/30"
             iconColor="text-indigo-400"
             variants={itemVariants}
@@ -228,7 +228,7 @@ function SkillBentoCard({
         <div className={`p-1.5 rounded-lg bg-gradient-to-br ${gradient} border ${borderColor}`}>
           <div className={iconColor}>{icon}</div>
         </div>
-        <h3 className="text-sm sm:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+        <h3 className="text-sm sm:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-500">
           {title}
         </h3>
       </div>
