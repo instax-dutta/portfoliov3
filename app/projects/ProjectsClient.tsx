@@ -125,7 +125,7 @@ const projects = [
 
   // 🎨 Premium Web Apps & Creative (Freelance & Client Focus)
   {
-    title: "Style Foundry",
+    title: "StyleLabs",
     description: "Advanced design system foundry for modern web applications. Build beautiful UIs with precision and speed. The live style lab for this portfolio.",
     technologies: ["React 19", "Next.js 15", "TypeScript 5", "Tailwind CSS 4", "Framer Motion", "Radix UI", "Lucide React"],
     link: "https://stylelabs.sdad.pro",
