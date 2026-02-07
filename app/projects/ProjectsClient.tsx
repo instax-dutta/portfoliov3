@@ -6,12 +6,12 @@ import { ProjectsAnimatedGrid } from "@/components/ui/projects-grid"
 
 const projects = [
   // 🚀 Nexus: AI & Automation (VC & High-End Client Focus)
+
   {
     title: "Tooner — Lightning-Fast Document Tokenization",
     description: "Privacy-first, client-side platform to convert any document (PDF, DOCX, CSV, etc.) into token-optimized .toon files. Reduces token usage for LLMs with zero server-side storage.",
     technologies: ["React 19", "Vite 6", "TypeScript 5", "Framer Motion", "GSAP", "Lenis", "Web Workers", "TOON Format"],
     link: "https://tooner.sdad.pro",
-    githubLink: "https://github.com/instax-dutta/tooner",
   },
   {
     title: "Ignition — Reddit to LLM Extraction Engine",
@@ -124,6 +124,12 @@ const projects = [
   },
 
   // 🎨 Premium Web Apps & Creative (Freelance & Client Focus)
+  {
+    title: "Style Foundry",
+    description: "Advanced design system foundry for modern web applications. Build beautiful UIs with precision and speed. The live style lab for this portfolio.",
+    technologies: ["React 19", "Next.js 15", "TypeScript 5", "Tailwind CSS 4", "Framer Motion", "Radix UI", "Lucide React"],
+    link: "https://stylelabs.sdad.pro",
+  },
   {
     title: "BizForge",
     description: "Suite of business tools to automate workflows and supercharge online presence. All-in-one business growth platform.",
