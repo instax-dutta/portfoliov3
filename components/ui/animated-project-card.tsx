@@ -68,6 +68,13 @@ const techMap: Record<string, { url: string; color: string }> = {
   'PyPDF2': { url: 'https://pypdf2.readthedocs.io/', color: '#3776AB' },
   'openpyxl': { url: 'https://openpyxl.readthedocs.io/', color: '#3776AB' },
   'IPinfo API': { url: 'https://ipinfo.io/', color: '#4A90E2' },
+  'NeonDB': { url: 'https://neon.tech/', color: '#00E297' },
+  'Prisma': { url: 'https://www.prisma.io/', color: '#2D3748' },
+  'TweetNaCl.js': { url: 'https://github.com/dchest/tweetnacl-js', color: '#000000' },
+  'Zustand': { url: 'https://github.com/pmndrs/zustand', color: '#433929' },
+  'TanStack Query': { url: 'https://tanstack.com/query', color: '#FF4154' },
+  'Next.js 15': { url: 'https://nextjs.org/', color: '#000000' },
+  'Tailwind CSS 4': { url: 'https://tailwindcss.com/', color: '#06B6D4' },
 }
 
 // Default fallback for unknown technologies

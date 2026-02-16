@@ -73,6 +73,13 @@ const projects = [
     link: "https://bin.sdad.pro",
   },
   {
+    title: "RedisKeeper — Privacy-First Redis Activity Guard",
+    description: "A privacy-first, open-source tool to prevent free-tier Redis databases from being auto-deleted due to inactivity. Weekly automated pings with client-side TweetNaCl.js encryption.",
+    technologies: ["Next.js 15", "TypeScript", "NeonDB", "Prisma", "TweetNaCl.js", "Tailwind CSS 4", "Framer Motion", "Lucide React"],
+    link: "https://github.com/instax-dutta/rediskeeper",
+    githubLink: "https://github.com/instax-dutta/rediskeeper",
+  },
+  {
     title: "RPi Persona — Server Health Monitoring Daemon",
     description: "Minimalist daemon that gives your server a voice based on its health. Ultra-lightweight with deterministic persona moods and premium glassmorphism dashboard.",
     technologies: ["Python 3", "Flask", "psutil", "HTML5/CSS", "Ollama Cloud", "Glassmorphism"],

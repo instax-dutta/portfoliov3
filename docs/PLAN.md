@@ -1,47 +1,45 @@
-# PLAN: Experience Page Layout Adjustment & Color Revert
+# PLAN: Add RedisKeeper to Projects Page
 
 ## Objective
-Restore the cohesive sci-fi color palette (blue/cyan/emerald) to the Experience page and fix layout overlaps in the Timeline component while maintaining smooth animations and responsiveness.
+Add the RedisKeeper project to the portfolio's project listing to showcase high-performance infrastructure and security work.
+
+## Project Details: RedisKeeper
+- **Title**: RedisKeeper — Privacy-First Redis Activity Guard
+- **Description**: A privacy-first, open-source tool to prevent free-tier Redis databases from being auto-deleted due to inactivity. Weekly automated pings with client-side TweetNaCl.js encryption.
+- **Technologies**: Next.js 15, TypeScript 5.7, NeonDB, Prisma 6, TweetNaCl.js, Tailwind CSS 4, Framer Motion, Lucide React
+- **Link**: https://github.com/instax-dutta/rediskeeper
+- **Category**: Infrastructure, Security & Cloud
 
 ## Proposed Changes
 
-### 1. Color System Revert
-- **Files**: `app/experience/ExperienceClient.tsx`
-- **Action**: Change the unique "cool" colors assigned to roles back to the established cohesive sci-fi palette.
-  - Role 1 (Freelance): `from-blue-400 to-cyan-500`
-  - Role 2 (Associate): `from-emerald-400 to-cyan-500`
-  - Role 3 (ML Intern): `from-teal-400 to-emerald-500`
-  - ... and so on, following the pattern of blue/cyan/emerald.
-- **Action**: Revert achievement bullet points to use the standard blue/emerald gradient.
+### 1. Update Project Data
+- **File**: `app/projects/ProjectsClient.tsx`
+- **Action**: Add RedisKeeper to the `projects` array under the `Infrastructure, Security & Cloud` section (after `Binify`).
 
-### 2. Layout & Timeline Optimization
-- **Files**: `components/ui/timeline.tsx`
-- **Problem**: Large side titles currently overlap with content cards.
-- **Solution**: 
-  - Adjust the `h3` size for side titles (currently `text-5xl` on md+ screens). Reduce to `text-3xl` or adjust margins.
-  - Fix the `translate` or `gap` between the sticky side title and the content.
-  - Ensure the "Role" text doesn't bleed into the card area.
-- **Files**: `app/experience/ExperienceClient.tsx`
-- **Decision**: Keep Role title as the side text BUT optimize its length/size, or revert to Date if users prefer.
-- **Refinement**: Add side padding or grid constraints to prevent overlap.
+### 2. Update Technology Metadata
+- **File**: `components/ui/animated-project-card.tsx`
+- **Action**: Add missing technology mappings to `techMap` for:
+  - `Next.js 15`
+  - `TypeScript 5.7`
+  - `NeonDB`
+  - `Prisma 6`
+  - `TweetNaCl.js`
+  - `Tailwind CSS 4`
 
-### 3. Responsiveness Fixes
-- **Action**: Hide or significantly shrink side titles on smaller tablet screens (md) where horizontal space is tight.
-- **Action**: Ensure cards center properly on mobile.
-
-### 4. Verification
-- Manual visual inspection via `npm run dev`.
-- Run linting checks.
+### 3. Verification
+- **Build Check**: Run `npm run build` to ensure no TypeScript or build errors.
+- **Visual Check**: Plan to verify the card rendering and technology icons in the UI.
+- **Link Check**: Verify GitHub links are correctly handled by the `AnimatedProjectCard` logic.
 
 ## Agent Assignments (Phase 2)
-1. **frontend-specialist**: Implementation of layout fixes and color reverts.
-2. **performance-optimizer**: Verify scroll performance and animation fluidity.
-3. **test-engineer**: Validate responsiveness across breakpoints (375px, 768px, 1024px).
+1. **frontend-specialist**: Update `ProjectsClient.tsx` and `animated-project-card.tsx` with the new project data and tech metadata.
+2. **seo-specialist**: Verify if any SEO metadata (e.g., in `ProjectsClient.tsx` or `Project` components) should be updated to include the new project keywords.
+3. **test-engineer**: Run linting and build checks to ensure the codebase remains stable.
 
 ---
 
 ## Approval Required
 Does this plan look correct?
-- Reverting colors to cohesive blue/emerald theme.
-- Fixing the side-text overlap by adjusting layout constraints.
-- Keeping the smooth scroll behavior.
+- Adding RedisKeeper under the Infrastructure section.
+- Updating tech metadata for new libraries.
+- Verifying the build after changes.
