@@ -155,6 +155,7 @@ const projects = [
     description: "Modern portfolio showcasing responsive design and seamless UX with cutting-edge web technologies.",
     technologies: ["React 18", "Next.js 14", "Tailwind CSS 3", "RadixUI", "shadcn/ui", "Lucide React", "Framer Motion"],
     link: "https://sdad.pro",
+    githubLink: "https://github.com/instax-dutta/portfoliov3",
   },
   {
     title: "Todo List Webapp",
