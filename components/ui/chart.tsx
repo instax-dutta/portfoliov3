@@ -74,14 +74,14 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     ([_, config]) => config.theme || config.color
   )
 
-  if (!colorConfig.length) {
-    return null
-  }
-
   // Strictly validate ID to prevent selector injection
   const safeId = id.replace(/[^a-zA-Z0-9-]/g, "")
 
   const styleContent = React.useMemo(() => {
+    if (!colorConfig.length) {
+      return null
+    }
+
     const rawStyles = Object.entries(THEMES)
       .map(([theme, prefix]) => {
         const themeStyles = colorConfig
@@ -111,6 +111,10 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
       ALLOWED_ATTR: [],
     })
   }, [safeId, colorConfig])
+
+  if (!colorConfig.length) {
+    return null
+  }
 
   return <style>{styleContent}</style>
 }

@@ -37,10 +37,11 @@ const Navigation: React.FC = () => {
   const pathname = usePathname()
   const menuRef = useRef<HTMLDivElement>(null)
 
-  // Close menu on route change
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname)
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname)
     setIsMobileMenuOpen(false)
-  }, [pathname])
+  }
 
   // Close menu when clicking outside
   useEffect(() => {
