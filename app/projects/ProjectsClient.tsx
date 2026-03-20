@@ -38,6 +38,34 @@ const projects = [
     technologies: ["AI", "Prompt Engineering", "Next.js 14", "React 18", "Tailwind CSS 3", "NLP"],
     link: "https://oneshotai.site",
   },
+  {
+    title: "easy-mlx — Local AI runtime for Apple Silicon powered by MLX",
+    description: "Run local AI models on Apple Silicon with MLX in minutes. Lightweight developer platform for running MLX-based large language models locally on macOS. It installs MLX automatically, manages models, and provides both a CLI and OpenAI-compatible API.",
+    technologies: ["Python", "MLX", "Apple Silicon", "CLI", "OpenAI-compatible API"],
+    link: "https://github.com/instax-dutta/easy-mlx",
+    githubLink: "https://github.com/instax-dutta/easy-mlx",
+  },
+  {
+    title: "VeronicaBot — Production Discord Bot for YouTube/Twitch Monitoring",
+    description: "A production-grade Discord bot for monitoring YouTube and Twitch channels for live streams and sending real-time notifications to Discord servers. Features privacy-first local storage with SQLite database, YouTube/Twitch API integration, web dashboard, and role-based notifications.",
+    technologies: ["Node.js", "Discord.js", "SQLite", "Upstash Redis", "Express.js", "Next.js", "TypeScript", "Docker", "PM2"],
+    link: "https://github.com/instax-dutta/VeronicaBot",
+    githubLink: "https://github.com/instax-dutta/VeronicaBot",
+  },
+  {
+    title: "AiVill — Adaptive AI Villain Engine for Games",
+    description: "A modular framework that creates self-learning game enemies that observe player behavior, evolve strategies, and adapt over time. Features adaptive villain AI, persistent memory, reinforcement learning, strategy evolution, personality system, and optional Ollama LLM integration for enhanced reasoning.",
+    technologies: ["Python", "Reinforcement Learning", "Ollama", "Game Development", "AI Agents", "Procedural AI"],
+    link: "https://github.com/instax-dutta/Aivill",
+    githubLink: "https://github.com/instax-dutta/Aivill",
+  },
+  {
+    title: "MaxArchiver — FFmpeg-based Video Compression Automation",
+    description: "Simple FFmpeg-based automation scripts to compress large video libraries and reclaim storage space from gameplay recordings and video captures. Features intelligent hardware auto-select, NVIDIA NVENC/Apple VideoToolbox acceleration, resume logic, and cross-platform support (Windows/Linux/macOS).",
+    technologies: ["FFmpeg", "Bash", "Batch", "NVIDIA NVENC", "Apple VideoToolbox", "libx265", "Hardware Acceleration"],
+    link: "https://github.com/instax-dutta/MaxArchiver",
+    githubLink: "https://github.com/instax-dutta/MaxArchiver",
+  },
 
   // 🔬 Applied ML & Data Engineering (Deep Tech Focus)
   {
