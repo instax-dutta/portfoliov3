@@ -39,25 +39,11 @@ const projects = [
     link: "https://oneshotai.site",
   },
   {
-    title: "easy-mlx — Local AI runtime for Apple Silicon powered by MLX",
-    description: "Run local AI models on Apple Silicon with MLX in minutes. Lightweight developer platform for running MLX-based large language models locally on macOS. It installs MLX automatically, manages models, and provides both a CLI and OpenAI-compatible API.",
-    technologies: ["Python", "MLX", "Apple Silicon", "CLI", "OpenAI-compatible API"],
-    link: "https://github.com/instax-dutta/easy-mlx",
-    githubLink: "https://github.com/instax-dutta/easy-mlx",
-  },
-  {
     title: "VeronicaBot — Production Discord Bot for YouTube/Twitch Monitoring",
     description: "A production-grade Discord bot for monitoring YouTube and Twitch channels for live streams and sending real-time notifications to Discord servers. Features privacy-first local storage with SQLite database, YouTube/Twitch API integration, web dashboard, and role-based notifications.",
     technologies: ["Node.js", "Discord.js", "SQLite", "Upstash Redis", "Express.js", "Next.js", "TypeScript", "Docker", "PM2"],
     link: "https://github.com/instax-dutta/VeronicaBot",
     githubLink: "https://github.com/instax-dutta/VeronicaBot",
-  },
-  {
-    title: "AiVill — Adaptive AI Villain Engine for Games",
-    description: "A modular framework that creates self-learning game enemies that observe player behavior, evolve strategies, and adapt over time. Features adaptive villain AI, persistent memory, reinforcement learning, strategy evolution, personality system, and optional Ollama LLM integration for enhanced reasoning.",
-    technologies: ["Python", "Reinforcement Learning", "Ollama", "Game Development", "AI Agents", "Procedural AI"],
-    link: "https://github.com/instax-dutta/Aivill",
-    githubLink: "https://github.com/instax-dutta/Aivill",
   },
   {
     title: "MaxArchiver — FFmpeg-based Video Compression Automation",
@@ -108,13 +94,6 @@ const projects = [
     githubLink: "https://github.com/instax-dutta/rediskeeper",
   },
   {
-    title: "RPi Persona — Server Health Monitoring Daemon",
-    description: "Minimalist daemon that gives your server a voice based on its health. Ultra-lightweight with deterministic persona moods and premium glassmorphism dashboard.",
-    technologies: ["Python 3", "Flask", "psutil", "HTML5/CSS", "Ollama Cloud", "Glassmorphism"],
-    link: "https://rpi.sdad.pro",
-    githubLink: "https://github.com/instax-dutta/Rpi-Persona",
-  },
-  {
     title: "Sensory",
     description: "Scalable cloud storage with efficient database management and advanced rate limiting for optimal performance.",
     technologies: ["Next.js 15", "React 19", "TypeScript 5", "Tailwind CSS 4", "Vercel", "Backblaze B2", "Turso", "Upstash Redis"],
@@ -138,64 +117,6 @@ const projects = [
     technologies: ["Flask 2", "zxcvbn", "SQLite 3", "Python 3.9"],
     link: "https://passwords.sdad.pro",
     githubLink: "https://github.com/instax-dutta/SecPassGenV2",
-  },
-  {
-    title: "PassGuard",
-    description: "Password manager with encrypted storage. Built with security best practices and data protection in mind.",
-    technologies: ["Flask 2", "SQLite 3", "Python 3.9"],
-    link: "https://github.com/instax-dutta/FlaskPasswordManagerApp",
-  },
-  {
-    title: "Bandwidth Patrol",
-    description: "Real-time bandwidth monitoring and visualization for network management and optimization insights.",
-    technologies: ["Flask 2", "HTML5", "Python 3.9"],
-    link: "https://github.com/instax-dutta/Bandwith-Usage-Dashboard",
-  },
-  {
-    title: "IpRecon",
-    description: "Network reconnaissance tool for IP address analysis and geolocation data using external APIs.",
-    technologies: ["Tkinter", "IPinfo API", "Python 3.9"],
-    link: "https://github.com/instax-dutta/IPRecon",
-  },
-
-  // 🎨 Premium Web Apps & Creative (Freelance & Client Focus)
-  {
-    title: "StyleLabs",
-    description: "Advanced design system foundry for modern web applications. Build beautiful UIs with precision and speed. The live style lab for this portfolio.",
-    technologies: ["React 19", "Next.js 15", "TypeScript 5", "Tailwind CSS 4", "Framer Motion", "Radix UI", "Lucide React"],
-    link: "https://stylelabs.sdad.pro",
-  },
-  {
-    title: "BizForge",
-    description: "Suite of business tools to automate workflows and supercharge online presence. All-in-one business growth platform.",
-    technologies: ["Next.js 14", "Tailwind CSS 3", "shadcn/ui", "RadixUI", "Flask 3", "Python 3.11"],
-    link: "https://bizzforge.sdad.pro",
-  },
-  {
-    title: "Preddit — Lightweight Reddit Mirror",
-    description: "Super-lightweight, personalisable Reddit mirror for minimal hardware. Disk-first aggregator with zero JavaScript and sub-20KB pages.",
-    technologies: ["Python 3", "Flask", "SQLite 3", "HTML", "Server-Side Rendering"],
-    link: "https://preddit.sdad.pro",
-    githubLink: "https://github.com/instax-dutta/preddit",
-  },
-  {
-    title: "My Developer Portfolio",
-    description: "Modern portfolio showcasing responsive design and seamless UX with cutting-edge web technologies.",
-    technologies: ["React 18", "Next.js 14", "Tailwind CSS 3", "RadixUI", "shadcn/ui", "Lucide React", "Framer Motion"],
-    link: "https://sdad.pro",
-    githubLink: "https://github.com/instax-dutta/portfoliov3",
-  },
-  {
-    title: "Todo List Webapp",
-    description: "Full-stack task manager with CRUD operations, drag-and-drop reordering, and persistent storage.",
-    technologies: ["Flask 2", "SQLAlchemy 2", "SQLite 3"],
-    link: "https://github.com/instax-dutta/TODO-List-FlaskApp",
-  },
-  {
-    title: "CL-Chat",
-    description: "Multi-client CLI chat application built with socket programming for real-time communication.",
-    technologies: ["Python 3.8", "Socket Programming"],
-    link: "https://github.com/instax-dutta/CL-Chat",
   },
 ]
 
