@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
-import ContactClient from "./ContactClient"
+import dynamic from "next/dynamic"
+const ContactClient = dynamic(() => import("./ContactClient"), {
+  loading: () => null,
+})
 
 export const metadata: Metadata = {
     title: "Hire Me & Collaboration | Sai Dutta Abhishek Dash",

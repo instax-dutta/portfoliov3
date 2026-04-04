@@ -1,10 +1,10 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, AnimatePresence } from "framer-motion"
 import {
   Home,
   User,
@@ -12,7 +12,6 @@ import {
   FolderKanban,
   Code,
   GraduationCap,
-  Award,
   Mail,
   Menu,
   X
@@ -31,29 +30,23 @@ const menuItems = [
 ]
 
 const Navigation: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+  const [uiState, setUiState] = useState({isScrolled: false, isMobile: false, isMobileMenuOpen: false})
   const pathname = usePathname()
   const menuRef = useRef<HTMLDivElement>(null)
 
-  const [prevPathname, setPrevPathname] = useState(pathname)
-  if (pathname !== prevPathname) {
-    setPrevPathname(pathname)
-    setIsMobileMenuOpen(false)
-  }
-
-  // Close menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false)
-      }
-    }
+    setUiState(prev => ({...prev, isMobileMenuOpen: false}))
+  }, [pathname])
 
-    if (isMobileMenuOpen) {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setUiState(prev => ({...prev, isMobileMenuOpen: false}))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (uiState.isMobileMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside)
-      // Prevent body scroll when menu is open
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = ""
@@ -63,25 +56,29 @@ const Navigation: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside)
       document.body.style.overflow = ""
     }
-  }, [isMobileMenuOpen])
+  }, [uiState.isMobileMenuOpen, handleClickOutside])
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
+      setUiState(prev => ({...prev, isScrolled: window.scrollY > 10}))
     }
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-      if (window.innerWidth >= 768) {
-        setIsMobileMenuOpen(false)
-      }
+      setUiState(prev => {
+        const newIsMobile = window.innerWidth < 768
+        return {
+          ...prev,
+          isMobile: newIsMobile,
+          isMobileMenuOpen: newIsMobile ? false : prev.isMobileMenuOpen
+        }
+      })
     }
 
     handleResize()
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     window.addEventListener("resize", handleResize)
     return () => {
-      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("scroll", handleScroll, { passive: true })
       window.removeEventListener("resize", handleResize)
     }
   }, [])
@@ -96,7 +93,7 @@ const Navigation: React.FC = () => {
     <>
       {/* Logo at top left */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-color-background/80 backdrop-blur-md" : "bg-transparent"
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${uiState.isScrolled ? "bg-color-background/80 backdrop-blur-md" : "bg-transparent"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,10 +109,7 @@ const Navigation: React.FC = () => {
                 e.preventDefault()
                 e.stopPropagation()
                 e.nativeEvent.stopImmediatePropagation()
-                setIsMobileMenuOpen((prev) => {
-                  console.log('Menu toggle clicked, new state:', !prev)
-                  return !prev
-                })
+                setUiState(prev => ({...prev, isMobileMenuOpen: !prev.isMobileMenuOpen}))
               }}
               onMouseDown={(e) => {
                 e.preventDefault()
@@ -123,11 +117,11 @@ const Navigation: React.FC = () => {
               }}
               className="md:hidden p-2 rounded-lg text-color-text hover:bg-color-primary/20 transition-colors z-[100] relative cursor-pointer"
               aria-label="Toggle menu"
-              aria-expanded={isMobileMenuOpen}
+              aria-expanded={uiState.isMobileMenuOpen}
               data-testid="mobile-menu-button"
               style={{ pointerEvents: 'auto', position: 'relative', zIndex: 100 }}
             >
-              {isMobileMenuOpen ? (
+              {uiState.isMobileMenuOpen ? (
                 <X className="w-6 h-6 pointer-events-none" />
               ) : (
                 <Menu className="w-6 h-6 pointer-events-none" />
@@ -139,19 +133,19 @@ const Navigation: React.FC = () => {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {uiState.isMobileMenuOpen && (
           <>
             {/* Backdrop */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="fixed inset-0 bg-black/50 z-40 md:hidden"
-              onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => setUiState(prev => ({...prev, isMobileMenuOpen: false}))}
             />
             {/* Menu */}
-            <motion.div
+            <m.div
               ref={menuRef}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -168,7 +162,7 @@ const Navigation: React.FC = () => {
                     <Link
                       key={item.href}
                       href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => setUiState(prev => ({...prev, isMobileMenuOpen: false}))}
                       className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-lg text-color-text hover:bg-color-primary/20 hover:text-color-primary transition-colors",
                         isActive && "bg-color-primary/10 text-color-primary"
@@ -180,7 +174,7 @@ const Navigation: React.FC = () => {
                   )
                 })}
               </div>
-            </motion.div>
+            </m.div>
           </>
         )}
       </AnimatePresence>

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { memo } from "react";
 import { cn } from "@/lib/utils";
 
 interface GooeyTextProps {
@@ -11,7 +12,7 @@ interface GooeyTextProps {
   textClassName?: string;
 }
 
-export function GooeyText({
+export const GooeyText = memo(function GooeyText({
   texts,
   morphTime = 1,
   cooldownTime = 0.25,
@@ -85,6 +86,19 @@ export function GooeyText({
       }
     }
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      if (text1Ref.current && text2Ref.current) {
+        text1Ref.current.textContent = texts[0];
+        text2Ref.current.textContent = texts[1] ?? texts[0];
+        text2Ref.current.style.filter = "";
+        text2Ref.current.style.opacity = "100%";
+        text1Ref.current.style.filter = "";
+        text1Ref.current.style.opacity = "0%";
+      }
+      return;
+    }
+
     animationFrameId = requestAnimationFrame(animate);
 
     return () => {
@@ -142,5 +156,5 @@ export function GooeyText({
       </div>
     </div>
   );
-}
+});
 

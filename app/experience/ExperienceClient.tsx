@@ -1,7 +1,6 @@
 "use client"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import Navigation from "../components/Navigation"
-import StarryBackground from "../components/StarryBackground"
 import { Briefcase, Calendar, Building2, Zap, Code, Brain, Rocket, ChevronDown } from "lucide-react"
 import { Timeline } from "@/components/ui/timeline"
 
@@ -148,7 +147,7 @@ const experiences = [
     skills: ["Leadership", "Entrepreneurship", "Strategic Planning", "Team Management", "Product Development"],
     achievements: ["Led team of 5+ members", "Launched successful product", "Managed startup operations"],
     icon: (
-      <motion.div
+      <m.div
         animate={{
           y: [0, -4, 0],
           rotate: [0, 5, 0]
@@ -163,7 +162,7 @@ const experiences = [
         <Rocket className="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]" strokeWidth={2.5} />
         {/* Plasma Thruster Effect */}
         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-3 bg-cyan-400 blur-[2px] opacity-60 animate-pulse" />
-      </motion.div>
+      </m.div>
     ),
     color: "from-white via-cyan-300 to-blue-600"
   },
@@ -200,42 +199,42 @@ export default function Experience() {
     <div className="relative text-gray-100 min-h-screen">
       <Navigation />
 
-      <motion.main
+      <m.main
         className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Header Section - Optimized for mobile */}
-        <motion.div className="text-center mb-12 sm:mb-16 lg:mb-20" variants={itemVariants}>
-          <motion.div
+        <m.div className="text-center mb-12 sm:mb-16 lg:mb-20" variants={itemVariants}>
+          <m.div
             className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-emerald-500/10 backdrop-blur-md border border-blue-500/20"
           >
             <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
             <span className="font-space-mono text-sm sm:text-base text-blue-400 font-medium tracking-wider">Professional Journey</span>
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             className="scifi-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow"
           >
             Experience Timeline
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             className="font-archivo text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4"
           >
             A comprehensive journey through my professional experiences, from entrepreneurship to machine learning engineering,
             showcasing growth, learning, and impact across diverse technology domains.
-          </motion.p>
+          </m.p>
 
           {/* Scroll Indicator */}
-          <motion.div
+          <m.div
             className="flex justify-center mt-8 sm:mt-12"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <motion.div
+            <m.div
               className="flex flex-col items-center gap-2 cursor-pointer group"
               animate={{
                 y: [0, 8, 0],
@@ -256,9 +255,9 @@ export default function Experience() {
                 <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:text-cyan-400 transition-colors duration-300" />
               </div>
               <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider font-space-mono">Scroll</p>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </m.div>
+          </m.div>
+        </m.div>
 
         {/* Timeline Component */}
         <div className="relative" data-timeline>
@@ -336,7 +335,7 @@ export default function Experience() {
         </div>
 
         {/* Footer Stats - Mobile-optimized */}
-        <motion.div
+        <m.div
           className="mt-12 sm:mt-16 lg:mt-20 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -345,7 +344,7 @@ export default function Experience() {
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
-              <motion.div
+              <m.div
                 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-500"
                 initial={{ scale: 0.8 }}
                 whileInView={{ scale: 1 }}
@@ -353,12 +352,12 @@ export default function Experience() {
                 transition={{ type: "spring", stiffness: 150, delay: 0.3 }}
               >
                 {experiences.length}
-              </motion.div>
+              </m.div>
               <p className="text-gray-400 mt-2 text-sm sm:text-base">Total Experiences</p>
             </div>
 
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
-              <motion.div
+              <m.div
                 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500"
                 initial={{ scale: 0.8 }}
                 whileInView={{ scale: 1 }}
@@ -366,12 +365,12 @@ export default function Experience() {
                 transition={{ type: "spring", stiffness: 150, delay: 0.4 }}
               >
                 10+
-              </motion.div>
+              </m.div>
               <p className="text-gray-400 mt-2 text-sm sm:text-base">Companies Worked With</p>
             </div>
 
             <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-xl p-4 sm:p-6">
-              <motion.div
+              <m.div
                 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500"
                 initial={{ scale: 0.8 }}
                 whileInView={{ scale: 1 }}
@@ -379,12 +378,12 @@ export default function Experience() {
                 transition={{ type: "spring", stiffness: 150, delay: 0.5 }}
               >
                 3+
-              </motion.div>
+              </m.div>
               <p className="text-gray-400 mt-2 text-sm sm:text-base">Years of Experience</p>
             </div>
           </div>
-        </motion.div>
-      </motion.main>
+        </m.div>
+      </m.main>
     </div>
   )
 }

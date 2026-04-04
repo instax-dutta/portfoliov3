@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { memo } from 'react'
 import { FileCode } from 'lucide-react'
 
 interface Tech {
@@ -13,7 +13,7 @@ interface ComponentProps {
   techStack: Tech[]
 }
 
-export const TechStack: React.FC<ComponentProps> = ({ techStack }) => {
+export const TechStack: React.FC<ComponentProps> = memo(({ techStack }) => {
 
   return (
     <div className="relative w-full">
@@ -24,7 +24,7 @@ export const TechStack: React.FC<ComponentProps> = ({ techStack }) => {
       <div className="flex flex-wrap gap-2">
         {techStack.map((tech, index) => (
           <a
-            key={index}
+            key={tech.name}
             target="_blank"
             rel="noopener noreferrer"
             href={tech.url}
@@ -40,5 +40,5 @@ export const TechStack: React.FC<ComponentProps> = ({ techStack }) => {
       </div>
     </div>
   )
-}
+})
 

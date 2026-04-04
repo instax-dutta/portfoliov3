@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
-import ProjectsClient from "./ProjectsClient"
+import dynamic from "next/dynamic"
+const ProjectsClient = dynamic(() => import("./ProjectsClient"), {
+  loading: () => null,
+})
 
 export const metadata: Metadata = {
     title: "Portfolio: AI, Security & Full Stack Projects",

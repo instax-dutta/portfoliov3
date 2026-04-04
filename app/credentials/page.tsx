@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
-import CredentialsClient from "./CredentialsClient"
+import dynamic from "next/dynamic"
+const CredentialsClient = dynamic(() => import("./CredentialsClient"), {
+  loading: () => null,
+})
 
 export const metadata: Metadata = {
     title: "Credentials & Certifications | Sai Dutta Abhishek Dash",

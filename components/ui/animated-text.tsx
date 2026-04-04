@@ -1,5 +1,9 @@
+"use client"
+
+"use client"
+
 import * as React from "react"
-import { motion, type Variants } from "framer-motion"
+import { m, type Variants } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -18,7 +22,7 @@ interface AnimatedTextProps extends React.HTMLAttributes<HTMLDivElement> {
   animateBy?: "letters" | "words"
 }
 
-const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
+const AnimatedText = React.memo(React.forwardRef<HTMLDivElement, AnimatedTextProps>(
   (
     {
       text,
@@ -99,7 +103,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
         {...props}
       >
         <div className="relative">
-          <motion.div
+          <m.div
             style={{ display: "flex", justifyContent: "center", overflow: "visible" }}
             variants={container}
             initial="hidden"
@@ -107,21 +111,21 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
             className={cn("text-4xl font-bold text-center flex-wrap md:flex-nowrap mb-2", textClassName)}
           >
             {animateBy === "words" ? (
-              words.map((word, index) => (
-                <motion.span key={index} variants={child} className="inline-block">
-                  {word}
-                  {index < words.length - 1 && "\u00A0"}
-                </motion.span>
+              words.map((word, idx) => ({ word, id: idx })).map((item) => (
+                <m.span key={item.id} variants={child} className="inline-block">
+                  {item.word}
+                  {item.id < words.length - 1 && "\u00A0"}
+                </m.span>
               ))
             ) : (
-              letters.map((letter, index) => (
-                <motion.span key={index} variants={child}>
-                  {letter === " " ? "\u00A0" : letter}
-                </motion.span>
+              letters.map((letter, idx) => ({ letter, id: idx })).map((item) => (
+                <m.span key={item.id} variants={child}>
+                  {item.letter === " " ? "\u00A0" : item.letter}
+                </m.span>
               ))
-            )}
-          </motion.div>
-          <motion.div
+            )} {/* Static list based on text input, order never changes */}
+          </m.div>
+          <m.div
             variants={lineVariants}
             initial="hidden"
             animate="visible"
@@ -138,7 +142,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
       </div>
     )
   },
-)
+))
 
 AnimatedText.displayName = "AnimatedText"
 

@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
-import ExperienceClient from "./ExperienceClient"
+import dynamic from "next/dynamic"
+const ExperienceClient = dynamic(() => import("./ExperienceClient"), {
+  loading: () => null,
+})
 
 export const metadata: Metadata = {
   title: "Experience & Professional Journey | Sai Dutta Abhishek Dash",

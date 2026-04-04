@@ -1,9 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { GraduationCap, BookOpen, School, Award, CheckCircle, Calendar, MapPin } from "lucide-react"
 import Navigation from "../components/Navigation"
-import StarryBackground from "../components/StarryBackground"
 
 const education = [
     {
@@ -83,6 +82,51 @@ const certifications = [
     },
 ]
 
+const categoryColors = {
+    "AI/ML": {
+        gradient: "from-emerald-500/10 to-teal-500/10",
+        border: "border-emerald-500/30 hover:border-emerald-500/60",
+        badge: "bg-emerald-500/20 text-emerald-300",
+        icon: "text-emerald-400"
+    },
+    "Cloud": {
+        gradient: "from-blue-500/10 to-cyan-500/10",
+        border: "border-blue-500/30 hover:border-blue-500/60",
+        badge: "bg-blue-500/20 text-blue-300",
+        icon: "text-blue-400"
+    },
+    "Programming": {
+        gradient: "from-green-500/10 to-emerald-500/10",
+        border: "border-green-500/30 hover:border-green-500/60",
+        badge: "bg-green-500/20 text-green-300",
+        icon: "text-green-400"
+    },
+    "Management": {
+        gradient: "from-orange-500/10 to-yellow-500/10",
+        border: "border-orange-500/30 hover:border-orange-500/60",
+        badge: "bg-orange-500/20 text-orange-300",
+        icon: "text-orange-400"
+    },
+}
+
+const educationColors = [
+    "from-blue-500/10 to-cyan-500/10 border-blue-500/30 hover:border-blue-500/60",
+    "from-emerald-500/10 to-teal-500/10 border-emerald-500/30 hover:border-emerald-500/60",
+    "from-cyan-500/10 to-blue-500/10 border-cyan-500/30 hover:border-cyan-500/60",
+]
+
+const educationIconColors = [
+    "bg-blue-500/20 border-blue-500/40",
+    "bg-emerald-500/20 border-emerald-500/40",
+    "bg-cyan-500/20 border-cyan-500/40",
+]
+
+const educationIconTextColors = [
+    "text-blue-400",
+    "text-emerald-400",
+    "text-cyan-400",
+]
+
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -109,7 +153,7 @@ export default function Credentials() {
     return (
         <div className="relative text-gray-100 min-h-screen overflow-hidden">
             <Navigation />
-            <motion.main
+            <m.main
                 className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
                 initial="hidden"
                 animate="visible"
@@ -119,7 +163,7 @@ export default function Credentials() {
                 } as any}
             >
                 {/* Header */}
-                <motion.div
+                <m.div
                     variants={itemVariants}
                     className="text-center mb-16 relative gpu-accelerated"
                 >
@@ -132,7 +176,7 @@ export default function Credentials() {
                 </motion.div>
 
                 {/* Education Section */}
-                <motion.div className="mb-24" variants={itemVariants}>
+                <m.div className="mb-24" variants={itemVariants}>
                     <div className="flex items-center gap-3 mb-8">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                             <GraduationCap className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
@@ -143,25 +187,18 @@ export default function Credentials() {
                     <div className="grid md:grid-cols-3 gap-6">
                         {education.map((edu, index) => {
                             const Icon = edu.icon
-                            const colors = [
-                                "from-blue-500/10 to-cyan-500/10 border-blue-500/30 hover:border-blue-500/60",
-                                "from-emerald-500/10 to-teal-500/10 border-emerald-500/30 hover:border-emerald-500/60",
-                                "from-cyan-500/10 to-blue-500/10 border-cyan-500/30 hover:border-cyan-500/60",
-                            ]
-                            const iconColors = ["bg-blue-500/20 border-blue-500/40", "bg-emerald-500/20 border-emerald-500/40", "bg-cyan-500/20 border-cyan-500/40"]
-                            const iconTextColors = ["text-blue-400", "text-emerald-400", "text-cyan-400"]
 
                             return (
-                                <motion.div
+                                <m.div
                                     key={index}
                                     className="group"
                                     variants={itemVariants}
                                     whileHover={{ y: -8, scale: 1.02 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <div className={`h-full bg-gradient-to-br ${colors[index]} backdrop-blur-md border rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10`}>
+                                    <div className={`h-full bg-gradient-to-br ${educationColors[index]} backdrop-blur-md border rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10`}>
                                         {/* Icon */}
-                                        <div className={`w-16 h-16 rounded-xl ${iconColors[index]} border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 relative`}>
+                                        <div className={`w-16 h-16 rounded-xl ${educationIconColors[index]} border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 relative`}>
                                             <Icon className="w-8 h-8 text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] relative z-10" />
                                         </div>
 
@@ -199,7 +236,7 @@ export default function Credentials() {
                 </motion.div>
 
                 {/* Certifications Section */}
-                <motion.div variants={itemVariants}>
+                <m.div variants={itemVariants}>
                     <div className="flex items-center gap-3 mb-8">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
                             <Award className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
@@ -209,36 +246,10 @@ export default function Credentials() {
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {certifications.map((cert, index) => {
-                            const categoryColors = {
-                                "AI/ML": {
-                                    gradient: "from-emerald-500/10 to-teal-500/10",
-                                    border: "border-emerald-500/30 hover:border-emerald-500/60",
-                                    badge: "bg-emerald-500/20 text-emerald-300",
-                                    icon: "text-emerald-400"
-                                },
-                                "Cloud": {
-                                    gradient: "from-blue-500/10 to-cyan-500/10",
-                                    border: "border-blue-500/30 hover:border-blue-500/60",
-                                    badge: "bg-blue-500/20 text-blue-300",
-                                    icon: "text-blue-400"
-                                },
-                                "Programming": {
-                                    gradient: "from-green-500/10 to-emerald-500/10",
-                                    border: "border-green-500/30 hover:border-green-500/60",
-                                    badge: "bg-green-500/20 text-green-300",
-                                    icon: "text-green-400"
-                                },
-                                "Management": {
-                                    gradient: "from-orange-500/10 to-yellow-500/10",
-                                    border: "border-orange-500/30 hover:border-orange-500/60",
-                                    badge: "bg-orange-500/20 text-orange-300",
-                                    icon: "text-orange-400"
-                                },
-                            }
                             const colors = categoryColors[cert.category as keyof typeof categoryColors] || categoryColors["Cloud"]
 
                             return (
-                                <motion.div
+                                <m.div
                                     key={index}
                                     className="group"
                                     variants={itemVariants}
@@ -275,7 +286,7 @@ export default function Credentials() {
                 </motion.div>
 
                 {/* Stats Summary */}
-                <motion.div
+                <m.div
                     className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
                     variants={containerVariants}
                 >
@@ -287,7 +298,7 @@ export default function Credentials() {
                     ].map((stat, index) => {
                         const Icon = stat.icon
                         return (
-                            <motion.div
+                            <m.div
                                 key={index}
                                 className="text-center p-6 bg-gradient-to-br from-color-background/60 to-color-background/30 backdrop-blur-md border border-cyan-500/20 rounded-xl hover:border-cyan-500/40 transition-all duration-300"
                                 variants={itemVariants}

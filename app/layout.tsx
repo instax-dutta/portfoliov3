@@ -1,9 +1,11 @@
 import type React from "react"
+import { Suspense } from "react"
 import "./globals.css"
 import { Orbitron, Space_Mono, Archivo, Inconsolata, Audiowide } from "next/font/google"
 import StarryBackground from "./components/StarryBackground"
 import CustomCursor from "./components/CustomCursor"
 import LenisProvider from "./components/LenisProvider"
+import MotionProvider from "./components/MotionProvider"
 import type { Metadata } from "next"
 
 // Sci-fi heading font - atmospheric and premium
@@ -305,8 +307,9 @@ export default function RootLayout({
       <body className={`${orbitron.variable} ${spaceMono.variable} ${archivo.variable} ${inconsolata.variable} ${audiowide.variable} font-archivo text-color-text min-h-screen relative overflow-x-hidden`}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(JSON.stringify(structuredData)) }}
-        />
+        >
+          {DOMPurify.sanitize(JSON.stringify(structuredData))}
+        </script>
 
         {/* Layer 1: Base Background Color (Lowest) */}
         <div className="fixed inset-0 bg-[#0a0f1f] -z-[100]" />
@@ -318,11 +321,13 @@ export default function RootLayout({
         <CustomCursor />
 
         {/* Layer 4: Content (Above all backgrounds) */}
-        <LenisProvider>
-          <div className="relative z-0 min-h-screen">
-            {children}
-          </div>
-        </LenisProvider>
+        <MotionProvider>
+          <Suspense fallback={null}>
+            <LenisProvider>
+              {children}
+            </LenisProvider>
+          </Suspense>
+        </MotionProvider>
       </body>
     </html>
   )

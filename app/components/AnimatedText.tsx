@@ -1,8 +1,8 @@
 "use client"
 
-import type React from "react"
+import React, { memo } from "react"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 interface AnimatedTextProps {
   text: string
@@ -42,21 +42,21 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = "" }) => 
   }
 
   return (
-    <motion.div
+    <m.div
       style={{ overflow: "hidden", display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       variants={container}
       initial="hidden"
       animate="visible"
       className={className}
     >
-      {words.map((word, index) => (
-        <motion.span variants={child} style={{ marginRight: "0.25em", display: "inline-block" }} key={index}>
-          {word}
-        </motion.span>
-      ))}
-    </motion.div>
+      {words.map((word, idx) => ({ word, id: idx })).map((item) => (
+        <m.span variants={child} style={{ marginRight: "0.25em", display: "inline-block" }} key={item.id}>
+          {item.word}
+        </m.span>
+      ))} {/* Static list based on text input, order never changes */}
+    </m.div>
   )
 }
 
-export default AnimatedText
+export default memo(AnimatedText)
 

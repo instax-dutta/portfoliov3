@@ -83,6 +83,13 @@ const StarryBackground: React.FC = () => {
     const frameDelay = 1000 / fps
     let lastFrameTime = 0
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (prefersReducedMotion) {
+      drawStars()
+      return
+    }
+
     function animate(currentTime: number) {
       animationFrameId = requestAnimationFrame(animate)
 

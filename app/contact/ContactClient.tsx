@@ -1,10 +1,9 @@
 "use client"
 
 import React, { useState, useRef } from "react"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Github, Linkedin, Twitter, Mail, MapPin, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import StarryBackground from "../components/StarryBackground"
 import Navigation from "../components/Navigation"
 
 const socialLinks = [
@@ -116,25 +115,25 @@ export default function Contact() {
   return (
     <div className="relative min-h-screen flex flex-col overflow-hidden">
       <Navigation />
-      <motion.main
+      <m.main
         className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 md:pb-20 relative"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.div
+        <m.div
           className="w-full max-w-4xl space-y-8 sm:space-y-12"
           variants={itemVariants}
         >
           {/* Header */}
           <div className="text-center space-y-4">
-            <motion.h1
+            <m.h1
               className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow"
               variants={itemVariants}
             >
               Get In Touch
             </motion.h1>
-            <motion.p
+            <m.p
               className="text-color-text-muted text-base sm:text-lg max-w-2xl mx-auto"
               variants={itemVariants}
             >
@@ -146,7 +145,7 @@ export default function Contact() {
           {/* Main Content Grid */}
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Left Side - Contact Info */}
-            <motion.div
+            <m.div
               className="h-full"
               variants={itemVariants}
             >
@@ -197,7 +196,7 @@ export default function Contact() {
                     {socialLinks.map((link, index) => {
                       const Icon = link.icon
                       return (
-                        <motion.a
+                        <m.a
                           key={index}
                           href={link.href}
                           target="_blank"
@@ -217,7 +216,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Right Side - Contact Form */}
-            <motion.div
+            <m.div
               className="bg-color-background/50 backdrop-blur-md border border-color-primary/30 rounded-xl p-6 sm:p-8 h-full"
               variants={itemVariants}
             >
@@ -274,7 +273,7 @@ export default function Contact() {
                 </Button>
 
                 {result && (
-                  <motion.div
+                  <m.div
                     className="mt-4 p-4 rounded-lg bg-color-primary/10 border border-color-primary/30 text-center"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}

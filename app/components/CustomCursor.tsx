@@ -18,6 +18,9 @@ const CustomCursor: React.FC = () => {
 
   useEffect(() => {
     // Check if device supports hover (mouse)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)")
     if (!mediaQuery.matches) return
 
