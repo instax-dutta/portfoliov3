@@ -2,7 +2,7 @@
 
 import React, { memo } from "react"
 
-import { m } from "framer-motion"
+import { motion } from "framer-motion"
 
 interface AnimatedIconProps {
   icon: React.ReactNode
@@ -11,7 +11,7 @@ interface AnimatedIconProps {
 
 const AnimatedIcon: React.FC<AnimatedIconProps> = ({ icon, delay = 0 }) => {
   return (
-    <m.div
+    <motion.div
       initial={{ scale: 0, rotate: -180 }}
       animate={{ scale: 1, rotate: 0 }}
       transition={{

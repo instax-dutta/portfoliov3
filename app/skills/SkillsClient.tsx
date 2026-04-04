@@ -1,5 +1,5 @@
 "use client"
-import { m } from "framer-motion"
+import { motion } from "framer-motion"
 import { useRef } from "react"
 import { Code, Brain, Server, Zap } from "lucide-react"
 import Navigation from "../components/Navigation"
@@ -63,37 +63,37 @@ export default function Skills() {
     <div className="relative text-gray-100 min-h-screen">
       <Navigation />
 
-      <m.main
+      <motion.main
         className="relative container mx-auto px-4 pt-20 sm:pt-24 pb-12 sm:pb-16"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <m.header
+        <motion.header
           className="text-center mb-12 sm:mb-16"
           variants={itemVariants}
         >
-          <m.h1
+          <motion.h1
             className="scifi-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-teal-400 to-emerald-500 text-glow"
           >
             My Skills & Expertise
-          </m.h1>
-          <m.p
+          </motion.h1>
+          <motion.p
             className="text-color-text-muted text-lg max-w-2xl mx-auto"
           >
             A comprehensive overview of my technical abilities and professional competencies
-          </m.p>
-        </m.header>
+          </motion.p>
+        </motion.header>
 
-        <m.div
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10"
           variants={containerVariants}
         >
           {skills.map((skillCategory, index) => (
             <SkillCategory key={skillCategory.category} category={skillCategory} index={index} />
           ))}
-        </m.div>
-      </m.main>
+        </motion.div>
+      </motion.main>
     </div>
   )
 }
@@ -103,7 +103,7 @@ function SkillCategory({ category, index }: { category: any; index: number }) {
 
   // Simplified animation logic for better performance
   return (
-    <m.div
+    <motion.div
       ref={ref}
       className="relative bg-color-background/40 backdrop-blur-md border border-color-primary/30 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group"
       variants={itemVariants}
@@ -127,13 +127,13 @@ function SkillCategory({ category, index }: { category: any; index: number }) {
           ))}
         </div>
       </div>
-    </m.div>
+    </motion.div>
   )
 }
 
 function SkillBadge({ skill, index }: { skill: string; index: number }) {
   return (
-    <m.div
+    <motion.div
       variants={itemVariants}
       whileHover={{
         scale: 1.05,
@@ -143,6 +143,6 @@ function SkillBadge({ skill, index }: { skill: string; index: number }) {
       className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-color-background/60 border border-color-primary/20 text-sm sm:text-base font-medium text-color-text-muted hover:text-color-primary hover:border-color-primary/50 hover:bg-color-primary/10 transition-colors cursor-default select-none shadow-sm"
     >
       {skill}
-    </m.div>
+    </motion.div>
   )
 }

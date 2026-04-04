@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { m } from "framer-motion"
+import { motion } from "framer-motion"
 import Navigation from "../components/Navigation"
 import { GooeyText } from "@/components/ui/gooey-text-morphing"
 import { Button } from "@/components/ui/button"
@@ -59,13 +59,13 @@ export default function HomeClient() {
     return (
         <main className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
             <Navigation />
-            <m.div
+            <motion.div
                 className="z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 max-w-7xl mt-12 sm:mt-16 gap-6 sm:gap-8"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
-                <m.div variants={nameVariants} className="w-full">
+                <motion.div variants={nameVariants} className="w-full">
                     <AnimatedText
                         text="Sai Dutta Abhishek Dash"
                         animateBy="words"
@@ -75,18 +75,18 @@ export default function HomeClient() {
                         underlineOffset="-bottom-3"
                         className="w-full"
                     />
-                </m.div>
+                </motion.div>
 
-                <m.div className="h-12 flex items-center justify-center w-full" variants={itemVariants}>
+                <motion.div className="h-12 flex items-center justify-center w-full" variants={itemVariants}>
                     <GooeyText
                         texts={roles}
                         morphTime={1.5}
                         cooldownTime={0.5}
                         textClassName="text-lg sm:text-xl md:text-2xl text-color-text-muted text-glow"
                     />
-                </m.div>
+                </motion.div>
 
-                <m.div
+                <motion.div
                     className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4"
                     variants={itemVariants}
                 >
@@ -94,9 +94,9 @@ export default function HomeClient() {
                     <span className="bg-color-accent/10 border border-color-accent/20 text-color-accent px-4 py-1.5 rounded-full text-sm font-medium uppercase tracking-wider font-space-mono">Machine Learning</span>
                     <span className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-medium uppercase tracking-wider font-space-mono">Next.js 15</span>
                     <span className="bg-amber-500/10 border border-amber-500/20 text-amber-400 px-4 py-1.5 rounded-full text-sm font-medium uppercase tracking-wider font-space-mono">AWS Certified</span>
-                </m.div>
+                </motion.div>
 
-                <m.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mt-4 sm:mt-6">
+                <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mt-4 sm:mt-6">
                     <Button
                         asChild
                         className="bg-gradient-to-r from-color-primary to-color-accent text-white px-8 py-4 h-auto text-lg rounded-full shadow-lg shadow-color-primary/20 hover:shadow-color-primary/40 transition-all font-bold group"
@@ -115,9 +115,9 @@ export default function HomeClient() {
                             Hire Me
                         </Link>
                     </Button>
-                </m.div>
+                </motion.div>
 
-                <m.div
+                <motion.div
                     className="flex flex-wrap justify-center gap-6 mt-4 sm:mt-6"
                     variants={itemVariants}
                 >
@@ -155,8 +155,8 @@ export default function HomeClient() {
                     >
                         <Mail className="w-8 h-8" />
                     </a>
-                </m.div>
-            </m.div>
+                </motion.div>
+            </motion.div>
         </main>
     )
 }

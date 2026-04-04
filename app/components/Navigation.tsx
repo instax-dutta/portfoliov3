@@ -4,7 +4,7 @@ import type React from "react"
 import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { m, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   Home,
   User,
@@ -136,7 +136,7 @@ const Navigation: React.FC = () => {
         {uiState.isMobileMenuOpen && (
           <>
             {/* Backdrop */}
-            <m.div
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -145,7 +145,7 @@ const Navigation: React.FC = () => {
                       onClick={() => setUiState(prev => ({...prev, isMobileMenuOpen: false}))}
             />
             {/* Menu */}
-            <m.div
+            <motion.div
               ref={menuRef}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -174,7 +174,7 @@ const Navigation: React.FC = () => {
                   )
                 })}
               </div>
-            </m.div>
+            </motion.div>
           </>
         )}
       </AnimatePresence>

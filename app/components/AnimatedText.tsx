@@ -2,7 +2,7 @@
 
 import React, { memo } from "react"
 
-import { m } from "framer-motion"
+import { motion } from "framer-motion"
 
 interface AnimatedTextProps {
   text: string
@@ -42,7 +42,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = "" }) => 
   }
 
   return (
-    <m.div
+    <motion.div
       style={{ overflow: "hidden", display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       variants={container}
       initial="hidden"
@@ -50,11 +50,11 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = "" }) => 
       className={className}
     >
       {words.map((word, idx) => ({ word, id: idx })).map((item) => (
-        <m.span variants={child} style={{ marginRight: "0.25em", display: "inline-block" }} key={item.id}>
+        <motion.span variants={child} style={{ marginRight: "0.25em", display: "inline-block" }} key={item.id}>
           {item.word}
-        </m.span>
+        </motion.span>
       ))} {/* Static list based on text input, order never changes */}
-    </m.div>
+    </motion.div>
   )
 }
 

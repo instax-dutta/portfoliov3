@@ -5,7 +5,7 @@ import { Orbitron, Space_Mono, Archivo, Inconsolata, Audiowide } from "next/font
 import StarryBackground from "./components/StarryBackground"
 import CustomCursor from "./components/CustomCursor"
 import LenisProvider from "./components/LenisProvider"
-import MotionProvider from "./components/MotionProvider"
+
 import type { Metadata } from "next"
 
 // Sci-fi heading font - atmospheric and premium
@@ -321,13 +321,11 @@ export default function RootLayout({
         <CustomCursor />
 
         {/* Layer 4: Content (Above all backgrounds) */}
-        <MotionProvider>
-          <Suspense fallback={null}>
-            <LenisProvider>
-              {children}
-            </LenisProvider>
-          </Suspense>
-        </MotionProvider>
+        <Suspense fallback={null}>
+          <LenisProvider>
+            {children}
+          </LenisProvider>
+        </Suspense>
       </body>
     </html>
   )

@@ -3,7 +3,7 @@
 "use client"
 
 import * as React from "react"
-import { m, type Variants } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -103,7 +103,7 @@ const AnimatedText = React.memo(React.forwardRef<HTMLDivElement, AnimatedTextPro
         {...props}
       >
         <div className="relative">
-          <m.div
+          <motion.div
             style={{ display: "flex", justifyContent: "center", overflow: "visible" }}
             variants={container}
             initial="hidden"
@@ -112,20 +112,20 @@ const AnimatedText = React.memo(React.forwardRef<HTMLDivElement, AnimatedTextPro
           >
             {animateBy === "words" ? (
               words.map((word, idx) => ({ word, id: idx })).map((item) => (
-                <m.span key={item.id} variants={child} className="inline-block">
+                <motion.span key={item.id} variants={child} className="inline-block">
                   {item.word}
                   {item.id < words.length - 1 && "\u00A0"}
-                </m.span>
+                </motion.span>
               ))
             ) : (
               letters.map((letter, idx) => ({ letter, id: idx })).map((item) => (
-                <m.span key={item.id} variants={child}>
+                <motion.span key={item.id} variants={child}>
                   {item.letter === " " ? "\u00A0" : item.letter}
-                </m.span>
+                </motion.span>
               ))
             )} {/* Static list based on text input, order never changes */}
-          </m.div>
-          <m.div
+          </motion.div>
+          <motion.div
             variants={lineVariants}
             initial="hidden"
             animate="visible"

@@ -1,6 +1,6 @@
 "use client"
 
-import { m } from "framer-motion"
+import { motion } from "framer-motion"
 import { GraduationCap, BookOpen, School, Award, CheckCircle, Calendar, MapPin } from "lucide-react"
 import Navigation from "../components/Navigation"
 
@@ -153,7 +153,7 @@ export default function Credentials() {
     return (
         <div className="relative text-gray-100 min-h-screen overflow-hidden">
             <Navigation />
-            <m.main
+            <motion.main
                 className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 lg:pb-20"
                 initial="hidden"
                 animate="visible"
@@ -163,7 +163,7 @@ export default function Credentials() {
                 } as any}
             >
                 {/* Header */}
-                <m.div
+                <motion.div
                     variants={itemVariants}
                     className="text-center mb-16 relative gpu-accelerated"
                 >
@@ -176,7 +176,7 @@ export default function Credentials() {
                 </motion.div>
 
                 {/* Education Section */}
-                <m.div className="mb-24" variants={itemVariants}>
+                <motion.div className="mb-24" variants={itemVariants}>
                     <div className="flex items-center gap-3 mb-8">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                             <GraduationCap className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
@@ -189,7 +189,7 @@ export default function Credentials() {
                             const Icon = edu.icon
 
                             return (
-                                <m.div
+                                <motion.div
                                     key={index}
                                     className="group"
                                     variants={itemVariants}
@@ -236,7 +236,7 @@ export default function Credentials() {
                 </motion.div>
 
                 {/* Certifications Section */}
-                <m.div variants={itemVariants}>
+                <motion.div variants={itemVariants}>
                     <div className="flex items-center gap-3 mb-8">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
                             <Award className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
@@ -249,7 +249,7 @@ export default function Credentials() {
                             const colors = categoryColors[cert.category as keyof typeof categoryColors] || categoryColors["Cloud"]
 
                             return (
-                                <m.div
+                                <motion.div
                                     key={index}
                                     className="group"
                                     variants={itemVariants}
@@ -286,7 +286,7 @@ export default function Credentials() {
                 </motion.div>
 
                 {/* Stats Summary */}
-                <m.div
+                <motion.div
                     className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
                     variants={containerVariants}
                 >
@@ -298,7 +298,7 @@ export default function Credentials() {
                     ].map((stat, index) => {
                         const Icon = stat.icon
                         return (
-                            <m.div
+                            <motion.div
                                 key={index}
                                 className="text-center p-6 bg-gradient-to-br from-color-background/60 to-color-background/30 backdrop-blur-md border border-cyan-500/20 rounded-xl hover:border-cyan-500/40 transition-all duration-300"
                                 variants={itemVariants}
