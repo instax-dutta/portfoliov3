@@ -79,7 +79,7 @@ const techMap: Record<string, { url: string; color: string }> = {
 
 // Default fallback for unknown technologies
 const getTechInfo = (techName: string): { url: string; color: string } => {
-  return techMap[techName] || { url: '#', color: '#60a5fa' }
+  return techMap[techName] || { url: '#', color: '#3b82f6' }
 }
 
 export const AnimatedProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {

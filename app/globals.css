@@ -7,15 +7,15 @@
 :root {
   --color-background: #020617;
   /* Deep Space Black */
-  --color-primary: #38bdf8;
+  --color-primary: #3b82f6;
   /* Sky Blue */
-  --color-secondary: #10b981;
+  --color-secondary: #f43f5e;
   /* Emerald Green */
-  --color-accent: #22d3ee;
+  --color-accent: #ec4899;
   /* Cyan */
   --color-text: #f8fafc;
   --color-text-muted: #94a3b8;
-  --color-rocket: #38bdf8;
+  --color-rocket: #f43f5e;
 }
 
 :root {
@@ -118,7 +118,7 @@
   }
 
   .text-glow {
-    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
   }
 
   .text-glow-sharp {
@@ -127,11 +127,11 @@
 
   .glow {
     @apply transition-shadow duration-300;
-    box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
   }
 
   .glow:hover {
-    box-shadow: 0 0 30px rgba(96, 165, 250, 0.8);
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.7);
   }
 
   .space-button {

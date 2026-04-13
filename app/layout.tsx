@@ -295,8 +295,6 @@ const structuredData = {
   ]
 }
 
-import DOMPurify from "isomorphic-dompurify"
-
 export default function RootLayout({
   children,
 }: {
@@ -307,9 +305,8 @@ export default function RootLayout({
       <body className={`${orbitron.variable} ${spaceMono.variable} ${archivo.variable} ${inconsolata.variable} ${audiowide.variable} font-archivo text-color-text min-h-screen relative overflow-x-hidden`}>
         <script
           type="application/ld+json"
-        >
-          {DOMPurify.sanitize(JSON.stringify(structuredData))}
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
 
         {/* Layer 1: Base Background Color (Lowest) */}
         <div className="fixed inset-0 bg-[#0a0f1f] -z-[100]" />
