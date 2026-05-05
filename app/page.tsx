@@ -26,6 +26,19 @@ export const metadata: Metadata = {
   }
 }
 
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://sdad.pro" },
+  ],
+}
+
 export default function Home() {
-  return <HomeClient />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
+      <HomeClient />
+    </>
+  )
 }

@@ -96,8 +96,8 @@ This document acts as the single source of truth for all statically embedded dat
 - **Tooner — Lightning-Fast Document Tokenization**: Toon format LLM preprocessing. (React 19, Vite 6, Typescript 5). [Link](https://tooner.sdad.pro)
 - **Ignition — Reddit to LLM Extraction Engine**: 50-70% token reduction via tooning. (Vite 5, React 18, Zustand, Netlify Functions). [Link](https://ignition.sdad.pro)
 - **GenieLabs**: AI dev platform for code generation. (Next.js 14, React 18). [Link](https://genielabs.sdad.pro)
-- **WordAI**: AI SEO article generation. (Vite 5, React 18). [Link](https://wordai.app)
-- **OneShotAI**: AI prompt engineering workflow tool. (Next.js 14). [Link](https://oneshotai.site)
+- **WordAI**: AI SEO article generation. (Vite 5, React 18). [Link](https://wordai.sdad.pro)
+- **OneShotAI**: AI prompt engineering workflow tool. (Next.js 14). [Link](https://osai.sdad.pro)
 
 ### 🔬 Applied ML & Data Engineering (Deep Tech Focus)
 

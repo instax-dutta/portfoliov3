@@ -30,13 +30,13 @@ const projects = [
     title: "WordAI",
     description: "AI content generation that produces SEO-optimized articles in seconds. No sign-up required.",
     technologies: ["AI Agent", "API Integration", "React 18", "Vite 5", "Tailwind CSS 3", "Redux Toolkit", "NLP"],
-    link: "https://wordai.app",
+    link: "https://wordai.sdad.pro",
   },
   {
     title: "OneShotAI – AI-Powered Prompt Engineering Tool",
     description: "Streamline prompt engineering workflows and optimize AI model interactions for better results.",
     technologies: ["AI", "Prompt Engineering", "Next.js 14", "React 18", "Tailwind CSS 3", "NLP"],
-    link: "https://oneshotai.site",
+    link: "https://osai.sdad.pro/",
   },
   {
     title: "VeronicaBot — Production Discord Bot for YouTube/Twitch Monitoring",

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://sdad.pro/og-image.jpg",
+        url: "https://sdad.pro/og-image.png",
         width: 1200,
         height: 630,
         alt: "Projects Portfolio - Freelance Full Stack Developer",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Projects - Portfolio Showcase | Freelance Full Stack Developer",
     description: "Explore my portfolio of 25+ innovative projects including AI-powered applications and web development solutions.",
-    images: ["https://sdad.pro/og-image.jpg"],
+    images: ["https://sdad.pro/og-image.png"],
   },
   alternates: {
     canonical: "/projects",
