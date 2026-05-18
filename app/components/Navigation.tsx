@@ -93,7 +93,7 @@ const Navigation: React.FC = () => {
     <>
       {/* Logo at top left */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${uiState.isScrolled ? "bg-color-background/80 backdrop-blur-md" : "bg-transparent"
+        className={`fixed top-[28px] sm:top-[32px] left-0 w-full z-50 transition-all duration-300 ${uiState.isScrolled ? "bg-color-background/80 backdrop-blur-md" : "bg-transparent"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,7 +151,7 @@ const Navigation: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="fixed top-14 sm:top-16 left-0 right-0 z-[60] bg-color-background/95 backdrop-blur-md border-b border-color-primary/30 md:hidden shadow-lg"
+              className="fixed top-[42px] sm:top-[48px] left-0 right-0 z-[60] bg-color-background/95 backdrop-blur-md border-b border-color-primary/30 md:hidden shadow-lg"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="px-4 py-4 space-y-2">

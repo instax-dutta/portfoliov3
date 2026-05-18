@@ -19,6 +19,7 @@ const credentialsStructuredData = {
     "name": "Credentials of Sai Dutta Abhishek Dash",
     "credentialCategory": "Certification",
     "author": { "@id": "https://sdad.pro/#person" },
+    "url": "https://v3.sdad.pro/credentials",
     "about": [
         { "@type": "EducationalOccupationalCredential", name: "AWS Certified Cloud Practitioner" },
         { "@type": "EducationalOccupationalCredential", name: "Bachelor's Degree in Computer Science" },
@@ -29,8 +30,8 @@ const breadcrumbStructuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://sdad.pro" },
-        { "@type": "ListItem", position: 2, name: "Credentials", item: "https://sdad.pro/credentials" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://v3.sdad.pro" },
+        { "@type": "ListItem", position: 2, name: "Credentials", item: "https://v3.sdad.pro/credentials" },
     ],
 }
 

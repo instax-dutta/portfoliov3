@@ -20,7 +20,7 @@ const aboutStructuredData = {
         "@type": "Person",
         "@id": "https://sdad.pro/#person",
         "name": "Sai Dutta Abhishek Dash",
-        "url": "https://sdad.pro/about",
+        "url": "https://v3.sdad.pro/about",
         "description": "Security-minded Full Stack Developer and Machine Learning Engineer specializing in Python, React, and production applications."
     }
 }
@@ -29,8 +29,8 @@ const breadcrumbStructuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://sdad.pro" },
-        { "@type": "ListItem", position: 2, name: "About", item: "https://sdad.pro/about" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://v3.sdad.pro" },
+        { "@type": "ListItem", position: 2, name: "About", item: "https://v3.sdad.pro/about" },
     ],
 }
 

@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/admin', '/private', '/tmp', '/cache'],
         },
-        sitemap: 'https://sdad.pro/sitemap.xml',
-        host: 'https://sdad.pro',
+        sitemap: 'https://v3.sdad.pro/sitemap.xml',
+        host: 'https://v3.sdad.pro',
     }
 }

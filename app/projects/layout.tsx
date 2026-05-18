@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Projects - Portfolio Showcase | Freelance Full Stack Developer",
     description: "Explore my portfolio of 25+ innovative projects including AI-powered applications, web development solutions, and machine learning implementations.",
-    url: "https://sdad.pro/projects",
+    url: "https://v3.sdad.pro/projects",
     type: "website",
     images: [
       {
-        url: "https://sdad.pro/og-image.png",
+        url: "https://v3.sdad.pro/og-image.png",
         width: 1200,
         height: 630,
         alt: "Projects Portfolio - Freelance Full Stack Developer",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Projects - Portfolio Showcase | Freelance Full Stack Developer",
     description: "Explore my portfolio of 25+ innovative projects including AI-powered applications and web development solutions.",
-    images: ["https://sdad.pro/og-image.png"],
+    images: ["https://v3.sdad.pro/og-image.png"],
   },
   alternates: {
     canonical: "/projects",
@@ -49,7 +49,7 @@ const projectsStructuredData = {
   "@type": "CollectionPage",
   name: "Projects Portfolio - Freelance Full Stack Developer",
   description: "Portfolio showcasing 25+ innovative web development and AI/ML projects built with React, Next.js, Python, and modern technologies",
-  url: "https://sdad.pro/projects",
+  url: "https://v3.sdad.pro/projects",
   mainEntity: {
     "@type": "ItemList",
     numberOfItems: 25,
@@ -92,13 +92,13 @@ const breadcrumbStructuredData = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://sdad.pro",
+      item: "https://v3.sdad.pro",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Projects",
-      item: "https://sdad.pro/projects",
+      item: "https://v3.sdad.pro/projects",
     },
   ],
 }

@@ -6,5 +6,5 @@ Disallow: /api/
 Disallow: /_next/
 
 # Sitemap location
-Sitemap: https://sdad.pro/sitemap.xml
+Sitemap: https://v3.sdad.pro/sitemap.xml
 

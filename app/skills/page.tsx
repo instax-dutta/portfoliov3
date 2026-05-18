@@ -19,6 +19,7 @@ const skillsStructuredData = {
     headline: "Technical Skills of Sai Dutta Abhishek Dash",
     description: "Comprehensive tech stack including Python, TypeScript, React, Next.js, AWS, TensorFlow, and security engineering tools.",
     author: { "@id": "https://sdad.pro/#person" },
+    url: "https://v3.sdad.pro/skills",
     about: [
         { "@type": "Thing", name: "Python" },
         { "@type": "Thing", name: "TypeScript" },
@@ -33,8 +34,8 @@ const breadcrumbStructuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://sdad.pro" },
-        { "@type": "ListItem", position: 2, name: "Skills", item: "https://sdad.pro/skills" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://v3.sdad.pro" },
+        { "@type": "ListItem", position: 2, name: "Skills", item: "https://v3.sdad.pro/skills" },
     ],
 }
 

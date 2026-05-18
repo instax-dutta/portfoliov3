@@ -166,18 +166,18 @@ export const metadata: Metadata = {
     "Sai Dutta Abhishek Dash",
     "SDAD",
   ],
-  authors: [{ name: "Sai Dutta Abhishek Dash", url: "https://sdad.pro" }],
+  authors: [{ name: "Sai Dutta Abhishek Dash", url: "https://v3.sdad.pro" }],
   creator: "Sai Dutta Abhishek Dash",
   publisher: "Sai Dutta Abhishek Dash",
-  metadataBase: new URL("https://sdad.pro"),
+  metadataBase: new URL("https://v3.sdad.pro"),
   alternates: {
-    canonical: "https://sdad.pro/",
+    canonical: "https://v3.sdad.pro/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sdad.pro",
-    siteName: "Sai Dutta Abhishek Dash - Developer Portfolio",
+    url: "https://v3.sdad.pro",
+    siteName: "Sai Dutta Abhishek Dash - Developer Portfolio (v3)",
     title: "Sai Dutta Abhishek Dash - Full Stack Developer | AI Engineer | Security Expert",
     description: "Security-focused Full Stack Developer & AI/ML Engineer with 20+ production applications. Built Binify (zero-knowledge encryption), GenieLabs (AI platform), Sensory (cloud storage), PacketBuddy (network monitoring). Python • React • Next.js • AWS • TensorFlow • TypeScript",
     images: [
@@ -227,7 +227,7 @@ export const metadata: Metadata = {
   other: {
     "theme-color": "#0a0f1f",
     "format-detection": "telephone=no",
-    "og:logo": "https://sdad.pro/favicon.svg",
+    "og:logo": "https://v3.sdad.pro/favicon.svg",
   },
 }
 
@@ -239,7 +239,7 @@ const structuredData = {
       "@id": "https://sdad.pro/#person",
       "name": "Sai Dutta Abhishek Dash",
       "url": "https://sdad.pro",
-      "image": "https://sdad.pro/og-image.png",
+      "image": "https://v3.sdad.pro/og-image.png",
       "description": "Security-focused Full Stack Developer & AI/ML Engineer. Specialist in Python, Next.js, and AWS Cloud Architecture.",
       "sameAs": [
         "https://github.com/instax-dutta",
@@ -266,16 +266,16 @@ const structuredData = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://sdad.pro/#website",
-      "url": "https://sdad.pro",
-      "name": "Sai Dutta Abhishek Dash Portfolio",
+      "@id": "https://v3.sdad.pro/#website",
+      "url": "https://v3.sdad.pro",
+      "name": "Sai Dutta Abhishek Dash Portfolio (v3)",
       "publisher": { "@id": "https://sdad.pro/#person" }
     },
     {
       "@type": "ProfessionalService",
       "name": "Sai Dutta Abhishek Dash - Development Services",
-      "image": "https://sdad.pro/og-image.png",
-      "url": "https://sdad.pro",
+      "image": "https://v3.sdad.pro/og-image.png",
+      "url": "https://v3.sdad.pro",
       "telephone": "",
       "address": {
         "@type": "PostalAddress",
@@ -317,7 +317,18 @@ export default function RootLayout({
         {/* Layer 3: Custom Cursor (Fixed top) */}
         <CustomCursor />
 
-        {/* Layer 4: Content (Above all backgrounds) */}
+        {/* Layer 4: Backlink Banner - links to main portfolio */}
+        <a
+          href="https://sdad.pro"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed top-0 left-0 right-0 z-[70] bg-gradient-to-r from-color-primary/90 via-color-accent/90 to-color-secondary/90 text-white text-center text-xs sm:text-sm py-1.5 sm:py-2 font-medium tracking-wide hover:from-color-primary hover:via-color-accent hover:to-color-secondary transition-all duration-300"
+        >
+          Discover my latest projects & updated portfolio →
+          <span className="hidden sm:inline"> sdad.pro</span>
+        </a>
+
+        {/* Layer 5: Content (Above all backgrounds) */}
         <Suspense fallback={null}>
           <LenisProvider>
             {children}

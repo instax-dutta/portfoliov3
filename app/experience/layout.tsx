@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Experience - Freelance Full Stack Developer | Professional Journey",
     description: "Explore my professional experience as a Freelance Full Stack Developer. Currently available for freelance projects and consulting.",
-    url: "https://sdad.pro/experience",
+    url: "https://v3.sdad.pro/experience",
     type: "website",
   },
   twitter: {
@@ -41,7 +41,7 @@ const experienceStructuredData = {
     "@type": "Person",
     name: "Sai Dutta Abhishek Dash",
     jobTitle: "Freelance Full Stack Developer & Machine Learning Engineer",
-    url: "https://sdad.pro/experience",
+    url: "https://v3.sdad.pro/experience",
     knowsAbout: [
       "Full Stack Development",
       "React",

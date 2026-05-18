@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Bhubaneswar Tech Expert"
   ],
   alternates: {
-    canonical: "https://sdad.pro/",
+    canonical: "/",
   }
 }
 
@@ -30,7 +30,7 @@ const breadcrumbStructuredData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://sdad.pro" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://v3.sdad.pro" },
   ],
 }
 

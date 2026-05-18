@@ -18,7 +18,7 @@ const contactPageStructuredData = {
     "@type": "ContactPage",
     name: "Contact Sai Dutta Abhishek Dash",
     description: "Contact page for freelance development and AI/ML consulting services.",
-    url: "https://sdad.pro/contact",
+    url: "https://v3.sdad.pro/contact",
     mainEntity: { "@id": "https://sdad.pro/#person" }
 }
 
@@ -26,8 +26,8 @@ const breadcrumbStructuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://sdad.pro" },
-        { "@type": "ListItem", position: 2, name: "Contact", item: "https://sdad.pro/contact" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://v3.sdad.pro" },
+        { "@type": "ListItem", position: 2, name: "Contact", item: "https://v3.sdad.pro/contact" },
     ],
 }
 
